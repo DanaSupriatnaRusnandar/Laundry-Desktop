@@ -34,8 +34,8 @@ namespace Laundry
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            TambahDataAdmin admin = new TambahDataAdmin();
-            admin.Show();
+            Form admin = new TambahDataAdmin(this, btn_refresh);
+            admin.ShowDialog();
         }
     }
 }

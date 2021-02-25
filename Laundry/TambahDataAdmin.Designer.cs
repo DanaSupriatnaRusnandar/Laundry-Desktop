@@ -91,6 +91,7 @@
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(280, 20);
             this.txtRole.TabIndex = 5;
+            this.txtRole.TextChanged += new System.EventHandler(this.txtRole_TextChanged);
             // 
             // btnAdd
             // 
@@ -105,6 +106,7 @@
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtpassword
             // 

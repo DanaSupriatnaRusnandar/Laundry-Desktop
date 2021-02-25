@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Luthor.lib;
 
 namespace Laundry
 {
     public partial class UserControlPaketLaundry : UserControl
     {
+        string Outlet;
         public UserControlPaketLaundry()
         {
             InitializeComponent();
@@ -19,23 +21,49 @@ namespace Laundry
 
         private void UserControlPaketLaundry_Load(object sender, EventArgs e)
         {
-            dataGridViewAdmin.BorderStyle = BorderStyle.None;
-            dataGridViewAdmin.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridViewAdmin.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewAdmin.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewAdmin.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridViewAdmin.BackgroundColor = Color.White;
+            dataGridViewpaket.BorderStyle = BorderStyle.None;
+            dataGridViewpaket.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridViewpaket.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewpaket.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dataGridViewpaket.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewpaket.BackgroundColor = Color.White;
 
-            dataGridViewAdmin.EnableHeadersVisualStyles = false;
-            dataGridViewAdmin.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewAdmin.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridViewAdmin.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewpaket.EnableHeadersVisualStyles = false;
+            dataGridViewpaket.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewpaket.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dataGridViewpaket.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            // binding outlet(combobox)
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama");
+            cmbOutlet.DisplayMember = "nama";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
+        }
+
+        private void Tampilkan()
+        {
+            DataTable data = Db.Read("tb_paket", "*");
+            dataGridViewpaket.Rows.Clear();
+            foreach (DataRow row in data.Rows)
+            {
+                dataGridViewpaket.Rows.Add(row.Field<int>("jenis"), row.Field<string>("nama_paket"), row.Field<int>("harga"));
+            }
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            PaketLaundry paket = new PaketLaundry();
+            PaketLaundry paket = new PaketLaundry(this, btn_refresh, Outlet);
             paket.Show();
+        }
+
+        private void cmbOutlet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Outlet = cmbOutlet.SelectedValue.ToString();
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            Tampilkan();
         }
     }
 }

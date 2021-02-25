@@ -29,38 +29,32 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelData = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnMinimize = new FontAwesome.Sharp.IconButton();
-            this.btnMaximize = new FontAwesome.Sharp.IconButton();
-            this.btnClose = new FontAwesome.Sharp.IconButton();
             this.btnKeluar = new FontAwesome.Sharp.IconButton();
             this.btnPengaturan = new FontAwesome.Sharp.IconButton();
             this.btnLaporan = new FontAwesome.Sharp.IconButton();
             this.btnTransaksi = new FontAwesome.Sharp.IconButton();
             this.btnPaketCucian = new FontAwesome.Sharp.IconButton();
             this.btnOutlet = new FontAwesome.Sharp.IconButton();
+            this.panelData = new System.Windows.Forms.Panel();
             this.btnPelanggan = new FontAwesome.Sharp.IconButton();
             this.btnDataOwner = new FontAwesome.Sharp.IconButton();
             this.btnDataKasir = new FontAwesome.Sharp.IconButton();
             this.BtnDataAdmin = new FontAwesome.Sharp.IconButton();
             this.btnAkun = new FontAwesome.Sharp.IconButton();
-            this.userControlTransaksi1 = new Laundry.UserControlTransaksi();
-            this.userControlPelanggancs1 = new Laundry.UserControlPelanggancs();
-            this.userControlOutlet1 = new Laundry.UserControlOutlet();
-            this.userControlDataOwner1 = new Laundry.UserControlDataOwner();
-            this.userControlDataKasir1 = new Laundry.UserControlDataKasir();
-            this.userControlDataAdmin1 = new Laundry.UserControlDataAdmin();
-            this.userControlPaketLaundry1 = new Laundry.UserControlPaketLaundry();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnMaximize = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pageWrapper = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelData.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -82,117 +76,6 @@
             this.panelMenu.Size = new System.Drawing.Size(198, 550);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // panelData
-            // 
-            this.panelData.Controls.Add(this.btnPelanggan);
-            this.panelData.Controls.Add(this.btnDataOwner);
-            this.panelData.Controls.Add(this.btnDataKasir);
-            this.panelData.Controls.Add(this.BtnDataAdmin);
-            this.panelData.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelData.Location = new System.Drawing.Point(0, 141);
-            this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(181, 200);
-            this.panelData.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(181, 91);
-            this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(36, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 32);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "XENZA";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CLEAN WASH";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(198, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(662, 38);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnMinimize);
-            this.panel3.Controls.Add(this.btnMaximize);
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(550, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(112, 38);
-            this.panel3.TabIndex = 0;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
-            this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMinimize.IconSize = 27;
-            this.btnMinimize.Location = new System.Drawing.Point(10, 9);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(26, 22);
-            this.btnMinimize.TabIndex = 20;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
-            this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnMaximize.IconSize = 27;
-            this.btnMaximize.Location = new System.Drawing.Point(44, 10);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(26, 22);
-            this.btnMaximize.TabIndex = 21;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click_1);
-            // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnClose.IconSize = 27;
-            this.btnClose.Location = new System.Drawing.Point(78, 9);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(26, 22);
-            this.btnClose.TabIndex = 22;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
             // btnKeluar
             // 
@@ -338,6 +221,18 @@
             this.btnOutlet.UseVisualStyleBackColor = true;
             this.btnOutlet.Click += new System.EventHandler(this.btnOutlet_Click);
             // 
+            // panelData
+            // 
+            this.panelData.Controls.Add(this.btnPelanggan);
+            this.panelData.Controls.Add(this.btnDataOwner);
+            this.panelData.Controls.Add(this.btnDataKasir);
+            this.panelData.Controls.Add(this.BtnDataAdmin);
+            this.panelData.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelData.Location = new System.Drawing.Point(0, 141);
+            this.panelData.Name = "panelData";
+            this.panelData.Size = new System.Drawing.Size(181, 200);
+            this.panelData.TabIndex = 3;
+            // 
             // btnPelanggan
             // 
             this.btnPelanggan.Dock = System.Windows.Forms.DockStyle.Top;
@@ -458,68 +353,112 @@
             this.btnAkun.UseVisualStyleBackColor = true;
             this.btnAkun.Click += new System.EventHandler(this.btnAkun_Click);
             // 
-            // userControlTransaksi1
+            // panel2
             // 
-            this.userControlTransaksi1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlTransaksi1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlTransaksi1.Location = new System.Drawing.Point(198, 38);
-            this.userControlTransaksi1.Name = "userControlTransaksi1";
-            this.userControlTransaksi1.Size = new System.Drawing.Size(662, 512);
-            this.userControlTransaksi1.TabIndex = 7;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(181, 91);
+            this.panel2.TabIndex = 0;
             // 
-            // userControlPelanggancs1
+            // label2
             // 
-            this.userControlPelanggancs1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlPelanggancs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlPelanggancs1.Location = new System.Drawing.Point(198, 38);
-            this.userControlPelanggancs1.Name = "userControlPelanggancs1";
-            this.userControlPelanggancs1.Size = new System.Drawing.Size(662, 512);
-            this.userControlPelanggancs1.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(36, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "XENZA";
             // 
-            // userControlOutlet1
+            // label1
             // 
-            this.userControlOutlet1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlOutlet1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlOutlet1.Location = new System.Drawing.Point(198, 38);
-            this.userControlOutlet1.Name = "userControlOutlet1";
-            this.userControlOutlet1.Size = new System.Drawing.Size(662, 512);
-            this.userControlOutlet1.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(23, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CLEAN WASH";
             // 
-            // userControlDataOwner1
+            // panel3
             // 
-            this.userControlDataOwner1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlDataOwner1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlDataOwner1.Location = new System.Drawing.Point(198, 38);
-            this.userControlDataOwner1.Name = "userControlDataOwner1";
-            this.userControlDataOwner1.Size = new System.Drawing.Size(662, 512);
-            this.userControlDataOwner1.TabIndex = 4;
+            this.panel3.Controls.Add(this.btnMinimize);
+            this.panel3.Controls.Add(this.btnMaximize);
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(550, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(112, 26);
+            this.panel3.TabIndex = 0;
             // 
-            // userControlDataKasir1
+            // btnClose
             // 
-            this.userControlDataKasir1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlDataKasir1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlDataKasir1.Location = new System.Drawing.Point(198, 38);
-            this.userControlDataKasir1.Name = "userControlDataKasir1";
-            this.userControlDataKasir1.Size = new System.Drawing.Size(662, 512);
-            this.userControlDataKasir1.TabIndex = 3;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.btnClose.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnClose.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnClose.IconSize = 20;
+            this.btnClose.Location = new System.Drawing.Point(78, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(26, 22);
+            this.btnClose.TabIndex = 22;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
-            // userControlDataAdmin1
+            // btnMaximize
             // 
-            this.userControlDataAdmin1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlDataAdmin1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlDataAdmin1.Location = new System.Drawing.Point(198, 38);
-            this.userControlDataAdmin1.Name = "userControlDataAdmin1";
-            this.userControlDataAdmin1.Size = new System.Drawing.Size(662, 512);
-            this.userControlDataAdmin1.TabIndex = 2;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMaximize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMaximize.IconSize = 20;
+            this.btnMaximize.Location = new System.Drawing.Point(44, 4);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(26, 22);
+            this.btnMaximize.TabIndex = 21;
+            this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click_1);
             // 
-            // userControlPaketLaundry1
+            // btnMinimize
             // 
-            this.userControlPaketLaundry1.BackColor = System.Drawing.Color.Gainsboro;
-            this.userControlPaketLaundry1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userControlPaketLaundry1.Location = new System.Drawing.Point(198, 38);
-            this.userControlPaketLaundry1.Name = "userControlPaketLaundry1";
-            this.userControlPaketLaundry1.Size = new System.Drawing.Size(662, 512);
-            this.userControlPaketLaundry1.TabIndex = 8;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnMinimize.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnMinimize.IconSize = 20;
+            this.btnMinimize.Location = new System.Drawing.Point(10, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(26, 22);
+            this.btnMinimize.TabIndex = 20;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(198, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(662, 26);
+            this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pageWrapper
+            // 
+            this.pageWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pageWrapper.Location = new System.Drawing.Point(198, 26);
+            this.pageWrapper.Name = "pageWrapper";
+            this.pageWrapper.Size = new System.Drawing.Size(662, 524);
+            this.pageWrapper.TabIndex = 2;
             // 
             // DashboardAdmin
             // 
@@ -528,13 +467,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 550);
-            this.Controls.Add(this.userControlPaketLaundry1);
-            this.Controls.Add(this.userControlTransaksi1);
-            this.Controls.Add(this.userControlPelanggancs1);
-            this.Controls.Add(this.userControlOutlet1);
-            this.Controls.Add(this.userControlDataOwner1);
-            this.Controls.Add(this.userControlDataKasir1);
-            this.Controls.Add(this.userControlDataAdmin1);
+            this.Controls.Add(this.pageWrapper);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -546,8 +479,8 @@
             this.panelData.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -557,7 +490,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnAkun;
         private System.Windows.Forms.Panel panelData;
         private FontAwesome.Sharp.IconButton btnDataOwner;
@@ -570,17 +502,12 @@
         private FontAwesome.Sharp.IconButton btnKeluar;
         private FontAwesome.Sharp.IconButton btnPengaturan;
         private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton btnPelanggan;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnMinimize;
         private FontAwesome.Sharp.IconButton btnMaximize;
         private FontAwesome.Sharp.IconButton btnClose;
-        private FontAwesome.Sharp.IconButton btnPelanggan;
-        private UserControlDataAdmin userControlDataAdmin1;
-        private UserControlDataKasir userControlDataKasir1;
-        private UserControlDataOwner userControlDataOwner1;
-        private UserControlOutlet userControlOutlet1;
-        private UserControlPelanggancs userControlPelanggancs1;
-        private UserControlTransaksi userControlTransaksi1;
-        private UserControlPaketLaundry userControlPaketLaundry1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pageWrapper;
     }
 }

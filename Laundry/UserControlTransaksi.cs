@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Luthor.lib;
 
 namespace Laundry
 {
@@ -30,6 +31,12 @@ namespace Laundry
             dataGridViewTransaksi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            // binding outlet (combobox)
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama");
+            cmbOutlet.DisplayMember = "nama";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
         }
     }
 }

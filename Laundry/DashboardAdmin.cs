@@ -101,6 +101,14 @@ namespace Laundry
             }
         }
 
+        //Pemanggilan user control
+        private void openPage(UserControl usercontrol)
+        {
+            pageWrapper.Controls.Clear();
+            usercontrol.Dock = DockStyle.Fill;
+            pageWrapper.Controls.Add(usercontrol);
+        }
+
         //Button Close, Maximiza, Minimize
         private void btnClose_Click_1(object sender, EventArgs e)
         {
@@ -133,90 +141,31 @@ namespace Laundry
 
         private void BtnDataAdmin_Click(object sender, EventArgs e)
         {
-            
-            //activateButton(sender, RGBColor.color10);
-            
-            //Hide User Control
-            userControlDataKasir1.Hide();
-            userControlDataOwner1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlOutlet1.Hide();
-            userControlTransaksi1.Hide();
-            userControlPaketLaundry1.Hide();
-
-
-            //Show User Control
-            userControlDataAdmin1.Show();
-            userControlDataAdmin1.BringToFront();
-
+            openPage(new UserControlDataAdmin());
             hideSubMenu();
-            
         }
 
         private void btnDataKasir_Click(object sender, EventArgs e)
         {
-            //Hide User Control
-            userControlDataAdmin1.Hide();
-            userControlDataOwner1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlTransaksi1.Hide();
-            userControlPaketLaundry1.Hide();
-
-            //Show User Control
-            userControlDataKasir1.Show();
-            userControlDataKasir1.BringToFront();
-
+            openPage(new UserControlDataKasir());
             hideSubMenu();
         }
 
         private void btnDataOwner_Click(object sender, EventArgs e)
         {
-            //Hide User Control
-            userControlDataAdmin1.Hide();
-            userControlDataKasir1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlOutlet1.Hide();
-            userControlTransaksi1.Hide();
-            userControlPaketLaundry1.Hide();
-
-            //Show User Control
-            userControlDataOwner1.Show();
-            userControlDataOwner1.BringToFront();
+            openPage(new UserControlDataOwner());
             hideSubMenu();
         }
 
         private void btnPelanggan_Click(object sender, EventArgs e)
         {
-            //Hide User Control
-            userControlDataAdmin1.Hide();
-            userControlDataKasir1.Hide();
-            userControlDataOwner1.Hide();
-            userControlOutlet1.Hide();
-            userControlTransaksi1.Hide();
-            userControlPaketLaundry1.Hide();
-
-            //Show User Control
-            userControlPelanggancs1.Show();
-            userControlPelanggancs1.BringToFront();
-
+            openPage(new UserControlPelanggancs());
             hideSubMenu();
         }
 
         private void btnOutlet_Click(object sender, EventArgs e)
         {
-            //Hide User Control
-            userControlDataAdmin1.Hide();
-            userControlDataKasir1.Hide();
-            userControlDataOwner1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlTransaksi1.Hide();
-            userControlPaketLaundry1.Hide();
-
-            //Show User Control
-            userControlOutlet1.Show();
-            userControlOutlet1.BringToFront();
-
+            openPage(new UserControlOutlet());
             activateButton(sender, RGBColor.color3);
         }
 
@@ -227,35 +176,13 @@ namespace Laundry
 
         private void btnPaketCucian_Click(object sender, EventArgs e)
         {
-            //Hide User Control
-            userControlDataAdmin1.Hide();
-            userControlDataKasir1.Hide();
-            userControlDataOwner1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlOutlet1.Hide();
-            userControlTransaksi1.Hide();
-
-            //Show User Control
-            userControlPaketLaundry1.Show();
-            userControlPaketLaundry1.BringToFront();
-
+            openPage(new UserControlPaketLaundry());
             activateButton(sender, RGBColor.color1);
         }
 
         private void btnTransaksi_Click(object sender, EventArgs e)
         {
-            //Hide User Control
-            userControlDataAdmin1.Hide();
-            userControlDataKasir1.Hide();
-            userControlDataOwner1.Hide();
-            userControlPelanggancs1.Hide();
-            userControlOutlet1.Hide();
-            userControlPaketLaundry1.Hide();
-
-            //Show User Control
-            userControlTransaksi1.Show();
-            userControlTransaksi1.BringToFront();
-
+            openPage(new UserControlTransaksi());
             activateButton(sender, RGBColor.color6);
         }
 

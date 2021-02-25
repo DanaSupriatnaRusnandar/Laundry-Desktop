@@ -51,3 +51,4 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlTransaksi
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\Guna.UI2.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPaketLaundry.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.PaketLaundry.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache
