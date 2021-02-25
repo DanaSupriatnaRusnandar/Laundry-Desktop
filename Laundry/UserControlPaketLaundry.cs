@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Laundry
 {
-    public partial class UserControlDataAdmin : UserControl
+    public partial class UserControlPaketLaundry : UserControl
     {
-        public UserControlDataAdmin()
+        public UserControlPaketLaundry()
         {
             InitializeComponent();
         }
 
-        private void UserControlDataAdmin_Load(object sender, EventArgs e)
+        private void UserControlPaketLaundry_Load(object sender, EventArgs e)
         {
             dataGridViewAdmin.BorderStyle = BorderStyle.None;
             dataGridViewAdmin.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
@@ -34,8 +34,8 @@ namespace Laundry
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            TambahDataAdmin admin = new TambahDataAdmin();
-            admin.Show();
+            PaketLaundry paket = new PaketLaundry();
+            paket.Show();
         }
     }
 }

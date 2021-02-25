@@ -42,6 +42,9 @@
     <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.1.4\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -110,6 +113,12 @@
     <Compile Include="DashboardAdmin.Designer.cs">
       <DependentUpon>DashboardAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaketLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaketLaundry.Designer.cs">
+      <DependentUpon>PaketLaundry.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistrasiPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +136,12 @@
     </Compile>
     <Compile Include="TambahDataKasir.Designer.cs">
       <DependentUpon>TambahDataKasir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahDataOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahDataOutlet.Designer.cs">
+      <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </Compile>
     <Compile Include="TambahDataOwner.cs">
       <SubType>Form</SubType>
@@ -165,14 +180,35 @@
     <Compile Include="UserControlDataOwner.Designer.cs">
       <DependentUpon>UserControlDataOwner.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlOutlet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlOutlet.Designer.cs">
+      <DependentUpon>UserControlOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlPaketLaundry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPaketLaundry.Designer.cs">
+      <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlPelanggancs.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlPelanggancs.Designer.cs">
       <DependentUpon>UserControlPelanggancs.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTransaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTransaksi.Designer.cs">
+      <DependentUpon>UserControlTransaksi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DashboardAdmin.resx">
       <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaketLaundry.resx">
+      <DependentUpon>PaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrasiPelanggan.resx">
       <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
@@ -182,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TambahDataKasir.resx">
       <DependentUpon>TambahDataKasir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahDataOutlet.resx">
+      <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TambahDataOwner.resx">
       <DependentUpon>TambahDataOwner.cs</DependentUpon>
@@ -203,8 +242,17 @@
     <EmbeddedResource Include="UserControlDataOwner.resx">
       <DependentUpon>UserControlDataOwner.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlOutlet.resx">
+      <DependentUpon>UserControlOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPaketLaundry.resx">
+      <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlPelanggancs.resx">
       <DependentUpon>UserControlPelanggancs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTransaksi.resx">
+      <DependentUpon>UserControlTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

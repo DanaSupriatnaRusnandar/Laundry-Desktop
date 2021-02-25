@@ -46,12 +46,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewAdmin = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.btn_refresh = new FontAwesome.Sharp.IconButton();
             this.btnCari = new FontAwesome.Sharp.IconButton();
@@ -151,7 +152,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.dataGridViewAdmin);
-            this.panel4.Location = new System.Drawing.Point(41, 152);
+            this.panel4.Location = new System.Drawing.Point(39, 152);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(630, 357);
             this.panel4.TabIndex = 2;
@@ -181,6 +182,7 @@
             this.dataGridViewAdmin.ColumnHeadersHeight = 40;
             this.dataGridViewAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
             this.nama,
             this.username,
             this.password,
@@ -203,7 +205,14 @@
             this.dataGridViewAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewAdmin.RowHeadersWidth = 35;
             this.dataGridViewAdmin.Size = new System.Drawing.Size(630, 357);
-            this.dataGridViewAdmin.TabIndex = 0;
+            this.dataGridViewAdmin.TabIndex = 1;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID Admin";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // nama
             // 
@@ -266,9 +275,10 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.id_outlet.DefaultCellStyle = dataGridViewCellStyle6;
             this.id_outlet.FillWeight = 50F;
-            this.id_outlet.HeaderText = "Outlet";
+            this.id_outlet.HeaderText = "ID Outlet";
             this.id_outlet.Name = "id_outlet";
             this.id_outlet.ReadOnly = true;
+            this.id_outlet.Visible = false;
             // 
             // role
             // 
@@ -298,6 +308,8 @@
             this.edit.HeaderText = "Aksi";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // btnHapus
             // 
@@ -350,6 +362,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "UserControlDataAdmin";
             this.Size = new System.Drawing.Size(709, 545);
+            this.Load += new System.EventHandler(this.UserControlDataAdmin_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -375,11 +388,12 @@
         private FontAwesome.Sharp.IconButton btnCari;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridViewAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_outlet;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edit;
+        private System.Windows.Forms.DataGridViewButtonColumn edit;
     }
 }

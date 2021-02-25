@@ -33,12 +33,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.txtnama = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,25 +71,23 @@
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.txtRole);
             this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.txtpassword);
             this.panel2.Controls.Add(this.txtusername);
             this.panel2.Controls.Add(this.txtnama);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(26, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 374);
+            this.panel2.Size = new System.Drawing.Size(416, 305);
             this.panel2.TabIndex = 3;
             // 
             // txtRole
             // 
             this.txtRole.BackColor = System.Drawing.Color.White;
             this.txtRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtRole.Location = new System.Drawing.Point(116, 206);
+            this.txtRole.Location = new System.Drawing.Point(116, 157);
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(280, 20);
             this.txtRole.TabIndex = 5;
@@ -103,22 +99,12 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 269);
+            this.btnAdd.Location = new System.Drawing.Point(295, 220);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // cmbOutlet
-            // 
-            this.cmbOutlet.BackColor = System.Drawing.Color.White;
-            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbOutlet.FormattingEnabled = true;
-            this.cmbOutlet.Location = new System.Drawing.Point(116, 162);
-            this.cmbOutlet.Name = "cmbOutlet";
-            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutlet.TabIndex = 4;
             // 
             // txtpassword
             // 
@@ -152,22 +138,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(16, 208);
+            this.label6.Location = new System.Drawing.Point(16, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 18);
             this.label6.TabIndex = 16;
             this.label6.Text = "Hak Akses";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 18);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Outlet";
             // 
             // label4
             // 
@@ -207,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 493);
+            this.ClientSize = new System.Drawing.Size(466, 428);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -229,11 +204,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox cmbOutlet;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.TextBox txtnama;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

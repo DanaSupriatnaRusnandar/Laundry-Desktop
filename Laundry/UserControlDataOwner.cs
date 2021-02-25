@@ -22,5 +22,20 @@ namespace Laundry
             TambahDataOwner owner = new TambahDataOwner();
             owner.Show();
         }
+
+        private void UserControlDataOwner_Load(object sender, EventArgs e)
+        {
+            dataGridViewOwner.BorderStyle = BorderStyle.None;
+            dataGridViewOwner.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dataGridViewOwner.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewOwner.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
+            dataGridViewOwner.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            dataGridViewOwner.BackgroundColor = Color.White;
+
+            dataGridViewOwner.EnableHeadersVisualStyles = false;
+            dataGridViewOwner.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewOwner.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
+            dataGridViewOwner.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace Laundry
             public static Color color7 = Color.FromArgb(24, 242, 111);
             public static Color color8 = Color.FromArgb(255, 106, 0);
             public static Color color9 = Color.FromArgb(227, 2, 2);
+            public static Color color10 = Color.FromArgb(20, 2, 2);
         }
 
         //Method
@@ -101,14 +102,14 @@ namespace Laundry
         }
 
         //Button Close, Maximiza, Minimize
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Keluar dari aplikasi???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
         }
-        private void btnMaximize_Click(object sender, EventArgs e)
+        private void btnMaximize_Click_1(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
             {
@@ -119,14 +120,9 @@ namespace Laundry
                 this.WindowState = FormWindowState.Normal;
             }
         }
-        private void btnMinimize_Click(object sender, EventArgs e)
+        private void btnMinimize_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btn_Dashboard_Click(object sender, EventArgs e)
-        {
-            activateButton(sender, RGBColor.color1);
         }
 
         private void btnAkun_Click(object sender, EventArgs e)
@@ -137,9 +133,17 @@ namespace Laundry
 
         private void BtnDataAdmin_Click(object sender, EventArgs e)
         {
+            
+            //activateButton(sender, RGBColor.color10);
+            
             //Hide User Control
             userControlDataKasir1.Hide();
             userControlDataOwner1.Hide();
+            userControlPelanggancs1.Hide();
+            userControlOutlet1.Hide();
+            userControlTransaksi1.Hide();
+            userControlPaketLaundry1.Hide();
+
 
             //Show User Control
             userControlDataAdmin1.Show();
@@ -155,6 +159,9 @@ namespace Laundry
             userControlDataAdmin1.Hide();
             userControlDataOwner1.Hide();
             userControlPelanggancs1.Hide();
+            userControlPelanggancs1.Hide();
+            userControlTransaksi1.Hide();
+            userControlPaketLaundry1.Hide();
 
             //Show User Control
             userControlDataKasir1.Show();
@@ -169,6 +176,9 @@ namespace Laundry
             userControlDataAdmin1.Hide();
             userControlDataKasir1.Hide();
             userControlPelanggancs1.Hide();
+            userControlOutlet1.Hide();
+            userControlTransaksi1.Hide();
+            userControlPaketLaundry1.Hide();
 
             //Show User Control
             userControlDataOwner1.Show();
@@ -182,6 +192,9 @@ namespace Laundry
             userControlDataAdmin1.Hide();
             userControlDataKasir1.Hide();
             userControlDataOwner1.Hide();
+            userControlOutlet1.Hide();
+            userControlTransaksi1.Hide();
+            userControlPaketLaundry1.Hide();
 
             //Show User Control
             userControlPelanggancs1.Show();
@@ -192,6 +205,18 @@ namespace Laundry
 
         private void btnOutlet_Click(object sender, EventArgs e)
         {
+            //Hide User Control
+            userControlDataAdmin1.Hide();
+            userControlDataKasir1.Hide();
+            userControlDataOwner1.Hide();
+            userControlPelanggancs1.Hide();
+            userControlTransaksi1.Hide();
+            userControlPaketLaundry1.Hide();
+
+            //Show User Control
+            userControlOutlet1.Show();
+            userControlOutlet1.BringToFront();
+
             activateButton(sender, RGBColor.color3);
         }
 
@@ -202,11 +227,35 @@ namespace Laundry
 
         private void btnPaketCucian_Click(object sender, EventArgs e)
         {
-            activateButton(sender, RGBColor.color5);
+            //Hide User Control
+            userControlDataAdmin1.Hide();
+            userControlDataKasir1.Hide();
+            userControlDataOwner1.Hide();
+            userControlPelanggancs1.Hide();
+            userControlOutlet1.Hide();
+            userControlTransaksi1.Hide();
+
+            //Show User Control
+            userControlPaketLaundry1.Show();
+            userControlPaketLaundry1.BringToFront();
+
+            activateButton(sender, RGBColor.color1);
         }
 
         private void btnTransaksi_Click(object sender, EventArgs e)
         {
+            //Hide User Control
+            userControlDataAdmin1.Hide();
+            userControlDataKasir1.Hide();
+            userControlDataOwner1.Hide();
+            userControlPelanggancs1.Hide();
+            userControlOutlet1.Hide();
+            userControlPaketLaundry1.Hide();
+
+            //Show User Control
+            userControlTransaksi1.Show();
+            userControlTransaksi1.BringToFront();
+
             activateButton(sender, RGBColor.color6);
         }
 
@@ -233,6 +282,11 @@ namespace Laundry
 
         //Tidak terpakai
         private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
