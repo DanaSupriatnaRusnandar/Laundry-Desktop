@@ -82,6 +82,7 @@
             this.btnAdd.TabIndex = 17;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtNoTelepon
             // 

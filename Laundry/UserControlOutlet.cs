@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Luthor.lib;
 
 namespace Laundry
 {
@@ -17,9 +18,19 @@ namespace Laundry
             InitializeComponent();
         }
 
+        public void Tampilkan()
+        {
+            DataTable data = Db.Read("tb_outlet", "*");
+            dataGridViewOtlet.Rows.Clear();
+            foreach (DataRow row in data.Rows)
+            {
+                dataGridViewOtlet.Rows.Add($"NULL",row.Field<string>("nama"), row.Field<string>("alamat"), row.Field<string>("tlp"));
+            }
+        }
+
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            TambahDataOutlet outlet = new TambahDataOutlet();
+            TambahDataOutlet outlet = new TambahDataOutlet(this, btn_refresh);
             outlet.Show();
         }
 
@@ -36,6 +47,11 @@ namespace Laundry
             dataGridViewOtlet.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewOtlet.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewOtlet.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            Tampilkan();
         }
     }
 }
