@@ -18,6 +18,16 @@ namespace Laundry
             InitializeComponent();
         }
 
+        public void Tampilkan()
+        {
+            DataTable data = Db.Read("tb_outlet", "*");
+            dataGridViewTransaksi.Rows.Clear();
+            foreach (DataRow row in data.Rows)
+            {
+                dataGridViewTransaksi.Rows.Add($"NULL", $"NULL", row.Field<string>("kode_invoice"), $"NULL" ,row.Field<string>("alamat"), row.Field<string>("tlp"));
+            }
+        }
+
         private void UserControlTransaksi_Load(object sender, EventArgs e)
         {
             dataGridViewTransaksi.BorderStyle = BorderStyle.None;

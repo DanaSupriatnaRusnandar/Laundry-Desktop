@@ -47,6 +47,8 @@ namespace Laundry
             dataGridViewOtlet.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewOtlet.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewOtlet.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            Tampilkan();
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

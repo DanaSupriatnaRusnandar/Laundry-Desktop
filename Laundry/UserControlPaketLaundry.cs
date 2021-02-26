@@ -38,16 +38,14 @@ namespace Laundry
             cmbOutlet.DisplayMember = "nama";
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
+
+            Tampilkan();
         }
 
         private void Tampilkan()
         {
-            DataTable data = Db.Read("tb_paket", "*");
-            dataGridViewpaket.Rows.Clear();
-            foreach (DataRow row in data.Rows)
-            {
-                dataGridViewpaket.Rows.Add(row.Field<int>("jenis"), row.Field<string>("nama_paket"), row.Field<int>("harga"));
-            }
+            dataGridViewpaket.AutoGenerateColumns = false;
+            dataGridViewpaket.DataSource = Db.Read("tb_paket", "*");
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -58,7 +56,10 @@ namespace Laundry
 
         private void cmbOutlet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Outlet = cmbOutlet.SelectedValue.ToString();
+           if (cmbOutlet.SelectedIndex >= 0)
+            {
+                Outlet = cmbOutlet.SelectedValue.ToString();
+            }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

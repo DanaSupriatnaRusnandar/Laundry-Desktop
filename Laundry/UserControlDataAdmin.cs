@@ -38,6 +38,8 @@ namespace Laundry
             cmbAdmin.DisplayMember = "role";
             cmbAdmin.ValueMember = "id";
             cmbAdmin.SelectedIndex = -1;
+
+            Tampilkan();
         }
 
         private void Tampilkan()
@@ -58,7 +60,10 @@ namespace Laundry
 
         private void cmbAdmin_SelectedIndexChanged(object sender, EventArgs e)
         {
-        //    user = cmbAdmin.SelectedValue.ToString();
+            if (cmbAdmin.SelectedIndex >= 0)
+                {
+                user = cmbAdmin.SelectedValue.ToString();
+                }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

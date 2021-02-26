@@ -131,23 +131,11 @@
     <Compile Include="TambahDataAdmin.Designer.cs">
       <DependentUpon>TambahDataAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="TambahDataKasir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TambahDataKasir.Designer.cs">
-      <DependentUpon>TambahDataKasir.cs</DependentUpon>
-    </Compile>
     <Compile Include="TambahDataOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TambahDataOutlet.Designer.cs">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TambahDataOwner.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TambahDataOwner.Designer.cs">
-      <DependentUpon>TambahDataOwner.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlDataAdmin.cs">
       <SubType>UserControl</SubType>
@@ -167,18 +155,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlDataKasir.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlDataKasir.Designer.cs">
-      <DependentUpon>UserControlDataKasir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlDataOwner.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlDataOwner.Designer.cs">
-      <DependentUpon>UserControlDataOwner.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlOutlet.cs">
       <SubType>UserControl</SubType>
@@ -216,14 +192,8 @@
     <EmbeddedResource Include="TambahDataAdmin.resx">
       <DependentUpon>TambahDataAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TambahDataKasir.resx">
-      <DependentUpon>TambahDataKasir.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TambahDataOutlet.resx">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TambahDataOwner.resx">
-      <DependentUpon>TambahDataOwner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDataAdmin.resx">
       <DependentUpon>UserControlDataAdmin.cs</DependentUpon>
@@ -235,12 +205,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDataKasir.resx">
-      <DependentUpon>UserControlDataKasir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDataOwner.resx">
-      <DependentUpon>UserControlDataOwner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOutlet.resx">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>

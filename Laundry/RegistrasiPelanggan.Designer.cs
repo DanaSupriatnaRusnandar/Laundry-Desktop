@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBoxP = new System.Windows.Forms.CheckBox();
-            this.checkBoxlk = new System.Windows.Forms.CheckBox();
             this.txtTelepon = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtalamat = new System.Windows.Forms.TextBox();
@@ -41,6 +39,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxJK = new System.Windows.Forms.TextBox();
+            this.radioButtonLaki = new System.Windows.Forms.RadioButton();
+            this.radioButtonPerempuan = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,8 +61,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.checkBoxP);
-            this.panel2.Controls.Add(this.checkBoxlk);
+            this.panel2.Controls.Add(this.radioButtonLaki);
+            this.panel2.Controls.Add(this.radioButtonPerempuan);
+            this.panel2.Controls.Add(this.textBoxJK);
             this.panel2.Controls.Add(this.txtTelepon);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtalamat);
@@ -74,30 +76,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 318);
             this.panel2.TabIndex = 5;
-            // 
-            // checkBoxP
-            // 
-            this.checkBoxP.AutoSize = true;
-            this.checkBoxP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.checkBoxP.Location = new System.Drawing.Point(209, 122);
-            this.checkBoxP.Name = "checkBoxP";
-            this.checkBoxP.Size = new System.Drawing.Size(91, 19);
-            this.checkBoxP.TabIndex = 4;
-            this.checkBoxP.Text = "Perempuan";
-            this.checkBoxP.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxlk
-            // 
-            this.checkBoxlk.AutoSize = true;
-            this.checkBoxlk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxlk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.checkBoxlk.Location = new System.Drawing.Point(122, 122);
-            this.checkBoxlk.Name = "checkBoxlk";
-            this.checkBoxlk.Size = new System.Drawing.Size(82, 19);
-            this.checkBoxlk.TabIndex = 3;
-            this.checkBoxlk.Text = "Laki - Laki";
-            this.checkBoxlk.UseVisualStyleBackColor = true;
             // 
             // txtTelepon
             // 
@@ -121,6 +99,7 @@
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtalamat
             // 
@@ -195,6 +174,43 @@
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
             // 
+            // textBoxJK
+            // 
+            this.textBoxJK.BackColor = System.Drawing.Color.White;
+            this.textBoxJK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBoxJK.Location = new System.Drawing.Point(116, 114);
+            this.textBoxJK.Multiline = true;
+            this.textBoxJK.Name = "textBoxJK";
+            this.textBoxJK.Size = new System.Drawing.Size(280, 27);
+            this.textBoxJK.TabIndex = 16;
+            this.textBoxJK.Visible = false;
+            // 
+            // radioButtonLaki
+            // 
+            this.radioButtonLaki.AutoSize = true;
+            this.radioButtonLaki.BackColor = System.Drawing.Color.Gainsboro;
+            this.radioButtonLaki.Location = new System.Drawing.Point(116, 119);
+            this.radioButtonLaki.Name = "radioButtonLaki";
+            this.radioButtonLaki.Size = new System.Drawing.Size(74, 17);
+            this.radioButtonLaki.TabIndex = 3;
+            this.radioButtonLaki.TabStop = true;
+            this.radioButtonLaki.Text = "Laki - Laki";
+            this.radioButtonLaki.UseVisualStyleBackColor = false;
+            this.radioButtonLaki.CheckedChanged += new System.EventHandler(this.radioButtonLaki_CheckedChanged);
+            // 
+            // radioButtonPerempuan
+            // 
+            this.radioButtonPerempuan.AutoSize = true;
+            this.radioButtonPerempuan.BackColor = System.Drawing.Color.Gainsboro;
+            this.radioButtonPerempuan.Location = new System.Drawing.Point(196, 119);
+            this.radioButtonPerempuan.Name = "radioButtonPerempuan";
+            this.radioButtonPerempuan.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonPerempuan.TabIndex = 4;
+            this.radioButtonPerempuan.TabStop = true;
+            this.radioButtonPerempuan.Text = "Perempuan";
+            this.radioButtonPerempuan.UseVisualStyleBackColor = false;
+            this.radioButtonPerempuan.CheckedChanged += new System.EventHandler(this.radioButtonPerempuan_CheckedChanged);
+            // 
             // RegistrasiPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,8 +236,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkBoxP;
-        private System.Windows.Forms.CheckBox checkBoxlk;
         private System.Windows.Forms.TextBox txtTelepon;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtalamat;
@@ -231,5 +245,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton radioButtonLaki;
+        private System.Windows.Forms.RadioButton radioButtonPerempuan;
+        private System.Windows.Forms.TextBox textBoxJK;
     }
 }

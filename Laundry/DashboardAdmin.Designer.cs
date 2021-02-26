@@ -37,8 +37,6 @@
             this.btnOutlet = new FontAwesome.Sharp.IconButton();
             this.panelData = new System.Windows.Forms.Panel();
             this.btnPelanggan = new FontAwesome.Sharp.IconButton();
-            this.btnDataOwner = new FontAwesome.Sharp.IconButton();
-            this.btnDataKasir = new FontAwesome.Sharp.IconButton();
             this.BtnDataAdmin = new FontAwesome.Sharp.IconButton();
             this.btnAkun = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -89,10 +87,10 @@
             this.btnKeluar.IconSize = 32;
             this.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnKeluar.Location = new System.Drawing.Point(0, 591);
+            this.btnKeluar.Location = new System.Drawing.Point(0, 491);
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnKeluar.Size = new System.Drawing.Size(181, 50);
+            this.btnKeluar.Size = new System.Drawing.Size(198, 50);
             this.btnKeluar.TabIndex = 14;
             this.btnKeluar.Text = "Keluar";
             this.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -113,10 +111,10 @@
             this.btnPengaturan.IconSize = 32;
             this.btnPengaturan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengaturan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPengaturan.Location = new System.Drawing.Point(0, 541);
+            this.btnPengaturan.Location = new System.Drawing.Point(0, 441);
             this.btnPengaturan.Name = "btnPengaturan";
             this.btnPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPengaturan.Size = new System.Drawing.Size(181, 50);
+            this.btnPengaturan.Size = new System.Drawing.Size(198, 50);
             this.btnPengaturan.TabIndex = 13;
             this.btnPengaturan.Text = "Pengaturan";
             this.btnPengaturan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,10 +135,10 @@
             this.btnLaporan.IconSize = 32;
             this.btnLaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLaporan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLaporan.Location = new System.Drawing.Point(0, 491);
+            this.btnLaporan.Location = new System.Drawing.Point(0, 391);
             this.btnLaporan.Name = "btnLaporan";
             this.btnLaporan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLaporan.Size = new System.Drawing.Size(181, 50);
+            this.btnLaporan.Size = new System.Drawing.Size(198, 50);
             this.btnLaporan.TabIndex = 12;
             this.btnLaporan.Text = "Laporan";
             this.btnLaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -161,10 +159,10 @@
             this.btnTransaksi.IconSize = 32;
             this.btnTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransaksi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnTransaksi.Location = new System.Drawing.Point(0, 441);
+            this.btnTransaksi.Location = new System.Drawing.Point(0, 341);
             this.btnTransaksi.Name = "btnTransaksi";
             this.btnTransaksi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTransaksi.Size = new System.Drawing.Size(181, 50);
+            this.btnTransaksi.Size = new System.Drawing.Size(198, 50);
             this.btnTransaksi.TabIndex = 11;
             this.btnTransaksi.Text = "Transaksi";
             this.btnTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,10 +183,10 @@
             this.btnPaketCucian.IconSize = 32;
             this.btnPaketCucian.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPaketCucian.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPaketCucian.Location = new System.Drawing.Point(0, 391);
+            this.btnPaketCucian.Location = new System.Drawing.Point(0, 291);
             this.btnPaketCucian.Name = "btnPaketCucian";
             this.btnPaketCucian.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPaketCucian.Size = new System.Drawing.Size(181, 50);
+            this.btnPaketCucian.Size = new System.Drawing.Size(198, 50);
             this.btnPaketCucian.TabIndex = 10;
             this.btnPaketCucian.Text = "Paket Laundry";
             this.btnPaketCucian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,10 +207,10 @@
             this.btnOutlet.IconSize = 32;
             this.btnOutlet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOutlet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOutlet.Location = new System.Drawing.Point(0, 341);
+            this.btnOutlet.Location = new System.Drawing.Point(0, 241);
             this.btnOutlet.Name = "btnOutlet";
             this.btnOutlet.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnOutlet.Size = new System.Drawing.Size(181, 50);
+            this.btnOutlet.Size = new System.Drawing.Size(198, 50);
             this.btnOutlet.TabIndex = 8;
             this.btnOutlet.Text = "Outlet";
             this.btnOutlet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -224,13 +222,11 @@
             // panelData
             // 
             this.panelData.Controls.Add(this.btnPelanggan);
-            this.panelData.Controls.Add(this.btnDataOwner);
-            this.panelData.Controls.Add(this.btnDataKasir);
             this.panelData.Controls.Add(this.BtnDataAdmin);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelData.Location = new System.Drawing.Point(0, 141);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(181, 200);
+            this.panelData.Size = new System.Drawing.Size(198, 100);
             this.panelData.TabIndex = 3;
             // 
             // btnPelanggan
@@ -245,10 +241,10 @@
             this.btnPelanggan.IconSize = 32;
             this.btnPelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPelanggan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPelanggan.Location = new System.Drawing.Point(0, 150);
+            this.btnPelanggan.Location = new System.Drawing.Point(0, 50);
             this.btnPelanggan.Name = "btnPelanggan";
             this.btnPelanggan.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnPelanggan.Size = new System.Drawing.Size(181, 50);
+            this.btnPelanggan.Size = new System.Drawing.Size(198, 50);
             this.btnPelanggan.TabIndex = 7;
             this.btnPelanggan.Text = "Registrasi Pelanggan";
             this.btnPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,54 +252,6 @@
             this.btnPelanggan.UseMnemonic = false;
             this.btnPelanggan.UseVisualStyleBackColor = true;
             this.btnPelanggan.Click += new System.EventHandler(this.btnPelanggan_Click);
-            // 
-            // btnDataOwner
-            // 
-            this.btnDataOwner.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDataOwner.FlatAppearance.BorderSize = 0;
-            this.btnDataOwner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataOwner.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDataOwner.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnDataOwner.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnDataOwner.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDataOwner.IconSize = 32;
-            this.btnDataOwner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataOwner.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDataOwner.Location = new System.Drawing.Point(0, 100);
-            this.btnDataOwner.Name = "btnDataOwner";
-            this.btnDataOwner.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnDataOwner.Size = new System.Drawing.Size(181, 50);
-            this.btnDataOwner.TabIndex = 6;
-            this.btnDataOwner.Text = "Data Owner";
-            this.btnDataOwner.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataOwner.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDataOwner.UseMnemonic = false;
-            this.btnDataOwner.UseVisualStyleBackColor = true;
-            this.btnDataOwner.Click += new System.EventHandler(this.btnDataOwner_Click);
-            // 
-            // btnDataKasir
-            // 
-            this.btnDataKasir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDataKasir.FlatAppearance.BorderSize = 0;
-            this.btnDataKasir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataKasir.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDataKasir.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnDataKasir.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnDataKasir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDataKasir.IconSize = 32;
-            this.btnDataKasir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataKasir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDataKasir.Location = new System.Drawing.Point(0, 50);
-            this.btnDataKasir.Name = "btnDataKasir";
-            this.btnDataKasir.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnDataKasir.Size = new System.Drawing.Size(181, 50);
-            this.btnDataKasir.TabIndex = 5;
-            this.btnDataKasir.Text = "Data Kasir";
-            this.btnDataKasir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataKasir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDataKasir.UseMnemonic = false;
-            this.btnDataKasir.UseVisualStyleBackColor = true;
-            this.btnDataKasir.Click += new System.EventHandler(this.btnDataKasir_Click);
             // 
             // BtnDataAdmin
             // 
@@ -320,9 +268,9 @@
             this.BtnDataAdmin.Location = new System.Drawing.Point(0, 0);
             this.BtnDataAdmin.Name = "BtnDataAdmin";
             this.BtnDataAdmin.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.BtnDataAdmin.Size = new System.Drawing.Size(181, 50);
+            this.BtnDataAdmin.Size = new System.Drawing.Size(198, 50);
             this.BtnDataAdmin.TabIndex = 4;
-            this.BtnDataAdmin.Text = "Data Admin";
+            this.BtnDataAdmin.Text = "Data User";
             this.BtnDataAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDataAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnDataAdmin.UseMnemonic = false;
@@ -344,7 +292,7 @@
             this.btnAkun.Location = new System.Drawing.Point(0, 91);
             this.btnAkun.Name = "btnAkun";
             this.btnAkun.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnAkun.Size = new System.Drawing.Size(181, 50);
+            this.btnAkun.Size = new System.Drawing.Size(198, 50);
             this.btnAkun.TabIndex = 2;
             this.btnAkun.Text = "Data & Akun";
             this.btnAkun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -360,7 +308,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(181, 91);
+            this.panel2.Size = new System.Drawing.Size(198, 91);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -492,8 +440,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnAkun;
         private System.Windows.Forms.Panel panelData;
-        private FontAwesome.Sharp.IconButton btnDataOwner;
-        private FontAwesome.Sharp.IconButton btnDataKasir;
         private FontAwesome.Sharp.IconButton BtnDataAdmin;
         private FontAwesome.Sharp.IconButton btnOutlet;
         private FontAwesome.Sharp.IconButton btnPaketCucian;

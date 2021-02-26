@@ -30,11 +30,7 @@ namespace Laundry
         {
             if (isfilled())
             {
-                string nama = txtnama.Text;
-                string alamat = txtAlamat.Text;
-                string tlp = txtNoTelepon.Text;
-
-                if (Db.Insert("tb_outlet", $"NULL, '{txtnama}', '{txtAlamat}', '{txtNoTelepon}'"))
+                if (Db.Insert("tb_outlet", $"NULL, '{txtnama.Text}', '{txtAlamat.Text}', '{txtNoTelepon.Text}'"))
                 {
                     MessageBox.Show("Outlet berhasil di tambahkan");
                     this.Close();

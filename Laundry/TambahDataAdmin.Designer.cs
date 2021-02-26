@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtRole = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
@@ -40,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -52,9 +52,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 22);
+            this.label1.Size = new System.Drawing.Size(137, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DATA ADMINISTRATOR";
+            this.label1.Text = "TAMBAH USER";
             // 
             // panel1
             // 
@@ -69,7 +69,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.txtRole);
+            this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtpassword);
             this.panel2.Controls.Add(this.txtusername);
@@ -82,16 +82,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 305);
             this.panel2.TabIndex = 3;
-            // 
-            // txtRole
-            // 
-            this.txtRole.BackColor = System.Drawing.Color.White;
-            this.txtRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtRole.Location = new System.Drawing.Point(116, 157);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(280, 20);
-            this.txtRole.TabIndex = 5;
-            this.txtRole.TextChanged += new System.EventHandler(this.txtRole_TextChanged);
             // 
             // btnAdd
             // 
@@ -179,6 +169,19 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Nama";
             // 
+            // cmbRole
+            // 
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Items.AddRange(new object[] {
+            "Administrator",
+            "Kasir",
+            "Owner"});
+            this.cmbRole.Location = new System.Drawing.Point(116, 160);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(280, 21);
+            this.cmbRole.TabIndex = 4;
+            // 
             // TambahDataAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,7 +215,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtRole;
         private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.ComboBox cmbRole;
     }
 }

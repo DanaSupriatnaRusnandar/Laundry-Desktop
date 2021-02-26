@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Luthor.lib;
 
 namespace Laundry
 {
@@ -19,7 +20,7 @@ namespace Laundry
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            RegistrasiPelanggan reg = new RegistrasiPelanggan();
+            RegistrasiPelanggan reg = new RegistrasiPelanggan(this, btn_refresh);
             reg.Show();
         }
 
@@ -36,6 +37,23 @@ namespace Laundry
             dataGridViewRegistrasi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            Tampilkan();
+        }
+
+        private void Tampilkan()
+        {
+            DataTable data = Db.Read("tb_member", "*");
+            dataGridViewRegistrasi.Rows.Clear();
+            foreach (DataRow row in data.Rows)
+            {
+                dataGridViewRegistrasi.Rows.Add($"NULL", row.Field<string>("nama"), row.Field<string>("alamat"), row.Field<string>("jenis_kelamin"), row.Field<string>("tlp"));
+            }
+        }
+
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            Tampilkan();
         }
     }
 }

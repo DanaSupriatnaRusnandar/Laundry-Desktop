@@ -22,7 +22,7 @@ namespace Laundry
 
         private bool isfilled()
         {
-            if (txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && txtRole.Text.Length > 0) return true;
+            if (txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbRole.SelectedIndex >= 0) return true;
             return false;
         }
 
@@ -30,12 +30,7 @@ namespace Laundry
         {
             if (isfilled())
             {
-                var nama = txtnama.Text;
-                var username = txtusername.Text;
-                var password = txtpassword;
-                var hak_akses = txtRole.Text;
-
-                if (Db.Insert("tb_user", $"null, '{nama}', '{username}', '{password}', '{hak_akses}'"))
+                if (Db.Insert("tb_user", $"null, '{txtnama.Text}', '{txtusername.Text}', '{txtpassword.Text}', '{cmbRole.SelectedItem}'"))
                 {
                     MessageBox.Show("User berhasil ditambah");
                     btrf.PerformClick();

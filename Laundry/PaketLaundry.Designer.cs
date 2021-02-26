@@ -50,9 +50,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 22);
+            this.label1.Size = new System.Drawing.Size(155, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DATA KASIR";
+            this.label1.Text = "PAKET LAUNDRY";
             // 
             // panel2
             // 

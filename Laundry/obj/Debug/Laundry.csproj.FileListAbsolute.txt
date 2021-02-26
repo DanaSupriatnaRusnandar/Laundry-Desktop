@@ -39,10 +39,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.exe
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.pdb
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDataAdmin.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataAdmin.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataKasir.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDataKasir.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataOwner.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDataOwner.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPelanggancs.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.RegistrasiPelanggan.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataOutlet.resources

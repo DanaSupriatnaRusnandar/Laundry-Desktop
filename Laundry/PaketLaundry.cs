@@ -33,14 +33,7 @@ namespace Laundry
         {
             if (isfilled())
             {
-                if (cmbJenis.SelectedIndex == 1)
-                {
-                    var jenis = cmbJenis.SelectedValue;
-                }
-                var nama_paket = txtNama.Text;
-                var harga = txtHarga.Text;
-
-                if (Db.Insert("tb_paket", $"null, '{cmbJenis}', '{txtNama}', '{txtHarga}'"))
+                if (Db.Insert("tb_paket", $"null, '{id_outlet}', '{cmbJenis.SelectedItem}', '{txtNama.Text}', '{txtHarga.Text}'"))
                 {
                     MessageBox.Show("Paket berhasil ditambah");
                     btrf.PerformClick();
