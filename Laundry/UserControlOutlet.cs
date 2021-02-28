@@ -24,14 +24,13 @@ namespace Laundry
             dataGridViewOtlet.Rows.Clear();
             foreach (DataRow row in data.Rows)
             {
-                dataGridViewOtlet.Rows.Add($"NULL",row.Field<string>("nama"), row.Field<string>("alamat"), row.Field<string>("tlp"));
+                dataGridViewOtlet.Rows.Add($"NULL",row.Field<string>("nama_outlet"), row.Field<string>("alamat"), row.Field<string>("tlp"));
             }
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            TambahDataOutlet outlet = new TambahDataOutlet(this, btn_refresh);
-            outlet.Show();
+            new TambahDataOutlet(btn_refresh).ShowDialog();
         }
 
         private void UserControlOutlet_Load(object sender, EventArgs e)

@@ -40,6 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,6 +91,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.txtPassword);
             this.panel2.Controls.Add(this.label5);
@@ -155,6 +157,9 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(330, 23);
             this.txtUsername.TabIndex = 8;
+            this.txtUsername.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtUsername_MaskInputRejected);
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             // 
             // label7
             // 
@@ -166,6 +171,18 @@
             this.label7.Size = new System.Drawing.Size(71, 18);
             this.label7.TabIndex = 7;
             this.label7.Text = "Username";
+            // 
+            // lblIsUsernameValid
+            // 
+            this.lblIsUsernameValid.AutoSize = true;
+            this.lblIsUsernameValid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
+            this.lblIsUsernameValid.Location = new System.Drawing.Point(194, 176);
+            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
+            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
+            this.lblIsUsernameValid.TabIndex = 21;
+            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
+            this.lblIsUsernameValid.Visible = false;
             // 
             // Login
             // 
@@ -202,5 +219,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox txtUsername;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblIsUsernameValid;
     }
 }

@@ -20,10 +20,8 @@ namespace Laundry
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            RegistrasiPelanggan reg = new RegistrasiPelanggan(this, btn_refresh);
-            reg.Show();
+            new RegistrasiPelanggan(this, btn_refresh).ShowDialog();
         }
-
         private void UserControlPelanggancs_Load(object sender, EventArgs e)
         {
             dataGridViewRegistrasi.BorderStyle = BorderStyle.None;

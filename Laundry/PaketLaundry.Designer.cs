@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbOutlet = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cmbJenis = new System.Windows.Forms.ComboBox();
             this.txtHarga = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -57,6 +59,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.cmbOutlet);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.cmbJenis);
             this.panel2.Controls.Add(this.txtHarga);
             this.panel2.Controls.Add(this.btnAdd);
@@ -66,32 +70,46 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(25, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 263);
+            this.panel2.Size = new System.Drawing.Size(416, 326);
             this.panel2.TabIndex = 7;
+            // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(116, 29);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutlet.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label3.Location = new System.Drawing.Point(16, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 18);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Outlet";
             // 
             // cmbJenis
             // 
             this.cmbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbJenis.FormattingEnabled = true;
-            this.cmbJenis.Items.AddRange(new object[] {
-            "Kiloan",
-            "selimut",
-            "Bed Cover",
-            "Kaos",
-            "lainnya"});
-            this.cmbJenis.Location = new System.Drawing.Point(116, 77);
+            this.cmbJenis.Location = new System.Drawing.Point(116, 120);
             this.cmbJenis.Name = "cmbJenis";
             this.cmbJenis.Size = new System.Drawing.Size(280, 21);
-            this.cmbJenis.TabIndex = 19;
+            this.cmbJenis.TabIndex = 3;
             // 
             // txtHarga
             // 
             this.txtHarga.BackColor = System.Drawing.Color.White;
             this.txtHarga.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtHarga.Location = new System.Drawing.Point(116, 123);
+            this.txtHarga.Location = new System.Drawing.Point(116, 165);
             this.txtHarga.Name = "txtHarga";
             this.txtHarga.Size = new System.Drawing.Size(280, 20);
-            this.txtHarga.TabIndex = 5;
+            this.txtHarga.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -100,10 +118,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 183);
+            this.btnAdd.Location = new System.Drawing.Point(295, 225);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 17;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -112,17 +130,17 @@
             // 
             this.txtNama.BackColor = System.Drawing.Color.White;
             this.txtNama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtNama.Location = new System.Drawing.Point(116, 29);
+            this.txtNama.Location = new System.Drawing.Point(116, 75);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(280, 20);
-            this.txtNama.TabIndex = 1;
+            this.txtNama.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 122);
+            this.label5.Location = new System.Drawing.Point(16, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 18);
             this.label5.TabIndex = 15;
@@ -133,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(16, 76);
+            this.label4.Location = new System.Drawing.Point(16, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 18);
             this.label4.TabIndex = 14;
@@ -144,7 +162,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(16, 31);
+            this.label2.Location = new System.Drawing.Point(16, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 18);
             this.label2.TabIndex = 12;
@@ -165,7 +183,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 384);
+            this.ClientSize = new System.Drawing.Size(466, 438);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -173,6 +191,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.PaketLaundry_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -193,5 +212,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbJenis;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbOutlet;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Laundry
 {
-    partial class UserControlDataAdmin
+    partial class UserControlDataUser
     {
         /// <summary> 
         /// Required designer variable.
@@ -113,10 +113,6 @@
             // cmbAdmin
             // 
             this.cmbAdmin.FormattingEnabled = true;
-            this.cmbAdmin.Items.AddRange(new object[] {
-            "Administrator",
-            "Kasir",
-            "Owner"});
             this.cmbAdmin.Location = new System.Drawing.Point(11, 16);
             this.cmbAdmin.Name = "cmbAdmin";
             this.cmbAdmin.Size = new System.Drawing.Size(158, 21);
@@ -151,6 +147,7 @@
             this.btnHapus.Size = new System.Drawing.Size(26, 26);
             this.btnHapus.TabIndex = 2;
             this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // panel3
             // 
@@ -277,9 +274,11 @@
             this.dataGridViewAdmin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewAdmin.Size = new System.Drawing.Size(630, 357);
             this.dataGridViewAdmin.TabIndex = 1;
+            this.dataGridViewAdmin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAdmin_CellClick);
             // 
             // id
             // 
+            this.id.DataPropertyName = "id";
             this.id.HeaderText = "ID Admin";
             this.id.Name = "id";
             this.id.ReadOnly = true;
@@ -337,23 +336,24 @@
             // id_outlet
             // 
             this.id_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_outlet.DataPropertyName = "id_outlet";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.id_outlet.DefaultCellStyle = dataGridViewCellStyle6;
             this.id_outlet.FillWeight = 50F;
-            this.id_outlet.HeaderText = "ID Outlet";
+            this.id_outlet.HeaderText = "Outlet";
             this.id_outlet.Name = "id_outlet";
             this.id_outlet.ReadOnly = true;
-            this.id_outlet.Visible = false;
             // 
             // role
             // 
             this.role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.role.DataPropertyName = "role";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -373,14 +373,14 @@
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
             // 
-            // UserControlDataAdmin
+            // UserControlDataUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Name = "UserControlDataAdmin";
+            this.Name = "UserControlDataUser";
             this.Size = new System.Drawing.Size(709, 545);
             this.Load += new System.EventHandler(this.UserControlDataAdmin_Load);
             this.panel2.ResumeLayout(false);

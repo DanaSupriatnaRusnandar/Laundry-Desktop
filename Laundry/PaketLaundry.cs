@@ -25,15 +25,36 @@ namespace Laundry
 
         private bool isfilled()
         {
-            if (cmbJenis.SelectedIndex > 0 && txtNama.Text.Length > 0 && txtHarga.Text.Length > 0) return true;
+            if (cmbOutlet.SelectedIndex >= 0 && cmbJenis.SelectedIndex >= 0 && txtNama.Text.Length > 0 && txtHarga.Text.Length > 0) return true;
             return false;
+        }
+
+        private void PaketLaundry_Load(object sender, EventArgs e)
+        {
+            //Biding outlet
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutlet.DisplayMember = "nama_outlet";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
+
+            //Biding Jenis
+            cmbJenis.DataSource = Db.Read("tb_jenis", "id, jenis");
+            cmbJenis.DisplayMember = "jenis";
+            cmbJenis.ValueMember = "id";
+            cmbJenis.SelectedIndex = -1;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (isfilled())
             {
-                if (Db.Insert("tb_paket", $"null, '{id_outlet}', '{cmbJenis.SelectedItem}', '{txtNama.Text}', '{txtHarga.Text}'"))
+                if (cmbOutlet.SelectedIndex == 0) ;
+                var outlet = cmbOutlet.SelectedValue;
+                if (cmbJenis.SelectedIndex == 0) ;
+                var jenis = cmbJenis.SelectedValue;
+                var nama_paket = txtNama.Text;
+                var harga = txtHarga.Text;
+                if (Db.Insert("tb_paket", $"null, '{outlet}', '{nama_paket}' , '{jenis}', '{harga}'"))
                 {
                     MessageBox.Show("Paket berhasil ditambah");
                     btrf.PerformClick();

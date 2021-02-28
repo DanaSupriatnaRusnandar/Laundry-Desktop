@@ -13,12 +13,12 @@ using FontAwesome.Sharp;
 
 namespace Laundry
 {
-    public partial class DashboardAdmin : Form
+    public partial class Dashboard : Form
     {
         //FIeld
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-        public DashboardAdmin()
+        public Dashboard()
         {
             InitializeComponent();
             constumizeDesign();
@@ -133,29 +133,17 @@ namespace Laundry
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnAkun_Click(object sender, EventArgs e)
+        private void btnAkun_Click_1(object sender, EventArgs e)
         {
             showSubMenu(panelData);
             activateButton(sender, RGBColor.color5);
         }
 
-        private void BtnDataAdmin_Click(object sender, EventArgs e)
+        private void BtnDataAdmin_Click_1(object sender, EventArgs e)
         {
-            openPage(new UserControlDataAdmin());
+            openPage(new UserControlDataUser());
             hideSubMenu();
         }
-
-       /* private void btnDataKasir_Click(object sender, EventArgs e)
-        {
-            openPage(new UserControlDataKasir());
-            hideSubMenu();
-        }*/
-
-        /*private void btnDataOwner_Click(object sender, EventArgs e)
-        {
-            openPage(new UserControlDataOwner());
-            hideSubMenu();
-        }*/
 
         private void btnPelanggan_Click(object sender, EventArgs e)
         {
@@ -169,8 +157,9 @@ namespace Laundry
             activateButton(sender, RGBColor.color3);
         }
 
-        private void btnJenisPaket_Click(object sender, EventArgs e)
+        private void btnJenisPaket_Click_1(object sender, EventArgs e)
         {
+            openPage(new UserControlJenisPaket());
             activateButton(sender, RGBColor.color4);
         }
 
@@ -180,23 +169,23 @@ namespace Laundry
             activateButton(sender, RGBColor.color1);
         }
 
-        private void btnTransaksi_Click(object sender, EventArgs e)
+        private void btnTransaksi_Click_1(object sender, EventArgs e)
         {
             openPage(new UserControlTransaksi());
             activateButton(sender, RGBColor.color6);
         }
 
-        private void btnLaporan_Click(object sender, EventArgs e)
+        private void btnLaporan_Click_1(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color7);
         }
 
-        private void btnPengaturan_Click(object sender, EventArgs e)
+        private void btnPengaturan_Click_1(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color8);
         }
 
-        private void btnKeluar_Click(object sender, EventArgs e)
+        private void btnKeluar_Click_1(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color9);
             if (MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -204,18 +193,32 @@ namespace Laundry
                 this.Hide();
                 Login lg = new Login();
                 lg.Show();
-            } 
+            }
         }
+
+
 
         //Tidak terpakai
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            lblJam.Text = DateTime.Now.ToLongTimeString();
+            lblHariTanggal.Text = DateTime.Now.ToLongDateString();
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblJam.Text = DateTime.Now.ToLongTimeString();
+            lblHariTanggal.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

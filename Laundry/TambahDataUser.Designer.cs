@@ -1,6 +1,6 @@
 ﻿namespace Laundry
 {
-    partial class TambahDataAdmin
+    partial class TambahDataUser
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblIsUsernameValid = new System.Windows.Forms.Label();
+            this.cmbOutlet = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
@@ -39,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +72,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.lblIsUsernameValid);
+            this.panel2.Controls.Add(this.cmbOutlet);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtpassword);
@@ -80,8 +86,48 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(26, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 305);
+            this.panel2.Size = new System.Drawing.Size(416, 321);
             this.panel2.TabIndex = 3;
+            // 
+            // lblIsUsernameValid
+            // 
+            this.lblIsUsernameValid.AutoSize = true;
+            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
+            this.lblIsUsernameValid.Location = new System.Drawing.Point(238, 59);
+            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
+            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
+            this.lblIsUsernameValid.TabIndex = 20;
+            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
+            this.lblIsUsernameValid.Visible = false;
+            // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(116, 157);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutlet.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(16, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 18);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Outlet";
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(116, 199);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(280, 21);
+            this.cmbRole.TabIndex = 5;
             // 
             // btnAdd
             // 
@@ -90,10 +136,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 220);
+            this.btnAdd.Location = new System.Drawing.Point(295, 250);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 17;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -101,7 +147,7 @@
             // txtpassword
             // 
             this.txtpassword.BackColor = System.Drawing.Color.White;
-            this.txtpassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtpassword.ForeColor = System.Drawing.Color.Black;
             this.txtpassword.Location = new System.Drawing.Point(116, 117);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(280, 20);
@@ -110,16 +156,18 @@
             // txtusername
             // 
             this.txtusername.BackColor = System.Drawing.Color.White;
-            this.txtusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtusername.ForeColor = System.Drawing.Color.Black;
             this.txtusername.Location = new System.Drawing.Point(116, 75);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(280, 20);
             this.txtusername.TabIndex = 2;
+            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
+            this.txtusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusername_KeyPress);
             // 
             // txtnama
             // 
             this.txtnama.BackColor = System.Drawing.Color.White;
-            this.txtnama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtnama.ForeColor = System.Drawing.Color.Black;
             this.txtnama.Location = new System.Drawing.Point(116, 29);
             this.txtnama.Name = "txtnama";
             this.txtnama.Size = new System.Drawing.Size(280, 20);
@@ -130,7 +178,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(16, 159);
+            this.label6.Location = new System.Drawing.Point(16, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 18);
             this.label6.TabIndex = 16;
@@ -169,32 +217,20 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Nama";
             // 
-            // cmbRole
-            // 
-            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Items.AddRange(new object[] {
-            "Administrator",
-            "Kasir",
-            "Owner"});
-            this.cmbRole.Location = new System.Drawing.Point(116, 160);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(280, 21);
-            this.cmbRole.TabIndex = 4;
-            // 
-            // TambahDataAdmin
+            // TambahDataUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 428);
+            this.ClientSize = new System.Drawing.Size(466, 442);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "TambahDataAdmin";
+            this.Name = "TambahDataUser";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.TambahDataUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -217,5 +253,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.ComboBox cmbOutlet;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblIsUsernameValid;
     }
 }

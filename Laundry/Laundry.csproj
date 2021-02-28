@@ -107,11 +107,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DashboardAdmin.cs">
+    <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashboardAdmin.Designer.cs">
-      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="PaketLaundry.cs">
       <SubType>Form</SubType>
@@ -125,11 +125,11 @@
     <Compile Include="RegistrasiPelanggan.Designer.cs">
       <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="TambahDataAdmin.cs">
+    <Compile Include="TambahDataUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TambahDataAdmin.Designer.cs">
-      <DependentUpon>TambahDataAdmin.cs</DependentUpon>
+    <Compile Include="TambahDataUser.Designer.cs">
+      <DependentUpon>TambahDataUser.cs</DependentUpon>
     </Compile>
     <Compile Include="TambahDataOutlet.cs">
       <SubType>Form</SubType>
@@ -137,11 +137,11 @@
     <Compile Include="TambahDataOutlet.Designer.cs">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlDataAdmin.cs">
+    <Compile Include="UserControlDataUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDataAdmin.Designer.cs">
-      <DependentUpon>UserControlDataAdmin.cs</DependentUpon>
+    <Compile Include="UserControlDataUser.Designer.cs">
+      <DependentUpon>UserControlDataUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -155,6 +155,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlJenisPaket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlJenisPaket.Designer.cs">
+      <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlOutlet.cs">
       <SubType>UserControl</SubType>
@@ -180,8 +186,8 @@
     <Compile Include="UserControlTransaksi.Designer.cs">
       <DependentUpon>UserControlTransaksi.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DashboardAdmin.resx">
-      <DependentUpon>DashboardAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaketLaundry.resx">
       <DependentUpon>PaketLaundry.cs</DependentUpon>
@@ -189,14 +195,14 @@
     <EmbeddedResource Include="RegistrasiPelanggan.resx">
       <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TambahDataAdmin.resx">
-      <DependentUpon>TambahDataAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="TambahDataUser.resx">
+      <DependentUpon>TambahDataUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TambahDataOutlet.resx">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDataAdmin.resx">
-      <DependentUpon>UserControlDataAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlDataUser.resx">
+      <DependentUpon>UserControlDataUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -205,6 +211,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlJenisPaket.resx">
+      <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOutlet.resx">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>

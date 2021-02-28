@@ -14,7 +14,7 @@ namespace Laundry
     public partial class TambahDataOutlet : Form
     {
         Button btrf;
-        public TambahDataOutlet(UserControlOutlet parent ,Button btrefresh)
+        public TambahDataOutlet(Button btrefresh)
         {
             InitializeComponent();
             btrf = btrefresh;
@@ -30,7 +30,10 @@ namespace Laundry
         {
             if (isfilled())
             {
-                if (Db.Insert("tb_outlet", $"NULL, '{txtnama.Text}', '{txtAlamat.Text}', '{txtNoTelepon.Text}'"))
+                var nama = txtnama.Text;
+                var alamat = txtAlamat.Text;
+                var tlp = txtNoTelepon.Text;
+                if (Db.Insert("tb_outlet", $"NULL, '{nama}', '{alamat}', '{tlp}'"))
                 {
                     MessageBox.Show("Outlet berhasil di tambahkan");
                     this.Close();

@@ -266,7 +266,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.nama.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nama.FillWeight = 80F;
+            this.nama.FillWeight = 150F;
             this.nama.HeaderText = "Nama Lengkap";
             this.nama.Name = "nama";
             this.nama.ReadOnly = true;
@@ -282,7 +282,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.alamat.DefaultCellStyle = dataGridViewCellStyle4;
-            this.alamat.FillWeight = 110F;
+            this.alamat.FillWeight = 150F;
             this.alamat.HeaderText = "Alamat";
             this.alamat.Name = "alamat";
             this.alamat.ReadOnly = true;
@@ -298,7 +298,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.jenis_kelamin.DefaultCellStyle = dataGridViewCellStyle5;
-            this.jenis_kelamin.FillWeight = 40F;
+            this.jenis_kelamin.FillWeight = 80F;
             this.jenis_kelamin.HeaderText = "Jenis Kelamin";
             this.jenis_kelamin.Name = "jenis_kelamin";
             this.jenis_kelamin.ReadOnly = true;
@@ -315,13 +315,13 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.tlp.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tlp.FillWeight = 80F;
             this.tlp.HeaderText = "No Telepon";
             this.tlp.Name = "tlp";
             this.tlp.ReadOnly = true;
             // 
             // edit
             // 
+            this.edit.FillWeight = 75F;
             this.edit.HeaderText = "Aksi";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;

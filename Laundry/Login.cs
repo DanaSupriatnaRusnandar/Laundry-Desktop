@@ -21,13 +21,19 @@ namespace Laundry
             InitializeComponent();
         }
 
+        private bool isUsernameValid()
+        {
+            if (txtUsername.Text.Contains(" ")) return false;
+            return true;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0)
+            if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0 && isUsernameValid())
             {
                 if (Auth.Login(txtUsername.Text, Sha256.Encrypt(txtPassword.Text), "tb_user"))
                 {
-                    Form Dashboar = new DashboardAdmin();
+                    Form Dashboar = new Dashboard();
                     MessageBox.Show("Login Berhasil");
                     this.Hide();
                     Dashboar.Show();
@@ -49,6 +55,22 @@ namespace Laundry
             {
                 MessageBox.Show("Masukan Password!", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void txtUsername_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            if (isUsernameValid()) lblIsUsernameValid.Visible = false;
+            else lblIsUsernameValid.Visible = true;
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.KeyChar = Char.ToLower(e.KeyChar);
         }
     }
 }

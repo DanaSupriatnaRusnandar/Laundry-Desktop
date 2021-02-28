@@ -28,12 +28,12 @@ namespace Laundry
 
         private void radioButtonLaki_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonLaki.Checked) textBoxJK.Text = "P";
+            if (radioButtonLaki.Checked) textBoxJK.Text = "Laki - Laki";
         }
 
         private void radioButtonPerempuan_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonPerempuan.Checked) textBoxJK.Text = "L";
+            if (radioButtonPerempuan.Checked) textBoxJK.Text = "Perempuan";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
