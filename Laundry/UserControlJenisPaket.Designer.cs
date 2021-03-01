@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCari = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,7 +100,7 @@
             this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.txtAdd.Location = new System.Drawing.Point(9, 78);
             this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(203, 20);
+            this.txtAdd.Size = new System.Drawing.Size(164, 20);
             this.txtAdd.TabIndex = 6;
             // 
             // Btn_Add
@@ -109,7 +110,7 @@
             this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(218, 76);
+            this.Btn_Add.Location = new System.Drawing.Point(179, 77);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(79, 25);
             this.Btn_Add.TabIndex = 1;
@@ -125,7 +126,7 @@
             this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHapus.IconSize = 26;
-            this.btnHapus.Location = new System.Drawing.Point(303, 76);
+            this.btnHapus.Location = new System.Drawing.Point(264, 77);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(26, 26);
             this.btnHapus.TabIndex = 2;
@@ -243,6 +244,12 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewJenis.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewJenis.RowHeadersWidth = 35;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewJenis.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewJenis.Size = new System.Drawing.Size(630, 357);
             this.dataGridViewJenis.TabIndex = 1;
             this.dataGridViewJenis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellClick);

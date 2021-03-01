@@ -20,6 +20,16 @@ namespace Laundry
         }
         string getIdUser;
 
+        private void Tampilkan()
+        {
+            DataTable data = Db.Read("SELECT tb_user.id, tb_user.nama, tb_user.username, tb_user.password, tb_outlet.nama_outlet, tb_role.nama_role, tb_user.role FROM tb_user INNER JOIN tb_role on tb_user.id_role = tb_role.id INNER JOIN tb_outlet on tb_user.id_outlet = tb_outlet.id");
+            dataGridViewAdmin.Rows.Clear();
+            foreach (DataRow row in data.Rows)
+            {
+                dataGridViewAdmin.Rows.Add(row.Field<int>("id"), row.Field<string>("nama"), row.Field<string>("username"), row.Field<string>("password"), row.Field<string>("nama_outlet"), row.Field<string>("nama_role"), row.Field<string>("role"));
+            }
+        }
+
         private void UserControlDataAdmin_Load(object sender, EventArgs e)
         {
             dataGridViewAdmin.BorderStyle = BorderStyle.None;
@@ -44,16 +54,6 @@ namespace Laundry
             Tampilkan();
         }
 
-        private void Tampilkan()
-        {
-            DataTable data = Db.Read("SELECT tb_user.id, tb_user.nama, tb_user.username, tb_user.password, tb_outlet.nama_outlet, tb_user.role FROM tb_user INNER JOIN tb_outlet on tb_user.id_outlet = tb_outlet.id");
-            dataGridViewAdmin.Rows.Clear();
-            foreach (DataRow row in data.Rows)
-            {
-                dataGridViewAdmin.Rows.Add($"NULL",row.Field<string>("nama"), row.Field<string>("username"), row.Field<string>("password"), row.Field<string>("nama_outlet") , row.Field<string>("role"));
-            }
-        }
-
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             new TambahDataUser(btn_refresh).ShowDialog();
@@ -74,12 +74,12 @@ namespace Laundry
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Apakah anda yakin ingin Menghapus Data Ini?", "KONFIRMASI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data user Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
-                Db.Delete("tb_jenis", $"id = {getIdUser}");
+                Db.Delete("tb_user", $"id = {getIdUser}");
                 Tampilkan();
-                MessageBox.Show("Data Telah Dihapus!");
+                MessageBox.Show("Data user berhasil dihapus!");
 
             }
         }

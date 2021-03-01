@@ -49,3 +49,5 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataUser.resou
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDataUser.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.Dashboard.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlJenisPaket.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlKurir.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataKurir.resources

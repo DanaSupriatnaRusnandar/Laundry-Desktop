@@ -30,12 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,6 +56,7 @@
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
@@ -253,6 +255,7 @@
             this.username,
             this.password,
             this.id_outlet,
+            this.nama_role,
             this.role,
             this.edit});
             this.dataGridViewAdmin.Cursor = System.Windows.Forms.Cursors.Default;
@@ -262,14 +265,14 @@
             this.dataGridViewAdmin.Name = "dataGridViewAdmin";
             this.dataGridViewAdmin.ReadOnly = true;
             this.dataGridViewAdmin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewAdmin.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewAdmin.RowHeadersWidth = 27;
             this.dataGridViewAdmin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewAdmin.Size = new System.Drawing.Size(630, 357);
@@ -279,7 +282,7 @@
             // id
             // 
             this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID Admin";
+            this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Visible = false;
@@ -350,10 +353,10 @@
             this.id_outlet.Name = "id_outlet";
             this.id_outlet.ReadOnly = true;
             // 
-            // role
+            // nama_role
             // 
-            this.role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.role.DataPropertyName = "role";
+            this.nama_role.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_role.DataPropertyName = "nama_role";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -361,14 +364,26 @@
             dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.role.DefaultCellStyle = dataGridViewCellStyle7;
-            this.role.FillWeight = 50F;
-            this.role.HeaderText = "Hak Akses";
+            this.nama_role.DefaultCellStyle = dataGridViewCellStyle7;
+            this.nama_role.FillWeight = 75F;
+            this.nama_role.HeaderText = "Hak Akses";
+            this.nama_role.Name = "nama_role";
+            this.nama_role.ReadOnly = true;
+            // 
+            // role
+            // 
+            this.role.HeaderText = "role";
             this.role.Name = "role";
             this.role.ReadOnly = true;
+            this.role.Visible = false;
             // 
             // edit
             // 
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle8;
             this.edit.HeaderText = "Aksi";
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
@@ -416,6 +431,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_outlet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nama_role;
         private System.Windows.Forms.DataGridViewTextBoxColumn role;
         private System.Windows.Forms.DataGridViewTextBoxColumn edit;
     }

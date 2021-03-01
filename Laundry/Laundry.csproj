@@ -125,6 +125,12 @@
     <Compile Include="RegistrasiPelanggan.Designer.cs">
       <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="TambahDataKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahDataKurir.Designer.cs">
+      <DependentUpon>TambahDataKurir.cs</DependentUpon>
+    </Compile>
     <Compile Include="TambahDataUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,12 @@
     <Compile Include="UserControlJenisPaket.Designer.cs">
       <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlKurir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlKurir.Designer.cs">
+      <DependentUpon>UserControlKurir.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlOutlet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -195,6 +207,9 @@
     <EmbeddedResource Include="RegistrasiPelanggan.resx">
       <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TambahDataKurir.resx">
+      <DependentUpon>TambahDataKurir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TambahDataUser.resx">
       <DependentUpon>TambahDataUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlJenisPaket.resx">
       <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlKurir.resx">
+      <DependentUpon>UserControlKurir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOutlet.resx">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>

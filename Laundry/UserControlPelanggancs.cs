@@ -17,6 +17,7 @@ namespace Laundry
         {
             InitializeComponent();
         }
+        string getIdPelanggan;
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
@@ -45,13 +46,34 @@ namespace Laundry
             dataGridViewRegistrasi.Rows.Clear();
             foreach (DataRow row in data.Rows)
             {
-                dataGridViewRegistrasi.Rows.Add($"NULL", row.Field<string>("nama"), row.Field<string>("alamat"), row.Field<string>("jenis_kelamin"), row.Field<string>("tlp"));
+                dataGridViewRegistrasi.Rows.Add(row.Field<int>("id"), row.Field<string>("nama"), row.Field<string>("alamat"), row.Field<string>("jenis_kelamin"), row.Field<string>("tlp"));
             }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data pelanggan Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                Db.Delete("tb_member", $"id = {getIdPelanggan}");
+                Tampilkan();
+                MessageBox.Show("Data user berhasil dihapus!");
+            }
+
+        }
+
+        private void dataGridViewRegistrasi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           /* int row = dataGridViewRegistrasi.CurrentCell.RowIndex;
+            getIdPelanggan = dataGridViewRegistrasi.Rows[row].Cells["id"].Value.ToString();*/
+
+            int row = dataGridViewRegistrasi.CurrentCell.RowIndex;
+            getIdPelanggan = dataGridViewRegistrasi.Rows[row].Cells["id"].Value.ToString();
         }
     }
 }

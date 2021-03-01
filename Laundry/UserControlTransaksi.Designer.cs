@@ -35,19 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewTransaksi = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kode_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_member = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.batas_waktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgl_bayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.biaya_tambahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pajak = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dibayar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btn_Add = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_refresh = new FontAwesome.Sharp.IconButton();
@@ -59,6 +46,20 @@
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kode_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_member = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.batas_waktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tgl_bayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.biaya_tambahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pajak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dibayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_kurir = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksi)).BeginInit();
             this.panel3.SuspendLayout();
@@ -136,6 +137,7 @@
             this.pajak,
             this.status,
             this.dibayar,
+            this.id_kurir,
             this.id_user});
             this.dataGridViewTransaksi.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridViewTransaksi.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -154,113 +156,6 @@
             this.dataGridViewTransaksi.RowHeadersWidth = 35;
             this.dataGridViewTransaksi.Size = new System.Drawing.Size(641, 377);
             this.dataGridViewTransaksi.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID Transaksi";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // id_outlet
-            // 
-            this.id_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_outlet.FillWeight = 75F;
-            this.id_outlet.HeaderText = "ID Outlet";
-            this.id_outlet.Name = "id_outlet";
-            this.id_outlet.ReadOnly = true;
-            this.id_outlet.Visible = false;
-            // 
-            // kode_invoice
-            // 
-            this.kode_invoice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.kode_invoice.FillWeight = 57F;
-            this.kode_invoice.HeaderText = "Kode Invoice";
-            this.kode_invoice.Name = "kode_invoice";
-            this.kode_invoice.ReadOnly = true;
-            // 
-            // id_member
-            // 
-            this.id_member.HeaderText = "ID Member";
-            this.id_member.Name = "id_member";
-            this.id_member.ReadOnly = true;
-            this.id_member.Visible = false;
-            // 
-            // tgl
-            // 
-            this.tgl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tgl.FillWeight = 70F;
-            this.tgl.HeaderText = "Tanggal";
-            this.tgl.Name = "tgl";
-            this.tgl.ReadOnly = true;
-            // 
-            // batas_waktu
-            // 
-            this.batas_waktu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.batas_waktu.FillWeight = 70F;
-            this.batas_waktu.HeaderText = "Batas Waktu";
-            this.batas_waktu.Name = "batas_waktu";
-            this.batas_waktu.ReadOnly = true;
-            // 
-            // tgl_bayar
-            // 
-            this.tgl_bayar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tgl_bayar.FillWeight = 70F;
-            this.tgl_bayar.HeaderText = "Tanggal Pembayaran";
-            this.tgl_bayar.Name = "tgl_bayar";
-            this.tgl_bayar.ReadOnly = true;
-            // 
-            // biaya_tambahan
-            // 
-            this.biaya_tambahan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.biaya_tambahan.FillWeight = 50F;
-            this.biaya_tambahan.HeaderText = "Biaya Tambahan";
-            this.biaya_tambahan.Name = "biaya_tambahan";
-            this.biaya_tambahan.ReadOnly = true;
-            this.biaya_tambahan.Width = 115;
-            // 
-            // diskon
-            // 
-            this.diskon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.diskon.FillWeight = 50F;
-            this.diskon.HeaderText = "Diskon";
-            this.diskon.Name = "diskon";
-            this.diskon.ReadOnly = true;
-            // 
-            // pajak
-            // 
-            this.pajak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.pajak.FillWeight = 50F;
-            this.pajak.HeaderText = "Pajak";
-            this.pajak.Name = "pajak";
-            this.pajak.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.status.FillWeight = 75F;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.status.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dibayar
-            // 
-            this.dibayar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dibayar.FillWeight = 75F;
-            this.dibayar.HeaderText = "Dibayar";
-            this.dibayar.Name = "dibayar";
-            this.dibayar.ReadOnly = true;
-            this.dibayar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dibayar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // id_user
-            // 
-            this.id_user.HeaderText = "ID User";
-            this.id_user.Name = "id_user";
-            this.id_user.ReadOnly = true;
-            this.id_user.Visible = false;
             // 
             // Btn_Add
             // 
@@ -396,6 +291,128 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ENTRI TRANSAKSI";
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID Transaksi";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // id_outlet
+            // 
+            this.id_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.id_outlet.DataPropertyName = "id_outlet";
+            this.id_outlet.FillWeight = 75F;
+            this.id_outlet.HeaderText = "Outlet";
+            this.id_outlet.Name = "id_outlet";
+            this.id_outlet.ReadOnly = true;
+            // 
+            // kode_invoice
+            // 
+            this.kode_invoice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.kode_invoice.DataPropertyName = "kode_invoice";
+            this.kode_invoice.FillWeight = 57F;
+            this.kode_invoice.HeaderText = "Kode Invoice";
+            this.kode_invoice.Name = "kode_invoice";
+            this.kode_invoice.ReadOnly = true;
+            // 
+            // id_member
+            // 
+            this.id_member.DataPropertyName = "id_member";
+            this.id_member.HeaderText = "Pelanggan";
+            this.id_member.Name = "id_member";
+            this.id_member.ReadOnly = true;
+            // 
+            // tgl
+            // 
+            this.tgl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tgl.DataPropertyName = "tgl";
+            this.tgl.FillWeight = 70F;
+            this.tgl.HeaderText = "Tanggal";
+            this.tgl.Name = "tgl";
+            this.tgl.ReadOnly = true;
+            // 
+            // batas_waktu
+            // 
+            this.batas_waktu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.batas_waktu.DataPropertyName = "batas_waktu";
+            this.batas_waktu.FillWeight = 70F;
+            this.batas_waktu.HeaderText = "Batas Waktu";
+            this.batas_waktu.Name = "batas_waktu";
+            this.batas_waktu.ReadOnly = true;
+            // 
+            // tgl_bayar
+            // 
+            this.tgl_bayar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tgl_bayar.DataPropertyName = "tgl_bayar";
+            this.tgl_bayar.FillWeight = 70F;
+            this.tgl_bayar.HeaderText = "Tanggal Pembayaran";
+            this.tgl_bayar.Name = "tgl_bayar";
+            this.tgl_bayar.ReadOnly = true;
+            // 
+            // biaya_tambahan
+            // 
+            this.biaya_tambahan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.biaya_tambahan.DataPropertyName = "biaya_tambahan";
+            this.biaya_tambahan.FillWeight = 50F;
+            this.biaya_tambahan.HeaderText = "Biaya Tambahan";
+            this.biaya_tambahan.Name = "biaya_tambahan";
+            this.biaya_tambahan.ReadOnly = true;
+            this.biaya_tambahan.Width = 115;
+            // 
+            // diskon
+            // 
+            this.diskon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.diskon.DataPropertyName = "diskon";
+            this.diskon.FillWeight = 50F;
+            this.diskon.HeaderText = "Diskon";
+            this.diskon.Name = "diskon";
+            this.diskon.ReadOnly = true;
+            // 
+            // pajak
+            // 
+            this.pajak.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.pajak.DataPropertyName = "pajak";
+            this.pajak.FillWeight = 50F;
+            this.pajak.HeaderText = "Pajak";
+            this.pajak.Name = "pajak";
+            this.pajak.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.status.DataPropertyName = "status";
+            this.status.FillWeight = 75F;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dibayar
+            // 
+            this.dibayar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dibayar.DataPropertyName = "dibayar";
+            this.dibayar.FillWeight = 75F;
+            this.dibayar.HeaderText = "Dibayar";
+            this.dibayar.Name = "dibayar";
+            this.dibayar.ReadOnly = true;
+            this.dibayar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // id_kurir
+            // 
+            this.id_kurir.DataPropertyName = "id_kurir";
+            this.id_kurir.HeaderText = "Kurir";
+            this.id_kurir.Name = "id_kurir";
+            this.id_kurir.ReadOnly = true;
+            // 
+            // id_user
+            // 
+            this.id_user.DataPropertyName = "id_user";
+            this.id_user.HeaderText = "Petugas";
+            this.id_user.Name = "id_user";
+            this.id_user.ReadOnly = true;
+            // 
             // UserControlTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +449,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewTransaksi;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox cmbOutlet;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_outlet;
         private System.Windows.Forms.DataGridViewTextBoxColumn kode_invoice;
@@ -442,11 +462,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn biaya_tambahan;
         private System.Windows.Forms.DataGridViewTextBoxColumn diskon;
         private System.Windows.Forms.DataGridViewTextBoxColumn pajak;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn status;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dibayar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dibayar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_kurir;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.ComboBox cmbOutlet;
-        private System.Windows.Forms.Label label3;
     }
 }

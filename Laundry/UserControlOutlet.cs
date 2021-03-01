@@ -17,6 +17,7 @@ namespace Laundry
         {
             InitializeComponent();
         }
+        string getIdOutlet;
 
         public void Tampilkan()
         {
@@ -24,7 +25,7 @@ namespace Laundry
             dataGridViewOtlet.Rows.Clear();
             foreach (DataRow row in data.Rows)
             {
-                dataGridViewOtlet.Rows.Add($"NULL",row.Field<string>("nama_outlet"), row.Field<string>("alamat"), row.Field<string>("tlp"));
+                dataGridViewOtlet.Rows.Add(row.Field<int>("id"), row.Field<string>("nama_outlet"), row.Field<string>("alamat"), row.Field<string>("tlp"));
             }
         }
 
@@ -53,6 +54,24 @@ namespace Laundry
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data outlet Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                Db.Delete("tb_outlet", $"id = {getIdOutlet}");
+                Tampilkan();
+                MessageBox.Show("Data outlet berhasil dihapus!");
+
+            }
+        }
+
+        private void dataGridViewOtlet_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = dataGridViewOtlet.CurrentCell.RowIndex;
+            getIdOutlet = dataGridViewOtlet.Rows[row].Cells["id"].Value.ToString();
         }
     }
 }

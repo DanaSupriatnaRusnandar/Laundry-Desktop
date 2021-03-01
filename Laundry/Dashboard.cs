@@ -145,6 +145,12 @@ namespace Laundry
             hideSubMenu();
         }
 
+        private void btnKurir_Click(object sender, EventArgs e)
+        {
+            openPage(new UserControlKurir());
+            hideSubMenu();
+        }
+
         private void btnPelanggan_Click(object sender, EventArgs e)
         {
             openPage(new UserControlPelanggancs());
@@ -196,18 +202,6 @@ namespace Laundry
             }
         }
 
-
-
-        //Tidak terpakai
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
             lblJam.Text = DateTime.Now.ToLongTimeString();
@@ -219,6 +213,16 @@ namespace Laundry
         {
             lblJam.Text = DateTime.Now.ToLongTimeString();
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();
+        }
+
+        //Tidak terpakai
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

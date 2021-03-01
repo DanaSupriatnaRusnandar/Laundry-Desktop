@@ -1,6 +1,6 @@
 ﻿namespace Laundry
 {
-    partial class TambahDataUser
+    partial class TambahDataKurir
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,19 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtpassword = new System.Windows.Forms.TextBox();
-            this.txtusername = new System.Windows.Forms.TextBox();
+            this.txtTlp = new System.Windows.Forms.TextBox();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
             this.txtnama = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -55,54 +52,31 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 22);
+            this.label1.Size = new System.Drawing.Size(149, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "TAMBAH USER";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(466, 67);
-            this.panel1.TabIndex = 2;
+            this.label1.Text = "TAMBAH KURIR";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.txtpassword);
-            this.panel2.Controls.Add(this.txtusername);
+            this.panel2.Controls.Add(this.txtTlp);
+            this.panel2.Controls.Add(this.txtAlamat);
             this.panel2.Controls.Add(this.txtnama);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(26, 94);
+            this.panel2.Location = new System.Drawing.Point(25, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 321);
-            this.panel2.TabIndex = 3;
-            // 
-            // lblIsUsernameValid
-            // 
-            this.lblIsUsernameValid.AutoSize = true;
-            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
-            this.lblIsUsernameValid.Location = new System.Drawing.Point(238, 59);
-            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
-            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
-            this.lblIsUsernameValid.TabIndex = 20;
-            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
-            this.lblIsUsernameValid.Visible = false;
+            this.panel2.Size = new System.Drawing.Size(416, 286);
+            this.panel2.TabIndex = 5;
             // 
             // cmbOutlet
             // 
             this.cmbOutlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbOutlet.FormattingEnabled = true;
             this.cmbOutlet.Location = new System.Drawing.Point(116, 157);
             this.cmbOutlet.Name = "cmbOutlet";
@@ -120,19 +94,6 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Outlet";
             // 
-            // cmbRole
-            // 
-            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Items.AddRange(new object[] {
-            "Administrator",
-            "Kasir",
-            "Owner"});
-            this.cmbRole.Location = new System.Drawing.Point(116, 199);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(280, 21);
-            this.cmbRole.TabIndex = 5;
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -140,7 +101,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 250);
+            this.btnAdd.Location = new System.Drawing.Point(295, 210);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 6;
@@ -148,45 +109,32 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtpassword
+            // txtTlp
             // 
-            this.txtpassword.BackColor = System.Drawing.Color.White;
-            this.txtpassword.ForeColor = System.Drawing.Color.Black;
-            this.txtpassword.Location = new System.Drawing.Point(116, 117);
-            this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Size = new System.Drawing.Size(280, 20);
-            this.txtpassword.TabIndex = 3;
+            this.txtTlp.BackColor = System.Drawing.Color.White;
+            this.txtTlp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtTlp.Location = new System.Drawing.Point(116, 117);
+            this.txtTlp.Name = "txtTlp";
+            this.txtTlp.Size = new System.Drawing.Size(280, 20);
+            this.txtTlp.TabIndex = 3;
             // 
-            // txtusername
+            // txtAlamat
             // 
-            this.txtusername.BackColor = System.Drawing.Color.White;
-            this.txtusername.ForeColor = System.Drawing.Color.Black;
-            this.txtusername.Location = new System.Drawing.Point(116, 75);
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(280, 20);
-            this.txtusername.TabIndex = 2;
-            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
-            this.txtusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusername_KeyPress);
+            this.txtAlamat.BackColor = System.Drawing.Color.White;
+            this.txtAlamat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtAlamat.Location = new System.Drawing.Point(116, 75);
+            this.txtAlamat.Name = "txtAlamat";
+            this.txtAlamat.Size = new System.Drawing.Size(280, 20);
+            this.txtAlamat.TabIndex = 2;
             // 
             // txtnama
             // 
             this.txtnama.BackColor = System.Drawing.Color.White;
-            this.txtnama.ForeColor = System.Drawing.Color.Black;
+            this.txtnama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.txtnama.Location = new System.Drawing.Point(116, 29);
             this.txtnama.Name = "txtnama";
             this.txtnama.Size = new System.Drawing.Size(280, 20);
             this.txtnama.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(16, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Hak Akses";
             // 
             // label4
             // 
@@ -195,9 +143,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.label4.Location = new System.Drawing.Point(16, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 18);
+            this.label4.Size = new System.Drawing.Size(85, 18);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Password";
+            this.label4.Text = "No Telepon";
             // 
             // label3
             // 
@@ -206,9 +154,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.label3.Location = new System.Drawing.Point(16, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 18);
+            this.label3.Size = new System.Drawing.Size(53, 18);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Username";
+            this.label3.Text = "Alamat";
             // 
             // label2
             // 
@@ -221,24 +169,32 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Nama";
             // 
-            // TambahDataUser
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(466, 67);
+            this.panel1.TabIndex = 4;
+            // 
+            // TambahDataKurir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 442);
+            this.ClientSize = new System.Drawing.Size(466, 408);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "TambahDataUser";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
+            this.Name = "TambahDataKurir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.TambahDataUser_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "TambahDataKurir";
+            this.Load += new System.EventHandler(this.TambahDataKurir_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,19 +202,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cmbOutlet;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtusername;
+        private System.Windows.Forms.TextBox txtTlp;
+        private System.Windows.Forms.TextBox txtAlamat;
         private System.Windows.Forms.TextBox txtnama;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtpassword;
-        private System.Windows.Forms.ComboBox cmbRole;
-        private System.Windows.Forms.ComboBox cmbOutlet;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblIsUsernameValid;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -18,6 +18,7 @@ namespace Laundry
         {
             InitializeComponent();
         }
+        string getIdPaketLaundry;
 
         private void UserControlPaketLaundry_Load(object sender, EventArgs e)
         {
@@ -74,6 +75,23 @@ namespace Laundry
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data paket laundry Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                Db.Delete("tb_paket", $"id = {getIdPaketLaundry}");
+                Tampilkan();
+                MessageBox.Show("Data paket laundry berhasil dihapus");
+            }
+        }
+
+        private void dataGridViewpaket_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = dataGridViewpaket.CurrentCell.RowIndex;
+            getIdPaketLaundry = dataGridViewpaket.Rows[row].Cells["id"].Value.ToString();
         }
     }
 }

@@ -35,15 +35,15 @@ namespace Laundry
 
         private void TambahDataUser_Load(object sender, EventArgs e)
         {
-            //Biding Jenis
+            //Biding Outlet
             cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutlet.DisplayMember = "nama_outlet";
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
 
             //Biding user
-            cmbRole.DataSource = Db.Read("tb_user", "id, role");
-            cmbRole.DisplayMember = "role";
+            cmbRole.DataSource = Db.Read("tb_role", "id, nama_role");
+            cmbRole.DisplayMember = "nama_role";
             cmbRole.ValueMember = "id";
             cmbRole.SelectedIndex = -1;
         }
@@ -59,9 +59,9 @@ namespace Laundry
                 var outlet = cmbOutlet.SelectedValue;
                 if (cmbRole.SelectedIndex == 0) ;
                 var role = cmbRole.SelectedValue;
-                if (Db.Insert("tb_user", $"null, '{nama}', '{username}', '{password}', '{outlet}' ,'{role}'"))
+                if (Db.Insert("tb_user", $"null, '{nama}', '{username}', '{password}', '{outlet}', '{role}', role"))
                 {
-                    MessageBox.Show("User berhasil ditambah");
+                    MessageBox.Show("Data user berhasil ditambah");
                     btrf.PerformClick();
                     this.Hide();
                 }

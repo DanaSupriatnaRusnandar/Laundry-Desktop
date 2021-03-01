@@ -53,6 +53,7 @@
             this.lblHariTanggal = new System.Windows.Forms.Label();
             this.lblJam = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnKurir = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -67,7 +68,7 @@
             this.panel3.Controls.Add(this.btnMaximize);
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(550, 0);
+            this.panel3.Location = new System.Drawing.Point(570, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(112, 37);
             this.panel3.TabIndex = 0;
@@ -124,7 +125,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(198, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(662, 37);
+            this.panel1.Size = new System.Drawing.Size(682, 37);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -161,7 +162,7 @@
             this.btnKeluar.IconSize = 32;
             this.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnKeluar.Location = new System.Drawing.Point(0, 539);
+            this.btnKeluar.Location = new System.Drawing.Point(0, 589);
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnKeluar.Size = new System.Drawing.Size(198, 50);
@@ -185,7 +186,7 @@
             this.btnPengaturan.IconSize = 32;
             this.btnPengaturan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengaturan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPengaturan.Location = new System.Drawing.Point(0, 489);
+            this.btnPengaturan.Location = new System.Drawing.Point(0, 539);
             this.btnPengaturan.Name = "btnPengaturan";
             this.btnPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPengaturan.Size = new System.Drawing.Size(198, 50);
@@ -209,7 +210,7 @@
             this.btnLaporan.IconSize = 32;
             this.btnLaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLaporan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLaporan.Location = new System.Drawing.Point(0, 439);
+            this.btnLaporan.Location = new System.Drawing.Point(0, 489);
             this.btnLaporan.Name = "btnLaporan";
             this.btnLaporan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLaporan.Size = new System.Drawing.Size(198, 50);
@@ -233,7 +234,7 @@
             this.btnTransaksi.IconSize = 32;
             this.btnTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransaksi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnTransaksi.Location = new System.Drawing.Point(0, 389);
+            this.btnTransaksi.Location = new System.Drawing.Point(0, 439);
             this.btnTransaksi.Name = "btnTransaksi";
             this.btnTransaksi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnTransaksi.Size = new System.Drawing.Size(198, 50);
@@ -257,7 +258,7 @@
             this.btnPaketCucian.IconSize = 32;
             this.btnPaketCucian.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPaketCucian.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPaketCucian.Location = new System.Drawing.Point(0, 339);
+            this.btnPaketCucian.Location = new System.Drawing.Point(0, 389);
             this.btnPaketCucian.Name = "btnPaketCucian";
             this.btnPaketCucian.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPaketCucian.Size = new System.Drawing.Size(198, 50);
@@ -281,7 +282,7 @@
             this.btnJenisPaket.IconSize = 32;
             this.btnJenisPaket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJenisPaket.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnJenisPaket.Location = new System.Drawing.Point(0, 289);
+            this.btnJenisPaket.Location = new System.Drawing.Point(0, 339);
             this.btnJenisPaket.Name = "btnJenisPaket";
             this.btnJenisPaket.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnJenisPaket.Size = new System.Drawing.Size(198, 50);
@@ -305,7 +306,7 @@
             this.btnOutlet.IconSize = 32;
             this.btnOutlet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOutlet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOutlet.Location = new System.Drawing.Point(0, 239);
+            this.btnOutlet.Location = new System.Drawing.Point(0, 289);
             this.btnOutlet.Name = "btnOutlet";
             this.btnOutlet.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnOutlet.Size = new System.Drawing.Size(198, 50);
@@ -320,16 +321,16 @@
             // panelData
             // 
             this.panelData.Controls.Add(this.btnPelanggan);
+            this.panelData.Controls.Add(this.btnKurir);
             this.panelData.Controls.Add(this.BtnDataAdmin);
             this.panelData.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelData.Location = new System.Drawing.Point(0, 139);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(198, 100);
+            this.panelData.Size = new System.Drawing.Size(198, 150);
             this.panelData.TabIndex = 4;
             // 
             // btnPelanggan
             // 
-            this.btnPelanggan.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPelanggan.FlatAppearance.BorderSize = 0;
             this.btnPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPelanggan.ForeColor = System.Drawing.Color.Gainsboro;
@@ -339,7 +340,7 @@
             this.btnPelanggan.IconSize = 32;
             this.btnPelanggan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPelanggan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPelanggan.Location = new System.Drawing.Point(0, 50);
+            this.btnPelanggan.Location = new System.Drawing.Point(0, 106);
             this.btnPelanggan.Name = "btnPelanggan";
             this.btnPelanggan.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
             this.btnPelanggan.Size = new System.Drawing.Size(198, 50);
@@ -438,7 +439,7 @@
             this.pageWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageWrapper.Location = new System.Drawing.Point(198, 37);
             this.pageWrapper.Name = "pageWrapper";
-            this.pageWrapper.Size = new System.Drawing.Size(662, 675);
+            this.pageWrapper.Size = new System.Drawing.Size(682, 675);
             this.pageWrapper.TabIndex = 2;
             // 
             // lblHariTanggal
@@ -473,18 +474,42 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnKurir
+            // 
+            this.btnKurir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKurir.FlatAppearance.BorderSize = 0;
+            this.btnKurir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKurir.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKurir.IconChar = FontAwesome.Sharp.IconChar.ShippingFast;
+            this.btnKurir.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnKurir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnKurir.IconSize = 32;
+            this.btnKurir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKurir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnKurir.Location = new System.Drawing.Point(0, 50);
+            this.btnKurir.Name = "btnKurir";
+            this.btnKurir.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
+            this.btnKurir.Size = new System.Drawing.Size(198, 50);
+            this.btnKurir.TabIndex = 4;
+            this.btnKurir.Text = "Data Kurir";
+            this.btnKurir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKurir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKurir.UseMnemonic = false;
+            this.btnKurir.UseVisualStyleBackColor = true;
+            this.btnKurir.Click += new System.EventHandler(this.btnKurir_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(860, 712);
+            this.ClientSize = new System.Drawing.Size(880, 712);
             this.Controls.Add(this.pageWrapper);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(860, 525);
+            this.MinimumSize = new System.Drawing.Size(880, 525);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardAdmin";
@@ -526,5 +551,6 @@
         private System.Windows.Forms.Label lblHariTanggal;
         private System.Windows.Forms.Label lblJam;
         private System.Windows.Forms.Timer timer1;
+        private FontAwesome.Sharp.IconButton btnKurir;
     }
 }

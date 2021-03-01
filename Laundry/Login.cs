@@ -31,7 +31,8 @@ namespace Laundry
         {
             if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0 && isUsernameValid())
             {
-                if (Auth.Login(txtUsername.Text, Sha256.Encrypt(txtPassword.Text), "tb_user"))
+                 //Login masih bermasalah
+                if (Auth.Login(txtUsername.Text, Sha256.Encrypt(txtPassword.Text),"tb_user"))
                 {
                     Form Dashboar = new Dashboard();
                     MessageBox.Show("Login Berhasil");

@@ -21,12 +21,15 @@ namespace Laundry
         public string getIdJenis;
 
         private void Tampilkan()
-        {
+        {/*
+            dataGridViewJenis.AutoGenerateColumns = false;
+            dataGridViewJenis.DataSource = Db.Read("tb_jenis", "*");
+*/
             DataTable data = Db.Read("tb_jenis", "*");
             dataGridViewJenis.Rows.Clear();
             foreach (DataRow row in data.Rows)
             {
-                dataGridViewJenis.Rows.Add($"NULL", row.Field<string>("jenis"));
+                dataGridViewJenis.Rows.Add(row.Field<int>("id"), row.Field<string>("jenis"));
             }
         }
 

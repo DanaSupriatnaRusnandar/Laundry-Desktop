@@ -37,6 +37,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewpaket = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCari = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_Add = new System.Windows.Forms.Button();
@@ -50,12 +56,6 @@
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewpaket)).BeginInit();
             this.panel3.SuspendLayout();
@@ -73,7 +73,7 @@
             this.panel4.Controls.Add(this.dataGridViewpaket);
             this.panel4.Location = new System.Drawing.Point(38, 151);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(630, 357);
+            this.panel4.Size = new System.Drawing.Size(602, 357);
             this.panel4.TabIndex = 4;
             // 
             // dataGridViewpaket
@@ -123,164 +123,9 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewpaket.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewpaket.RowHeadersWidth = 35;
-            this.dataGridViewpaket.Size = new System.Drawing.Size(630, 357);
+            this.dataGridViewpaket.Size = new System.Drawing.Size(602, 357);
             this.dataGridViewpaket.TabIndex = 1;
-            // 
-            // txtCari
-            // 
-            this.txtCari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtCari.Location = new System.Drawing.Point(85, 16);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(172, 20);
-            this.txtCari.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(4, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Cari Data :";
-            // 
-            // Btn_Add
-            // 
-            this.Btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.Btn_Add.FlatAppearance.BorderSize = 0;
-            this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(8, 72);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(91, 33);
-            this.Btn_Add.TabIndex = 1;
-            this.Btn_Add.Text = "Baru";
-            this.Btn_Add.UseVisualStyleBackColor = false;
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.txtCari);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.btn_refresh);
-            this.panel3.Controls.Add(this.btnCari);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(368, 65);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(341, 50);
-            this.panel3.TabIndex = 12;
-            // 
-            // btn_refresh
-            // 
-            this.btn_refresh.FlatAppearance.BorderSize = 0;
-            this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_refresh.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.btn_refresh.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btn_refresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_refresh.IconSize = 24;
-            this.btn_refresh.Location = new System.Drawing.Point(293, 12);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(24, 24);
-            this.btn_refresh.TabIndex = 5;
-            this.btn_refresh.UseVisualStyleBackColor = true;
-            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
-            // 
-            // btnCari
-            // 
-            this.btnCari.FlatAppearance.BorderSize = 0;
-            this.btnCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCari.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnCari.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnCari.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCari.IconSize = 24;
-            this.btnCari.Location = new System.Drawing.Point(263, 13);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.Size = new System.Drawing.Size(24, 24);
-            this.btnCari.TabIndex = 4;
-            this.btnCari.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.Btn_Add);
-            this.panel1.Controls.Add(this.btnHapus);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(709, 115);
-            this.panel1.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.cmbOutlet);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(142, 65);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(226, 50);
-            this.panel5.TabIndex = 13;
-            // 
-            // cmbOutlet
-            // 
-            this.cmbOutlet.FormattingEnabled = true;
-            this.cmbOutlet.Location = new System.Drawing.Point(55, 16);
-            this.cmbOutlet.Name = "cmbOutlet";
-            this.cmbOutlet.Size = new System.Drawing.Size(158, 21);
-            this.cmbOutlet.TabIndex = 4;
-            this.cmbOutlet.SelectedIndexChanged += new System.EventHandler(this.cmbOutlet_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(3, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Outlet :";
-            // 
-            // btnHapus
-            // 
-            this.btnHapus.FlatAppearance.BorderSize = 0;
-            this.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHapus.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHapus.IconSize = 26;
-            this.btnHapus.Location = new System.Drawing.Point(104, 75);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(26, 26);
-            this.btnHapus.TabIndex = 2;
-            this.btnHapus.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(709, 65);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PAKET LAUNDRY";
+            this.dataGridViewpaket.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewpaket_CellClick);
             // 
             // id
             // 
@@ -362,6 +207,163 @@
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
             // 
+            // txtCari
+            // 
+            this.txtCari.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtCari.Location = new System.Drawing.Point(85, 16);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(172, 20);
+            this.txtCari.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label2.Location = new System.Drawing.Point(4, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Cari Data :";
+            // 
+            // Btn_Add
+            // 
+            this.Btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.Btn_Add.FlatAppearance.BorderSize = 0;
+            this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Add.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Add.ForeColor = System.Drawing.Color.White;
+            this.Btn_Add.Location = new System.Drawing.Point(8, 72);
+            this.Btn_Add.Name = "Btn_Add";
+            this.Btn_Add.Size = new System.Drawing.Size(91, 33);
+            this.Btn_Add.TabIndex = 1;
+            this.Btn_Add.Text = "Baru";
+            this.Btn_Add.UseVisualStyleBackColor = false;
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.txtCari);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.btn_refresh);
+            this.panel3.Controls.Add(this.btnCari);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(358, 65);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(323, 50);
+            this.panel3.TabIndex = 12;
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.FlatAppearance.BorderSize = 0;
+            this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refresh.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.btn_refresh.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btn_refresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_refresh.IconSize = 24;
+            this.btn_refresh.Location = new System.Drawing.Point(293, 12);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(24, 24);
+            this.btn_refresh.TabIndex = 5;
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // btnCari
+            // 
+            this.btnCari.FlatAppearance.BorderSize = 0;
+            this.btnCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCari.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnCari.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnCari.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCari.IconSize = 24;
+            this.btnCari.Location = new System.Drawing.Point(263, 13);
+            this.btnCari.Name = "btnCari";
+            this.btnCari.Size = new System.Drawing.Size(24, 24);
+            this.btnCari.TabIndex = 4;
+            this.btnCari.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.Btn_Add);
+            this.panel1.Controls.Add(this.btnHapus);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(681, 115);
+            this.panel1.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.cmbOutlet);
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(132, 65);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(226, 50);
+            this.panel5.TabIndex = 13;
+            // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(55, 16);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(158, 21);
+            this.cmbOutlet.TabIndex = 4;
+            this.cmbOutlet.SelectedIndexChanged += new System.EventHandler(this.cmbOutlet_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label3.Location = new System.Drawing.Point(3, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Outlet :";
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.FlatAppearance.BorderSize = 0;
+            this.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHapus.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHapus.IconSize = 26;
+            this.btnHapus.Location = new System.Drawing.Point(104, 75);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(26, 26);
+            this.btnHapus.TabIndex = 2;
+            this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(681, 65);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(225, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PAKET LAUNDRY";
+            // 
             // UserControlPaketLaundry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,7 +372,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "UserControlPaketLaundry";
-            this.Size = new System.Drawing.Size(709, 545);
+            this.Size = new System.Drawing.Size(681, 545);
             this.Load += new System.EventHandler(this.UserControlPaketLaundry_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewpaket)).EndInit();
