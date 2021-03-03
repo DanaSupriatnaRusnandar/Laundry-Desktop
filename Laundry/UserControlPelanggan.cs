@@ -11,18 +11,14 @@ using Luthor.lib;
 
 namespace Laundry
 {
-    public partial class UserControlPelanggancs : UserControl
+    public partial class UserControlPelanggan : UserControl
     {
-        public UserControlPelanggancs()
+        public UserControlPelanggan()
         {
             InitializeComponent();
         }
         string getIdPelanggan;
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            new RegistrasiPelanggan(this, btn_refresh).ShowDialog();
-        }
         private void UserControlPelanggancs_Load(object sender, EventArgs e)
         {
             dataGridViewRegistrasi.BorderStyle = BorderStyle.None;
@@ -40,20 +36,33 @@ namespace Laundry
             Tampilkan();
         }
 
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            new RegistrasiPelanggan(this, btn_refresh).ShowDialog();
+        }
+
         private void Tampilkan()
         {
             DataTable data = Db.Read("tb_member", "*");
-            dataGridViewRegistrasi.Rows.Clear();
-            foreach (DataRow row in data.Rows)
-            {
-                dataGridViewRegistrasi.Rows.Add(row.Field<int>("id"), row.Field<string>("nama"), row.Field<string>("alamat"), row.Field<string>("jenis_kelamin"), row.Field<string>("tlp"));
-            }
+            dataGridViewRegistrasi.AutoGenerateColumns = false;
+            dataGridViewRegistrasi.DataSource = Db.Read($"tb_member", "*");
+        }
+
+        private void CariData(string keyword)
+        {
+            dataGridViewRegistrasi.AutoGenerateColumns = false;
+            dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member WHERE tb_member.nama LIKE '%{keyword}%' OR tb_member.alamat LIKE '%{keyword}%'");
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
         }
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            CariData(txtCari.Text);
+        }
+
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
@@ -69,11 +78,22 @@ namespace Laundry
 
         private void dataGridViewRegistrasi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           /* int row = dataGridViewRegistrasi.CurrentCell.RowIndex;
-            getIdPelanggan = dataGridViewRegistrasi.Rows[row].Cells["id"].Value.ToString();*/
-
             int row = dataGridViewRegistrasi.CurrentCell.RowIndex;
             getIdPelanggan = dataGridViewRegistrasi.Rows[row].Cells["id"].Value.ToString();
+        }
+
+        private void dataGridViewRegistrasi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewRegistrasi.Columns["edit"].Index)
+            {
+                var row = dataGridViewRegistrasi.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                string nama = row.Cells["nama"].Value.ToString();
+                string alamat = row.Cells["alamat"].Value.ToString();
+                string jk = row.Cells["jenis_kelamin"].Value.ToString();
+                string tlp = row.Cells["tlp"].Value.ToString();
+                new EditDataPelanggan(btn_refresh, id, nama, alamat, jk, tlp).ShowDialog();
+            }
         }
     }
 }

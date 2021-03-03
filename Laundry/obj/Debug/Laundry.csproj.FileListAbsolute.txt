@@ -36,7 +36,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csproj.CoreCompileIn
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csproj.CopyComplete
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.exe
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.pdb
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPelanggancs.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.RegistrasiPelanggan.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataOutlet.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlOutlet.resources
@@ -53,3 +52,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditPaketLaundry.res
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataUser.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataKurir.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahPaketLaundry.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataPelanggan.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPelanggan.resources

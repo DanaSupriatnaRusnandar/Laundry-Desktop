@@ -52,8 +52,6 @@ namespace Laundry
             dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id WHERE tb_user.nama LIKE '%{keyword}%' OR tb_user.username LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_role.nama_role LIKE '%{keyword}%'");
         }
 
-      
-
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             new TambahDataUser(btn_refresh, getIdUser).ShowDialog();

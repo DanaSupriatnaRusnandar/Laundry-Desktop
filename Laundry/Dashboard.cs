@@ -174,7 +174,7 @@ namespace Laundry
 
         private void btnJenisPaket_Click_1(object sender, EventArgs e)
         {
-            openPage(new UserControlPelanggancs());
+            openPage(new UserControlPelanggan());
             activateButton(sender, RGBColor.color4);
         }
 

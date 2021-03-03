@@ -186,8 +186,9 @@
             this.ClientSize = new System.Drawing.Size(466, 408);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditDataKurir";
-            this.Text = "EditKurir";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EditDataKurir_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

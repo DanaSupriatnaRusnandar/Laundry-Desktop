@@ -30,6 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButtonLaki = new System.Windows.Forms.RadioButton();
+            this.radioButtonPerempuan = new System.Windows.Forms.RadioButton();
+            this.textBoxJK = new System.Windows.Forms.TextBox();
             this.txtTelepon = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtalamat = new System.Windows.Forms.TextBox();
@@ -39,9 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxJK = new System.Windows.Forms.TextBox();
-            this.radioButtonLaki = new System.Windows.Forms.RadioButton();
-            this.radioButtonPerempuan = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,43 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 318);
             this.panel2.TabIndex = 5;
+            // 
+            // radioButtonLaki
+            // 
+            this.radioButtonLaki.AutoSize = true;
+            this.radioButtonLaki.BackColor = System.Drawing.Color.Gainsboro;
+            this.radioButtonLaki.Location = new System.Drawing.Point(116, 119);
+            this.radioButtonLaki.Name = "radioButtonLaki";
+            this.radioButtonLaki.Size = new System.Drawing.Size(74, 17);
+            this.radioButtonLaki.TabIndex = 3;
+            this.radioButtonLaki.TabStop = true;
+            this.radioButtonLaki.Text = "Laki - Laki";
+            this.radioButtonLaki.UseVisualStyleBackColor = false;
+            this.radioButtonLaki.CheckedChanged += new System.EventHandler(this.radioButtonLaki_CheckedChanged);
+            // 
+            // radioButtonPerempuan
+            // 
+            this.radioButtonPerempuan.AutoSize = true;
+            this.radioButtonPerempuan.BackColor = System.Drawing.Color.Gainsboro;
+            this.radioButtonPerempuan.Location = new System.Drawing.Point(196, 119);
+            this.radioButtonPerempuan.Name = "radioButtonPerempuan";
+            this.radioButtonPerempuan.Size = new System.Drawing.Size(79, 17);
+            this.radioButtonPerempuan.TabIndex = 4;
+            this.radioButtonPerempuan.TabStop = true;
+            this.radioButtonPerempuan.Text = "Perempuan";
+            this.radioButtonPerempuan.UseVisualStyleBackColor = false;
+            this.radioButtonPerempuan.CheckedChanged += new System.EventHandler(this.radioButtonPerempuan_CheckedChanged);
+            // 
+            // textBoxJK
+            // 
+            this.textBoxJK.BackColor = System.Drawing.Color.White;
+            this.textBoxJK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBoxJK.Location = new System.Drawing.Point(116, 114);
+            this.textBoxJK.Multiline = true;
+            this.textBoxJK.Name = "textBoxJK";
+            this.textBoxJK.Size = new System.Drawing.Size(280, 27);
+            this.textBoxJK.TabIndex = 16;
+            this.textBoxJK.Visible = false;
             // 
             // txtTelepon
             // 
@@ -174,43 +211,6 @@
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
             // 
-            // textBoxJK
-            // 
-            this.textBoxJK.BackColor = System.Drawing.Color.White;
-            this.textBoxJK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.textBoxJK.Location = new System.Drawing.Point(116, 114);
-            this.textBoxJK.Multiline = true;
-            this.textBoxJK.Name = "textBoxJK";
-            this.textBoxJK.Size = new System.Drawing.Size(280, 27);
-            this.textBoxJK.TabIndex = 16;
-            this.textBoxJK.Visible = false;
-            // 
-            // radioButtonLaki
-            // 
-            this.radioButtonLaki.AutoSize = true;
-            this.radioButtonLaki.BackColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonLaki.Location = new System.Drawing.Point(116, 119);
-            this.radioButtonLaki.Name = "radioButtonLaki";
-            this.radioButtonLaki.Size = new System.Drawing.Size(74, 17);
-            this.radioButtonLaki.TabIndex = 3;
-            this.radioButtonLaki.TabStop = true;
-            this.radioButtonLaki.Text = "Laki - Laki";
-            this.radioButtonLaki.UseVisualStyleBackColor = false;
-            this.radioButtonLaki.CheckedChanged += new System.EventHandler(this.radioButtonLaki_CheckedChanged);
-            // 
-            // radioButtonPerempuan
-            // 
-            this.radioButtonPerempuan.AutoSize = true;
-            this.radioButtonPerempuan.BackColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPerempuan.Location = new System.Drawing.Point(196, 119);
-            this.radioButtonPerempuan.Name = "radioButtonPerempuan";
-            this.radioButtonPerempuan.Size = new System.Drawing.Size(79, 17);
-            this.radioButtonPerempuan.TabIndex = 4;
-            this.radioButtonPerempuan.TabStop = true;
-            this.radioButtonPerempuan.Text = "Perempuan";
-            this.radioButtonPerempuan.UseVisualStyleBackColor = false;
-            this.radioButtonPerempuan.CheckedChanged += new System.EventHandler(this.radioButtonPerempuan_CheckedChanged);
-            // 
             // RegistrasiPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +224,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.RegistrasiPelanggan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

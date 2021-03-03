@@ -210,11 +210,11 @@
     <Compile Include="UserControlPaketLaundry.Designer.cs">
       <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlPelanggancs.cs">
+    <Compile Include="UserControlPelanggan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlPelanggancs.Designer.cs">
-      <DependentUpon>UserControlPelanggancs.cs</DependentUpon>
+    <Compile Include="UserControlPelanggan.Designer.cs">
+      <DependentUpon>UserControlPelanggan.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlTransaksi.cs">
       <SubType>UserControl</SubType>
@@ -275,8 +275,8 @@
     <EmbeddedResource Include="UserControlPaketLaundry.resx">
       <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlPelanggancs.resx">
-      <DependentUpon>UserControlPelanggancs.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlPelanggan.resx">
+      <DependentUpon>UserControlPelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTransaksi.resx">
       <DependentUpon>UserControlTransaksi.cs</DependentUpon>

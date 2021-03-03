@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButtonLaki = new System.Windows.Forms.RadioButton();
-            this.radioButtonPerempuan = new System.Windows.Forms.RadioButton();
-            this.textBoxJK = new System.Windows.Forms.TextBox();
+            this.rbLaki = new System.Windows.Forms.RadioButton();
+            this.rbPerempuan = new System.Windows.Forms.RadioButton();
+            this.txtJK = new System.Windows.Forms.TextBox();
             this.txtTelepon = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtalamat = new System.Windows.Forms.TextBox();
@@ -54,16 +54,16 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 22);
+            this.label1.Size = new System.Drawing.Size(164, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "REGISTRASI PELANGGAN";
+            this.label1.Text = "EDIT PELANGGAN";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.radioButtonLaki);
-            this.panel2.Controls.Add(this.radioButtonPerempuan);
-            this.panel2.Controls.Add(this.textBoxJK);
+            this.panel2.Controls.Add(this.rbLaki);
+            this.panel2.Controls.Add(this.rbPerempuan);
+            this.panel2.Controls.Add(this.txtJK);
             this.panel2.Controls.Add(this.txtTelepon);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtalamat);
@@ -74,43 +74,45 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(25, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 318);
+            this.panel2.Size = new System.Drawing.Size(416, 305);
             this.panel2.TabIndex = 7;
             // 
-            // radioButtonLaki
+            // rbLaki
             // 
-            this.radioButtonLaki.AutoSize = true;
-            this.radioButtonLaki.BackColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonLaki.Location = new System.Drawing.Point(116, 119);
-            this.radioButtonLaki.Name = "radioButtonLaki";
-            this.radioButtonLaki.Size = new System.Drawing.Size(74, 17);
-            this.radioButtonLaki.TabIndex = 3;
-            this.radioButtonLaki.TabStop = true;
-            this.radioButtonLaki.Text = "Laki - Laki";
-            this.radioButtonLaki.UseVisualStyleBackColor = false;
+            this.rbLaki.AutoSize = true;
+            this.rbLaki.BackColor = System.Drawing.Color.Gainsboro;
+            this.rbLaki.Location = new System.Drawing.Point(116, 119);
+            this.rbLaki.Name = "rbLaki";
+            this.rbLaki.Size = new System.Drawing.Size(74, 17);
+            this.rbLaki.TabIndex = 3;
+            this.rbLaki.TabStop = true;
+            this.rbLaki.Text = "Laki - Laki";
+            this.rbLaki.UseVisualStyleBackColor = false;
+            this.rbLaki.CheckedChanged += new System.EventHandler(this.rbLaki_CheckedChanged);
             // 
-            // radioButtonPerempuan
+            // rbPerempuan
             // 
-            this.radioButtonPerempuan.AutoSize = true;
-            this.radioButtonPerempuan.BackColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPerempuan.Location = new System.Drawing.Point(196, 119);
-            this.radioButtonPerempuan.Name = "radioButtonPerempuan";
-            this.radioButtonPerempuan.Size = new System.Drawing.Size(79, 17);
-            this.radioButtonPerempuan.TabIndex = 4;
-            this.radioButtonPerempuan.TabStop = true;
-            this.radioButtonPerempuan.Text = "Perempuan";
-            this.radioButtonPerempuan.UseVisualStyleBackColor = false;
+            this.rbPerempuan.AutoSize = true;
+            this.rbPerempuan.BackColor = System.Drawing.Color.Gainsboro;
+            this.rbPerempuan.Location = new System.Drawing.Point(196, 119);
+            this.rbPerempuan.Name = "rbPerempuan";
+            this.rbPerempuan.Size = new System.Drawing.Size(79, 17);
+            this.rbPerempuan.TabIndex = 4;
+            this.rbPerempuan.TabStop = true;
+            this.rbPerempuan.Text = "Perempuan";
+            this.rbPerempuan.UseVisualStyleBackColor = false;
+            this.rbPerempuan.CheckedChanged += new System.EventHandler(this.rbPerempuan_CheckedChanged);
             // 
-            // textBoxJK
+            // txtJK
             // 
-            this.textBoxJK.BackColor = System.Drawing.Color.White;
-            this.textBoxJK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.textBoxJK.Location = new System.Drawing.Point(116, 114);
-            this.textBoxJK.Multiline = true;
-            this.textBoxJK.Name = "textBoxJK";
-            this.textBoxJK.Size = new System.Drawing.Size(280, 27);
-            this.textBoxJK.TabIndex = 16;
-            this.textBoxJK.Visible = false;
+            this.txtJK.BackColor = System.Drawing.Color.White;
+            this.txtJK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtJK.Location = new System.Drawing.Point(116, 114);
+            this.txtJK.Multiline = true;
+            this.txtJK.Name = "txtJK";
+            this.txtJK.Size = new System.Drawing.Size(280, 27);
+            this.txtJK.TabIndex = 16;
+            this.txtJK.Visible = false;
             // 
             // txtTelepon
             // 
@@ -128,12 +130,13 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 230);
+            this.btnAdd.Location = new System.Drawing.Point(295, 221);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Tambah Data";
+            this.btnAdd.Text = "Edit Data";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtalamat
             // 
@@ -213,11 +216,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 442);
+            this.ClientSize = new System.Drawing.Size(466, 430);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditDataPelanggan";
-            this.Text = "EditDataPelanggan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.EditDataPelanggan_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -230,9 +235,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButtonLaki;
-        private System.Windows.Forms.RadioButton radioButtonPerempuan;
-        private System.Windows.Forms.TextBox textBoxJK;
+        private System.Windows.Forms.RadioButton rbLaki;
+        private System.Windows.Forms.RadioButton rbPerempuan;
+        private System.Windows.Forms.TextBox txtJK;
         private System.Windows.Forms.TextBox txtTelepon;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtalamat;

@@ -41,12 +41,6 @@ namespace Laundry
             dataGridViewTransaksi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            // binding outlet (combobox)
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
         }
     }
 }

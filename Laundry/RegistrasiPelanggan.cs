@@ -14,7 +14,7 @@ namespace Laundry
     public partial class RegistrasiPelanggan : Form
     {
         Button btrf;
-        public RegistrasiPelanggan(UserControlPelanggancs parent, Button btrefresh)
+        public RegistrasiPelanggan(UserControlPelanggan parent, Button btrefresh)
         {
             InitializeComponent();
             btrf = btrefresh;
@@ -40,7 +40,11 @@ namespace Laundry
         {
             if (isfilled())
             {
-                if (Db.Insert("tb_member", $"NULL, '{txtnama.Text}', '{txtalamat.Text}', '{textBoxJK.Text}', '{txtTelepon.Text}'"))
+                var nama = txtnama.Text;
+                var alamat = txtalamat.Text;
+                var JK = textBoxJK.Text;
+                var tlp = txtTelepon.Text;
+                if (Db.Insert("tb_member", $"NULL, '{nama}', '{alamat}', '{JK}', '{tlp}'"))
                 {
                     MessageBox.Show("Data pelanggan berhasil ditambah");
                     btrf.PerformClick();
@@ -51,6 +55,11 @@ namespace Laundry
                     MessageBox.Show($"Gagal Menambah pelanggan. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void RegistrasiPelanggan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

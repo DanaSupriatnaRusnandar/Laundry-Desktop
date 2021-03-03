@@ -35,12 +35,6 @@ namespace Laundry
             dataGridViewKurir.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewKurir.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            //Biding Admin
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
-
             Tampilkan();
         }
 
@@ -60,14 +54,6 @@ namespace Laundry
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             new TambahDataKurir(btn_refresh).ShowDialog();
-        }
-
-        private void cmbOutlet_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbOutlet.SelectedIndex >= 0)
-            {
-                kurir = cmbOutlet.SelectedValue.ToString();
-            }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

@@ -229,8 +229,9 @@
             this.ClientSize = new System.Drawing.Size(466, 442);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditDataUser";
-            this.Text = "EditDataUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EditDataUser_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
