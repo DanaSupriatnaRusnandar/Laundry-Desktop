@@ -12,31 +12,25 @@ using Luthor.lib.Encryption;
 
 namespace Laundry
 {
-    public partial class TambahDataUser : Form
+    public partial class EditDataUser : Form
     {
         Button btrf;
         string getIdUser;
-        public TambahDataUser(Button btrefresh, string id)
+        string idOutlet;
+        public EditDataUser(Button btrefresh, string id, string nama, string username, string password,string id_outlet, string outlet, string role)
         {
             InitializeComponent();
             btrf = btrefresh;
             getIdUser = id;
-
+            txtnama.Text = nama;
+            txtusername.Text = username;
+            //  txtpassword.Text = password;
+            idOutlet = id_outlet;
+            cmbOutlet.SelectedItem = outlet;
+            cmbRole.SelectedItem = role;
         }
 
-        private bool isfilled()
-        {
-            if ( txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbOutlet.SelectedIndex >= 0 &&cmbRole.SelectedIndex >= 0) return true;
-            return false;
-        }
-
-        private bool isUsernameValid()
-        {
-            if (txtusername.Text.Contains(" ")) return false;
-            return true;
-        }
-
-        private void TambahDataUser_Load(object sender, EventArgs e)
+        private void EditDataUser_Load(object sender, EventArgs e)
         {
             //Biding Outlet
             cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
@@ -49,15 +43,25 @@ namespace Laundry
             cmbRole.DisplayMember = "nama_role";
             cmbRole.ValueMember = "id";
             cmbRole.SelectedIndex = -1;
-/*
-            //Edit Data User
-            DataTable dataEdit = Db.Read("tb_user", "*", $"id = {getIdUser}");
-            txtnama.Text = dataEdit.Rows[0].Field<string>("nama");
-            txtusername.Text = dataEdit.Rows[0].Field<string>("username");*/
+
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        //Function
+        private bool isfilled()
         {
+
+            if (txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbOutlet.SelectedIndex >= 0 && cmbRole.SelectedIndex >= 0) return true;
+            return false;
+        }
+        private bool isUsernameValid()
+        {
+            if (txtusername.Text.Contains(" ")) return false;
+            return true;
+        }
+
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        { 
             if (isfilled() && isUsernameValid())
             {
                 var nama = txtnama.Text;
@@ -67,15 +71,15 @@ namespace Laundry
                 var outlet = cmbOutlet.SelectedValue;
                 if (cmbRole.SelectedIndex == 0) ;
                 var role = cmbRole.SelectedValue;
-                if (Db.Insert("tb_user", $"null, '{nama}', '{username}', '{password}', '{outlet}', '{role}'"))
+                if (Db.Update($"tb_user", $"id = '{getIdUser}', nama ='{nama}', username = '{username}', password = '{password}', id_outlet = '{outlet}' , id_role = '{role}'", $"id = {getIdUser}"))
                 {
-                    MessageBox.Show("Data user berhasil ditambah");
+                    MessageBox.Show("Data user berhasil diubah");
                     btrf.PerformClick();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show($"Gagal Menambah User. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Gagal mengubah data user. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

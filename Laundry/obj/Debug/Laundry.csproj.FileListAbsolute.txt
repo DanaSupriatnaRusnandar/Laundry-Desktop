@@ -44,10 +44,12 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlTransaksi
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\Guna.UI2.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPaketLaundry.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.PaketLaundry.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataUser.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDataUser.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.Dashboard.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlJenisPaket.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlKurir.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataKurir.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditPaketLaundry.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataUser.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache

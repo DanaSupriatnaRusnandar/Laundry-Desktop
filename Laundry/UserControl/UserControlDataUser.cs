@@ -13,12 +13,12 @@ namespace Laundry
 {
     public partial class UserControlDataUser : UserControl
     {
-      //  string user;
+     //   string user;
+        string getIdUser;
         public UserControlDataUser()
         {
             InitializeComponent();
         }
-        string getIdUser;
 
         private void UserControlDataAdmin_Load(object sender, EventArgs e)
         {
@@ -29,10 +29,13 @@ namespace Laundry
             dataGridViewAdmin.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
             dataGridViewAdmin.BackgroundColor = Color.White;
 
+           // colPaket.Width = (int)(dataGridViewAdmin.Width * 0.50);
+
             dataGridViewAdmin.EnableHeadersVisualStyles = false;
             dataGridViewAdmin.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewAdmin.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewAdmin.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
 
             Tampilkan();
         }
@@ -40,10 +43,10 @@ namespace Laundry
         //Function
         private void Tampilkan()
         {
-            DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id");
-          //  dataGridViewAdmin.Rows.Clear();
+            DataTable data = Db.Read("SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id");
             dataGridViewAdmin.AutoGenerateColumns = false;
             dataGridViewAdmin.DataSource = data;
+       
         }
 
         private void CariData(string keyword)
@@ -51,8 +54,6 @@ namespace Laundry
             dataGridViewAdmin.AutoGenerateColumns = false;
             dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id WHERE tb_user.nama LIKE '%{keyword}%' OR tb_user.username LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_role.nama_role LIKE '%{keyword}%'");
         }
-
-      
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
@@ -62,11 +63,6 @@ namespace Laundry
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
-        }
-
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            CariData(txtCari.Text);
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -80,17 +76,19 @@ namespace Laundry
 
             }
         }
-        //Event Hapus
+
         private void dataGridViewAdmin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridViewAdmin.CurrentCell.RowIndex;
             getIdUser = dataGridViewAdmin.Rows[row].Cells["id"].Value.ToString();
+
+            
         }
 
-        //Event Edit
         private void dataGridViewAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == dataGridViewAdmin.Columns["edit"].Index)
+            //Edit
+            if (e.ColumnIndex == dataGridViewAdmin.Columns["edit"].Index)
             {
                 var row = dataGridViewAdmin.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
@@ -99,9 +97,14 @@ namespace Laundry
                 string password = row.Cells["password"].Value.ToString();
                 string id_outlet = row.Cells["id_outlet"].Value.ToString();
                 string outlet = row.Cells["nama_outlet"].Value.ToString();
-                string role = row.Cells["nama_role"].Value.ToString();
-                new EditDataUser(btn_refresh ,id, nama, username, password, id_outlet, outlet, role).ShowDialog();
+                string nama_role = row.Cells["nama_role"].Value.ToString();
+                new EditDataUser(btn_refresh, id, nama, username, password, id_outlet, outlet, nama_role).ShowDialog();
             }
+        }
+
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            CariData(txtCari.Text);
         }
     }
 }

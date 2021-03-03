@@ -113,6 +113,18 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDataUser.Designer.cs">
+      <DependentUpon>EditDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPaketLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPaketLaundry.Designer.cs">
+      <DependentUpon>EditPaketLaundry.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaketLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +212,12 @@
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDataUser.resx">
+      <DependentUpon>EditDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPaketLaundry.resx">
+      <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaketLaundry.resx">
       <DependentUpon>PaketLaundry.cs</DependentUpon>

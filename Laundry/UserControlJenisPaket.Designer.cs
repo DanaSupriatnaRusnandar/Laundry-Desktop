@@ -36,6 +36,7 @@
             this.btnCari = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.txtAdd = new System.Windows.Forms.TextBox();
             this.Btn_Add = new System.Windows.Forms.Button();
             this.btnHapus = new FontAwesome.Sharp.IconButton();
@@ -77,13 +78,14 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 32);
+            this.label1.Size = new System.Drawing.Size(172, 32);
             this.label1.TabIndex = 0;
-            this.label1.Text = "PAKET LAUNDRY";
+            this.label1.Text = "JENIS PAKRT";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.txtAdd);
             this.panel1.Controls.Add(this.Btn_Add);
             this.panel1.Controls.Add(this.btnHapus);
@@ -95,12 +97,26 @@
             this.panel1.Size = new System.Drawing.Size(709, 115);
             this.panel1.TabIndex = 5;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(234, 77);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(79, 25);
+            this.btnEdit.TabIndex = 13;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
             // txtAdd
             // 
             this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.txtAdd.Location = new System.Drawing.Point(9, 78);
             this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(164, 20);
+            this.txtAdd.Size = new System.Drawing.Size(129, 20);
             this.txtAdd.TabIndex = 6;
             // 
             // Btn_Add
@@ -110,7 +126,7 @@
             this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Add.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(179, 77);
+            this.Btn_Add.Location = new System.Drawing.Point(149, 76);
             this.Btn_Add.Name = "Btn_Add";
             this.Btn_Add.Size = new System.Drawing.Size(79, 25);
             this.Btn_Add.TabIndex = 1;
@@ -126,7 +142,7 @@
             this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHapus.IconSize = 26;
-            this.btnHapus.Location = new System.Drawing.Point(264, 77);
+            this.btnHapus.Location = new System.Drawing.Point(319, 77);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(26, 26);
             this.btnHapus.TabIndex = 2;
@@ -319,5 +335,6 @@
         private System.Windows.Forms.DataGridView dataGridViewJenis;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenis;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

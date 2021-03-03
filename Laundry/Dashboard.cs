@@ -109,6 +109,13 @@ namespace Laundry
             pageWrapper.Controls.Add(usercontrol);
         }
 
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            lblJam.Text = DateTime.Now.ToLongTimeString();
+            lblHariTanggal.Text = DateTime.Now.ToLongDateString();
+            timer1.Enabled = true;
+        }
+
         //Button Close, Maximiza, Minimize
         private void btnClose_Click_1(object sender, EventArgs e)
         {
@@ -133,6 +140,7 @@ namespace Laundry
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //Button Menu
         private void btnAkun_Click_1(object sender, EventArgs e)
         {
             showSubMenu(panelData);
@@ -202,13 +210,7 @@ namespace Laundry
             }
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            lblJam.Text = DateTime.Now.ToLongTimeString();
-            lblHariTanggal.Text = DateTime.Now.ToLongDateString();
-            timer1.Enabled = true;
-        }
-
+        //Waktu
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblJam.Text = DateTime.Now.ToLongTimeString();
