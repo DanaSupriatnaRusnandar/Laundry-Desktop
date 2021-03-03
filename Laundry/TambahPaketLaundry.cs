@@ -11,12 +11,12 @@ using Luthor.lib;
 
 namespace Laundry
 {
-    public partial class PaketLaundry : Form
+    public partial class TambahPaketLaundry : Form
     {
         Button btrf;
         string id_outlet;
         
-        public PaketLaundry(UserControlPaketLaundry parent, Button btrefresh, string Outlet)
+        public TambahPaketLaundry(UserControlPaketLaundry parent, Button btrefresh, string Outlet)
         {
             InitializeComponent();
             id_outlet = Outlet;

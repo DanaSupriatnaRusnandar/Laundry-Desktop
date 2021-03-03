@@ -1,6 +1,6 @@
 ﻿namespace Laundry
 {
-    partial class PaketLaundry
+    partial class TambahPaketLaundry
     {
         /// <summary>
         /// Required designer variable.

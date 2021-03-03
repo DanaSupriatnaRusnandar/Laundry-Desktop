@@ -31,8 +31,8 @@ namespace Laundry
         //Struktur
         private struct RGBColor
         {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-         //   public static Color color2 = Color.FromArgb(249, 118, 176);
+          // public static Color color1 = Color.FromArgb(172, 126, 241);
+          // public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
@@ -40,7 +40,7 @@ namespace Laundry
             public static Color color7 = Color.FromArgb(24, 242, 111);
             public static Color color8 = Color.FromArgb(255, 106, 0);
             public static Color color9 = Color.FromArgb(227, 2, 2);
-         //   public static Color color10 = Color.FromArgb(20, 2, 2);
+          // public static Color color10 = Color.FromArgb(20, 2, 2);
         }
 
         //Method
@@ -114,6 +114,7 @@ namespace Laundry
             lblJam.Text = DateTime.Now.ToLongTimeString();
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();
             timer1.Enabled = true;
+
         }
 
         //Button Close, Maximiza, Minimize
@@ -161,26 +162,26 @@ namespace Laundry
 
         private void btnPelanggan_Click(object sender, EventArgs e)
         {
-            openPage(new UserControlPelanggancs());
+            openPage(new UserControlJenisPaket());
             hideSubMenu();
         }
 
         private void btnOutlet_Click(object sender, EventArgs e)
         {
             openPage(new UserControlOutlet());
-            activateButton(sender, RGBColor.color3);
+            hideSubMenu();
         }
 
         private void btnJenisPaket_Click_1(object sender, EventArgs e)
         {
-            openPage(new UserControlJenisPaket());
+            openPage(new UserControlPelanggancs());
             activateButton(sender, RGBColor.color4);
         }
 
         private void btnPaketCucian_Click(object sender, EventArgs e)
         {
             openPage(new UserControlPaketLaundry());
-            activateButton(sender, RGBColor.color1);
+            activateButton(sender, RGBColor.color3);
         }
 
         private void btnTransaksi_Click_1(object sender, EventArgs e)

@@ -48,12 +48,12 @@ namespace Laundry
         private void CariData(string keyword)
         {
             dataGridViewpaket.AutoGenerateColumns = false;
-            dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.nama_jenis LIKE '%{keyword}%'");
+            dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.jenis LIKE '%{keyword}%'");
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            PaketLaundry paket = new PaketLaundry(this, btn_refresh, Outlet);
+            TambahPaketLaundry paket = new TambahPaketLaundry(this, btn_refresh, Outlet);
             paket.Show();
         }
 
@@ -78,12 +78,14 @@ namespace Laundry
             }
         }
 
+        //Event Hapus
         private void dataGridViewpaket_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridViewpaket.CurrentCell.RowIndex;
             getIdPaketLaundry = dataGridViewpaket.Rows[row].Cells["id"].Value.ToString();
         }
 
+        //Event edit
         private void dataGridViewpaket_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridViewpaket.Columns["edit"].Index)

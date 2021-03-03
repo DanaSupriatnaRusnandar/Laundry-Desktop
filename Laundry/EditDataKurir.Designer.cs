@@ -1,6 +1,6 @@
 ﻿namespace Laundry
 {
-    partial class TambahDataKurir
+    partial class EditDataKurir
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.txtTlp = new System.Windows.Forms.TextBox();
             this.txtAlamat = new System.Windows.Forms.TextBox();
             this.txtnama = new System.Windows.Forms.TextBox();
@@ -52,26 +52,26 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 22);
+            this.label1.Size = new System.Drawing.Size(116, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "TAMBAH KURIR";
+            this.label1.Text = "EDIT KURIR";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.txtTlp);
             this.panel2.Controls.Add(this.txtAlamat);
             this.panel2.Controls.Add(this.txtnama);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(25, 94);
+            this.panel2.Location = new System.Drawing.Point(25, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 286);
-            this.panel2.TabIndex = 5;
+            this.panel2.TabIndex = 7;
             // 
             // cmbOutlet
             // 
@@ -93,20 +93,20 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Outlet";
             // 
-            // btnAdd
+            // btnEdit
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 210);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Tambah Data";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(295, 210);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(101, 32);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Edit Data";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // txtTlp
             // 
@@ -176,9 +176,9 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 67);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 6;
             // 
-            // TambahDataKurir
+            // EditDataKurir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,11 +186,9 @@
             this.ClientSize = new System.Drawing.Size(466, 408);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "TambahDataKurir";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TambahDataKurir";
-            this.Load += new System.EventHandler(this.TambahDataKurir_Load);
+            this.Name = "EditDataKurir";
+            this.Text = "EditKurir";
+            this.Load += new System.EventHandler(this.EditDataKurir_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -205,7 +203,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cmbOutlet;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtTlp;
         private System.Windows.Forms.TextBox txtAlamat;
         private System.Windows.Forms.TextBox txtnama;

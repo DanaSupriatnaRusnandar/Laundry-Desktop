@@ -20,16 +20,6 @@ namespace Laundry
         string getIdKurir;
         string kurir;
 
-        private void Tampilkan()
-        {
-            DataTable data = Db.Read("SELECT tb_kurir.id, tb_kurir.nama_kurir, tb_kurir.alamat, tb_kurir.tlp, tb_outlet.nama_outlet FROM tb_kurir INNER JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id");
-            dataGridViewKurir.Rows.Clear();
-             foreach (DataRow row in data.Rows)
-            {
-                dataGridViewKurir.Rows.Add(row.Field<int>("id"), row.Field<string>("nama_kurir"), row.Field<string>("alamat"), row.Field<string>("tlp"), row.Field<string>("nama_outlet"));
-            }
-        }
-
         private void UserControlKurir_Load(object sender, EventArgs e)
         {
 
@@ -54,6 +44,19 @@ namespace Laundry
             Tampilkan();
         }
 
+        private void Tampilkan()
+        {
+            DataTable data = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id");
+            dataGridViewKurir.AutoGenerateColumns = false;
+            dataGridViewKurir.DataSource = data;
+        }
+
+        private void CariData(string keyword)
+        {
+            dataGridViewKurir.AutoGenerateColumns = false;
+            dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.nama_kurir LIKE '%{keyword}%' OR tb_kurir.alamat LIKE '%{keyword}%' OR tb_kurir.tlp LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%'");
+        }
+
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             new TambahDataKurir(btn_refresh).ShowDialog();
@@ -72,6 +75,11 @@ namespace Laundry
             Tampilkan();
         }
 
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            CariData(txtCari.Text);
+        }
+
         private void btnHapus_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data user Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -83,11 +91,27 @@ namespace Laundry
             }
         }
 
+        //Even Hapus
         private void dataGridViewKurir_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridViewKurir.CurrentCell.RowIndex;
             getIdKurir = dataGridViewKurir.Rows[row].Cells["id"].Value.ToString();
 
+        }
+
+        //Event Edit
+        private void dataGridViewKurir_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewKurir.Columns["edit"].Index)
+            {
+                var row = dataGridViewKurir.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                string nama_kurir = row.Cells["nama_kurir"].Value.ToString();
+                string alamat = row.Cells["alamat"].Value.ToString();
+                string tlp = row.Cells["tlp"].Value.ToString();
+                string outlet = row.Cells["nama_outlet"].Value.ToString();
+                new EditDataKurir(btn_refresh, id, nama_kurir, alamat, tlp, outlet).ShowDialog();
+            }
         }
     }
 }

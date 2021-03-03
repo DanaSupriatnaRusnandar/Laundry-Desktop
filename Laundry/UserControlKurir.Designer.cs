@@ -54,8 +54,8 @@
             this.nama_kurir = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alamat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKurir)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -94,7 +94,7 @@
             this.nama_kurir,
             this.alamat,
             this.tlp,
-            this.id_outlet,
+            this.nama_outlet,
             this.edit});
             this.dataGridViewKurir.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridViewKurir.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -116,6 +116,7 @@
             this.dataGridViewKurir.Size = new System.Drawing.Size(630, 357);
             this.dataGridViewKurir.TabIndex = 1;
             this.dataGridViewKurir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKurir_CellClick);
+            this.dataGridViewKurir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKurir_CellContentClick);
             // 
             // txtCari
             // 
@@ -204,6 +205,7 @@
             this.btnCari.Size = new System.Drawing.Size(24, 24);
             this.btnCari.TabIndex = 4;
             this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // cmbOutlet
             // 
@@ -332,10 +334,10 @@
             this.tlp.Name = "tlp";
             this.tlp.ReadOnly = true;
             // 
-            // id_outlet
+            // nama_outlet
             // 
-            this.id_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.id_outlet.DataPropertyName = "id_outlet";
+            this.nama_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_outlet.DataPropertyName = "nama_outlet";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,22 +345,31 @@
             dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.id_outlet.DefaultCellStyle = dataGridViewCellStyle6;
-            this.id_outlet.HeaderText = "Outlet";
-            this.id_outlet.Name = "id_outlet";
-            this.id_outlet.ReadOnly = true;
+            this.nama_outlet.DefaultCellStyle = dataGridViewCellStyle6;
+            this.nama_outlet.HeaderText = "Outlet";
+            this.nama_outlet.Name = "nama_outlet";
+            this.nama_outlet.ReadOnly = true;
             // 
             // edit
             // 
+            this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.DataPropertyName = "edit";
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.edit.DefaultCellStyle = dataGridViewCellStyle7;
             this.edit.FillWeight = 50F;
-            this.edit.HeaderText = "Aksi";
+            this.edit.HeaderText = "";
+            this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.Text = "Edit";
+            this.edit.TrackVisitedState = false;
+            this.edit.UseColumnTextForLinkValue = true;
+            this.edit.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
             // 
             // UserControlKurir
             // 
@@ -400,7 +411,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_kurir;
         private System.Windows.Forms.DataGridViewTextBoxColumn alamat;
         private System.Windows.Forms.DataGridViewTextBoxColumn tlp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_outlet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn edit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nama_outlet;
+        private System.Windows.Forms.DataGridViewLinkColumn edit;
     }
 }

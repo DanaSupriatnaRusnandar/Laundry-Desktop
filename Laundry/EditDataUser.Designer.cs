@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,17 @@
             this.btnEdit.Text = "Edit Data";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblIsUsernameValid
+            // 
+            this.lblIsUsernameValid.AutoSize = true;
+            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
+            this.lblIsUsernameValid.Location = new System.Drawing.Point(238, 59);
+            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
+            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
+            this.lblIsUsernameValid.TabIndex = 20;
+            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
+            this.lblIsUsernameValid.Visible = false;
             // 
             // cmbOutlet
             // 
@@ -210,21 +221,11 @@
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
             // 
-            // lblIsUsernameValid
-            // 
-            this.lblIsUsernameValid.AutoSize = true;
-            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
-            this.lblIsUsernameValid.Location = new System.Drawing.Point(238, 59);
-            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
-            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
-            this.lblIsUsernameValid.TabIndex = 20;
-            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
-            this.lblIsUsernameValid.Visible = false;
-            // 
             // EditDataUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(466, 442);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

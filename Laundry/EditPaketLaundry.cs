@@ -60,7 +60,7 @@ namespace Laundry
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (isfilled())
+            if (isfilled() && ishargaValid())
             {
                 if (cmbOutlet.SelectedIndex == 0) ;
                 var outlet = cmbOutlet.SelectedValue;

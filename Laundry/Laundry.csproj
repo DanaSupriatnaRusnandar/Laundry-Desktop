@@ -113,11 +113,23 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDataPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDataPelanggan.Designer.cs">
+      <DependentUpon>EditDataPelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditDataUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditDataUser.Designer.cs">
       <DependentUpon>EditDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDataKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDataKurir.Designer.cs">
+      <DependentUpon>EditDataKurir.cs</DependentUpon>
     </Compile>
     <Compile Include="EditPaketLaundry.cs">
       <SubType>Form</SubType>
@@ -125,11 +137,11 @@
     <Compile Include="EditPaketLaundry.Designer.cs">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaketLaundry.cs">
+    <Compile Include="TambahPaketLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaketLaundry.Designer.cs">
-      <DependentUpon>PaketLaundry.cs</DependentUpon>
+    <Compile Include="TambahPaketLaundry.Designer.cs">
+      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
     </Compile>
     <Compile Include="RegistrasiPelanggan.cs">
       <SubType>Form</SubType>
@@ -213,14 +225,20 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDataKurir.resx">
+      <DependentUpon>EditDataKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDataPelanggan.resx">
+      <DependentUpon>EditDataPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditDataUser.resx">
       <DependentUpon>EditDataUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPaketLaundry.resx">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaketLaundry.resx">
-      <DependentUpon>PaketLaundry.cs</DependentUpon>
+    <EmbeddedResource Include="TambahPaketLaundry.resx">
+      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistrasiPelanggan.resx">
       <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
@@ -280,5 +298,6 @@
   <ItemGroup>
     <None Include="Resources\Happy housewife cheerful mother vector image on VectorStock1.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
