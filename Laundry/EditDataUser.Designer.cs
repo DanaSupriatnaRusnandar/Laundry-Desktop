@@ -107,7 +107,7 @@
             // 
             // cmbOutlet
             // 
-            this.cmbOutlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbOutlet.FormattingEnabled = true;
             this.cmbOutlet.Location = new System.Drawing.Point(116, 157);
             this.cmbOutlet.Name = "cmbOutlet";
@@ -127,7 +127,7 @@
             // 
             // cmbRole
             // 
-            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Items.AddRange(new object[] {
             "Administrator",

@@ -41,11 +41,11 @@
             this.btnTransaksi = new FontAwesome.Sharp.IconButton();
             this.btnPaketCucian = new FontAwesome.Sharp.IconButton();
             this.btnPelanggan = new FontAwesome.Sharp.IconButton();
-            this.btnOutlet = new FontAwesome.Sharp.IconButton();
             this.panelData = new System.Windows.Forms.Panel();
             this.btnJenis = new FontAwesome.Sharp.IconButton();
             this.btnKurir = new FontAwesome.Sharp.IconButton();
             this.BtnDataAdmin = new FontAwesome.Sharp.IconButton();
+            this.btnOutlet = new FontAwesome.Sharp.IconButton();
             this.btnAkun = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -293,30 +293,6 @@
             this.btnPelanggan.UseVisualStyleBackColor = true;
             this.btnPelanggan.Click += new System.EventHandler(this.btnJenisPaket_Click_1);
             // 
-            // btnOutlet
-            // 
-            this.btnOutlet.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOutlet.FlatAppearance.BorderSize = 0;
-            this.btnOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOutlet.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnOutlet.IconChar = FontAwesome.Sharp.IconChar.Store;
-            this.btnOutlet.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnOutlet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnOutlet.IconSize = 32;
-            this.btnOutlet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutlet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOutlet.Location = new System.Drawing.Point(0, 0);
-            this.btnOutlet.Name = "btnOutlet";
-            this.btnOutlet.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnOutlet.Size = new System.Drawing.Size(198, 50);
-            this.btnOutlet.TabIndex = 4;
-            this.btnOutlet.Text = "Outlet";
-            this.btnOutlet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOutlet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOutlet.UseMnemonic = false;
-            this.btnOutlet.UseVisualStyleBackColor = true;
-            this.btnOutlet.Click += new System.EventHandler(this.btnOutlet_Click);
-            // 
             // panelData
             // 
             this.panelData.Controls.Add(this.btnJenis);
@@ -401,6 +377,30 @@
             this.BtnDataAdmin.UseVisualStyleBackColor = true;
             this.BtnDataAdmin.Click += new System.EventHandler(this.BtnDataAdmin_Click_1);
             // 
+            // btnOutlet
+            // 
+            this.btnOutlet.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOutlet.FlatAppearance.BorderSize = 0;
+            this.btnOutlet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOutlet.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnOutlet.IconChar = FontAwesome.Sharp.IconChar.Store;
+            this.btnOutlet.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnOutlet.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnOutlet.IconSize = 32;
+            this.btnOutlet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOutlet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnOutlet.Location = new System.Drawing.Point(0, 0);
+            this.btnOutlet.Name = "btnOutlet";
+            this.btnOutlet.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
+            this.btnOutlet.Size = new System.Drawing.Size(198, 50);
+            this.btnOutlet.TabIndex = 4;
+            this.btnOutlet.Text = "Outlet";
+            this.btnOutlet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOutlet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOutlet.UseMnemonic = false;
+            this.btnOutlet.UseVisualStyleBackColor = true;
+            this.btnOutlet.Click += new System.EventHandler(this.btnOutlet_Click);
+            // 
             // btnAkun
             // 
             this.btnAkun.Dock = System.Windows.Forms.DockStyle.Top;
@@ -449,13 +449,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(34, 52);
+            this.label4.Location = new System.Drawing.Point(28, 47);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 22);
+            this.label4.Size = new System.Drawing.Size(135, 32);
             this.label4.TabIndex = 0;
-            this.label4.Text = "CLEAN WASH";
+            this.label4.Text = "LAUNDRY";
             // 
             // pageWrapper
             // 

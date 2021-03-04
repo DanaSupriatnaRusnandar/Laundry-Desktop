@@ -231,14 +231,13 @@
             this.dataGridViewAdmin.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewAdmin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewAdmin.ColumnHeadersHeight = 40;
-            this.dataGridViewAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewAdmin.ColumnHeadersHeight = 38;
             this.dataGridViewAdmin.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.nama,
@@ -291,7 +290,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.nama.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nama.FillWeight = 75F;
             this.nama.HeaderText = "Nama Lengkap";
             this.nama.Name = "nama";
             this.nama.ReadOnly = true;
@@ -325,7 +323,6 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.password.DefaultCellStyle = dataGridViewCellStyle5;
-            this.password.FillWeight = 50F;
             this.password.HeaderText = "Password";
             this.password.Name = "password";
             this.password.ReadOnly = true;
@@ -350,7 +347,6 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.nama_outlet.DefaultCellStyle = dataGridViewCellStyle6;
-            this.nama_outlet.FillWeight = 50F;
             this.nama_outlet.HeaderText = "Outlet";
             this.nama_outlet.Name = "nama_outlet";
             this.nama_outlet.ReadOnly = true;
@@ -367,7 +363,7 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.nama_role.DefaultCellStyle = dataGridViewCellStyle7;
-            this.nama_role.FillWeight = 75F;
+            this.nama_role.FillWeight = 50F;
             this.nama_role.HeaderText = "Hak Akses";
             this.nama_role.Name = "nama_role";
             this.nama_role.ReadOnly = true;
@@ -375,11 +371,13 @@
             // edit
             // 
             this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.edit.DefaultCellStyle = dataGridViewCellStyle8;
+            this.edit.FillWeight = 35F;
             this.edit.HeaderText = "";
             this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));

@@ -19,21 +19,6 @@ namespace Laundry
         }
         string getIdOutlet;
 
-        public void Tampilkan()
-        {
-            DataTable data = Db.Read("tb_outlet", "*");
-            dataGridViewOtlet.Rows.Clear();
-            foreach (DataRow row in data.Rows)
-            {
-                dataGridViewOtlet.Rows.Add(row.Field<int>("id"), row.Field<string>("nama_outlet"), row.Field<string>("alamat"), row.Field<string>("tlp"));
-            }
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            new TambahDataOutlet(btn_refresh).ShowDialog();
-        }
-
         private void UserControlOutlet_Load(object sender, EventArgs e)
         {
             dataGridViewOtlet.BorderStyle = BorderStyle.None;
@@ -51,12 +36,35 @@ namespace Laundry
             Tampilkan();
         }
 
+        public void Tampilkan()
+        {
+            DataTable data = Db.Read("tb_outlet", "*");
+            dataGridViewOtlet.AutoGenerateColumns = false;
+            dataGridViewOtlet.DataSource = data;
+        }
+
+        private void CariData(string keyword)
+        {
+            dataGridViewOtlet.AutoGenerateColumns = false;
+            dataGridViewOtlet.DataSource = Db.Read($"SELECT * FROM tb_outlet WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_outlet.alamat LIKE '%{keyword}%' OR tb_outlet.tlp LIKE '%{keyword}%'");
+        }
+
+        private void Btn_Add_Click_1(object sender, EventArgs e)
+        {
+            new TambahDataOutlet(btn_refresh).ShowDialog();
+        }
+
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
         }
 
-        private void btnHapus_Click(object sender, EventArgs e)
+        private void btnCari_Click(object sender, EventArgs e)
+        {
+            CariData(txtCari.Text);
+        }
+
+        private void btnHapus_Click_1(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data outlet Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
@@ -68,10 +76,25 @@ namespace Laundry
             }
         }
 
+        //Event Hapus
         private void dataGridViewOtlet_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridViewOtlet.CurrentCell.RowIndex;
             getIdOutlet = dataGridViewOtlet.Rows[row].Cells["id"].Value.ToString();
+        }
+
+        //Event Edit
+        private void dataGridViewOtlet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewOtlet.Columns["edit"].Index)
+            {
+                var row = dataGridViewOtlet.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                string nama = row.Cells["nama_outlet"].Value.ToString();
+                string alamat = row.Cells["alamat"].Value.ToString();
+                string tlp = row.Cells["tlp"].Value.ToString();
+                new EditDataOutlet(btn_refresh, id, nama, alamat, tlp).ShowDialog();
+            }
         }
     }
 }

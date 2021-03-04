@@ -38,7 +38,7 @@ namespace Laundry
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            new RegistrasiPelanggan(this, btn_refresh).ShowDialog();
+            new RegistrasiPelanggan(btn_refresh).ShowDialog();
         }
 
         private void Tampilkan()

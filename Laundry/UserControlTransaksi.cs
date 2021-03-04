@@ -42,5 +42,10 @@ namespace Laundry
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            new Transaksi(btn_refresh).ShowDialog();
+        }
     }
 }

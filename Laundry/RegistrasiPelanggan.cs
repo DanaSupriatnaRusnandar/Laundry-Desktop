@@ -14,7 +14,7 @@ namespace Laundry
     public partial class RegistrasiPelanggan : Form
     {
         Button btrf;
-        public RegistrasiPelanggan(UserControlPelanggan parent, Button btrefresh)
+        public RegistrasiPelanggan(Button btrefresh)
         {
             InitializeComponent();
             btrf = btrefresh;

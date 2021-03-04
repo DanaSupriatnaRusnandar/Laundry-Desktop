@@ -113,6 +113,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDataOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDataOutlet.Designer.cs">
+      <DependentUpon>EditDataOutlet.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditDataPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,12 @@
     </Compile>
     <Compile Include="TambahDataOutlet.Designer.cs">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaksi.Designer.cs">
+      <DependentUpon>Transaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlDataUser.cs">
       <SubType>UserControl</SubType>
@@ -228,6 +240,9 @@
     <EmbeddedResource Include="EditDataKurir.resx">
       <DependentUpon>EditDataKurir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDataOutlet.resx">
+      <DependentUpon>EditDataOutlet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditDataPelanggan.resx">
       <DependentUpon>EditDataPelanggan.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TambahDataOutlet.resx">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaksi.resx">
+      <DependentUpon>Transaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDataUser.resx">
       <DependentUpon>UserControlDataUser.cs</DependentUpon>

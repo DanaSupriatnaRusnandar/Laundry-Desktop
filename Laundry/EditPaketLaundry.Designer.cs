@@ -89,7 +89,6 @@
             // 
             // cmbOutlet
             // 
-            this.cmbOutlet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbOutlet.FormattingEnabled = true;
             this.cmbOutlet.Location = new System.Drawing.Point(116, 29);
@@ -110,7 +109,6 @@
             // 
             // cmbJenis
             // 
-            this.cmbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbJenis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbJenis.FormattingEnabled = true;
             this.cmbJenis.Location = new System.Drawing.Point(116, 120);

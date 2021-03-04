@@ -37,6 +37,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewpaket = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.txtCari = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -48,13 +55,6 @@
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewpaket)).BeginInit();
             this.panel3.SuspendLayout();
@@ -92,13 +92,13 @@
             this.dataGridViewpaket.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewpaket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewpaket.ColumnHeadersHeight = 40;
+            this.dataGridViewpaket.ColumnHeadersHeight = 38;
             this.dataGridViewpaket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewpaket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -127,6 +127,102 @@
             this.dataGridViewpaket.TabIndex = 1;
             this.dataGridViewpaket.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewpaket_CellClick);
             this.dataGridViewpaket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewpaket_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID Paket";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.Visible = false;
+            // 
+            // nama_outlet
+            // 
+            this.nama_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_outlet.DataPropertyName = "nama_outlet";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.nama_outlet.DefaultCellStyle = dataGridViewCellStyle3;
+            this.nama_outlet.HeaderText = "Outlet";
+            this.nama_outlet.Name = "nama_outlet";
+            this.nama_outlet.ReadOnly = true;
+            // 
+            // nama_paket
+            // 
+            this.nama_paket.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_paket.DataPropertyName = "nama_paket";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.nama_paket.DefaultCellStyle = dataGridViewCellStyle4;
+            this.nama_paket.HeaderText = "Nama Paket";
+            this.nama_paket.Name = "nama_paket";
+            this.nama_paket.ReadOnly = true;
+            // 
+            // id_jenis
+            // 
+            this.id_jenis.DataPropertyName = "id_jenis";
+            this.id_jenis.HeaderText = "id_jenis";
+            this.id_jenis.Name = "id_jenis";
+            this.id_jenis.ReadOnly = true;
+            this.id_jenis.Visible = false;
+            // 
+            // jenis
+            // 
+            this.jenis.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.jenis.DataPropertyName = "jenis";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.jenis.DefaultCellStyle = dataGridViewCellStyle5;
+            this.jenis.HeaderText = "Jenis Paket";
+            this.jenis.Name = "jenis";
+            this.jenis.ReadOnly = true;
+            this.jenis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // harga
+            // 
+            this.harga.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.harga.DataPropertyName = "harga";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.harga.DefaultCellStyle = dataGridViewCellStyle6;
+            this.harga.HeaderText = "Harga";
+            this.harga.Name = "harga";
+            this.harga.ReadOnly = true;
+            // 
+            // edit
+            // 
+            this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.HeaderText = "";
+            this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.Text = "Edit";
+            this.edit.TrackVisitedState = false;
+            this.edit.UseColumnTextForLinkValue = true;
+            this.edit.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
             // 
             // txtCari
             // 
@@ -263,102 +359,6 @@
             this.label1.Size = new System.Drawing.Size(225, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "PAKET LAUNDRY";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID Paket";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.Visible = false;
-            // 
-            // nama_outlet
-            // 
-            this.nama_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama_outlet.DataPropertyName = "nama_outlet";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.nama_outlet.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nama_outlet.HeaderText = "Outlet";
-            this.nama_outlet.Name = "nama_outlet";
-            this.nama_outlet.ReadOnly = true;
-            // 
-            // nama_paket
-            // 
-            this.nama_paket.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama_paket.DataPropertyName = "nama_paket";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.nama_paket.DefaultCellStyle = dataGridViewCellStyle4;
-            this.nama_paket.HeaderText = "Nama Paket";
-            this.nama_paket.Name = "nama_paket";
-            this.nama_paket.ReadOnly = true;
-            // 
-            // id_jenis
-            // 
-            this.id_jenis.DataPropertyName = "id_jenis";
-            this.id_jenis.HeaderText = "id_jenis";
-            this.id_jenis.Name = "id_jenis";
-            this.id_jenis.ReadOnly = true;
-            this.id_jenis.Visible = false;
-            // 
-            // jenis
-            // 
-            this.jenis.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.jenis.DataPropertyName = "jenis";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.jenis.DefaultCellStyle = dataGridViewCellStyle5;
-            this.jenis.HeaderText = "Jenis Paket";
-            this.jenis.Name = "jenis";
-            this.jenis.ReadOnly = true;
-            this.jenis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // harga
-            // 
-            this.harga.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.harga.DataPropertyName = "harga";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.harga.DefaultCellStyle = dataGridViewCellStyle6;
-            this.harga.HeaderText = "Harga";
-            this.harga.Name = "harga";
-            this.harga.ReadOnly = true;
-            // 
-            // edit
-            // 
-            this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
-            this.edit.HeaderText = "";
-            this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.edit.Text = "Edit";
-            this.edit.TrackVisitedState = false;
-            this.edit.UseColumnTextForLinkValue = true;
-            this.edit.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
             // 
             // UserControlPaketLaundry
             // 

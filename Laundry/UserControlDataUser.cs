@@ -41,7 +41,6 @@ namespace Laundry
         private void Tampilkan()
         {
             DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id");
-          //  dataGridViewAdmin.Rows.Clear();
             dataGridViewAdmin.AutoGenerateColumns = false;
             dataGridViewAdmin.DataSource = data;
         }

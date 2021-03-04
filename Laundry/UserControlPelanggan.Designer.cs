@@ -50,16 +50,16 @@
             this.btn_refresh = new FontAwesome.Sharp.IconButton();
             this.btnCari = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrasi)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewRegistrasi
@@ -79,13 +79,13 @@
             this.dataGridViewRegistrasi.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewRegistrasi.ColumnHeadersHeight = 40;
+            this.dataGridViewRegistrasi.ColumnHeadersHeight = 38;
             this.dataGridViewRegistrasi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewRegistrasi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -307,6 +307,16 @@
             this.panel1.Size = new System.Drawing.Size(709, 115);
             this.panel1.TabIndex = 3;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.Btn_Add);
+            this.panel5.Controls.Add(this.btnHapus);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 65);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(176, 50);
+            this.panel5.TabIndex = 13;
+            // 
             // btnHapus
             // 
             this.btnHapus.FlatAppearance.BorderSize = 0;
@@ -344,16 +354,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRASI PELANGGAN";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.Btn_Add);
-            this.panel5.Controls.Add(this.btnHapus);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 65);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(176, 50);
-            this.panel5.TabIndex = 13;
-            // 
             // UserControlPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,9 +369,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
