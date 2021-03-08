@@ -51,7 +51,7 @@ namespace Laundry
         private void CariData(string keyword)
         {
             dataGridViewRegistrasi.AutoGenerateColumns = false;
-            dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member WHERE tb_member.nama LIKE '%{keyword}%' OR tb_member.alamat LIKE '%{keyword}%'");
+            dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member WHERE tb_member.nama_member LIKE '%{keyword}%' OR tb_member.alamat LIKE '%{keyword}%'");
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace Laundry
             {
                 var row = dataGridViewRegistrasi.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
-                string nama = row.Cells["nama"].Value.ToString();
+                string nama = row.Cells["nama_member"].Value.ToString();
                 string alamat = row.Cells["alamat"].Value.ToString();
                 string jk = row.Cells["jenis_kelamin"].Value.ToString();
                 string tlp = row.Cells["tlp"].Value.ToString();

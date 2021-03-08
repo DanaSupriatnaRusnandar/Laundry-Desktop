@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Luthor.lib;
 
 namespace Laundry
 {
@@ -31,7 +32,7 @@ namespace Laundry
         //Struktur
         private struct RGBColor
         {
-          // public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color1 = Color.FromArgb(172, 126, 241);
           // public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
@@ -115,6 +116,16 @@ namespace Laundry
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();
             timer1.Enabled = true;
 
+          /*  if (Session.getUserLogged().Rows[0].Field<string>("nama_role") == "kasir")
+            {
+                btnAkun.Visible = true;
+
+            }
+            else
+            {
+                MessageBox.Show("ERROR");
+            }*/
+            
         }
 
         //Button Close, Maximiza, Minimize
@@ -160,7 +171,7 @@ namespace Laundry
             hideSubMenu();
         }
 
-        private void btnPelanggan_Click(object sender, EventArgs e)
+        private void btnJenis_Click(object sender, EventArgs e)
         {
             openPage(new UserControlJenisPaket());
             hideSubMenu();
@@ -172,7 +183,7 @@ namespace Laundry
             hideSubMenu();
         }
 
-        private void btnJenisPaket_Click_1(object sender, EventArgs e)
+        private void btnPelanggan_Click_1(object sender, EventArgs e)
         {
             openPage(new UserControlPelanggan());
             activateButton(sender, RGBColor.color4);
@@ -190,17 +201,23 @@ namespace Laundry
             activateButton(sender, RGBColor.color6);
         }
 
-        private void btnLaporan_Click_1(object sender, EventArgs e)
+        private void btnPengeluaran_Click_1(object sender, EventArgs e)
         {
+            openPage(new UserControlPengeluaran());
             activateButton(sender, RGBColor.color7);
         }
 
-        private void btnPengaturan_Click_1(object sender, EventArgs e)
+        private void btnLaporan_Click_1(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color8);
         }
 
-        private void btnKeluar_Click_1(object sender, EventArgs e)
+        private void btnPengaturan_Click_1(object sender, EventArgs e)
+        {
+            activateButton(sender, RGBColor.color1);
+        }
+
+        private void btnKeluar_Click(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color9);
             if (MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

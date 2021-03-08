@@ -125,6 +125,12 @@
     <Compile Include="EditDataPelanggan.Designer.cs">
       <DependentUpon>EditDataPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDataPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDataPengeluaran.Designer.cs">
+      <DependentUpon>EditDataPengeluaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditDataUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="EditPaketLaundry.Designer.cs">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahDataPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahDataPengeluaran.Designer.cs">
+      <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
     </Compile>
     <Compile Include="TambahPaketLaundry.cs">
       <SubType>Form</SubType>
@@ -228,6 +240,12 @@
     <Compile Include="UserControlPelanggan.Designer.cs">
       <DependentUpon>UserControlPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlPengeluaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlPengeluaran.Designer.cs">
+      <DependentUpon>UserControlPengeluaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlTransaksi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,11 +264,17 @@
     <EmbeddedResource Include="EditDataPelanggan.resx">
       <DependentUpon>EditDataPelanggan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDataPengeluaran.resx">
+      <DependentUpon>EditDataPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditDataUser.resx">
       <DependentUpon>EditDataUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPaketLaundry.resx">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahDataPengeluaran.resx">
+      <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TambahPaketLaundry.resx">
       <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
@@ -295,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlPelanggan.resx">
       <DependentUpon>UserControlPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlPengeluaran.resx">
+      <DependentUpon>UserControlPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTransaksi.resx">
       <DependentUpon>UserControlTransaksi.cs</DependentUpon>

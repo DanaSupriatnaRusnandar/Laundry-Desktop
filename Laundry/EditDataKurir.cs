@@ -15,6 +15,7 @@ namespace Laundry
     {
         Button btrf;
         string getIdKurir;
+        string nama_outlet;
         public EditDataKurir(Button btrefresh, string id, string nama_kurir, string alamat, string tlp, string outlet)
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace Laundry
             txtnama.Text = nama_kurir;
             txtAlamat.Text = alamat;
             txtTlp.Text = tlp;
-            cmbOutlet.SelectedItem = outlet;
+            nama_outlet = outlet;
         }
 
         private void EditDataKurir_Load(object sender, EventArgs e)
@@ -33,6 +34,8 @@ namespace Laundry
             cmbOutlet.DisplayMember = "nama_outlet";
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
+
+            cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
         }  
 
         private bool isfilled()

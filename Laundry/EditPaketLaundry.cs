@@ -13,18 +13,20 @@ namespace Laundry
 {
     public partial class EditPaketLaundry : Form
     {
+        Button btrf;
         string getIdPaket;
         string getIdjenis;
-        Button btrf;
+        string nama_outlet;
+        string nama_jenis;
         public EditPaketLaundry(Button btrefresh, string id, string outlet, string nama_paket, string id_jenis, string jenis, string harga)
         {
             InitializeComponent();
             btrf = btrefresh;
             getIdPaket = id;
-            cmbOutlet.SelectedItem = outlet;
+            nama_outlet = outlet;
             txtNama.Text = nama_paket;
             getIdjenis = id_jenis;
-            cmbJenis.SelectedItem = jenis;
+            nama_jenis = jenis;
             txtHarga.Text = harga;
 
         }
@@ -42,6 +44,9 @@ namespace Laundry
             cmbJenis.DisplayMember = "jenis";
             cmbJenis.ValueMember = "id";
             cmbJenis.SelectedIndex = -1;
+
+            cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
+            cmbJenis.SelectedIndex = cmbJenis.FindStringExact(nama_jenis);
 
         }
 
@@ -68,7 +73,7 @@ namespace Laundry
                 var jenis = cmbJenis.SelectedValue;
                 var nama_paket = txtNama.Text;
                 var harga = txtHarga.Text;
-                if (Db.Update($"tb_paket", $"id = '{getIdPaket}', id_outlet = '{outlet}, nama_paket = '{nama_paket}', id_jenis ='{jenis}', harga = '{harga}'", $"id = {getIdPaket}"))
+                if (Db.Update($"tb_paket", $"id = '{getIdPaket}', id_outlet = '{outlet}', nama_paket = '{nama_paket}', id_jenis ='{jenis}', harga = '{harga}'", $"id = {getIdPaket}"))
                 {
                     MessageBox.Show("Paket laundry berhasil diubah");
                     btrf.PerformClick();

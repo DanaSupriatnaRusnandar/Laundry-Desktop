@@ -17,6 +17,8 @@ namespace Laundry
         Button btrf;
         string getIdUser;
         string idOutlet;
+        string nama_outlet;
+        string nama_role;
         public EditDataUser(Button btrefresh, string id, string nama, string username, string password,string id_outlet, string outlet, string role)
         {
             InitializeComponent();
@@ -26,8 +28,8 @@ namespace Laundry
             txtusername.Text = username;
             //  txtpassword.Text = password;
             idOutlet = id_outlet;
-            cmbOutlet.SelectedItem = outlet;
-            cmbRole.SelectedItem = role;
+            nama_outlet = outlet;
+            nama_role = role;
         }
 
         private void EditDataUser_Load(object sender, EventArgs e)
@@ -43,6 +45,10 @@ namespace Laundry
             cmbRole.DisplayMember = "nama_role";
             cmbRole.ValueMember = "id";
             cmbRole.SelectedIndex = -1;
+
+            cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
+            cmbRole.SelectedIndex = cmbRole.FindStringExact(nama_role);
+
 
         }
 

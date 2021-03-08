@@ -24,6 +24,8 @@ namespace Laundry
             txtalamat.Text = alamat;
             txtJK.Text = jk;
             txtTelepon.Text = tlp;
+            if (jk == "Laki - Laki") rbLaki.Checked = true;
+            else rbPerempuan.Checked = true;
         }
 
         private void EditDataPelanggan_Load(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace Laundry
                 var alamat = txtalamat.Text;
                 var JK = txtJK.Text;
                 var tlp = txtTelepon.Text;
-                if (Db.Update("tb_member", $"id = {getIdPelanggan}, nama = '{nama}', alamat = '{alamat}', jenis_kelamin = '{JK}', tlp = '{tlp}'", $"{getIdPelanggan}"))
+                if (Db.Update("tb_member", $"id = {getIdPelanggan}, nama_member = '{nama}', alamat = '{alamat}', jenis_kelamin = '{JK}', tlp = '{tlp}'", $"id = {getIdPelanggan}"))
                 {
                     MessageBox.Show("Data pelanggan berhasil diubah");
                     btrf.PerformClick();

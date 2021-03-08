@@ -24,18 +24,6 @@ namespace Laundry
 
         }
 
-        private bool isfilled()
-        {
-            if ( txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbOutlet.SelectedIndex >= 0 &&cmbRole.SelectedIndex >= 0) return true;
-            return false;
-        }
-
-        private bool isUsernameValid()
-        {
-            if (txtusername.Text.Contains(" ")) return false;
-            return true;
-        }
-
         private void TambahDataUser_Load(object sender, EventArgs e)
         {
             //Biding Outlet
@@ -49,11 +37,18 @@ namespace Laundry
             cmbRole.DisplayMember = "nama_role";
             cmbRole.ValueMember = "id";
             cmbRole.SelectedIndex = -1;
-/*
-            //Edit Data User
-            DataTable dataEdit = Db.Read("tb_user", "*", $"id = {getIdUser}");
-            txtnama.Text = dataEdit.Rows[0].Field<string>("nama");
-            txtusername.Text = dataEdit.Rows[0].Field<string>("username");*/
+        }
+
+        private bool isfilled()
+        {
+            if ( txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbOutlet.SelectedIndex >= 0 &&cmbRole.SelectedIndex >= 0) return true;
+            return false;
+        }
+
+        private bool isUsernameValid()
+        {
+            if (txtusername.Text.Contains(" ")) return false;
+            return true;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

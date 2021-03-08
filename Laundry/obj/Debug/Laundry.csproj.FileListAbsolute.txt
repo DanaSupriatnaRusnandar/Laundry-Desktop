@@ -57,3 +57,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataPelanggan.re
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPelanggan.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataOutlet.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.Transaksi.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataPengeluaran.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPengeluaran.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataPengeluaran.resources

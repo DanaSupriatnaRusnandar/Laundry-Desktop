@@ -38,6 +38,7 @@
             this.btnKeluar = new FontAwesome.Sharp.IconButton();
             this.btnPengaturan = new FontAwesome.Sharp.IconButton();
             this.btnLaporan = new FontAwesome.Sharp.IconButton();
+            this.btnPengeluaran = new FontAwesome.Sharp.IconButton();
             this.btnTransaksi = new FontAwesome.Sharp.IconButton();
             this.btnPaketCucian = new FontAwesome.Sharp.IconButton();
             this.btnPelanggan = new FontAwesome.Sharp.IconButton();
@@ -136,6 +137,7 @@
             this.panelMenu.Controls.Add(this.btnKeluar);
             this.panelMenu.Controls.Add(this.btnPengaturan);
             this.panelMenu.Controls.Add(this.btnLaporan);
+            this.panelMenu.Controls.Add(this.btnPengeluaran);
             this.panelMenu.Controls.Add(this.btnTransaksi);
             this.panelMenu.Controls.Add(this.btnPaketCucian);
             this.panelMenu.Controls.Add(this.btnPelanggan);
@@ -161,17 +163,17 @@
             this.btnKeluar.IconSize = 32;
             this.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnKeluar.Location = new System.Drawing.Point(0, 589);
+            this.btnKeluar.Location = new System.Drawing.Point(0, 639);
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnKeluar.Size = new System.Drawing.Size(198, 50);
-            this.btnKeluar.TabIndex = 10;
+            this.btnKeluar.TabIndex = 11;
             this.btnKeluar.Text = "Keluar";
             this.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKeluar.UseMnemonic = false;
             this.btnKeluar.UseVisualStyleBackColor = true;
-            this.btnKeluar.Click += new System.EventHandler(this.btnKeluar_Click_1);
+            this.btnKeluar.Click += new System.EventHandler(this.btnKeluar_Click);
             // 
             // btnPengaturan
             // 
@@ -185,11 +187,11 @@
             this.btnPengaturan.IconSize = 32;
             this.btnPengaturan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengaturan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPengaturan.Location = new System.Drawing.Point(0, 539);
+            this.btnPengaturan.Location = new System.Drawing.Point(0, 589);
             this.btnPengaturan.Name = "btnPengaturan";
             this.btnPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPengaturan.Size = new System.Drawing.Size(198, 50);
-            this.btnPengaturan.TabIndex = 9;
+            this.btnPengaturan.TabIndex = 10;
             this.btnPengaturan.Text = "Pengaturan";
             this.btnPengaturan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengaturan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -203,23 +205,47 @@
             this.btnLaporan.FlatAppearance.BorderSize = 0;
             this.btnLaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLaporan.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnLaporan.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnLaporan.IconChar = FontAwesome.Sharp.IconChar.ChartPie;
             this.btnLaporan.IconColor = System.Drawing.Color.Gainsboro;
             this.btnLaporan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLaporan.IconSize = 32;
             this.btnLaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLaporan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnLaporan.Location = new System.Drawing.Point(0, 489);
+            this.btnLaporan.Location = new System.Drawing.Point(0, 539);
             this.btnLaporan.Name = "btnLaporan";
             this.btnLaporan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLaporan.Size = new System.Drawing.Size(198, 50);
-            this.btnLaporan.TabIndex = 8;
+            this.btnLaporan.TabIndex = 9;
             this.btnLaporan.Text = "Laporan";
             this.btnLaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLaporan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLaporan.UseMnemonic = false;
             this.btnLaporan.UseVisualStyleBackColor = true;
             this.btnLaporan.Click += new System.EventHandler(this.btnLaporan_Click_1);
+            // 
+            // btnPengeluaran
+            // 
+            this.btnPengeluaran.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPengeluaran.FlatAppearance.BorderSize = 0;
+            this.btnPengeluaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPengeluaran.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnPengeluaran.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnPengeluaran.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnPengeluaran.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPengeluaran.IconSize = 32;
+            this.btnPengeluaran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPengeluaran.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnPengeluaran.Location = new System.Drawing.Point(0, 489);
+            this.btnPengeluaran.Name = "btnPengeluaran";
+            this.btnPengeluaran.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnPengeluaran.Size = new System.Drawing.Size(198, 50);
+            this.btnPengeluaran.TabIndex = 8;
+            this.btnPengeluaran.Text = "Pengeluaran";
+            this.btnPengeluaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPengeluaran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPengeluaran.UseMnemonic = false;
+            this.btnPengeluaran.UseVisualStyleBackColor = true;
+            this.btnPengeluaran.Click += new System.EventHandler(this.btnPengeluaran_Click_1);
             // 
             // btnTransaksi
             // 
@@ -291,7 +317,7 @@
             this.btnPelanggan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPelanggan.UseMnemonic = false;
             this.btnPelanggan.UseVisualStyleBackColor = true;
-            this.btnPelanggan.Click += new System.EventHandler(this.btnJenisPaket_Click_1);
+            this.btnPelanggan.Click += new System.EventHandler(this.btnPelanggan_Click_1);
             // 
             // panelData
             // 
@@ -327,7 +353,7 @@
             this.btnJenis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnJenis.UseMnemonic = false;
             this.btnJenis.UseVisualStyleBackColor = true;
-            this.btnJenis.Click += new System.EventHandler(this.btnPelanggan_Click);
+            this.btnJenis.Click += new System.EventHandler(this.btnJenis_Click);
             // 
             // btnKurir
             // 
@@ -393,7 +419,7 @@
             this.btnOutlet.Name = "btnOutlet";
             this.btnOutlet.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
             this.btnOutlet.Size = new System.Drawing.Size(198, 50);
-            this.btnOutlet.TabIndex = 4;
+            this.btnOutlet.TabIndex = 2;
             this.btnOutlet.Text = "Outlet";
             this.btnOutlet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOutlet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -473,11 +499,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHariTanggal.AutoSize = true;
-            this.lblHariTanggal.Font = new System.Drawing.Font("Permanent Marker", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.lblHariTanggal.Location = new System.Drawing.Point(3, 41);
             this.lblHariTanggal.Name = "lblHariTanggal";
-            this.lblHariTanggal.Size = new System.Drawing.Size(243, 35);
+            this.lblHariTanggal.Size = new System.Drawing.Size(254, 35);
             this.lblHariTanggal.TabIndex = 1;
             this.lblHariTanggal.Text = "Hari dan Tanggal";
             // 
@@ -487,11 +513,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblJam.AutoSize = true;
-            this.lblJam.Font = new System.Drawing.Font("Permanent Marker", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJam.Font = new System.Drawing.Font("Shrikhand", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.lblJam.Location = new System.Drawing.Point(3, 3);
             this.lblJam.Name = "lblJam";
-            this.lblJam.Size = new System.Drawing.Size(68, 35);
+            this.lblJam.Size = new System.Drawing.Size(73, 35);
             this.lblJam.TabIndex = 0;
             this.lblJam.Text = "Jam";
             // 
@@ -546,12 +572,13 @@
         private FontAwesome.Sharp.IconButton btnPelanggan;
         private FontAwesome.Sharp.IconButton btnPaketCucian;
         private FontAwesome.Sharp.IconButton btnTransaksi;
+        private FontAwesome.Sharp.IconButton btnPengeluaran;
         private FontAwesome.Sharp.IconButton btnLaporan;
         private FontAwesome.Sharp.IconButton btnPengaturan;
-        private FontAwesome.Sharp.IconButton btnKeluar;
         private System.Windows.Forms.Label lblHariTanggal;
         private System.Windows.Forms.Label lblJam;
         private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton btnKurir;
+        private FontAwesome.Sharp.IconButton btnKeluar;
     }
 }
