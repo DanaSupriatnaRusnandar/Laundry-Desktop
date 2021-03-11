@@ -14,12 +14,12 @@ namespace Laundry
     public partial class TambahDataPengeluaran : Form
     {
         Button btrf;
-        string getIdPengeluarana;
+        string getIdPengeluaran;
         public TambahDataPengeluaran(Button btrefresh, string id)
         {
             InitializeComponent();
             btrf = btrefresh;
-            getIdPengeluarana = id;
+            getIdPengeluaran = id;
         }
 
         private void TambahDataPengeluaran_Load(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace Laundry
 
         private bool isfilled()
         {
-           if (cmbOutlet.SelectedIndex >= 0 && txtNamaBarang.Text.Length >= 0 && dateTimePicker.Checked && txtNominal.Text.Length >= 0 && txtKeterangan.Text.Length >= 0) return true;
+            if (cmbOutlet.SelectedIndex >= 0 && txtNamaBarang.Text.Length >= 0 && dateTimePicker.Checked && txtNominal.Text.Length >= 0 && txtKeterangan.Text.Length >= 0) return true;
             return false;
         }
 
@@ -44,7 +44,7 @@ namespace Laundry
                 if (cmbOutlet.SelectedIndex == 0) ;
                 var outlet = cmbOutlet.SelectedValue;
                 var nama = txtNamaBarang.Text;
-                var tgl = dateTimePicker.Value.ToString("yyy-MMMM-dd");
+                var tgl = dateTimePicker.Value.ToString("yyyy-MM-dd");
                 var nominal = txtNominal.Text;
                 var keterangan = txtKeterangan.Text;
 

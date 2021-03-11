@@ -114,5 +114,15 @@ namespace Laundry
             int row = dataGridViewJenis.CurrentCell.RowIndex;
             getIdJenis = dataGridViewJenis.Rows[row].Cells["id"].Value.ToString();
         }
+
+        private void dataGridViewJenis_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewJenis.Columns["edit"].Index)
+            {
+                var row = dataGridViewJenis.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                string jenis = row.Cells["jenis"].Value.ToString();
+            }
+        }
     }
 }

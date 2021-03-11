@@ -49,6 +49,7 @@
             this.dataGridViewJenis = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -228,6 +229,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridViewJenis.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewJenis.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewJenis.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +242,8 @@
             this.dataGridViewJenis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewJenis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.jenis});
+            this.jenis,
+            this.edit});
             this.dataGridViewJenis.Cursor = System.Windows.Forms.Cursors.Default;
             this.dataGridViewJenis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewJenis.GridColor = System.Drawing.Color.Gainsboro;
@@ -255,7 +258,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewJenis.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewJenis.RowHeadersWidth = 35;
+            this.dataGridViewJenis.RowHeadersWidth = 25;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -265,6 +268,7 @@
             this.dataGridViewJenis.Size = new System.Drawing.Size(630, 357);
             this.dataGridViewJenis.TabIndex = 1;
             this.dataGridViewJenis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellClick);
+            this.dataGridViewJenis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellContentClick);
             // 
             // id
             // 
@@ -291,6 +295,21 @@
             this.jenis.Name = "jenis";
             this.jenis.ReadOnly = true;
             this.jenis.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // edit
+            // 
+            this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.edit.FillWeight = 10F;
+            this.edit.HeaderText = "";
+            this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.Text = "Edit";
+            this.edit.UseColumnTextForLinkValue = true;
+            this.edit.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
             // 
             // UserControlJenisPaket
             // 
@@ -330,8 +349,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridViewJenis;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenis;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridViewLinkColumn edit;
     }
 }

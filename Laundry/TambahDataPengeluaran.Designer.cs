@@ -74,7 +74,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(24, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 390);
+            this.panel2.Size = new System.Drawing.Size(416, 376);
             this.panel2.TabIndex = 5;
             // 
             // txtNamaBarang
@@ -140,7 +140,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(294, 313);
+            this.btnAdd.Location = new System.Drawing.Point(294, 302);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 6;
@@ -205,10 +205,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 513);
+            this.ClientSize = new System.Drawing.Size(466, 497);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TambahDataPengeluaran";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TambahDataPengeluaran";
             this.Load += new System.EventHandler(this.TambahDataPengeluaran_Load);
             this.panel2.ResumeLayout(false);

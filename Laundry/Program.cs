@@ -9,6 +9,7 @@ namespace Laundry
 {
     static class Program
     {
+       
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,7 +20,7 @@ namespace Laundry
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dashboard());
+            Application.Run(new Login());
 
             //Tes Koneksi Database
             /*if (Connection.Ping()) Application.Run(new Login());

@@ -35,7 +35,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtJenis = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtQty = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtHarga = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtQty = new System.Windows.Forms.TextBox();
             this.cmbPaket = new System.Windows.Forms.ComboBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -178,18 +178,6 @@
             this.label8.TabIndex = 24;
             this.label8.Text = "Qty";
             // 
-            // txtQty
-            // 
-            this.txtQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtQty.Location = new System.Drawing.Point(332, 31);
-            this.txtQty.Multiline = true;
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(95, 25);
-            this.txtQty.TabIndex = 10;
-            this.txtQty.Text = "1,00";
-            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -210,7 +198,7 @@
             this.txtHarga.ReadOnly = true;
             this.txtHarga.Size = new System.Drawing.Size(95, 25);
             this.txtHarga.TabIndex = 11;
-            this.txtHarga.Text = "0,00";
+            this.txtHarga.Text = "0";
             this.txtHarga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHarga.TextChanged += new System.EventHandler(this.txtHarga_TextChanged);
             // 
@@ -233,7 +221,7 @@
             this.txtDiskon.Name = "txtDiskon";
             this.txtDiskon.Size = new System.Drawing.Size(95, 25);
             this.txtDiskon.TabIndex = 12;
-            this.txtDiskon.Text = "0,00";
+            this.txtDiskon.Text = "0";
             this.txtDiskon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDiskon.TextChanged += new System.EventHandler(this.txtDiskon_TextChanged);
             // 
@@ -256,7 +244,7 @@
             this.txtBiayaTambahan.Name = "txtBiayaTambahan";
             this.txtBiayaTambahan.Size = new System.Drawing.Size(95, 25);
             this.txtBiayaTambahan.TabIndex = 13;
-            this.txtBiayaTambahan.Text = "0,00";
+            this.txtBiayaTambahan.Text = "0";
             this.txtBiayaTambahan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBiayaTambahan.TextChanged += new System.EventHandler(this.txtBiayaTambahan_TextChanged);
             // 
@@ -279,7 +267,7 @@
             this.txtPajak.Name = "txtPajak";
             this.txtPajak.Size = new System.Drawing.Size(95, 25);
             this.txtPajak.TabIndex = 14;
-            this.txtPajak.Text = "0,00";
+            this.txtPajak.Text = "0";
             this.txtPajak.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPajak.TextChanged += new System.EventHandler(this.txtPajak_TextChanged);
             // 
@@ -331,6 +319,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.txtQty);
             this.panel3.Controls.Add(this.cmbPaket);
             this.panel3.Controls.Add(this.txtTotal);
             this.panel3.Controls.Add(this.label13);
@@ -344,7 +333,6 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.txtHarga);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.txtQty);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtJenis);
             this.panel3.Controls.Add(this.label7);
@@ -354,6 +342,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(949, 109);
             this.panel3.TabIndex = 9;
+            // 
+            // txtQty
+            // 
+            this.txtQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtQty.Location = new System.Drawing.Point(332, 32);
+            this.txtQty.Multiline = true;
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(95, 25);
+            this.txtQty.TabIndex = 10;
+            this.txtQty.Text = "1";
+            this.txtQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cmbPaket
             // 
@@ -376,7 +375,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(95, 25);
             this.txtTotal.TabIndex = 15;
-            this.txtTotal.Text = "0,00";
+            this.txtTotal.Text = "0";
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
@@ -644,7 +643,7 @@
             this.txtGrandTotal.ReadOnly = true;
             this.txtGrandTotal.Size = new System.Drawing.Size(279, 25);
             this.txtGrandTotal.TabIndex = 16;
-            this.txtGrandTotal.Text = "0,00";
+            this.txtGrandTotal.Text = "0";
             this.txtGrandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtGrandTotal.TextChanged += new System.EventHandler(this.txtGrandTotal_TextChanged);
             // 
@@ -868,7 +867,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtJenis;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtHarga;
         private System.Windows.Forms.Label label10;
@@ -924,5 +922,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox cmbKurir;
         private FontAwesome.Sharp.IconButton btn_refresh;
+        private System.Windows.Forms.TextBox txtQty;
     }
 }

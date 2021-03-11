@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Luthor.lib;
+using ClosedXML.Excel;
 
 namespace Laundry
 {
@@ -34,6 +35,7 @@ namespace Laundry
             dataGridViewPengeluaran.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             Tampilkan();
+            
         }
 
         private void Tampilkan()
@@ -86,16 +88,63 @@ namespace Laundry
         {
             if (e.ColumnIndex == dataGridViewPengeluaran.Columns["edit"].Index)
             {
-                var row = dataGridViewPengeluaran.Rows[e.RowIndex];
+               /* var row = dataGridViewPengeluaran.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
+                string id_outlet = row.Cells["id_outlet"].Value.ToString();
                 string outlet = row.Cells["nama_outlet"].Value.ToString();
                 string nama = row.Cells["nama_barang"].Value.ToString();
-                string tgl = row.Cells["tgl"].Value.ToString();
+                DateTime tgl = (DateTime)row.Cells["tgl"].Value;
                 string total = row.Cells["total"].Value.ToString();
                 string keterangan = row.Cells["keterangan"].Value.ToString();
-                new EditDataPengeluaran(btn_refresh, id, outlet, nama, tgl, total, keterangan).ShowDialog();
+                new EditDataPengeluaran(btn_refresh, id, id_outlet, outlet, nama, tgl, total, keterangan).ShowDialog();*/
+
+                var row = dataGridViewPengeluaran.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                string id_outlet = row.Cells["id_outlet"].Value.ToString();
+                string outlet = row.Cells["nama_outlet"].Value.ToString();
+                string nama = row.Cells["nama_barang"].Value.ToString();
+                DateTime tgl = (DateTime)row.Cells["tgl"].Value;
+                string total = row.Cells["total"].Value.ToString();
+                string keterangan = row.Cells["keterangan"].Value.ToString();
+                new EditDataPengeluaran(btn_refresh, id,id_outlet, outlet, nama, tgl, total, keterangan).ShowDialog();
 
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            //EXPORT TO EXCEL
+            saveFileDialog.InitialDirectory = "C";
+            saveFileDialog.Title = "SIMPAN FILE EXCEL";
+            saveFileDialog.FileName = "";
+            saveFileDialog.Filter = "Excel Files (Excel)|*.xlsx";
+
+            if(saveFileDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                //Change Properties
+                Cursor.Current = Cursors.WaitCursor;
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Application.Workbooks.Add(Type.Missing);
+
+                excelApp.Columns.ColumnWidth = 28;
+                for(int i = 1; i < dataGridViewPengeluaran.Columns.Count +1; i++)
+                {
+                    excelApp.Cells[1, i] = dataGridViewPengeluaran.Columns[i - 1].HeaderText;
+                }
+                for (int i = 1; i<dataGridViewPengeluaran.Rows.Count; i++)
+                {
+                    for  (int j = 0; j < dataGridViewPengeluaran.Columns.Count; j++)
+                    {
+                        excelApp.Cells[i + 2, j + 1] = dataGridViewPengeluaran.Rows[1].Cells[j].Value.ToString();
+                    }
+                }
+                excelApp.ActiveWorkbook.SaveCopyAs(saveFileDialog.FileName.ToString());
+                excelApp.ActiveWorkbook.Saved = false;
+                excelApp.Quit();
+
+                MessageBox.Show("Export berhasil");
+            }
+            Cursor.Current = Cursors.Default;
         }
     }
 }

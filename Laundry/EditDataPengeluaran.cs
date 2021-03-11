@@ -16,29 +16,20 @@ namespace Laundry
     {
         Button btrf;
         string getIdPengeluaran;
+        string IdOutlet;
         string nama_outlet;
-
-        public EditDataPengeluaran(Button btrefresh, string id, string outlet, string nama, string tgl, string total, string keterangan)
+        public EditDataPengeluaran(Button btrefresh, string id, string id_outlet, string outlet, string nama, DateTime tgl, string total, string keterangan)
         {
             InitializeComponent();
+            btrf = btrefresh;
             getIdPengeluaran = id;
+            IdOutlet = id_outlet;
             nama_outlet = outlet;
             txtNamaBarang.Text = nama;
-            dateTimePicker.Value = DateTime.Parse("yyyy/MM/dd");
+            dateTimePicker.Value = tgl;
             txtNominal.Text = total;
             txtKeterangan.Text = keterangan;
         }
-
-        /*public EditDataPengeluaran(IconButton btn_refresh, string id, string outlet, string nama, string tgl, string total, string keterangan)
-        {
-            Btn_refresh = btn_refresh;
-            Id = id;
-            Outlet = outlet;
-            Nama = nama;
-            Tgl = tgl;
-            Total = total;
-            Keterangan = keterangan;
-        }*/
 
         private void EditDataPengeluaran_Load(object sender, EventArgs e)
         {
@@ -64,11 +55,11 @@ namespace Laundry
                 if (cmbOutlet.SelectedIndex == 0) ;
                 var outlet = cmbOutlet.SelectedValue;
                 var nama = txtNamaBarang.Text;
-                var tgl = dateTimePicker.Value.ToString("yyyy-MMMM-dd");
+                var tgl = dateTimePicker.Value.ToString("yyyy-MM-dd");
                 var nominal = txtNominal.Text;
                 var keterangan = txtKeterangan.Text;
 
-                if (Db.Insert($"tb_pengeluaran", $"id = {getIdPengeluaran}, nama_outlet = '{outlet}', nama_barang = '{nama}', tgl = '{tgl}', total = '{nominal}', keterangan = '{keterangan}'"))
+                if (Db.Update($"tb_pengeluaran", $"id = '{getIdPengeluaran}', id_outlet = '{outlet}', nama_barang = '{nama}', tgl = '{tgl}', total = '{nominal}', keterangan = '{keterangan}'", $"id = {getIdPengeluaran}"))
                 {
                     MessageBox.Show("Data pengeluaran berhasil diubah");
                     btrf.PerformClick();

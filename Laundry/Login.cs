@@ -31,8 +31,8 @@ namespace Laundry
         {
             if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0 && isUsernameValid())
             {
-                 //Login masih bermasalah
-                if (Auth.Login(txtUsername.Text, Sha256.Encrypt(txtPassword.Text), $"SELECT * FROM tb_user JOIN tb_role ON tb_user.id_role = tb_role.id"))
+             
+               if(Auth.Login($"SELECT * FROM tb_user JOIN tb_role ON tb_user.id_role = tb_role.id WHERE username = {txtUsername.Text} AND password = {Sha256.Encrypt(txtPassword.Text)} AND nama_outlet = {"nama_outlet"}"))
                 {
                     Form Dashboar = new Dashboard();
                     MessageBox.Show("Login Berhasil");
@@ -43,9 +43,6 @@ namespace Laundry
                 else
                 {
                     MessageBox.Show("Username atau Password salah!", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Form Dashboar = new Dashboard();
-                    this.Hide();
-                    Dashboar.Show();
                 }
             }
             if (txtUsername.Text.Length == 0 && txtPassword.Text.Length == 0)

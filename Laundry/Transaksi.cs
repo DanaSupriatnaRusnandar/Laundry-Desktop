@@ -55,7 +55,7 @@ namespace Laundry
 
         private void dataPaket()
         {
-            DataTable dt = Db.Read($"SELECT * FROM tb_paket JOIN tb_jenis on tb_paket.id_jenis = tb_jenis.id");
+            DataTable dt = Db.Read($"SELECT * FROM tb_paket JOIN tb_jenis on tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id = {cmbPaket.SelectedValue}");
             foreach (DataRow dr in dt.Rows)
             {
                 txtJenis.Text = dr["jenis"].ToString();
@@ -65,34 +65,22 @@ namespace Laundry
 
         private void hitungTotal()
         {
-            /*int harga = (Int32)txtHarga.Text;
-            int qty = (Int32)txtQty.Text;
-            int diskon = (Int32)txtDiskon.Text;
-            int biayaTambahan = (Int32)txtBiayaTambahan.Text;
-            int pajak = (Int32)txtPajak.Text;
-            int total = (qty + biayaTambahan + pajak) - biayaTambahan;
-            txtTotal.Text = total.ToString();*/
+            /*  int harga = Convert.ToInt32(txtHarga.Text);
+              int qty = Convert.ToInt32(txtQty.Text);
+              int diskon = Convert.ToInt32(txtDiskon.Text);
+              int biayaTambahan = Convert.ToInt32(txtBiayaTambahan.Text);
+              int pajak = Convert.ToInt32(txtPajak.Text);
+              int total = (qty + biayaTambahan + pajak) - biayaTambahan;
+              txtTotal.Text = total.ToString();*/
 
+            int.TryParse(txtHarga.Text, out int harga);
+            int.TryParse(txtQty.Text, out int qty);
+            int.TryParse(txtDiskon.Text, out int diskon);
+            int.TryParse(txtBiayaTambahan.Text, out int biayaTambahan);
+            int.TryParse(txtPajak.Text, out int pajak);
+            int total = (harga * qty) + (biayaTambahan + pajak) - diskon;
+            txtTotal.Text = total.ToString();
 
-            /*int harga = Int32.Parse(txtHarga.Text);
-            int qty = Int32.Parse(txtQty.Text);
-            int diskon = Int32.Parse(txtDiskon.Text);
-            int biayaTambahan = Int32.Parse(txtBiayaTambahan.Text);
-            int pajak = Int32.Parse(txtPajak.Text);
-            int total = (harga + qty + biayaTambahan + pajak) - biayaTambahan;
-            txtTotal.Text = total.ToString();*/
-
-           /* int harga, qty, diskon, biayaTambahan, pajak, total;
-
-            harga = int.Parse(txtHarga.Text);
-            qty = int.Parse(txtQty.Text);
-            diskon = int.Parse(txtDiskon.Text);
-            biayaTambahan = int.Parse(txtBiayaTambahan.Text);
-            pajak = int.Parse(txtPajak.Text);
-            total = int.Parse(txtTotal.Text);
-
-            total = (harga + qty + biayaTambahan + pajak) - biayaTambahan;
-            txtTotal.Text = total.ToString();*/
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -102,12 +90,12 @@ namespace Laundry
 
         private void cmbPaket_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            dataPaket();
         }
 
         private void cmbPaket_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            dataPaket();
+         //   dataPaket();
         }
 
         private void txtQty_TextChanged(object sender, EventArgs e)

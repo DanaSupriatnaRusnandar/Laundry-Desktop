@@ -85,7 +85,7 @@
             this.btnMinimize.Location = new System.Drawing.Point(10, 3);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(26, 22);
-            this.btnMinimize.TabIndex = 20;
+            this.btnMinimize.TabIndex = 14;
             this.btnMinimize.UseVisualStyleBackColor = true;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click_1);
             // 
@@ -100,7 +100,7 @@
             this.btnMaximize.Location = new System.Drawing.Point(44, 7);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(26, 22);
-            this.btnMaximize.TabIndex = 21;
+            this.btnMaximize.TabIndex = 15;
             this.btnMaximize.UseVisualStyleBackColor = true;
             this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click_1);
             // 
@@ -115,7 +115,7 @@
             this.btnClose.Location = new System.Drawing.Point(78, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(26, 22);
-            this.btnClose.TabIndex = 22;
+            this.btnClose.TabIndex = 16;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
             // 
@@ -167,7 +167,7 @@
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnKeluar.Size = new System.Drawing.Size(198, 50);
-            this.btnKeluar.TabIndex = 11;
+            this.btnKeluar.TabIndex = 13;
             this.btnKeluar.Text = "Keluar";
             this.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,7 +191,7 @@
             this.btnPengaturan.Name = "btnPengaturan";
             this.btnPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPengaturan.Size = new System.Drawing.Size(198, 50);
-            this.btnPengaturan.TabIndex = 10;
+            this.btnPengaturan.TabIndex = 12;
             this.btnPengaturan.Text = "Pengaturan";
             this.btnPengaturan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengaturan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,7 +215,7 @@
             this.btnLaporan.Name = "btnLaporan";
             this.btnLaporan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnLaporan.Size = new System.Drawing.Size(198, 50);
-            this.btnLaporan.TabIndex = 9;
+            this.btnLaporan.TabIndex = 11;
             this.btnLaporan.Text = "Laporan";
             this.btnLaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLaporan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -239,7 +239,7 @@
             this.btnPengeluaran.Name = "btnPengeluaran";
             this.btnPengeluaran.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPengeluaran.Size = new System.Drawing.Size(198, 50);
-            this.btnPengeluaran.TabIndex = 8;
+            this.btnPengeluaran.TabIndex = 10;
             this.btnPengeluaran.Text = "Pengeluaran";
             this.btnPengeluaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengeluaran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -263,7 +263,7 @@
             this.btnTransaksi.Name = "btnTransaksi";
             this.btnTransaksi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnTransaksi.Size = new System.Drawing.Size(198, 50);
-            this.btnTransaksi.TabIndex = 7;
+            this.btnTransaksi.TabIndex = 9;
             this.btnTransaksi.Text = "Transaksi";
             this.btnTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTransaksi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -287,7 +287,7 @@
             this.btnPaketCucian.Name = "btnPaketCucian";
             this.btnPaketCucian.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPaketCucian.Size = new System.Drawing.Size(198, 50);
-            this.btnPaketCucian.TabIndex = 6;
+            this.btnPaketCucian.TabIndex = 8;
             this.btnPaketCucian.Text = "Paket Laundry";
             this.btnPaketCucian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPaketCucian.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -311,7 +311,7 @@
             this.btnPelanggan.Name = "btnPelanggan";
             this.btnPelanggan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnPelanggan.Size = new System.Drawing.Size(198, 50);
-            this.btnPelanggan.TabIndex = 5;
+            this.btnPelanggan.TabIndex = 7;
             this.btnPelanggan.Text = "Pelanggan";
             this.btnPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPelanggan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -346,8 +346,8 @@
             this.btnJenis.Location = new System.Drawing.Point(0, 150);
             this.btnJenis.Name = "btnJenis";
             this.btnJenis.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnJenis.Size = new System.Drawing.Size(198, 47);
-            this.btnJenis.TabIndex = 3;
+            this.btnJenis.Size = new System.Drawing.Size(198, 50);
+            this.btnJenis.TabIndex = 6;
             this.btnJenis.Text = "Jenis";
             this.btnJenis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnJenis.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -371,7 +371,7 @@
             this.btnKurir.Name = "btnKurir";
             this.btnKurir.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
             this.btnKurir.Size = new System.Drawing.Size(198, 50);
-            this.btnKurir.TabIndex = 4;
+            this.btnKurir.TabIndex = 5;
             this.btnKurir.Text = "Data Kurir";
             this.btnKurir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKurir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -395,7 +395,7 @@
             this.BtnDataAdmin.Name = "BtnDataAdmin";
             this.BtnDataAdmin.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
             this.BtnDataAdmin.Size = new System.Drawing.Size(198, 50);
-            this.BtnDataAdmin.TabIndex = 2;
+            this.BtnDataAdmin.TabIndex = 4;
             this.BtnDataAdmin.Text = "Data User";
             this.BtnDataAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDataAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -419,7 +419,7 @@
             this.btnOutlet.Name = "btnOutlet";
             this.btnOutlet.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
             this.btnOutlet.Size = new System.Drawing.Size(198, 50);
-            this.btnOutlet.TabIndex = 2;
+            this.btnOutlet.TabIndex = 3;
             this.btnOutlet.Text = "Outlet";
             this.btnOutlet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOutlet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -443,7 +443,7 @@
             this.btnAkun.Name = "btnAkun";
             this.btnAkun.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.btnAkun.Size = new System.Drawing.Size(198, 50);
-            this.btnAkun.TabIndex = 1;
+            this.btnAkun.TabIndex = 2;
             this.btnAkun.Text = "Data Master";
             this.btnAkun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAkun.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -459,7 +459,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(198, 89);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 1;
             // 
             // label3
             // 
@@ -501,7 +501,7 @@
             this.lblHariTanggal.AutoSize = true;
             this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblHariTanggal.Location = new System.Drawing.Point(3, 41);
+            this.lblHariTanggal.Location = new System.Drawing.Point(6, 52);
             this.lblHariTanggal.Name = "lblHariTanggal";
             this.lblHariTanggal.Size = new System.Drawing.Size(254, 35);
             this.lblHariTanggal.TabIndex = 1;
@@ -515,7 +515,7 @@
             this.lblJam.AutoSize = true;
             this.lblJam.Font = new System.Drawing.Font("Shrikhand", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblJam.Location = new System.Drawing.Point(3, 3);
+            this.lblJam.Location = new System.Drawing.Point(6, 14);
             this.lblJam.Name = "lblJam";
             this.lblJam.Size = new System.Drawing.Size(73, 35);
             this.lblJam.TabIndex = 0;

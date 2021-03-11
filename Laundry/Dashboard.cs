@@ -16,6 +16,7 @@ namespace Laundry
 {
     public partial class Dashboard : Form
     {
+        string getRole;
         //FIeld
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -116,16 +117,12 @@ namespace Laundry
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();
             timer1.Enabled = true;
 
-          /*  if (Session.getUserLogged().Rows[0].Field<string>("nama_role") == "kasir")
+            if (Session.getUserLogged().Rows[0].Field<string>("nama_role") == "Kasir")
             {
-                btnAkun.Visible = true;
-
+                btnAkun.Visible = false;
+                panelData.Visible = false;
+                btnPengeluaran.Visible = false;
             }
-            else
-            {
-                MessageBox.Show("ERROR");
-            }*/
-            
         }
 
         //Button Close, Maximiza, Minimize
