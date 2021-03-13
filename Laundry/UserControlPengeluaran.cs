@@ -35,7 +35,6 @@ namespace Laundry
             dataGridViewPengeluaran.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             Tampilkan();
-            
         }
 
         private void Tampilkan()
@@ -68,7 +67,7 @@ namespace Laundry
             {
                 Db.Delete("tb_pengeluaran", $"id = {getIdPengeluaran}");
                 Tampilkan();
-                MessageBox.Show("Data pengeluaran berhasil dihhapus berhasil dihapus!");
+                MessageBox.Show("Data pengeluaran berhasil dihapus!");
 
             }
         }
@@ -88,16 +87,6 @@ namespace Laundry
         {
             if (e.ColumnIndex == dataGridViewPengeluaran.Columns["edit"].Index)
             {
-               /* var row = dataGridViewPengeluaran.Rows[e.RowIndex];
-                string id = row.Cells["id"].Value.ToString();
-                string id_outlet = row.Cells["id_outlet"].Value.ToString();
-                string outlet = row.Cells["nama_outlet"].Value.ToString();
-                string nama = row.Cells["nama_barang"].Value.ToString();
-                DateTime tgl = (DateTime)row.Cells["tgl"].Value;
-                string total = row.Cells["total"].Value.ToString();
-                string keterangan = row.Cells["keterangan"].Value.ToString();
-                new EditDataPengeluaran(btn_refresh, id, id_outlet, outlet, nama, tgl, total, keterangan).ShowDialog();*/
-
                 var row = dataGridViewPengeluaran.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
                 string id_outlet = row.Cells["id_outlet"].Value.ToString();
@@ -107,7 +96,6 @@ namespace Laundry
                 string total = row.Cells["total"].Value.ToString();
                 string keterangan = row.Cells["keterangan"].Value.ToString();
                 new EditDataPengeluaran(btn_refresh, id,id_outlet, outlet, nama, tgl, total, keterangan).ShowDialog();
-
             }
         }
 

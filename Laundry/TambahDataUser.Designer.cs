@@ -124,10 +124,6 @@
             // 
             this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Items.AddRange(new object[] {
-            "Administrator",
-            "Kasir",
-            "Owner"});
             this.cmbRole.Location = new System.Drawing.Point(116, 199);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(280, 21);

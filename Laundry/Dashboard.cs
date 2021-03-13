@@ -113,16 +113,42 @@ namespace Laundry
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            //Jam & Tanggal
             lblJam.Text = DateTime.Now.ToLongTimeString();
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();
             timer1.Enabled = true;
 
-            if (Session.getUserLogged().Rows[0].Field<string>("nama_role") == "Kasir")
+            //Pembagian Role
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
+            { 
+                
+            }
+
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "kasir")
             {
                 btnAkun.Visible = false;
-                panelData.Visible = false;
+                btnKurir.Visible = false;
+                BtnDataAdmin.Visible = false;
+                btnOutlet.Visible = false;
+                btnJenis.Visible = false;
                 btnPengeluaran.Visible = false;
+                btnPaketCucian.Visible = false;
             }
+
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "owner")
+            {
+                btnAkun.Visible = false;
+                btnKurir.Visible = false;
+                BtnDataAdmin.Visible = false;
+                btnOutlet.Visible = false;
+                btnJenis.Visible = false;
+                btnPengeluaran.Visible = false;
+                btnPelanggan.Visible = false;
+                btnTransaksi.Visible = false;
+                btnPengeluaran.Visible = false;
+                btnPaketCucian.Visible = false;
+            }
+                MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role" ));
         }
 
         //Button Close, Maximiza, Minimize
@@ -217,8 +243,9 @@ namespace Laundry
         private void btnKeluar_Click(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color9);
-            if (MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if ( MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Auth.Logout();
                 this.Hide();
                 Login lg = new Login();
                 lg.Show();

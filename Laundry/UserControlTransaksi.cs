@@ -13,6 +13,7 @@ namespace Laundry
 {
     public partial class UserControlTransaksi : UserControl
     {
+        string getIdTransaksi;
         public UserControlTransaksi()
         {
             InitializeComponent();
@@ -47,7 +48,7 @@ namespace Laundry
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            new Transaksi(btn_refresh).ShowDialog();
+            new Transaksi(btn_refresh, getIdTransaksi ).ShowDialog();
         }
     }
 }

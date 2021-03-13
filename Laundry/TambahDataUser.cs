@@ -32,17 +32,21 @@ namespace Laundry
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
 
-            //Biding user
-            cmbRole.DataSource = Db.Read("tb_role", "id, nama_role");
-            cmbRole.DisplayMember = "nama_role";
-            cmbRole.ValueMember = "id";
-            cmbRole.SelectedIndex = -1;
+            Role();
         }
 
         private bool isfilled()
         {
             if ( txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbOutlet.SelectedIndex >= 0 &&cmbRole.SelectedIndex >= 0) return true;
             return false;
+        }
+
+        void Role()
+        {
+            cmbRole.Items.Add("admin"); 
+            cmbRole.Items.Add("kasir"); 
+            cmbRole.Items.Add("owner");
+
         }
 
         private bool isUsernameValid()
@@ -61,7 +65,7 @@ namespace Laundry
                 if (cmbOutlet.SelectedIndex == 0) ;
                 var outlet = cmbOutlet.SelectedValue;
                 if (cmbRole.SelectedIndex == 0) ;
-                var role = cmbRole.SelectedValue;
+                var role = cmbRole.SelectedItem;
                 if (Db.Insert("tb_user", $"null, '{nama}', '{username}', '{password}', '{outlet}', '{role}'"))
                 {
                     MessageBox.Show("Data user berhasil ditambah");

@@ -41,8 +41,8 @@ namespace Laundry
             cmbOutlet.SelectedIndex = -1;
 
             //Biding user
-            cmbRole.DataSource = Db.Read("tb_role", "id, nama_role");
-            cmbRole.DisplayMember = "nama_role";
+            cmbRole.DataSource = Db.Read("tb_user", "id, role");
+            cmbRole.DisplayMember = "role";
             cmbRole.ValueMember = "id";
             cmbRole.SelectedIndex = -1;
 
@@ -77,7 +77,7 @@ namespace Laundry
                 var outlet = cmbOutlet.SelectedValue;
                 if (cmbRole.SelectedIndex == 0) ;
                 var role = cmbRole.SelectedValue;
-                if (Db.Update($"tb_user", $"id = '{getIdUser}', nama ='{nama}', username = '{username}', password = '{password}', id_outlet = '{outlet}' , id_role = '{role}'", $"id = {getIdUser}"))
+                if (Db.Update($"tb_user", $"id = '{getIdUser}', nama ='{nama}', username = '{username}', password = '{password}', id_outlet = '{outlet}' , role = '{role}'", $"id = {getIdUser}"))
                 {
                     MessageBox.Show("Data user berhasil diubah");
                     btrf.PerformClick();

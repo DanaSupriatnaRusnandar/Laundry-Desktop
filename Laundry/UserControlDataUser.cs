@@ -41,7 +41,8 @@ namespace Laundry
         //Function
         private void Tampilkan()
         {
-            DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id");
+            //SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id
+            DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id");
             dataGridViewAdmin.AutoGenerateColumns = false;
             dataGridViewAdmin.DataSource = data;
         }
@@ -49,7 +50,7 @@ namespace Laundry
         private void CariData(string keyword)
         {
             dataGridViewAdmin.AutoGenerateColumns = false;
-            dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id JOIN tb_role ON tb_user.id_role = tb_role.id WHERE tb_user.nama LIKE '%{keyword}%' OR tb_user.username LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_role.nama_role LIKE '%{keyword}%'");
+            dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.nama LIKE '%{keyword}%' OR tb_user.username LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_user.role LIKE '%{keyword}%'");
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace Laundry
                 string password = row.Cells["password"].Value.ToString();
                 string id_outlet = row.Cells["id_outlet"].Value.ToString();
                 string outlet = row.Cells["nama_outlet"].Value.ToString();
-                string role = row.Cells["nama_role"].Value.ToString();
+                string role = row.Cells["role"].Value.ToString();
                 new EditDataUser(btn_refresh ,id, nama, username, password, id_outlet, outlet, role).ShowDialog();
             }
         }
