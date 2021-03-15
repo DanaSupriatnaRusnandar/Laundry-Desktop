@@ -68,3 +68,4 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\ClosedXML.pdb
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\ClosedXML.xml
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\ExcelNumberFormat.xml
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDashboard.resources

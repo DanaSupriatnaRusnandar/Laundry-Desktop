@@ -92,7 +92,8 @@ namespace Laundry
             NominalDiskon = (int)(total * diskon);
             txtNominalDiskon.Text = NominalDiskon.ToString();
 
-             //Pajak
+
+            //Pajak
             pajak = 0.01;
             NominalPajak = (int)(total * pajak);
             txtNominalPajak.Text = NominalPajak.ToString();
@@ -182,6 +183,11 @@ namespace Laundry
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
             hitungTotalPembayaran();
+        }
+
+        private void txtDiskon_TextChanged(object sender, EventArgs e)
+        {
+            txtDiskon.Text = txtNominalDiskon.Text;
         }
     }
 }

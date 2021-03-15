@@ -16,7 +16,7 @@ namespace Laundry
 {
     public partial class Dashboard : Form
     {
-        string getRole;
+       
         //FIeld
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -34,7 +34,7 @@ namespace Laundry
         private struct RGBColor
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
-          // public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
@@ -128,10 +128,9 @@ namespace Laundry
             {
                 btnAkun.Visible = false;
                 btnKurir.Visible = false;
-                BtnDataAdmin.Visible = false;
+                BtnDataUser.Visible = false;
                 btnOutlet.Visible = false;
                 btnJenis.Visible = false;
-                btnPengeluaran.Visible = false;
                 btnPaketCucian.Visible = false;
             }
 
@@ -139,14 +138,13 @@ namespace Laundry
             {
                 btnAkun.Visible = false;
                 btnKurir.Visible = false;
-                BtnDataAdmin.Visible = false;
+                BtnDataUser.Visible = false;
                 btnOutlet.Visible = false;
                 btnJenis.Visible = false;
-                btnPengeluaran.Visible = false;
-                btnPelanggan.Visible = false;
+                btnPaketCucian.Visible = false;
                 btnTransaksi.Visible = false;
                 btnPengeluaran.Visible = false;
-                btnPaketCucian.Visible = false;
+                btnPelanggan.Visible = false;
             }
                 MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role" ));
         }
@@ -176,74 +174,81 @@ namespace Laundry
         }
 
         //Button Menu
-        private void btnAkun_Click_1(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            openPage(new UserControlDashboard());
+            activateButton(sender, RGBColor.color2);
+        }
+
+        private void btnAkun_Click(object sender, EventArgs e)
         {
             showSubMenu(panelData);
             activateButton(sender, RGBColor.color5);
         }
 
-        private void BtnDataAdmin_Click_1(object sender, EventArgs e)
+        private void BtnDataUser_Click(object sender, EventArgs e)
         {
             openPage(new UserControlDataUser());
             hideSubMenu();
         }
 
-        private void btnKurir_Click(object sender, EventArgs e)
-        {
-            openPage(new UserControlKurir());
-            hideSubMenu();
-        }
-
-        private void btnJenis_Click(object sender, EventArgs e)
+        private void btnJenis_Click_1(object sender, EventArgs e)
         {
             openPage(new UserControlJenisPaket());
             hideSubMenu();
         }
 
-        private void btnOutlet_Click(object sender, EventArgs e)
+        private void btnOutlet_Click_1(object sender, EventArgs e)
         {
             openPage(new UserControlOutlet());
             hideSubMenu();
         }
 
-        private void btnPelanggan_Click_1(object sender, EventArgs e)
+        private void btnKurir_Click_1(object sender, EventArgs e)
+        {
+            openPage(new UserControlKurir());
+            hideSubMenu();
+        }
+
+        private void btnPaketCucian_Click_1(object sender, EventArgs e)
+        {
+            openPage(new UserControlPaketLaundry());
+            activateButton(sender, RGBColor.color3);
+            hideSubMenu();
+        }
+
+        private void btnPelanggan_Click(object sender, EventArgs e)
         {
             openPage(new UserControlPelanggan());
             activateButton(sender, RGBColor.color4);
         }
 
-        private void btnPaketCucian_Click(object sender, EventArgs e)
-        {
-            openPage(new UserControlPaketLaundry());
-            activateButton(sender, RGBColor.color3);
-        }
-
-        private void btnTransaksi_Click_1(object sender, EventArgs e)
+        private void btnTransaksi_Click(object sender, EventArgs e)
         {
             openPage(new UserControlTransaksi());
             activateButton(sender, RGBColor.color6);
         }
 
-        private void btnPengeluaran_Click_1(object sender, EventArgs e)
+        private void btnPengeluaran_Click(object sender, EventArgs e)
         {
             openPage(new UserControlPengeluaran());
             activateButton(sender, RGBColor.color7);
         }
 
-        private void btnLaporan_Click_1(object sender, EventArgs e)
+        private void btnLaporan_Click(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color8);
         }
 
-        private void btnPengaturan_Click_1(object sender, EventArgs e)
+        private void btnPengaturan_Click(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color1);
         }
 
-        private void btnKeluar_Click(object sender, EventArgs e)
+        private void btnKeluar_Click_1(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color9);
-            if ( MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Auth.Logout();
                 this.Hide();
@@ -257,16 +262,6 @@ namespace Laundry
         {
             lblJam.Text = DateTime.Now.ToLongTimeString();
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();
-        }
-
-        //Tidak terpakai
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

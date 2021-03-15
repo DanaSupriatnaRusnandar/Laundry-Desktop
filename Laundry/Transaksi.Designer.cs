@@ -62,7 +62,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.txtPajak = new System.Windows.Forms.TextBox();
             this.txtNominalPajak = new System.Windows.Forms.TextBox();
+            this.txtDiskon = new System.Windows.Forms.TextBox();
             this.txtNominalDiskon = new System.Windows.Forms.TextBox();
             this.txtTotalPembayaran = new System.Windows.Forms.TextBox();
             this.btnSimpan = new System.Windows.Forms.Button();
@@ -80,8 +82,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.cmbKurir = new System.Windows.Forms.ComboBox();
             this.cmbDibayar = new System.Windows.Forms.ComboBox();
-            this.txtPajak = new System.Windows.Forms.TextBox();
-            this.txtDiskon = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -504,6 +504,17 @@
             this.label16.TabIndex = 43;
             this.label16.Text = "%";
             // 
+            // txtPajak
+            // 
+            this.txtPajak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtPajak.Location = new System.Drawing.Point(351, 48);
+            this.txtPajak.Multiline = true;
+            this.txtPajak.Name = "txtPajak";
+            this.txtPajak.Size = new System.Drawing.Size(103, 25);
+            this.txtPajak.TabIndex = 19;
+            this.txtPajak.Text = "0";
+            this.txtPajak.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // txtNominalPajak
             // 
             this.txtNominalPajak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -514,6 +525,18 @@
             this.txtNominalPajak.TabIndex = 20;
             this.txtNominalPajak.Text = "0";
             this.txtNominalPajak.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtDiskon
+            // 
+            this.txtDiskon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.txtDiskon.Location = new System.Drawing.Point(352, 17);
+            this.txtDiskon.Multiline = true;
+            this.txtDiskon.Name = "txtDiskon";
+            this.txtDiskon.Size = new System.Drawing.Size(103, 25);
+            this.txtDiskon.TabIndex = 17;
+            this.txtDiskon.Text = "0";
+            this.txtDiskon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDiskon.TextChanged += new System.EventHandler(this.txtDiskon_TextChanged);
             // 
             // txtNominalDiskon
             // 
@@ -711,28 +734,6 @@
             this.cmbDibayar.Size = new System.Drawing.Size(189, 23);
             this.cmbDibayar.TabIndex = 23;
             // 
-            // txtPajak
-            // 
-            this.txtPajak.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtPajak.Location = new System.Drawing.Point(351, 48);
-            this.txtPajak.Multiline = true;
-            this.txtPajak.Name = "txtPajak";
-            this.txtPajak.Size = new System.Drawing.Size(103, 25);
-            this.txtPajak.TabIndex = 19;
-            this.txtPajak.Text = "0";
-            this.txtPajak.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDiskon
-            // 
-            this.txtDiskon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtDiskon.Location = new System.Drawing.Point(352, 17);
-            this.txtDiskon.Multiline = true;
-            this.txtDiskon.Name = "txtDiskon";
-            this.txtDiskon.Size = new System.Drawing.Size(103, 25);
-            this.txtDiskon.TabIndex = 17;
-            this.txtDiskon.Text = "0";
-            this.txtDiskon.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // Transaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,6 +748,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Transaksi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "x";
             this.Load += new System.EventHandler(this.Transaksi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
