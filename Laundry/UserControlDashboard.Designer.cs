@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblJam = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPelanggan = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblAmbil = new System.Windows.Forms.Label();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.lblHariTanggal = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblProses = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblBaru = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblSelesai = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -139,7 +139,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Goldenrod;
-            this.panel8.Controls.Add(this.label3);
+            this.panel8.Controls.Add(this.lblPelanggan);
             this.panel8.Controls.Add(this.iconPictureBox1);
             this.panel8.Controls.Add(this.label14);
             this.panel8.Location = new System.Drawing.Point(23, 62);
@@ -147,16 +147,16 @@
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 36;
             // 
-            // label3
+            // lblPelanggan
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(161, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "No";
+            this.lblPelanggan.AutoSize = true;
+            this.lblPelanggan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPelanggan.ForeColor = System.Drawing.Color.White;
+            this.lblPelanggan.Location = new System.Drawing.Point(161, 30);
+            this.lblPelanggan.Name = "lblPelanggan";
+            this.lblPelanggan.Size = new System.Drawing.Size(18, 20);
+            this.lblPelanggan.TabIndex = 6;
+            this.lblPelanggan.Text = "0";
             // 
             // iconPictureBox1
             // 
@@ -185,7 +185,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(183)))));
-            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.lblAmbil);
             this.panel7.Controls.Add(this.iconPictureBox5);
             this.panel7.Controls.Add(this.label11);
             this.panel7.Location = new System.Drawing.Point(23, 541);
@@ -193,16 +193,16 @@
             this.panel7.Size = new System.Drawing.Size(200, 100);
             this.panel7.TabIndex = 40;
             // 
-            // label10
+            // lblAmbil
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(161, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(29, 20);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "No";
+            this.lblAmbil.AutoSize = true;
+            this.lblAmbil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmbil.ForeColor = System.Drawing.Color.White;
+            this.lblAmbil.Location = new System.Drawing.Point(161, 27);
+            this.lblAmbil.Name = "lblAmbil";
+            this.lblAmbil.Size = new System.Drawing.Size(18, 20);
+            this.lblAmbil.TabIndex = 15;
+            this.lblAmbil.Text = "0";
             // 
             // iconPictureBox5
             // 
@@ -245,7 +245,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.lblProses);
             this.panel5.Controls.Add(this.iconPictureBox3);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Location = new System.Drawing.Point(23, 299);
@@ -253,16 +253,16 @@
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 38;
             // 
-            // label6
+            // lblProses
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Sienna;
-            this.label6.Location = new System.Drawing.Point(161, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 20);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "No";
+            this.lblProses.AutoSize = true;
+            this.lblProses.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProses.ForeColor = System.Drawing.Color.Sienna;
+            this.lblProses.Location = new System.Drawing.Point(161, 27);
+            this.lblProses.Name = "lblProses";
+            this.lblProses.Size = new System.Drawing.Size(18, 20);
+            this.lblProses.TabIndex = 9;
+            this.lblProses.Text = "0";
             // 
             // iconPictureBox3
             // 
@@ -292,7 +292,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(252)))), ((int)(((byte)(184)))));
-            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.lblBaru);
             this.panel3.Controls.Add(this.iconPictureBox2);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Location = new System.Drawing.Point(23, 179);
@@ -300,16 +300,16 @@
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 37;
             // 
-            // label2
+            // lblBaru
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(183)))));
-            this.label2.Location = new System.Drawing.Point(161, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "No";
+            this.lblBaru.AutoSize = true;
+            this.lblBaru.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBaru.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(183)))));
+            this.lblBaru.Location = new System.Drawing.Point(161, 27);
+            this.lblBaru.Name = "lblBaru";
+            this.lblBaru.Size = new System.Drawing.Size(18, 20);
+            this.lblBaru.TabIndex = 5;
+            this.lblBaru.Text = "0";
             // 
             // iconPictureBox2
             // 
@@ -339,7 +339,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel6.Controls.Add(this.label8);
+            this.panel6.Controls.Add(this.lblSelesai);
             this.panel6.Controls.Add(this.iconPictureBox4);
             this.panel6.Controls.Add(this.label9);
             this.panel6.Location = new System.Drawing.Point(23, 419);
@@ -347,16 +347,16 @@
             this.panel6.Size = new System.Drawing.Size(200, 100);
             this.panel6.TabIndex = 39;
             // 
-            // label8
+            // lblSelesai
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(191)))), ((int)(((byte)(20)))));
-            this.label8.Location = new System.Drawing.Point(161, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 20);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "No";
+            this.lblSelesai.AutoSize = true;
+            this.lblSelesai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelesai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(191)))), ((int)(((byte)(20)))));
+            this.lblSelesai.Location = new System.Drawing.Point(161, 27);
+            this.lblSelesai.Name = "lblSelesai";
+            this.lblSelesai.Size = new System.Drawing.Size(18, 20);
+            this.lblSelesai.TabIndex = 12;
+            this.lblSelesai.Text = "0";
             // 
             // iconPictureBox4
             // 
@@ -400,22 +400,22 @@
             this.dataGridViewTransaksi.AllowUserToAddRows = false;
             this.dataGridViewTransaksi.AllowUserToDeleteRows = false;
             this.dataGridViewTransaksi.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTransaksi.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTransaksi.ColumnHeadersHeight = 38;
             this.dataGridViewTransaksi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -432,12 +432,12 @@
             this.dataGridViewTransaksi.Name = "dataGridViewTransaksi";
             this.dataGridViewTransaksi.ReadOnly = true;
             this.dataGridViewTransaksi.RowHeadersWidth = 25;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTransaksi.Size = new System.Drawing.Size(492, 603);
             this.dataGridViewTransaksi.TabIndex = 0;
             // 
@@ -540,24 +540,24 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblJam;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPelanggan;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblAmbil;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblHariTanggal;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblProses;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBaru;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblSelesai;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;

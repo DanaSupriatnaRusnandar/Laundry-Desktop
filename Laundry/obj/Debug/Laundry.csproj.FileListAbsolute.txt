@@ -56,7 +56,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyRefere
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataPelanggan.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPelanggan.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataOutlet.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.Transaksi.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahDataPengeluaran.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlPengeluaran.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditDataPengeluaran.resources
@@ -69,3 +68,5 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\ClosedXML.xml
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\DocumentFormat.OpenXml.xml
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\ExcelNumberFormat.xml
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDashboard.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditTransaksi.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahTransaksi.resources

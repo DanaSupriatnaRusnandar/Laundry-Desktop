@@ -173,6 +173,12 @@
     <Compile Include="EditPaketLaundry.Designer.cs">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTransaksi.Designer.cs">
+      <DependentUpon>EditTransaksi.cs</DependentUpon>
+    </Compile>
     <Compile Include="TambahDataPengeluaran.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,11 +215,11 @@
     <Compile Include="TambahDataOutlet.Designer.cs">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transaksi.cs">
+    <Compile Include="TambahTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transaksi.Designer.cs">
-      <DependentUpon>Transaksi.cs</DependentUpon>
+    <Compile Include="TambahTransaksi.Designer.cs">
+      <DependentUpon>TambahTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlDashboard.cs">
       <SubType>UserControl</SubType>
@@ -303,6 +309,9 @@
     <EmbeddedResource Include="EditPaketLaundry.resx">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditTransaksi.resx">
+      <DependentUpon>EditTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TambahDataPengeluaran.resx">
       <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,8 +330,8 @@
     <EmbeddedResource Include="TambahDataOutlet.resx">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transaksi.resx">
-      <DependentUpon>Transaksi.cs</DependentUpon>
+    <EmbeddedResource Include="TambahTransaksi.resx">
+      <DependentUpon>TambahTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlDashboard.resx">
       <DependentUpon>UserControlDashboard.cs</DependentUpon>
@@ -376,6 +385,8 @@
   <ItemGroup>
     <None Include="Resources\Happy housewife cheerful mother vector image on VectorStock1.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Dana01.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
