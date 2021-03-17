@@ -52,6 +52,7 @@ namespace Laundry
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+            txtCari.Clear();
         }
 
         private void btnCari_Click(object sender, EventArgs e)
