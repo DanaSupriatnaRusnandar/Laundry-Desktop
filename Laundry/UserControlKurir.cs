@@ -51,11 +51,6 @@ namespace Laundry
             dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.nama_kurir LIKE '%{keyword}%' OR tb_kurir.alamat LIKE '%{keyword}%' OR tb_kurir.tlp LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%'");
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            new TambahDataKurir(btn_refresh).ShowDialog();
-        }
-
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
@@ -98,6 +93,11 @@ namespace Laundry
                 string outlet = row.Cells["nama_outlet"].Value.ToString();
                 new EditDataKurir(btn_refresh, id, nama_kurir, alamat, tlp, outlet).ShowDialog();
             }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new TambahDataKurir(btn_refresh).ShowDialog();
         }
     }
 }

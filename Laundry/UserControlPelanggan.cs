@@ -36,11 +36,6 @@ namespace Laundry
             Tampilkan();
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            new RegistrasiPelanggan(btn_refresh).ShowDialog();
-        }
-
         private void Tampilkan()
         {
             DataTable data = Db.Read("tb_member", "*");
@@ -94,6 +89,11 @@ namespace Laundry
                 string tlp = row.Cells["tlp"].Value.ToString();
                 new EditDataPelanggan(btn_refresh, id, nama, alamat, jk, tlp).ShowDialog();
             }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new RegistrasiPelanggan(btn_refresh).ShowDialog();
         }
     }
 }

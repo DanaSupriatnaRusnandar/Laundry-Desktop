@@ -55,11 +55,6 @@ namespace Laundry
             Tampilkan();
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
-        }
-
         private void btnHapus_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data pengeluarana Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -99,7 +94,7 @@ namespace Laundry
             }
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void btnExport_Click_1(object sender, EventArgs e)
         {
             //EXPORT TO EXCEL
             saveFileDialog.InitialDirectory = "C";
@@ -107,7 +102,7 @@ namespace Laundry
             saveFileDialog.FileName = "";
             saveFileDialog.Filter = "Excel Files (Excel)|*.xlsx";
 
-            if(saveFileDialog.ShowDialog() != DialogResult.Cancel)
+            if (saveFileDialog.ShowDialog() != DialogResult.Cancel)
             {
                 //Change Properties
                 Cursor.Current = Cursors.WaitCursor;
@@ -115,13 +110,13 @@ namespace Laundry
                 excelApp.Application.Workbooks.Add(Type.Missing);
 
                 excelApp.Columns.ColumnWidth = 28;
-                for(int i = 1; i < dataGridViewPengeluaran.Columns.Count +1; i++)
+                for (int i = 1; i < dataGridViewPengeluaran.Columns.Count + 1; i++)
                 {
                     excelApp.Cells[1, i] = dataGridViewPengeluaran.Columns[i - 1].HeaderText;
                 }
-                for (int i = 1; i<dataGridViewPengeluaran.Rows.Count; i++)
+                for (int i = 1; i < dataGridViewPengeluaran.Rows.Count; i++)
                 {
-                    for  (int j = 0; j < dataGridViewPengeluaran.Columns.Count; j++)
+                    for (int j = 0; j < dataGridViewPengeluaran.Columns.Count; j++)
                     {
                         excelApp.Cells[i + 2, j + 1] = dataGridViewPengeluaran.Rows[1].Cells[j].Value.ToString();
                     }
@@ -133,6 +128,11 @@ namespace Laundry
                 MessageBox.Show("Export berhasil");
             }
             Cursor.Current = Cursors.Default;
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
         }
     }
 }

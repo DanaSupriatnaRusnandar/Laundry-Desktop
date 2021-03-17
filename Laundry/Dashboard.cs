@@ -119,11 +119,6 @@ namespace Laundry
             timer1.Enabled = true;
 
             //Pembagian Role
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
-            { 
-                
-            }
-
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "kasir")
             {
                 btnAkun.Visible = false;
@@ -213,7 +208,6 @@ namespace Laundry
         private void btnPaketCucian_Click_1(object sender, EventArgs e)
         {
             openPage(new UserControlPaketLaundry());
-            activateButton(sender, RGBColor.color3);
             hideSubMenu();
         }
 

@@ -53,11 +53,6 @@ namespace Laundry
             dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.nama LIKE '%{keyword}%' OR tb_user.username LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_user.role LIKE '%{keyword}%'");
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            new TambahDataUser(btn_refresh, getIdUser).ShowDialog();
-        }
-
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
@@ -101,6 +96,11 @@ namespace Laundry
                 string role = row.Cells["role"].Value.ToString();
                 new EditDataUser(btn_refresh ,id, nama, username, password, id_outlet, outlet, role).ShowDialog();
             }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new TambahDataUser(btn_refresh, getIdUser).ShowDialog();
         }
     }
 }

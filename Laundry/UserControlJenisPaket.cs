@@ -61,23 +61,6 @@ namespace Laundry
             if (txtCari.Text.Length > 0) return false;
             return true;
         }
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            if (isfilled())
-            {
-                var jenis = txtAdd.Text;
-
-                if(  Db.Insert("tb_jenis", $"NULL, '{jenis}'"))
-                {
-                    MessageBox.Show("Jenis barang berhasil di tambahkan");
-                    txtAdd.Clear();
-                }
-                else
-                {
-                    MessageBox.Show($"Gagal menambah jenis barang \n\n ERROR MESSAGE : \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
@@ -122,6 +105,24 @@ namespace Laundry
                 var row = dataGridViewJenis.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
                 string jenis = row.Cells["jenis"].Value.ToString();
+            }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            if (isfilled())
+            {
+                var jenis = txtAdd.Text;
+
+                if (Db.Insert("tb_jenis", $"NULL, '{jenis}'"))
+                {
+                    MessageBox.Show("Jenis barang berhasil di tambahkan");
+                    txtAdd.Clear();
+                }
+                else
+                {
+                    MessageBox.Show($"Gagal menambah jenis barang \n\n ERROR MESSAGE : \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

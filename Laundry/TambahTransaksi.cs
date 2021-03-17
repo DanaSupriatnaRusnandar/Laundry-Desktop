@@ -157,10 +157,10 @@ namespace Laundry
                 petugas = Session.getUserLogged().Rows[0].Field<int>("id");
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    var total = dataGridView1.Rows[i].Cells["harga"].Value.ToString();
+                    var total_pembayaran = dataGridView1.Rows[i].Cells["harga"].Value.ToString();
 
                     getIdPaket = dataGridView1.Rows[i].Cells["id"].Value.ToString();
-                    if (Db.Insert($"tb_transaksi", $"Null, '{outlet}', '{invoice}', '{pelanggan}', '{tanggal}', '{batasWaktu}', '{tanggalBayar}', '{biayaTambahan}', '{diskon}', '{pajak}', '{total}', 'baru', '{dibayar}', '{kurir}', '{petugas}'"))
+                    if (Db.Insert($"tb_transaksi", $"Null, '{outlet}', '{invoice}', '{pelanggan}', '{tanggal}', '{batasWaktu}', '{tanggalBayar}', '{biayaTambahan}', '{diskon}', '{pajak}', '{total_pembayaran}', 'baru', '{dibayar}', '{kurir}', '{petugas}'"))
                     {
                         MessageBox.Show("Transaksi berhasil dilakukan");
                         btrf.PerformClick();
@@ -217,11 +217,6 @@ namespace Laundry
             }
 
             hitungTotalPembayaran();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -22,15 +22,15 @@ namespace Laundry
 
         public void Tampilkan()
         {
-            //  DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id");
-            /* dataGridViewTransaksi.Rows.Clear();
-             foreach (DataRow row in data.Rows)
-             {
-                 dataGridViewTransaksi.Rows.Add($"NULL", $"NULL", row.Field<string>("kode_invoice"), $"NULL" ,row.Field<string>("alamat"), row.Field<string>("tlp"));
-             }*/
             DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id");
             dataGridViewTransaksi.AutoGenerateColumns = false;
             dataGridViewTransaksi.DataSource = data;
+        }
+
+        private void CariData(string keyword)
+        {
+            dataGridViewTransaksi.AutoGenerateColumns = false;
+            dataGridViewTransaksi.DataSource = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_member.nama_member LIKE '%{keyword}%' OR tb_kurir.nama_kurir '%{keyword}%' OR tb_user.nama LIKE '%{keyword}%' OR tb_transaksi.tgl LIKE '%{keyword}%'");
         }
 
         private void UserControlTransaksi_Load(object sender, EventArgs e)
@@ -50,9 +50,9 @@ namespace Laundry
             Tampilkan();
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
+        private void btnTambah_Click_1(object sender, EventArgs e)
         {
-            new TambahTransaksi(btn_refresh, getIdTransaksi ).ShowDialog();
+            new TambahTransaksi(btn_refresh, getIdTransaksi).ShowDialog();
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -60,9 +60,9 @@ namespace Laundry
             Tampilkan();
         }
 
-        private void dataGridViewTransaksi_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        private void btnCari_Click(object sender, EventArgs e)
         {
-           
+            CariData(txtCari.Text);
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -73,7 +73,6 @@ namespace Laundry
                 Db.Delete("tb_transaksi", $"id = {getIdTransaksi}");
                 Tampilkan();
                 MessageBox.Show("Data transaksi berhasil dihapus!");
-
             }
         }
 
@@ -91,7 +90,21 @@ namespace Laundry
             {
                 var row = dataGridViewTransaksi.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
-
+                string outlet = row.Cells["nama_outlet"].Value.ToString();
+                string invoice = row.Cells["kode_invoice"].Value.ToString();
+                string pelanggan = row.Cells["nama_member"].Value.ToString();
+                DateTime tanggal = (DateTime)row.Cells["tgl"].Value;
+                DateTime batas_waktu = (DateTime)row.Cells["batas_waktu"].Value;
+                DateTime tgl_bayar = (DateTime)row.Cells["tgl_bayar"].Value;
+                string biaya_tambahan = row.Cells["biaya_tambahan"].Value.ToString();
+                string diskon = row.Cells["diskon"].Value.ToString();
+                string pajak = row.Cells["pajak"].Value.ToString();
+                string total = row.Cells["total_pembayaran"].Value.ToString();
+                string status = row.Cells["status"].Value.ToString();
+                string dibayar = row.Cells["dibayar"].Value.ToString();
+                string kuris = row.Cells["nama_kurir"].Value.ToString();
+                string petugas = row.Cells["nama"].Value.ToString();
+                new EditTransaksi(btn_refresh, id, outlet, invoice, pelanggan, tanggal, batas_waktu, tgl_bayar, biaya_tambahan, diskon, pajak, total, status, dibayar, kuris, petugas).ShowDialog();
             }
         }
     }

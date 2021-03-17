@@ -51,12 +51,6 @@ namespace Laundry
             dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.jenis LIKE '%{keyword}%'");
         }
 
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-            TambahPaketLaundry paket = new TambahPaketLaundry(this, btn_refresh, Outlet);
-            paket.Show();
-        }
-
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
@@ -99,6 +93,11 @@ namespace Laundry
                 string harga = row.Cells["harga"].Value.ToString();
                 new EditPaketLaundry(btn_refresh, id, outlet, nama_paket, id_jenis, jenis, harga).ShowDialog();
             }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new TambahPaketLaundry(this, btn_refresh, Outlet).ShowDialog();
         }
     }
 }

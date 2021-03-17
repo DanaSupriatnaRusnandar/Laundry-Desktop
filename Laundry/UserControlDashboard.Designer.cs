@@ -107,6 +107,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DASHBOARD";
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.timer_Tick_1);
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblJam);

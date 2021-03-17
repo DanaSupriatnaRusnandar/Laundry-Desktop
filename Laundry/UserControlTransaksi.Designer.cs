@@ -28,37 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtCari = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridViewTransaksi = new System.Windows.Forms.DataGridView();
-            this.Btn_Add = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnHapus = new FontAwesome.Sharp.IconButton();
-            this.btn_refresh = new FontAwesome.Sharp.IconButton();
-            this.btnCari = new FontAwesome.Sharp.IconButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama_outlet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kode_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,11 +58,23 @@
             this.biaya_tambahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pajak = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_pembayaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dibayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama_kurir = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_refresh = new FontAwesome.Sharp.IconButton();
+            this.btnCari = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnHapus = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnTambah = new FontAwesome.Sharp.IconButton();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksi)).BeginInit();
             this.panel3.SuspendLayout();
@@ -118,22 +119,22 @@
             this.dataGridViewTransaksi.AllowUserToAddRows = false;
             this.dataGridViewTransaksi.AllowUserToDeleteRows = false;
             this.dataGridViewTransaksi.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridViewTransaksi.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridViewTransaksi.ColumnHeadersHeight = 38;
             this.dataGridViewTransaksi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -146,6 +147,7 @@
             this.biaya_tambahan,
             this.diskon,
             this.pajak,
+            this.total_pembayaran,
             this.status,
             this.dibayar,
             this.nama_kurir,
@@ -156,32 +158,215 @@
             this.dataGridViewTransaksi.Name = "dataGridViewTransaksi";
             this.dataGridViewTransaksi.ReadOnly = true;
             this.dataGridViewTransaksi.RowHeadersWidth = 25;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle48;
             this.dataGridViewTransaksi.Size = new System.Drawing.Size(641, 377);
             this.dataGridViewTransaksi.TabIndex = 0;
             this.dataGridViewTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTransaksi_CellClick);
             this.dataGridViewTransaksi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTransaksi_CellContentClick);
-            this.dataGridViewTransaksi.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridViewTransaksi_RowsAdded);
             // 
-            // Btn_Add
+            // id
             // 
-            this.Btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.Btn_Add.FlatAppearance.BorderSize = 0;
-            this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(39, 9);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(91, 33);
-            this.Btn_Add.TabIndex = 1;
-            this.Btn_Add.Text = "Transaksi";
-            this.Btn_Add.UseVisualStyleBackColor = false;
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nama_outlet
+            // 
+            this.nama_outlet.DataPropertyName = "nama_outlet";
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.White;
+            this.nama_outlet.DefaultCellStyle = dataGridViewCellStyle35;
+            this.nama_outlet.HeaderText = "Outlet";
+            this.nama_outlet.Name = "nama_outlet";
+            this.nama_outlet.ReadOnly = true;
+            // 
+            // kode_invoice
+            // 
+            this.kode_invoice.DataPropertyName = "kode_invoice";
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White;
+            this.kode_invoice.DefaultCellStyle = dataGridViewCellStyle36;
+            this.kode_invoice.HeaderText = "Invoice";
+            this.kode_invoice.Name = "kode_invoice";
+            this.kode_invoice.ReadOnly = true;
+            // 
+            // nama_member
+            // 
+            this.nama_member.DataPropertyName = "nama_member";
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.White;
+            this.nama_member.DefaultCellStyle = dataGridViewCellStyle37;
+            this.nama_member.HeaderText = "Pelanggan";
+            this.nama_member.Name = "nama_member";
+            this.nama_member.ReadOnly = true;
+            // 
+            // tgl
+            // 
+            this.tgl.DataPropertyName = "tgl";
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.White;
+            this.tgl.DefaultCellStyle = dataGridViewCellStyle38;
+            this.tgl.HeaderText = "Tanggal";
+            this.tgl.Name = "tgl";
+            this.tgl.ReadOnly = true;
+            // 
+            // batas_waktu
+            // 
+            this.batas_waktu.DataPropertyName = "batas_waktu";
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.White;
+            this.batas_waktu.DefaultCellStyle = dataGridViewCellStyle39;
+            this.batas_waktu.HeaderText = "Batas Waktu";
+            this.batas_waktu.Name = "batas_waktu";
+            this.batas_waktu.ReadOnly = true;
+            // 
+            // tgl_bayar
+            // 
+            this.tgl_bayar.DataPropertyName = "tgl_bayar";
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.White;
+            this.tgl_bayar.DefaultCellStyle = dataGridViewCellStyle40;
+            this.tgl_bayar.HeaderText = "Tanggal Bayar";
+            this.tgl_bayar.Name = "tgl_bayar";
+            this.tgl_bayar.ReadOnly = true;
+            // 
+            // biaya_tambahan
+            // 
+            this.biaya_tambahan.DataPropertyName = "biaya_tambahan";
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.White;
+            this.biaya_tambahan.DefaultCellStyle = dataGridViewCellStyle41;
+            this.biaya_tambahan.HeaderText = "Biaya Tambahan";
+            this.biaya_tambahan.Name = "biaya_tambahan";
+            this.biaya_tambahan.ReadOnly = true;
+            // 
+            // diskon
+            // 
+            this.diskon.DataPropertyName = "diskon";
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.White;
+            this.diskon.DefaultCellStyle = dataGridViewCellStyle42;
+            this.diskon.HeaderText = "Diskon";
+            this.diskon.Name = "diskon";
+            this.diskon.ReadOnly = true;
+            // 
+            // pajak
+            // 
+            this.pajak.DataPropertyName = "pajak";
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.Color.White;
+            this.pajak.DefaultCellStyle = dataGridViewCellStyle43;
+            this.pajak.HeaderText = "Pajak";
+            this.pajak.Name = "pajak";
+            this.pajak.ReadOnly = true;
+            // 
+            // total_pembayaran
+            // 
+            this.total_pembayaran.DataPropertyName = "total_pembayaran";
+            this.total_pembayaran.HeaderText = "Total";
+            this.total_pembayaran.Name = "total_pembayaran";
+            this.total_pembayaran.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.Color.White;
+            this.status.DefaultCellStyle = dataGridViewCellStyle44;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // dibayar
+            // 
+            this.dibayar.DataPropertyName = "dibayar";
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.White;
+            this.dibayar.DefaultCellStyle = dataGridViewCellStyle45;
+            this.dibayar.HeaderText = "Pembayaran";
+            this.dibayar.Name = "dibayar";
+            this.dibayar.ReadOnly = true;
+            // 
+            // nama_kurir
+            // 
+            this.nama_kurir.DataPropertyName = "nama_kurir";
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.Color.White;
+            this.nama_kurir.DefaultCellStyle = dataGridViewCellStyle46;
+            this.nama_kurir.HeaderText = "Kurir";
+            this.nama_kurir.Name = "nama_kurir";
+            this.nama_kurir.ReadOnly = true;
+            // 
+            // nama
+            // 
+            this.nama.DataPropertyName = "nama";
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.Color.White;
+            this.nama.DefaultCellStyle = dataGridViewCellStyle47;
+            this.nama.HeaderText = "Petugas";
+            this.nama.Name = "nama";
+            this.nama.ReadOnly = true;
+            // 
+            // edit
+            // 
+            this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.HeaderText = "";
+            this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Text = "Edit";
+            this.edit.TrackVisitedState = false;
+            this.edit.UseColumnTextForLinkValue = true;
+            this.edit.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
             // 
             // panel3
             // 
@@ -195,87 +380,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(328, 50);
             this.panel3.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(720, 115);
-            this.panel1.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.Btn_Add);
-            this.panel5.Controls.Add(this.btnHapus);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(0, 65);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(181, 50);
-            this.panel5.TabIndex = 14;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(720, 65);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ENTRI TRANSAKSI";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(36, 130);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 15);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Total Pemasukan:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.textBox1.Location = new System.Drawing.Point(164, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 21);
-            this.textBox1.TabIndex = 33;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnHapus
-            // 
-            this.btnHapus.FlatAppearance.BorderSize = 0;
-            this.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHapus.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHapus.IconSize = 26;
-            this.btnHapus.Location = new System.Drawing.Point(135, 12);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(26, 26);
-            this.btnHapus.TabIndex = 2;
-            this.btnHapus.UseVisualStyleBackColor = true;
-            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btn_refresh
             // 
@@ -305,198 +409,103 @@
             this.btnCari.Size = new System.Drawing.Size(24, 24);
             this.btnCari.TabIndex = 4;
             this.btnCari.UseVisualStyleBackColor = true;
+            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
-            // id
+            // panel1
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(720, 115);
+            this.panel1.TabIndex = 3;
             // 
-            // nama_outlet
+            // panel5
             // 
-            this.nama_outlet.DataPropertyName = "nama_outlet";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.nama_outlet.DefaultCellStyle = dataGridViewCellStyle3;
-            this.nama_outlet.HeaderText = "Outlet";
-            this.nama_outlet.Name = "nama_outlet";
-            this.nama_outlet.ReadOnly = true;
+            this.panel5.Controls.Add(this.btnTambah);
+            this.panel5.Controls.Add(this.btnHapus);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(0, 65);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(127, 50);
+            this.panel5.TabIndex = 14;
             // 
-            // kode_invoice
+            // btnHapus
             // 
-            this.kode_invoice.DataPropertyName = "kode_invoice";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.kode_invoice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.kode_invoice.HeaderText = "Invoice";
-            this.kode_invoice.Name = "kode_invoice";
-            this.kode_invoice.ReadOnly = true;
+            this.btnHapus.FlatAppearance.BorderSize = 0;
+            this.btnHapus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHapus.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHapus.IconSize = 30;
+            this.btnHapus.Location = new System.Drawing.Point(77, 9);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(32, 32);
+            this.btnHapus.TabIndex = 2;
+            this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // nama_member
+            // panel2
             // 
-            this.nama_member.DataPropertyName = "nama_member";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.nama_member.DefaultCellStyle = dataGridViewCellStyle5;
-            this.nama_member.HeaderText = "Pelanggan";
-            this.nama_member.Name = "nama_member";
-            this.nama_member.ReadOnly = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(720, 65);
+            this.panel2.TabIndex = 0;
             // 
-            // tgl
+            // label1
             // 
-            this.tgl.DataPropertyName = "tgl";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.tgl.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tgl.HeaderText = "Tanggal";
-            this.tgl.Name = "tgl";
-            this.tgl.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(243, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ENTRI TRANSAKSI";
             // 
-            // batas_waktu
+            // label3
             // 
-            this.batas_waktu.DataPropertyName = "batas_waktu";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.batas_waktu.DefaultCellStyle = dataGridViewCellStyle7;
-            this.batas_waktu.HeaderText = "Batas Waktu";
-            this.batas_waktu.Name = "batas_waktu";
-            this.batas_waktu.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label3.Location = new System.Drawing.Point(36, 128);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(122, 15);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Total Pemasukan:";
             // 
-            // tgl_bayar
+            // textBox1
             // 
-            this.tgl_bayar.DataPropertyName = "tgl_bayar";
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.tgl_bayar.DefaultCellStyle = dataGridViewCellStyle8;
-            this.tgl_bayar.HeaderText = "Tanggal Bayar";
-            this.tgl_bayar.Name = "tgl_bayar";
-            this.tgl_bayar.ReadOnly = true;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.textBox1.Location = new System.Drawing.Point(164, 124);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 21);
+            this.textBox1.TabIndex = 33;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // biaya_tambahan
+            // btnTambah
             // 
-            this.biaya_tambahan.DataPropertyName = "biaya_tambahan";
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.biaya_tambahan.DefaultCellStyle = dataGridViewCellStyle9;
-            this.biaya_tambahan.HeaderText = "Biaya Tambahan";
-            this.biaya_tambahan.Name = "biaya_tambahan";
-            this.biaya_tambahan.ReadOnly = true;
-            // 
-            // diskon
-            // 
-            this.diskon.DataPropertyName = "diskon";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.diskon.DefaultCellStyle = dataGridViewCellStyle10;
-            this.diskon.HeaderText = "Diskon";
-            this.diskon.Name = "diskon";
-            this.diskon.ReadOnly = true;
-            // 
-            // pajak
-            // 
-            this.pajak.DataPropertyName = "pajak";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.pajak.DefaultCellStyle = dataGridViewCellStyle11;
-            this.pajak.HeaderText = "Pajak";
-            this.pajak.Name = "pajak";
-            this.pajak.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.status.DefaultCellStyle = dataGridViewCellStyle12;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // dibayar
-            // 
-            this.dibayar.DataPropertyName = "dibayar";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
-            this.dibayar.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dibayar.HeaderText = "Pembayaran";
-            this.dibayar.Name = "dibayar";
-            this.dibayar.ReadOnly = true;
-            // 
-            // nama_kurir
-            // 
-            this.nama_kurir.DataPropertyName = "nama_kurir";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            this.nama_kurir.DefaultCellStyle = dataGridViewCellStyle14;
-            this.nama_kurir.HeaderText = "Kurir";
-            this.nama_kurir.Name = "nama_kurir";
-            this.nama_kurir.ReadOnly = true;
-            // 
-            // nama
-            // 
-            this.nama.DataPropertyName = "nama";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            this.nama.DefaultCellStyle = dataGridViewCellStyle15;
-            this.nama.HeaderText = "Petugas";
-            this.nama.Name = "nama";
-            this.nama.ReadOnly = true;
-            // 
-            // edit
-            // 
-            this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
-            this.edit.HeaderText = "";
-            this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Text = "Edit";
-            this.edit.TrackVisitedState = false;
-            this.edit.UseColumnTextForLinkValue = true;
-            this.edit.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.btnTambah.FlatAppearance.BorderSize = 0;
+            this.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTambah.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnTambah.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTambah.IconSize = 30;
+            this.btnTambah.Location = new System.Drawing.Point(39, 9);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(32, 32);
+            this.btnTambah.TabIndex = 30;
+            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click_1);
             // 
             // UserControlTransaksi
             // 
@@ -528,7 +537,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private FontAwesome.Sharp.IconButton btn_refresh;
-        private System.Windows.Forms.Button Btn_Add;
         private FontAwesome.Sharp.IconButton btnHapus;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconButton btnCari;
@@ -549,10 +557,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn biaya_tambahan;
         private System.Windows.Forms.DataGridViewTextBoxColumn diskon;
         private System.Windows.Forms.DataGridViewTextBoxColumn pajak;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_pembayaran;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn dibayar;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_kurir;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama;
         private System.Windows.Forms.DataGridViewLinkColumn edit;
+        private FontAwesome.Sharp.IconButton btnTambah;
     }
 }

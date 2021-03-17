@@ -49,11 +49,6 @@ namespace Laundry
             dataGridViewOtlet.DataSource = Db.Read($"SELECT * FROM tb_outlet WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_outlet.alamat LIKE '%{keyword}%' OR tb_outlet.tlp LIKE '%{keyword}%'");
         }
 
-        private void Btn_Add_Click_1(object sender, EventArgs e)
-        {
-            new TambahDataOutlet(btn_refresh).ShowDialog();
-        }
-
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
@@ -95,6 +90,11 @@ namespace Laundry
                 string tlp = row.Cells["tlp"].Value.ToString();
                 new EditDataOutlet(btn_refresh, id, nama, alamat, tlp).ShowDialog();
             }
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new TambahDataOutlet(btn_refresh).ShowDialog();
         }
     }
 }

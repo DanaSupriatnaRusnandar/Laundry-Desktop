@@ -25,7 +25,7 @@ namespace Laundry
             timer.Enabled = true;
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        private void timer_Tick_1(object sender, EventArgs e)
         {
             lblJam.Text = DateTime.Now.ToLongTimeString();
             lblHariTanggal.Text = DateTime.Now.ToLongDateString();

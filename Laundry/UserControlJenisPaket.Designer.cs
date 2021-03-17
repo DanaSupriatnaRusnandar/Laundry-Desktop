@@ -37,9 +37,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnTambah = new FontAwesome.Sharp.IconButton();
             this.txtAdd = new System.Windows.Forms.TextBox();
             this.btnHapus = new FontAwesome.Sharp.IconButton();
-            this.Btn_Add = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtCari = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -99,19 +99,34 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnTambah);
             this.panel5.Controls.Add(this.txtAdd);
             this.panel5.Controls.Add(this.btnHapus);
-            this.panel5.Controls.Add(this.Btn_Add);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 65);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(305, 50);
             this.panel5.TabIndex = 13;
             // 
+            // btnTambah
+            // 
+            this.btnTambah.FlatAppearance.BorderSize = 0;
+            this.btnTambah.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTambah.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnTambah.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTambah.IconSize = 30;
+            this.btnTambah.Location = new System.Drawing.Point(173, 13);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(32, 32);
+            this.btnTambah.TabIndex = 25;
+            this.btnTambah.UseVisualStyleBackColor = true;
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
+            // 
             // txtAdd
             // 
             this.txtAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtAdd.Location = new System.Drawing.Point(37, 15);
+            this.txtAdd.Location = new System.Drawing.Point(38, 17);
             this.txtAdd.Name = "txtAdd";
             this.txtAdd.Size = new System.Drawing.Size(129, 20);
             this.txtAdd.TabIndex = 6;
@@ -123,28 +138,13 @@
             this.btnHapus.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnHapus.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnHapus.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHapus.IconSize = 26;
-            this.btnHapus.Location = new System.Drawing.Point(269, 14);
+            this.btnHapus.IconSize = 30;
+            this.btnHapus.Location = new System.Drawing.Point(211, 13);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(26, 26);
+            this.btnHapus.Size = new System.Drawing.Size(32, 32);
             this.btnHapus.TabIndex = 2;
             this.btnHapus.UseVisualStyleBackColor = true;
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
-            // 
-            // Btn_Add
-            // 
-            this.Btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.Btn_Add.FlatAppearance.BorderSize = 0;
-            this.Btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Add.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Add.ForeColor = System.Drawing.Color.White;
-            this.Btn_Add.Location = new System.Drawing.Point(172, 8);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(91, 33);
-            this.Btn_Add.TabIndex = 1;
-            this.Btn_Add.Text = "Baru";
-            this.Btn_Add.UseVisualStyleBackColor = false;
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // panel3
             // 
@@ -340,7 +340,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtAdd;
-        private System.Windows.Forms.Button Btn_Add;
         private FontAwesome.Sharp.IconButton btnHapus;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtCari;
@@ -353,5 +352,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn jenis;
         private System.Windows.Forms.DataGridViewLinkColumn edit;
+        private FontAwesome.Sharp.IconButton btnTambah;
     }
 }
