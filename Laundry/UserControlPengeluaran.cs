@@ -35,11 +35,18 @@ namespace Laundry
             dataGridViewPengeluaran.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             Tampilkan();
+
+            double pengeluaran = 0;
+            foreach (DataGridViewRow row in dataGridViewPengeluaran.Rows)
+            {
+                pengeluaran = pengeluaran + Convert.ToDouble(row.Cells["total"].Value);
+            }
+            txtTotal.Text = pengeluaran.ToString("C0");
         }
 
         private void Tampilkan()
         {
-            DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id");
+            DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
             dataGridViewPengeluaran.AutoGenerateColumns = false;
             dataGridViewPengeluaran.DataSource = data;
         }
@@ -47,12 +54,13 @@ namespace Laundry
         private void CariData(string keyword)
         {
             dataGridViewPengeluaran.AutoGenerateColumns = false;
-            dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_pengeluaran.nama_barang LIKE '%{keyword}%' OR tb_pengeluaran.tgl LIKE '%{keyword}%'");
+            dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_pengeluaran.nama_barang LIKE '%{keyword}%' OR tb_pengeluaran.tgl LIKE '%{keyword}%'");
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+            txtCari.Clear();
         }
 
         private void btnHapus_Click(object sender, EventArgs e)

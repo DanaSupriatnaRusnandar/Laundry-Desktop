@@ -56,6 +56,7 @@ namespace Laundry
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+            txtCari.Clear();
         }
 
         private void btnCari_Click(object sender, EventArgs e)
@@ -69,9 +70,8 @@ namespace Laundry
             if (confirm == DialogResult.Yes)
             {
                 Db.Delete("tb_user", $"id = {getIdUser}");
-                Tampilkan();
                 MessageBox.Show("Data user berhasil dihapus!");
-
+                Tampilkan();
             }
         }
         //Event Hapus

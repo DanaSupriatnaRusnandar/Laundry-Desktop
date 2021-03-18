@@ -141,9 +141,7 @@ namespace Laundry
                 btnPengeluaran.Visible = false;
                 btnPelanggan.Visible = false;
             }
-                MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role" ));
-
-            lblRole.Text = Session.getUserLogged().Rows[0].Field<string>("nama");
+             //   MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role" ));
         }
 
         //Button Close, Maximiza, Minimize

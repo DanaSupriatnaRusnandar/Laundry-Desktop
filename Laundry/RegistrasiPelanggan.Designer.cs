@@ -74,14 +74,14 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(25, 96);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 318);
+            this.panel2.Size = new System.Drawing.Size(416, 297);
             this.panel2.TabIndex = 5;
             // 
             // radioButtonLaki
             // 
             this.radioButtonLaki.AutoSize = true;
             this.radioButtonLaki.BackColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonLaki.Location = new System.Drawing.Point(116, 119);
+            this.radioButtonLaki.Location = new System.Drawing.Point(123, 124);
             this.radioButtonLaki.Name = "radioButtonLaki";
             this.radioButtonLaki.Size = new System.Drawing.Size(74, 17);
             this.radioButtonLaki.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             this.radioButtonPerempuan.AutoSize = true;
             this.radioButtonPerempuan.BackColor = System.Drawing.Color.Gainsboro;
-            this.radioButtonPerempuan.Location = new System.Drawing.Point(196, 119);
+            this.radioButtonPerempuan.Location = new System.Drawing.Point(203, 124);
             this.radioButtonPerempuan.Name = "radioButtonPerempuan";
             this.radioButtonPerempuan.Size = new System.Drawing.Size(79, 17);
             this.radioButtonPerempuan.TabIndex = 4;
@@ -107,7 +107,7 @@
             // 
             this.textBoxJK.BackColor = System.Drawing.Color.White;
             this.textBoxJK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.textBoxJK.Location = new System.Drawing.Point(116, 114);
+            this.textBoxJK.Location = new System.Drawing.Point(117, 119);
             this.textBoxJK.Multiline = true;
             this.textBoxJK.Name = "textBoxJK";
             this.textBoxJK.Size = new System.Drawing.Size(280, 27);
@@ -118,10 +118,11 @@
             // 
             this.txtTelepon.BackColor = System.Drawing.Color.White;
             this.txtTelepon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtTelepon.Location = new System.Drawing.Point(116, 165);
+            this.txtTelepon.Location = new System.Drawing.Point(117, 170);
             this.txtTelepon.Name = "txtTelepon";
             this.txtTelepon.Size = new System.Drawing.Size(280, 20);
             this.txtTelepon.TabIndex = 5;
+            this.txtTelepon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelepon_KeyPress);
             // 
             // btnAdd
             // 
@@ -130,7 +131,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 230);
+            this.btnAdd.Location = new System.Drawing.Point(296, 225);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 6;
@@ -142,7 +143,7 @@
             // 
             this.txtalamat.BackColor = System.Drawing.Color.White;
             this.txtalamat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtalamat.Location = new System.Drawing.Point(116, 75);
+            this.txtalamat.Location = new System.Drawing.Point(117, 80);
             this.txtalamat.Multiline = true;
             this.txtalamat.Name = "txtalamat";
             this.txtalamat.Size = new System.Drawing.Size(280, 20);
@@ -152,7 +153,7 @@
             // 
             this.txtnama.BackColor = System.Drawing.Color.White;
             this.txtnama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtnama.Location = new System.Drawing.Point(116, 29);
+            this.txtnama.Location = new System.Drawing.Point(117, 34);
             this.txtnama.Name = "txtnama";
             this.txtnama.Size = new System.Drawing.Size(280, 20);
             this.txtnama.TabIndex = 1;
@@ -162,7 +163,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 165);
+            this.label5.Location = new System.Drawing.Point(17, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 18);
             this.label5.TabIndex = 15;
@@ -173,7 +174,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(16, 119);
+            this.label4.Location = new System.Drawing.Point(17, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 18);
             this.label4.TabIndex = 14;
@@ -184,7 +185,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(16, 75);
+            this.label3.Location = new System.Drawing.Point(17, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 18);
             this.label3.TabIndex = 13;
@@ -195,7 +196,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(16, 31);
+            this.label2.Location = new System.Drawing.Point(17, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 18);
             this.label2.TabIndex = 12;
@@ -216,7 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 442);
+            this.ClientSize = new System.Drawing.Size(466, 425);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

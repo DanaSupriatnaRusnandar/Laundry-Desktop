@@ -71,15 +71,23 @@ namespace Laundry
             cmbKurir.ValueMember = "id";
             cmbKurir.SelectedIndex = -1;
 
-            
 
+            Dibayar();
             cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
             cmbPelanggan.SelectedIndex = cmbPelanggan.FindStringExact(nama_pelanggan);
-          //  cmbDibayar.SelectedIndex = cmbDibayar.FindStringExact();
+            cmbDibayar.SelectedIndex = cmbDibayar.FindStringExact(pembayaran);
             cmbKurir.SelectedIndex = cmbKurir.FindStringExact(nama_kurir);
-        }
 
-        void Dibayar(object dibayar)
+            //data
+            DataTable data = Db.Read($"SELECT * FROM tb_detail_transaksi JOIN tb_transaksi ON tb_detail_transaksi.id_transaksi = tb_transaksi.id JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id WHERE kode_invoice = '{kode_invoice}'");
+            foreach (DataRow row in data.Rows)
+            {
+                dataGridView1.Rows.Add(row.Field<string>("nama_paket"), row.Field<double>("qty"), row.Field<int>("total_pembayaran"));
+            }
+            MessageBox.Show(data.Rows.Count.ToString());
+        }
+        
+        void Dibayar()
         {
             cmbDibayar.Items.Add("dibayar");
             cmbDibayar.Items.Add("belum_dibayar");

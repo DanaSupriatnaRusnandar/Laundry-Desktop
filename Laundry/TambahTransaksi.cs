@@ -28,10 +28,10 @@ namespace Laundry
         private void Transaksi_Load(object sender, EventArgs e)
         {
             //Biding Outlet
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            /*cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutlet.DisplayMember = "nama_outlet";
             cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
+            cmbOutlet.SelectedIndex = -1;*/
 
             //Biding Pelanggan
             cmbPelanggan.DataSource = Db.Read("tb_member", "id, nama_member");
@@ -106,9 +106,27 @@ namespace Laundry
             txtTotalPembayaran.Text = TotalPembayaran.ToString();
         }
 
+        private void Hitungkerangjang()
+        {
+            if (dataGridView1.Rows.Count > 0 )
+            {
+                int HitungTotal = 0;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    HitungTotal = HitungTotal + Convert.ToInt32(row.Cells["harga"].Value);
+                }
+                Total = HitungTotal;
+                hitungTotalPembayaran();
+            }
+            else
+            {
+                txtTotalPembayaran.Text = "0";
+            }
+        }
+
         private bool isfilled()
         {
-            if (cmbOutlet.SelectedIndex >= 0 && cmbPelanggan.SelectedIndex >= 0 && dtpTanggal.Checked && dtpBatasWaktu.Checked && txtDiskon.Text.Length >= 0 && txtBiayaTambahan.Text.Length >= 0 && txtPajak.Text.Length >= 0 && cmbDibayar.SelectedIndex >= 0 && dtpTanggalBayar.Checked && txtCatatan.Text.Length >= 0 && cmbKurir.SelectedIndex >= 0) return true;
+            if (cmbPelanggan.SelectedIndex >= 0 && dtpTanggal.Checked && dtpBatasWaktu.Checked && txtDiskon.Text.Length >= 0 && txtBiayaTambahan.Text.Length >= 0 && txtPajak.Text.Length >= 0 && cmbDibayar.SelectedIndex >= 0 && dtpTanggalBayar.Checked && txtCatatan.Text.Length >= 0 && cmbKurir.SelectedIndex >= 0) return true;
             return false;
         }
 
@@ -142,7 +160,7 @@ namespace Laundry
         {
             if (isfilled())
             {
-                var outlet = cmbOutlet.SelectedValue;
+                var outlet = Session.getUserLogged().Rows[0].Field<int>("id");
                 var pelanggan = cmbPelanggan.SelectedValue;
                 var tanggal = dtpTanggal.Value.ToString("yyyy-MM-dd");
                 var batasWaktu = dtpBatasWaktu.Value.ToString("yyyy-MM-dd");
@@ -217,6 +235,40 @@ namespace Laundry
             }
 
             hitungTotalPembayaran();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == hapus.Index)
+            {
+                string item = dataGridView1.Rows[e.RowIndex].Cells["nama_paket"].Value.ToString();
+                var confirm = MessageBox.Show($"Apakah anda yakin ingin menghapus '{item}' dari keranjang?", "KONFIRMASI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.Yes)
+                {
+                    dataGridView1.Rows.Remove(dataGridView1.Rows[e.RowIndex]);
+                    Hitungkerangjang();
+                }
+            }
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtDiskon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtPajak_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

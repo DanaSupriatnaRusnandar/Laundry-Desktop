@@ -31,20 +31,9 @@ namespace Laundry
             txtKeterangan.Text = keterangan;
         }
 
-        private void EditDataPengeluaran_Load(object sender, EventArgs e)
-        {
-            // Biding Outlet
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
-
-            cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
-        }
-
         private bool isfilled()
         {
-            if (cmbOutlet.SelectedIndex >= 0 && txtNamaBarang.Text.Length >= 0 && dateTimePicker.Checked && txtNominal.Text.Length >= 0 && txtKeterangan.Text.Length >= 0) return true;
+            if (txtNamaBarang.Text.Length >= 0 && dateTimePicker.Checked && txtNominal.Text.Length >= 0 && txtKeterangan.Text.Length >= 0) return true;
             return false;
         }
 
@@ -52,8 +41,7 @@ namespace Laundry
         {
             if (isfilled())
             {
-                if (cmbOutlet.SelectedIndex == 0) ;
-                var outlet = cmbOutlet.SelectedValue;
+                var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
                 var nama = txtNamaBarang.Text;
                 var tgl = dateTimePicker.Value.ToString("yyyy-MM-dd");
                 var nominal = txtNominal.Text;
@@ -70,6 +58,11 @@ namespace Laundry
                     MessageBox.Show($"Gagal mengubah data pengeluaran. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtNominal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

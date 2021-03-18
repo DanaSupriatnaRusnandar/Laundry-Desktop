@@ -36,6 +36,7 @@ namespace Laundry
                 if (Db.Insert("tb_outlet", $"NULL, '{nama}', '{alamat}', '{tlp}'"))
                 {
                     MessageBox.Show("Outlet berhasil di tambahkan");
+                    btrf.PerformClick();
                     this.Close();
                 }
                 else

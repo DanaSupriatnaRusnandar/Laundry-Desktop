@@ -55,8 +55,6 @@
             this.lblHariTanggal = new System.Windows.Forms.Label();
             this.lblJam = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblselamatDatang = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -125,8 +123,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.lblRole);
-            this.panel1.Controls.Add(this.lblselamatDatang);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(198, 0);
@@ -546,28 +542,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // lblselamatDatang
-            // 
-            this.lblselamatDatang.AutoSize = true;
-            this.lblselamatDatang.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblselamatDatang.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblselamatDatang.Location = new System.Drawing.Point(6, 16);
-            this.lblselamatDatang.Name = "lblselamatDatang";
-            this.lblselamatDatang.Size = new System.Drawing.Size(108, 16);
-            this.lblselamatDatang.TabIndex = 1;
-            this.lblselamatDatang.Text = "Selamat Datang,";
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblRole.Location = new System.Drawing.Point(108, 17);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(37, 16);
-            this.lblRole.TabIndex = 2;
-            this.lblRole.Text = "Role";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -586,7 +560,6 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelMenu.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -624,7 +597,5 @@
         private System.Windows.Forms.Label lblHariTanggal;
         private System.Windows.Forms.Label lblJam;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Label lblselamatDatang;
     }
 }

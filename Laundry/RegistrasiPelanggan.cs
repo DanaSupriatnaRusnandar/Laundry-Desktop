@@ -44,7 +44,8 @@ namespace Laundry
                 var alamat = txtalamat.Text;
                 var JK = textBoxJK.Text;
                 var tlp = txtTelepon.Text;
-                if (Db.Insert("tb_member", $"NULL, '{nama}', '{alamat}', '{JK}', '{tlp}'"))
+                var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
+                if (Db.Insert("tb_member", $"NULL, '{nama}', '{alamat}', '{JK}', '{tlp}', '{outlet}'"))
                 {
                     MessageBox.Show("Data pelanggan berhasil ditambah");
                     btrf.PerformClick();
@@ -60,6 +61,11 @@ namespace Laundry
         private void RegistrasiPelanggan_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTelepon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

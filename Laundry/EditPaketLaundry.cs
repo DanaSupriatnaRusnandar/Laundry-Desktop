@@ -33,43 +33,27 @@ namespace Laundry
 
         private void EditPaketLaundry_Load(object sender, EventArgs e)
         {
-            // Biding outlet
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
-
             //Biding Jenis
             cmbJenis.DataSource = Db.Read("tb_jenis", "id, jenis");
             cmbJenis.DisplayMember = "jenis";
             cmbJenis.ValueMember = "id";
             cmbJenis.SelectedIndex = -1;
 
-            cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
             cmbJenis.SelectedIndex = cmbJenis.FindStringExact(nama_jenis);
-
         }
 
         //Function
-        private bool ishargaValid()
-        {
-            if (txtHarga.Text.Contains(" ")) return false;
-            return true;
-        }
-
         public bool isfilled()
         {
-            if (cmbOutlet.SelectedIndex >= 0 && txtNama.Text.Length >= 0 && cmbJenis.SelectedIndex >= 0 && txtHarga.Text.Length >= 0) return true;
+            if (txtNama.Text.Length >= 0 && cmbJenis.SelectedIndex >= 0 && txtHarga.Text.Length >= 0) return true;
             return false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (isfilled() && ishargaValid())
+            if (isfilled())
             {
-                if (cmbOutlet.SelectedIndex == 0) ;
-                var outlet = cmbOutlet.SelectedValue;
-                if (cmbJenis.SelectedIndex == 0) ;
+                var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
                 var jenis = cmbJenis.SelectedValue;
                 var nama_paket = txtNama.Text;
                 var harga = txtHarga.Text;
@@ -88,16 +72,7 @@ namespace Laundry
 
         private void txtHarga_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void lblIsUsernameValid_TextChanged(object sender, EventArgs e)
-        {
-            if (ishargaValid()) lblIsUsernameValid.Visible = false;
-            else lblIsUsernameValid.Visible = true;
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

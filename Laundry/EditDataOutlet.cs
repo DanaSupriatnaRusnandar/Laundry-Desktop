@@ -40,6 +40,7 @@ namespace Laundry
                 if (Db.Update($"tb_outlet", $"id = {getIdOutlet}, nama_outlet ='{nama}', alamat = '{alamat}', tlp = '{tlp}'", $"id = {getIdOutlet}"))
                 {
                     MessageBox.Show("Data outlet berhasil diubah");
+                    btrf.PerformClick();
                     this.Close();
                 }
                 else
@@ -47,6 +48,11 @@ namespace Laundry
                     MessageBox.Show($"Gagal mengubah data outlet \n\n ERROR MESSAGE : \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtNoTelepon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

@@ -25,17 +25,12 @@ namespace Laundry
 
         private bool isfilled()
         {
-            if (cmbOutlet.SelectedIndex >= 0 && cmbJenis.SelectedIndex >= 0 && txtNama.Text.Length > 0 && txtHarga.Text.Length > 0) return true;
+            if (cmbJenis.SelectedIndex >= 0 && txtNama.Text.Length > 0 && txtHarga.Text.Length > 0) return true;
             return false;
         }
 
         private void PaketLaundry_Load(object sender, EventArgs e)
         {
-            //Biding outlet
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
 
             //Biding Jenis
             cmbJenis.DataSource = Db.Read("tb_jenis", "id, jenis");
@@ -48,8 +43,7 @@ namespace Laundry
         {
             if (isfilled())
             {
-                if (cmbOutlet.SelectedIndex == 0) ;
-                var outlet = cmbOutlet.SelectedValue;
+                var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
                 if (cmbJenis.SelectedIndex == 0) ;
                 var jenis = cmbJenis.SelectedValue;
                 var nama_paket = txtNama.Text;
@@ -65,6 +59,11 @@ namespace Laundry
                     MessageBox.Show($"Gagal Menambah paket. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtHarga_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

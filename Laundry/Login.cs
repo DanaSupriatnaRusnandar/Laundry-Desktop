@@ -31,11 +31,11 @@ namespace Laundry
         {
             if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0 && isUsernameValid())
             {
-                //SELECT * FROM tb_user JOIN tb_role ON tb_user.id_role = tb_role.id WHERE username = {txtUsername.Text} AND password = {Sha256.Encrypt(txtPassword.Text)} AND nama_outlet = {"nama_outlet"}
                 if (Auth.Login(txtUsername.Text, Sha256.Encrypt(txtPassword.Text),"tb_user"))
                 {
+                   
                     Form Dashboar = new Dashboard();
-                    MessageBox.Show("Login Berhasil");
+                    MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role"));
                     this.Hide();
                     Dashboar.ShowDialog();
 

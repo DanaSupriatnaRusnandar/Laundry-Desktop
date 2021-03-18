@@ -15,11 +15,13 @@ namespace Laundry
     {
         Button btrf;
         string getIdPelanggan;
-        public EditDataPelanggan(Button btrefresh, string id, string nama, string alamat, string jk, string tlp)
+        string nama_outlet;
+        public EditDataPelanggan(Button btrefresh, string id, string outlet, string nama, string alamat, string jk, string tlp)
         {
             InitializeComponent();
             btrf = btrefresh;
             getIdPelanggan = id;
+            nama_outlet = outlet;
             txtnama.Text = nama;
             txtalamat.Text = alamat;
             txtJK.Text = jk;
@@ -57,7 +59,8 @@ namespace Laundry
                 var alamat = txtalamat.Text;
                 var JK = txtJK.Text;
                 var tlp = txtTelepon.Text;
-                if (Db.Update("tb_member", $"id = {getIdPelanggan}, nama_member = '{nama}', alamat = '{alamat}', jenis_kelamin = '{JK}', tlp = '{tlp}'", $"id = {getIdPelanggan}"))
+                var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
+                if (Db.Update("tb_member", $"id = {getIdPelanggan}, id_outlet = '{outlet}', nama_member = '{nama}', alamat = '{alamat}', jenis_kelamin = '{JK}', tlp = '{tlp}'", $"id = {getIdPelanggan}"))
                 {
                     MessageBox.Show("Data pelanggan berhasil diubah");
                     btrf.PerformClick();
@@ -68,6 +71,11 @@ namespace Laundry
                     MessageBox.Show($"Gagal mengubah data pelanggan. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void txtTelepon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

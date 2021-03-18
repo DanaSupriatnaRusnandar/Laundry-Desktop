@@ -38,20 +38,22 @@ namespace Laundry
 
         private void Tampilkan()
         {
-            DataTable data = Db.Read("tb_member", "*");
             dataGridViewRegistrasi.AutoGenerateColumns = false;
-            dataGridViewRegistrasi.DataSource = Db.Read($"tb_member", "*");
+            DataTable data = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+
+            dataGridViewRegistrasi.DataSource = data;
         }
 
         private void CariData(string keyword)
         {
             dataGridViewRegistrasi.AutoGenerateColumns = false;
-            dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member WHERE tb_member.nama_member LIKE '%{keyword}%' OR tb_member.alamat LIKE '%{keyword}%'");
+            dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_member.nama_member LIKE '%{keyword}%' OR tb_member.alamat LIKE '%{keyword}%'");
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Tampilkan();
+            txtCari.Clear();
         }
         private void btnCari_Click(object sender, EventArgs e)
         {
@@ -83,11 +85,12 @@ namespace Laundry
             {
                 var row = dataGridViewRegistrasi.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
+                string outlet = row.Cells["nama_outlet"].Value.ToString();
                 string nama = row.Cells["nama_member"].Value.ToString();
                 string alamat = row.Cells["alamat"].Value.ToString();
                 string jk = row.Cells["jenis_kelamin"].Value.ToString();
                 string tlp = row.Cells["tlp"].Value.ToString();
-                new EditDataPelanggan(btn_refresh, id, nama, alamat, jk, tlp).ShowDialog();
+                new EditDataPelanggan(btn_refresh, id, outlet,  nama, alamat, jk, tlp).ShowDialog();
             }
         }
 

@@ -30,8 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cmbOutlet = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtTlp = new System.Windows.Forms.TextBox();
             this.txtAlamat = new System.Windows.Forms.TextBox();
@@ -59,8 +57,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.cmbOutlet);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.txtTlp);
             this.panel2.Controls.Add(this.txtAlamat);
@@ -70,28 +66,8 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(25, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 286);
+            this.panel2.Size = new System.Drawing.Size(416, 236);
             this.panel2.TabIndex = 7;
-            // 
-            // cmbOutlet
-            // 
-            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbOutlet.FormattingEnabled = true;
-            this.cmbOutlet.Location = new System.Drawing.Point(116, 157);
-            this.cmbOutlet.Name = "cmbOutlet";
-            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutlet.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 18);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Outlet";
             // 
             // btnEdit
             // 
@@ -100,7 +76,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(295, 210);
+            this.btnEdit.Location = new System.Drawing.Point(295, 169);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 32);
             this.btnEdit.TabIndex = 6;
@@ -116,6 +92,7 @@
             this.txtTlp.Name = "txtTlp";
             this.txtTlp.Size = new System.Drawing.Size(280, 20);
             this.txtTlp.TabIndex = 3;
+            this.txtTlp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTlp_KeyPress);
             // 
             // txtAlamat
             // 
@@ -183,13 +160,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 408);
+            this.ClientSize = new System.Drawing.Size(466, 358);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditDataKurir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.EditDataKurir_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -202,8 +178,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox cmbOutlet;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.TextBox txtTlp;
         private System.Windows.Forms.TextBox txtAlamat;

@@ -122,6 +122,7 @@
             this.txtTelepon.Name = "txtTelepon";
             this.txtTelepon.Size = new System.Drawing.Size(280, 20);
             this.txtTelepon.TabIndex = 5;
+            this.txtTelepon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelepon_KeyPress);
             // 
             // btnAdd
             // 

@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblJam = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblPelanggan = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -45,7 +44,6 @@
             this.lblAmbil = new System.Windows.Forms.Label();
             this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.lblHariTanggal = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblProses = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
@@ -58,7 +56,11 @@
             this.lblSelesai = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridViewTransaksi = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +71,8 @@
             this.batas_waktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblJam = new System.Windows.Forms.Label();
+            this.lblHariTanggal = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -81,7 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,10 +119,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblJam);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.lblRole);
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.lblHariTanggal);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel6);
@@ -125,20 +131,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(241, 649);
             this.panel1.TabIndex = 2;
-            // 
-            // lblJam
-            // 
-            this.lblJam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblJam.AutoSize = true;
-            this.lblJam.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblJam.Location = new System.Drawing.Point(13, 8);
-            this.lblJam.Name = "lblJam";
-            this.lblJam.Size = new System.Drawing.Size(45, 21);
-            this.lblJam.TabIndex = 34;
-            this.lblJam.Text = "Jam";
             // 
             // panel8
             // 
@@ -231,20 +223,6 @@
             this.label11.Size = new System.Drawing.Size(163, 16);
             this.label11.TabIndex = 13;
             this.label11.Text = "Jumlah Cucian Siap Ambil";
-            // 
-            // lblHariTanggal
-            // 
-            this.lblHariTanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHariTanggal.AutoSize = true;
-            this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblHariTanggal.Location = new System.Drawing.Point(13, 29);
-            this.lblHariTanggal.Name = "lblHariTanggal";
-            this.lblHariTanggal.Size = new System.Drawing.Size(151, 21);
-            this.lblHariTanggal.TabIndex = 35;
-            this.lblHariTanggal.Text = "Hari dan Tanggal";
             // 
             // panel5
             // 
@@ -387,39 +365,87 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Jumlah Cucian Selesai";
             // 
-            // panel4
+            // label2
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.dataGridViewTransaksi);
-            this.panel4.Location = new System.Drawing.Point(262, 94);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label2.Location = new System.Drawing.Point(19, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 21);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Selamat Datang,";
+            // 
+            // lblRole
+            // 
+            this.lblRole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.lblRole.Location = new System.Drawing.Point(19, 24);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(44, 21);
+            this.lblRole.TabIndex = 37;
+            this.lblRole.Text = "Role";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.panel10);
+            this.panel9.Controls.Add(this.panel4);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(241, 65);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(547, 649);
+            this.panel9.TabIndex = 36;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblHariTanggal);
+            this.panel4.Controls.Add(this.lblJam);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(389, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(492, 603);
-            this.panel4.TabIndex = 5;
+            this.panel4.Size = new System.Drawing.Size(158, 649);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.dataGridViewTransaksi);
+            this.panel10.Location = new System.Drawing.Point(27, 85);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(492, 546);
+            this.panel10.TabIndex = 36;
             // 
             // dataGridViewTransaksi
             // 
             this.dataGridViewTransaksi.AllowUserToAddRows = false;
             this.dataGridViewTransaksi.AllowUserToDeleteRows = false;
             this.dataGridViewTransaksi.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTransaksi.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTransaksi.ColumnHeadersHeight = 38;
             this.dataGridViewTransaksi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -436,13 +462,13 @@
             this.dataGridViewTransaksi.Name = "dataGridViewTransaksi";
             this.dataGridViewTransaksi.ReadOnly = true;
             this.dataGridViewTransaksi.RowHeadersWidth = 25;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTransaksi.Size = new System.Drawing.Size(492, 603);
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTransaksi.Size = new System.Drawing.Size(492, 546);
             this.dataGridViewTransaksi.TabIndex = 0;
             // 
             // id
@@ -500,12 +526,40 @@
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
+            // lblJam
+            // 
+            this.lblJam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblJam.AutoSize = true;
+            this.lblJam.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.lblJam.Location = new System.Drawing.Point(34, 3);
+            this.lblJam.Name = "lblJam";
+            this.lblJam.Size = new System.Drawing.Size(45, 21);
+            this.lblJam.TabIndex = 37;
+            this.lblJam.Text = "Jam";
+            // 
+            // lblHariTanggal
+            // 
+            this.lblHariTanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHariTanggal.AutoSize = true;
+            this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.lblHariTanggal.Location = new System.Drawing.Point(3, 24);
+            this.lblHariTanggal.Name = "lblHariTanggal";
+            this.lblHariTanggal.Size = new System.Drawing.Size(151, 21);
+            this.lblHariTanggal.TabIndex = 38;
+            this.lblHariTanggal.Text = "Hari dan Tanggal";
+            // 
             // UserControlDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "UserControlDashboard";
@@ -530,7 +584,10 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            this.panel9.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksi)).EndInit();
             this.ResumeLayout(false);
 
@@ -542,7 +599,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblJam;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label lblPelanggan;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
@@ -551,7 +607,6 @@
         private System.Windows.Forms.Label lblAmbil;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblHariTanggal;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblProses;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
@@ -564,7 +619,10 @@
         private System.Windows.Forms.Label lblSelesai;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView dataGridViewTransaksi;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn no;
@@ -575,5 +633,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn batas_waktu;
         private System.Windows.Forms.DataGridViewTextBoxColumn harga;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblHariTanggal;
+        private System.Windows.Forms.Label lblJam;
     }
 }
