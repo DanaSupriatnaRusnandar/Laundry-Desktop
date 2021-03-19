@@ -259,6 +259,12 @@
     <Compile Include="UserControlKurir.Designer.cs">
       <DependentUpon>UserControlKurir.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlLaporan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLaporan.Designer.cs">
+      <DependentUpon>UserControlLaporan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlOutlet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlKurir.resx">
       <DependentUpon>UserControlKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLaporan.resx">
+      <DependentUpon>UserControlLaporan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOutlet.resx">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>

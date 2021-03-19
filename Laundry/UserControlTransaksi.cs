@@ -48,6 +48,14 @@ namespace Laundry
             dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             Tampilkan();
+
+            //Jumlah Pemasukan
+            double pemasukan = 0;
+            foreach (DataGridViewRow row in dataGridViewTransaksi.Rows)
+            {
+                pemasukan = pemasukan + Convert.ToDouble(row.Cells["total_pembayaran"].Value);
+            }
+            txtTotal.Text = pemasukan.ToString("C0");
         }
 
         private void btnTambah_Click_1(object sender, EventArgs e)

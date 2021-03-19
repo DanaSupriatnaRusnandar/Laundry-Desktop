@@ -70,3 +70,4 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\ExcelNumberFormat.xml
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlDashboard.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditTransaksi.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahTransaksi.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlLaporan.resources

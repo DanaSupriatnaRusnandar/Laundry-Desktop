@@ -18,6 +18,7 @@ namespace Laundry
             InitializeComponent();
         }
         string getIdPelanggan;
+        string outlet;
 
         private void UserControlPelanggancs_Load(object sender, EventArgs e)
         {
@@ -32,6 +33,17 @@ namespace Laundry
             dataGridViewRegistrasi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            //Biding Outlet (combo Box)
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet", "id != '1'");
+            cmbOutlet.DisplayMember = "nama_outlet";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
+
+            /*if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                outlet = Session.getUserLogged().Rows[0].Field<string>("id_outlet");
+            }*/
 
             Tampilkan();
         }

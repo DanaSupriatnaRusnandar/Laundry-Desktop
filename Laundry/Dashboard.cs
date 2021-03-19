@@ -231,6 +231,7 @@ namespace Laundry
 
         private void btnLaporan_Click(object sender, EventArgs e)
         {
+            openPage(new UserControlLaporan());
             activateButton(sender, RGBColor.color8);
         }
 

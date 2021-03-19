@@ -57,12 +57,15 @@
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cmbOutlet = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRegistrasi)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewRegistrasi
@@ -307,6 +310,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -378,6 +382,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRASI PELANGGAN";
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.cmbOutlet);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(173, 65);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(199, 50);
+            this.panel6.TabIndex = 1;
+            // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(7, 15);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(186, 21);
+            this.cmbOutlet.TabIndex = 0;
+            // 
             // UserControlPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,6 +417,7 @@
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -422,5 +444,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn jenis_kelamin;
         private System.Windows.Forms.DataGridViewTextBoxColumn tlp;
         private System.Windows.Forms.DataGridViewLinkColumn edit;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.ComboBox cmbOutlet;
     }
 }

@@ -36,6 +36,7 @@ namespace Laundry
 
             Tampilkan();
 
+            //Jumlah pengeluaran
             double pengeluaran = 0;
             foreach (DataGridViewRow row in dataGridViewPengeluaran.Rows)
             {

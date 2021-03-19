@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +44,6 @@ namespace Laundry
             if (isfilled())
             {
                 var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
-                if (cmbJenis.SelectedIndex == 0) ;
                 var jenis = cmbJenis.SelectedValue;
                 var nama_paket = txtNama.Text;
                 var harga = txtHarga.Text;
