@@ -34,13 +34,6 @@ namespace Laundry
             dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridViewRegistrasi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-            //Biding Outlet (combo Box)
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet", "id != '1'");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;
-
-
             Tampilkan();
         }
 
@@ -79,11 +72,6 @@ namespace Laundry
             Tampilkan();
             txtCari.Clear();
         }
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            CariData(txtCari.Text);
-        }
-
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
@@ -94,7 +82,6 @@ namespace Laundry
                 Tampilkan();
                 MessageBox.Show("Data user berhasil dihapus!");
             }
-
         }
 
         private void dataGridViewRegistrasi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -121,6 +108,12 @@ namespace Laundry
         private void btnTambah_Click(object sender, EventArgs e)
         {
             new RegistrasiPelanggan(btn_refresh).ShowDialog();
+        }
+
+        private void txtCari_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCari.Text.Length > 0)
+             CariData(txtCari.Text);
         }
     }
 }

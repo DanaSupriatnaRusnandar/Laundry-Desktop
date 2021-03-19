@@ -49,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_refresh = new FontAwesome.Sharp.IconButton();
-            this.btnCari = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnTambah = new FontAwesome.Sharp.IconButton();
@@ -240,6 +239,7 @@
             this.txtCari.Name = "txtCari";
             this.txtCari.Size = new System.Drawing.Size(143, 20);
             this.txtCari.TabIndex = 22;
+            this.txtCari.TextChanged += new System.EventHandler(this.txtCari_TextChanged);
             // 
             // label2
             // 
@@ -258,7 +258,6 @@
             this.panel3.Controls.Add(this.txtCari);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btn_refresh);
-            this.panel3.Controls.Add(this.btnCari);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(491, 65);
             this.panel3.Name = "panel3";
@@ -273,27 +272,12 @@
             this.btn_refresh.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btn_refresh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_refresh.IconSize = 24;
-            this.btn_refresh.Location = new System.Drawing.Point(264, 13);
+            this.btn_refresh.Location = new System.Drawing.Point(234, 13);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(24, 24);
             this.btn_refresh.TabIndex = 24;
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
-            // 
-            // btnCari
-            // 
-            this.btnCari.FlatAppearance.BorderSize = 0;
-            this.btnCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCari.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnCari.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnCari.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCari.IconSize = 24;
-            this.btnCari.Location = new System.Drawing.Point(234, 12);
-            this.btnCari.Name = "btnCari";
-            this.btnCari.Size = new System.Drawing.Size(24, 24);
-            this.btnCari.TabIndex = 23;
-            this.btnCari.UseVisualStyleBackColor = true;
-            this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
             // panel1
             // 
@@ -392,8 +376,6 @@
         }
 
         #endregion
-
-        private FontAwesome.Sharp.IconButton btnCari;
         private FontAwesome.Sharp.IconButton btnHapus;
         private FontAwesome.Sharp.IconButton btn_refresh;
         private System.Windows.Forms.Panel panel4;

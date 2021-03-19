@@ -89,11 +89,6 @@ namespace Laundry
             txtCari.Clear();
         }
 
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            CariData(txtCari.Text);
-        }
-
         private void btnHapus_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data transaksi Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -135,6 +130,13 @@ namespace Laundry
                 string petugas = row.Cells["nama"].Value.ToString();
                 new EditTransaksi(btn_refresh, id, outlet, invoice, pelanggan, tanggal, batas_waktu, tgl_bayar, biaya_tambahan, diskon, pajak, total, status, dibayar, kuris, petugas).ShowDialog();
             }
+        }
+
+        //Cari Data
+        private void txtCari_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCari.Text.Length > 0)
+            CariData(txtCari.Text);
         }
     }
 }

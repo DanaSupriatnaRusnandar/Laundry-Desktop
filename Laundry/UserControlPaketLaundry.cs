@@ -74,11 +74,6 @@ namespace Laundry
             txtCari.Clear();
         }
 
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            CariData(txtCari.Text);
-        }
-
         private void btnHapus_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data paket laundry Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -116,6 +111,12 @@ namespace Laundry
         private void btnTambah_Click(object sender, EventArgs e)
         {
             new TambahPaketLaundry(this, btn_refresh, Outlet).ShowDialog();
+        }
+
+        private void txtCari_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCari.Text.Length > 0)
+                CariData(txtCari.Text);
         }
     }
 }

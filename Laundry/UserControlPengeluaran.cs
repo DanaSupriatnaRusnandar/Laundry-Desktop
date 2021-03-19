@@ -163,6 +163,7 @@ namespace Laundry
             new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
         }
 
+        //Cari Data
         private void txtCari_TextChanged(object sender, EventArgs e)
         {
             if (txtCari.Text.Length > 0)

@@ -55,7 +55,6 @@ namespace Laundry
             dataGridViewJenis.DataSource = Db.Read($"SELECT * FROM tb_jenis WHERE tb_jenis.jenis LIKE '%{keyword}%'");
         }
 
-
         private bool isfilled()
         {
             if (txtCari.Text.Length > 0) return false;
@@ -68,28 +67,14 @@ namespace Laundry
             txtCari.Clear();
         }
 
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            CariData(txtCari.Text);
-        }
-
         private void btnHapus_Click(object sender, EventArgs e)
         {
-          /*  var confirm = MessageBox.Show("Yakin inngin menghapus data jenis paket ini?", "Konfirmasie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm == DialogResult.Yes)
-            {
-                Db.Delete("tb_jenis", $"id = {getIdJenis}");
-                Tampilkan();
-                MessageBox.Show("Data telah dihapus");
-            }*/
-
             var confirm = MessageBox.Show("Apakah anda yakin ingin Menghapus Data Ini?", "KONFIRMASI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (confirm == DialogResult.Yes)
             {
                 Db.Delete("tb_jenis", $"id = {getIdJenis}");
                 Tampilkan();
                 MessageBox.Show("Data Telah Dihapus!");
-
             }
         }
 
@@ -125,6 +110,13 @@ namespace Laundry
                     MessageBox.Show($"Gagal menambah jenis barang \n\n ERROR MESSAGE : \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        //Cari Data
+        private void txtCari_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCari.Text.Length > 0)
+                CariData(txtCari.Text);
         }
     }
 }
