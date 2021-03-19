@@ -30,7 +30,7 @@ namespace Laundry
             panelMenu.Controls.Add(leftBorderBtn);
         }
 
-        //Struktur
+        //Struktur warna button
         private struct RGBColor
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -103,7 +103,7 @@ namespace Laundry
             }
         }
 
-        //Pemanggilan user control
+        //Pemanggil user control
         private void openPage(UserControl usercontrol)
         {
             pageWrapper.Controls.Clear();
@@ -113,12 +113,13 @@ namespace Laundry
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            //Jam & Tanggal
-            lblJam.Text = DateTime.Now.ToLongTimeString();
-            lblHariTanggal.Text = DateTime.Now.ToLongDateString();
-            timer1.Enabled = true;
-
             //Pembagian Role
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
+            {
+                btnOutlet.Visible = false;
+                panelData.Height -= 50;
+            }
+
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "kasir")
             {
                 btnAkun.Visible = false;
@@ -141,7 +142,6 @@ namespace Laundry
                 btnPengeluaran.Visible = false;
                 btnPelanggan.Visible = false;
             }
-             //   MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role" ));
         }
 
         //Button Close, Maximiza, Minimize
@@ -250,13 +250,6 @@ namespace Laundry
                 Login lg = new Login();
                 lg.Show();
             }
-        }
-
-        //Waktu
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblJam.Text = DateTime.Now.ToLongTimeString();
-            lblHariTanggal.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

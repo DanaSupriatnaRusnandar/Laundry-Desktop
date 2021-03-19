@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.btnMaximize = new FontAwesome.Sharp.IconButton();
@@ -52,16 +51,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pageWrapper = new System.Windows.Forms.Panel();
-            this.lblHariTanggal = new System.Windows.Forms.Label();
-            this.lblJam = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelData.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.pageWrapper.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -305,7 +300,7 @@
             this.panelData.Location = new System.Drawing.Point(0, 184);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(198, 250);
-            this.panelData.TabIndex = 15;
+            this.panelData.TabIndex = 30;
             // 
             // btnJenis
             // 
@@ -502,45 +497,11 @@
             // 
             // pageWrapper
             // 
-            this.pageWrapper.Controls.Add(this.lblHariTanggal);
-            this.pageWrapper.Controls.Add(this.lblJam);
             this.pageWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageWrapper.Location = new System.Drawing.Point(198, 47);
             this.pageWrapper.Name = "pageWrapper";
             this.pageWrapper.Size = new System.Drawing.Size(682, 715);
             this.pageWrapper.TabIndex = 2;
-            // 
-            // lblHariTanggal
-            // 
-            this.lblHariTanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHariTanggal.AutoSize = true;
-            this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblHariTanggal.Location = new System.Drawing.Point(5, 26);
-            this.lblHariTanggal.Name = "lblHariTanggal";
-            this.lblHariTanggal.Size = new System.Drawing.Size(151, 21);
-            this.lblHariTanggal.TabIndex = 21;
-            this.lblHariTanggal.Text = "Hari dan Tanggal";
-            // 
-            // lblJam
-            // 
-            this.lblJam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblJam.AutoSize = true;
-            this.lblJam.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblJam.Location = new System.Drawing.Point(5, 5);
-            this.lblJam.Name = "lblJam";
-            this.lblJam.Size = new System.Drawing.Size(45, 21);
-            this.lblJam.TabIndex = 20;
-            this.lblJam.Text = "Jam";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Dashboard
             // 
@@ -564,8 +525,6 @@
             this.panelData.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.pageWrapper.ResumeLayout(false);
-            this.pageWrapper.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -579,7 +538,6 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel pageWrapper;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Timer timer1;
         private FontAwesome.Sharp.IconButton btnDashboard;
         private FontAwesome.Sharp.IconButton btnAkun;
         private FontAwesome.Sharp.IconButton btnJenis;
@@ -594,8 +552,6 @@
         private FontAwesome.Sharp.IconButton btnTransaksi;
         private FontAwesome.Sharp.IconButton btnPelanggan;
         private FontAwesome.Sharp.IconButton btnPaketCucian;
-        private System.Windows.Forms.Label lblHariTanggal;
-        private System.Windows.Forms.Label lblJam;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

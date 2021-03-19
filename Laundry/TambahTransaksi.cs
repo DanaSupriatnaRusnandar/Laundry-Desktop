@@ -171,7 +171,8 @@ namespace Laundry
                 var tanggalBayar = dtpTanggalBayar.Value.ToString("yyyy-MM-dd");
                 var catatan = txtCatatan.Text;
                 var kurir = cmbKurir.SelectedValue;
-                var invoice = DateTime.Now.ToString("yyyyMMddmmss");
+                Random r = new Random();
+                string invoice = $"INV{DateTime.Now.ToString("yyMMddHHmm")}{r.Next(1, 99)}";
                 petugas = Session.getUserLogged().Rows[0].Field<int>("id");
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {

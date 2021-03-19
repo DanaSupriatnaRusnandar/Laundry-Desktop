@@ -40,15 +40,32 @@ namespace Laundry
         //Function
         private void Tampilkan()
         {
-         //   SELECT tb_paket.id, tb_outlet.nama_outlet ,tb_paket.nama_paket, tb_jenis.jenis, tb_paket.harga FROM tb_paket INNER JOIN tb_outlet on tb_paket.id_outlet = tb_outlet.id INNER JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id
-            dataGridViewpaket.AutoGenerateColumns = false;
-            dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id");
+                dataGridViewpaket.AutoGenerateColumns = false;
+                dataGridViewpaket.DataSource = data;
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                dataGridViewpaket.AutoGenerateColumns = false;
+                dataGridViewpaket.DataSource = data;
+            }
         }
         
         private void CariData(string keyword)
         {
-            dataGridViewpaket.AutoGenerateColumns = false;
-            dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.jenis LIKE '%{keyword}%'");
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                dataGridViewpaket.AutoGenerateColumns = false;
+                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.jenis LIKE '%{keyword}%'");
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                dataGridViewpaket.AutoGenerateColumns = false;
+                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.jenis LIKE '%{keyword}%'");
+            }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

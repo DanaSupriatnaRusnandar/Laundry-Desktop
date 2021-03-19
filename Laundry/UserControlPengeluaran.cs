@@ -15,6 +15,7 @@ namespace Laundry
     public partial class UserControlPengeluaran : UserControl
     {
         string getIdPengeluaran;
+        int Total;
         public UserControlPengeluaran()
         {
             InitializeComponent();
@@ -35,7 +36,43 @@ namespace Laundry
             dataGridViewPengeluaran.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
             Tampilkan();
+        }
 
+        private void Tampilkan()
+        {
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id");
+                dataGridViewPengeluaran.AutoGenerateColumns = false;
+                dataGridViewPengeluaran.DataSource = data;
+            }
+            else
+            {
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                dataGridViewPengeluaran.AutoGenerateColumns = false;
+                dataGridViewPengeluaran.DataSource = data;
+            }
+            hitungPengeluaran();
+
+        }
+
+        private void CariData(string keyword)
+        {
+            if(Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                dataGridViewPengeluaran.AutoGenerateColumns = false;
+                dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_pengeluaran.nama_barang LIKE '%{keyword}%' OR tb_pengeluaran.tgl LIKE '%{keyword}%'");
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                dataGridViewPengeluaran.AutoGenerateColumns = false;
+                dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_pengeluaran.nama_barang LIKE '%{keyword}%' OR tb_pengeluaran.tgl LIKE '%{keyword}%' ");
+            }
+            hitungPengeluaran();
+        }
+
+        private void hitungPengeluaran()
+        {
             //Jumlah pengeluaran
             double pengeluaran = 0;
             foreach (DataGridViewRow row in dataGridViewPengeluaran.Rows)
@@ -43,19 +80,6 @@ namespace Laundry
                 pengeluaran = pengeluaran + Convert.ToDouble(row.Cells["total"].Value);
             }
             txtTotal.Text = pengeluaran.ToString("C0");
-        }
-
-        private void Tampilkan()
-        {
-            DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
-            dataGridViewPengeluaran.AutoGenerateColumns = false;
-            dataGridViewPengeluaran.DataSource = data;
-        }
-
-        private void CariData(string keyword)
-        {
-            dataGridViewPengeluaran.AutoGenerateColumns = false;
-            dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_pengeluaran.nama_barang LIKE '%{keyword}%' OR tb_pengeluaran.tgl LIKE '%{keyword}%'");
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -80,11 +104,6 @@ namespace Laundry
         {
             int row = dataGridViewPengeluaran.CurrentCell.RowIndex;
             getIdPengeluaran = dataGridViewPengeluaran.Rows[row].Cells["id"].Value.ToString();
-        }
-
-        private void btnCari_Click(object sender, EventArgs e)
-        {
-            CariData(txtCari.Text);
         }
 
         private void dataGridViewPengeluaran_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,6 +161,12 @@ namespace Laundry
         private void btnTambah_Click(object sender, EventArgs e)
         {
             new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
+        }
+
+        private void txtCari_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCari.Text.Length > 0)
+                CariData(txtCari.Text);
         }
     }
 }
