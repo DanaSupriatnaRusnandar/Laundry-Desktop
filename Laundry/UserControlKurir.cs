@@ -40,15 +40,32 @@ namespace Laundry
 
         private void Tampilkan()
         {
-            DataTable data = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
-            dataGridViewKurir.AutoGenerateColumns = false;
-            dataGridViewKurir.DataSource = data;
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                DataTable data = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id");
+                dataGridViewKurir.AutoGenerateColumns = false;
+                dataGridViewKurir.DataSource = data;
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                DataTable data = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                dataGridViewKurir.AutoGenerateColumns = false;
+                dataGridViewKurir.DataSource = data;
+            }
         }
 
         private void CariData(string keyword)
         {
-            dataGridViewKurir.AutoGenerateColumns = false;
-            dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_kurir.nama_kurir LIKE '%{keyword}%' OR tb_kurir.alamat LIKE '%{keyword}%' OR tb_kurir.tlp LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%'");
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                dataGridViewKurir.AutoGenerateColumns = false;
+                dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.nama_kurir LIKE '%{keyword}%' OR tb_kurir.alamat LIKE '%{keyword}%' OR tb_kurir.tlp LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%'");
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                dataGridViewKurir.AutoGenerateColumns = false;
+                dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_kurir.nama_kurir, tb_kurir.alamat, OR tb_kurir.tlp) LIKE '%{keyword}%'");
+            }
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

@@ -18,6 +18,8 @@ namespace Laundry
         string getIdPaket;
         int Total;
         int petugas;
+        int id_outlet;
+        int id_user;
         public TambahTransaksi(Button btrefresh, string id)
         {
             InitializeComponent();
@@ -27,12 +29,6 @@ namespace Laundry
 
         private void Transaksi_Load(object sender, EventArgs e)
         {
-            //Biding Outlet
-            /*cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;*/
-
             //Biding Pelanggan
             cmbPelanggan.DataSource = Db.Read("tb_member", "id, nama_member");
             cmbPelanggan.DisplayMember = "nama_member";
@@ -50,6 +46,9 @@ namespace Laundry
             cmbKurir.DisplayMember = "nama_kurir";
             cmbKurir.ValueMember = "id";
             cmbKurir.SelectedIndex = -1;
+
+            id_outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
+            id_user = Session.getUserLogged().Rows[0].Field<int>("id");
 
             Dibayar(cmbDibayar.SelectedItem);
         }
@@ -126,7 +125,7 @@ namespace Laundry
 
         private bool isfilled()
         {
-            if (cmbPelanggan.SelectedIndex >= 0 && dtpTanggal.Checked && dtpBatasWaktu.Checked && txtDiskon.Text.Length >= 0 && txtBiayaTambahan.Text.Length >= 0 && txtPajak.Text.Length >= 0 && cmbDibayar.SelectedIndex >= 0 && dtpTanggalBayar.Checked && txtCatatan.Text.Length >= 0 && cmbKurir.SelectedIndex >= 0) return true;
+            if (cmbPelanggan.SelectedIndex >= 0 && dtpTanggal.Checked && dtpBatasWaktu.Checked && txtDiskon.Text.Length >= 0 && txtBiayaTambahan.Text.Length >= 0 && txtPajak.Text.Length >= 0 && cmbDibayar.SelectedIndex >= 0  && txtCatatan.Text.Length >= 0 && cmbKurir.SelectedIndex >= 0) return true;
             return false;
         }
 
@@ -145,8 +144,8 @@ namespace Laundry
             cmbPaket.SelectedIndex = -1;
             txtJenis.Clear();
             txtQty.Text = "1";
-            txtHarga.Clear();
-            txtTotal.Clear();
+            txtHarga.Text = "0";
+            txtTotal.Text = "0";
         }
 
         //Tambah Paket dataGridView
@@ -160,37 +159,66 @@ namespace Laundry
         {
             if (isfilled())
             {
-                var outlet = Session.getUserLogged().Rows[0].Field<int>("id");
-                var pelanggan = cmbPelanggan.SelectedValue;
-                var tanggal = dtpTanggal.Value.ToString("yyyy-MM-dd");
-                var batasWaktu = dtpBatasWaktu.Value.ToString("yyyy-MM-dd");
-                var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
-                var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
-                var pajak = Convert.ToDouble(txtNominalPajak.Text) / dataGridView1.Rows.Count;
-                var dibayar = cmbDibayar.SelectedItem;
-                var tanggalBayar = dtpTanggalBayar.Value.ToString("yyyy-MM-dd");
-                var catatan = txtCatatan.Text;
-                var kurir = cmbKurir.SelectedValue;
-                Random r = new Random();
-                string invoice = $"INV{DateTime.Now.ToString("yyMMddHHmm")}{r.Next(1, 99)}";
-                petugas = Session.getUserLogged().Rows[0].Field<int>("id");
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    var total_pembayaran = dataGridView1.Rows[i].Cells["harga"].Value.ToString();
+                int next_id;
+                DataTable result = Db.Read("SELECT id FROM tb_transaksi ORDER BY id DESC LIMIT 1");
+                if (result.Rows.Count > 0) next_id = result.Rows[0].Field<int>("id") + 1;
+                else next_id = 1;
 
-                    getIdPaket = dataGridView1.Rows[i].Cells["id"].Value.ToString();
-                    if (Db.Insert($"tb_transaksi", $"Null, '{outlet}', '{invoice}', '{pelanggan}', '{tanggal}', '{batasWaktu}', '{tanggalBayar}', '{biayaTambahan}', '{diskon}', '{pajak}', '{total_pembayaran}', 'baru', '{dibayar}', '{kurir}', '{petugas}'"))
+                if (Db.ExecuteQuery($"ALTER TABLE tb_transaksi AUTO_INCREMENT = {next_id}"))
+                {
+                    string invoice = $"INV{DateTime.Now.ToString("yyMMddHHmm")}";
+                    string now = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
+                    var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
+                    var pajak = Convert.ToDouble(txtNominalPajak.Text) / dataGridView1.Rows.Count;
+                    var dibayar = cmbDibayar.SelectedItem;
+                    var kurir = cmbKurir.SelectedValue;
+                    string tanggalBayar = "Null";
+                    if (cmbDibayar.SelectedIndex == 0) tanggalBayar = $"'{now}'";
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        MessageBox.Show("Transaksi berhasil dilakukan");
-                        btrf.PerformClick();
-                        this.Hide();
+                        string id_paket = row.Cells["id"].Value.ToString();
+                        string qty = row.Cells["qty"].Value.ToString();
+                        double total = Convert.ToDouble(row.Cells["harga"].Value) + pajak + biayaTambahan - diskon;
+
+                        if (Db.ExecuteQuery(
+                            $"CALL transaksi({next_id},{id_outlet},'{invoice}', {cmbPelanggan.SelectedValue}, '{now}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
+                            )) 
+                        {
+                            next_id++;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"ERROR : {Error.error_msg}");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show($"Gagal melakukan transaksi. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Transaksi berhasil dilakukan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hapusTransaksi();
+
                 }
             }
+        }
+
+        private void hapusTransaksi()
+        {
+            cmbPelanggan.ResetText();
+            cmbPaket.ResetText();
+            cmbKurir.ResetText();
+            cmbDibayar.ResetText();
+            dtpBatasWaktu.Value = DateTime.Now;
+            dtpTanggal.Value = DateTime.Now;
+            txtJenis.Clear();
+            txtQty.Text = "1";
+            txtHarga.Text = "0";
+            txtTotal.Text = "0";
+            txtDiskon.Text = "0";
+            txtPajak.Text = "0";
+            txtNominalDiskon.Text = "0";
+            txtNominalPajak.Text = "0";
+            txtBiayaTambahan.Text = "0";
+            txtTotalPembayaran.Text = "0";
+            txtCatatan.Clear();
+            dataGridView1.Rows.Clear();
         }
 
         private void cmbPaket_SelectedIndexChanged(object sender, EventArgs e)

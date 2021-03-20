@@ -48,7 +48,7 @@ namespace Laundry
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
                 dataGridViewTransaksi.AutoGenerateColumns = false;
-                dataGridViewTransaksi.DataSource = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_member.nama_member LIKE '%{keyword}%' OR tb_kurir.nama_kurir LIKE '%{keyword}%' OR tb_user.nama LIKE '%{keyword}%' OR tb_transaksi.tgl LIKE '%{keyword}%'");
+                dataGridViewTransaksi.DataSource = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_member.nama_member, tb_kurir.nama_kurir, tb_user.nama, tb_transaksi.tgl) LIKE '%{keyword}%'");
 
             }
         }

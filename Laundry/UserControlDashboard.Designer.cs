@@ -61,18 +61,17 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridViewTransaksi = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblHariTanggal = new System.Windows.Forms.Label();
+            this.lblJam = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kode_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama_member = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.batas_waktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_pemabayaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblHariTanggal = new System.Windows.Forms.Label();
-            this.lblJam = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -444,9 +443,8 @@
             this.kode_invoice,
             this.tgl,
             this.nama_member,
-            this.jenis,
-            this.batas_waktu,
-            this.harga,
+            this.nama_paket,
+            this.total_pemabayaran,
             this.status});
             this.dataGridViewTransaksi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewTransaksi.Location = new System.Drawing.Point(0, 0);
@@ -461,61 +459,6 @@
             this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTransaksi.Size = new System.Drawing.Size(492, 546);
             this.dataGridViewTransaksi.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // no
-            // 
-            this.no.HeaderText = "No";
-            this.no.Name = "no";
-            this.no.ReadOnly = true;
-            // 
-            // kode_invoice
-            // 
-            this.kode_invoice.HeaderText = "Invoice";
-            this.kode_invoice.Name = "kode_invoice";
-            this.kode_invoice.ReadOnly = true;
-            // 
-            // tgl
-            // 
-            this.tgl.HeaderText = "Tanggal";
-            this.tgl.Name = "tgl";
-            this.tgl.ReadOnly = true;
-            // 
-            // nama_member
-            // 
-            this.nama_member.HeaderText = "Pelanggan";
-            this.nama_member.Name = "nama_member";
-            this.nama_member.ReadOnly = true;
-            // 
-            // jenis
-            // 
-            this.jenis.HeaderText = "Jenis Paket";
-            this.jenis.Name = "jenis";
-            this.jenis.ReadOnly = true;
-            // 
-            // batas_waktu
-            // 
-            this.batas_waktu.HeaderText = "Batas Waktu";
-            this.batas_waktu.Name = "batas_waktu";
-            this.batas_waktu.ReadOnly = true;
-            // 
-            // harga
-            // 
-            this.harga.HeaderText = "Harga";
-            this.harga.Name = "harga";
-            this.harga.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
             // 
             // panel4
             // 
@@ -554,6 +497,61 @@
             this.lblJam.Size = new System.Drawing.Size(45, 21);
             this.lblJam.TabIndex = 37;
             this.lblJam.Text = "Jam";
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // no
+            // 
+            this.no.DataPropertyName = "no";
+            this.no.HeaderText = "No";
+            this.no.Name = "no";
+            this.no.ReadOnly = true;
+            // 
+            // kode_invoice
+            // 
+            this.kode_invoice.DataPropertyName = "kode_invoice";
+            this.kode_invoice.HeaderText = "Invoice";
+            this.kode_invoice.Name = "kode_invoice";
+            this.kode_invoice.ReadOnly = true;
+            // 
+            // tgl
+            // 
+            this.tgl.DataPropertyName = "tgl";
+            this.tgl.HeaderText = "Tanggal";
+            this.tgl.Name = "tgl";
+            this.tgl.ReadOnly = true;
+            // 
+            // nama_member
+            // 
+            this.nama_member.HeaderText = "Pelanggan";
+            this.nama_member.Name = "nama_member";
+            this.nama_member.ReadOnly = true;
+            // 
+            // nama_paket
+            // 
+            this.nama_paket.DataPropertyName = "nama_paket";
+            this.nama_paket.HeaderText = "Nama Paket";
+            this.nama_paket.Name = "nama_paket";
+            this.nama_paket.ReadOnly = true;
+            // 
+            // total_pemabayaran
+            // 
+            this.total_pemabayaran.DataPropertyName = "total_pemabayaran";
+            this.total_pemabayaran.HeaderText = "Harga Total";
+            this.total_pemabayaran.Name = "total_pemabayaran";
+            this.total_pemabayaran.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
             // 
             // UserControlDashboard
             // 
@@ -625,17 +623,16 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView dataGridViewTransaksi;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblHariTanggal;
+        private System.Windows.Forms.Label lblJam;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn no;
         private System.Windows.Forms.DataGridViewTextBoxColumn kode_invoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn tgl;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_member;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jenis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn batas_waktu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn harga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nama_paket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_pemabayaran;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblHariTanggal;
-        private System.Windows.Forms.Label lblJam;
     }
 }

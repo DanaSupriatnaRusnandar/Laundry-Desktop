@@ -63,7 +63,7 @@ namespace Laundry
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
                 dataGridViewRegistrasi.AutoGenerateColumns = false;
-                dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND tb_member.nama_member LIKE '%{keyword}%' OR tb_member.alamat LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%'");
+                dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_member.nama_member, tb_member.alamat) LIKE '%{keyword}%'");
             }
         }
 

@@ -145,13 +145,6 @@ namespace Laundry
         }
 
         //Button Close, Maximiza, Minimize
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Keluar dari aplikasi???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
         private void btnMaximize_Click_1(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Normal)
@@ -239,16 +232,23 @@ namespace Laundry
         {
             activateButton(sender, RGBColor.color1);
         }
-
         private void btnKeluar_Click_1(object sender, EventArgs e)
         {
             activateButton(sender, RGBColor.color9);
-            if (MessageBox.Show("Keluar dari Akun???", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Keluar dari Akun?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Auth.Logout();
                 this.Hide();
                 Login lg = new Login();
                 lg.Show();
+            }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Keluar dari aplikasi?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }

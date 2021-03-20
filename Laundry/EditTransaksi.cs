@@ -24,6 +24,7 @@ namespace Laundry
         string pembayaran;
         string nama_kurir;
         string nama_petugas;
+        double Total;
         public EditTransaksi(Button btrefresh, string id, string outlet, string invoice, string pelanggan, DateTime tgl, DateTime batas_waktu, DateTime tgl_bayar, string biaya_tambahan, string diskon, string pajak, string total, string status, string dibayar, string kurir, string petugas)
         {
             InitializeComponent();
@@ -84,7 +85,6 @@ namespace Laundry
             {
                 dataGridView1.Rows.Add(row.Field<string>("nama_paket"), row.Field<double>("qty"), row.Field<int>("total_pembayaran"));
             }
-            MessageBox.Show(data.Rows.Count.ToString());
         }
         
         void Dibayar()
@@ -92,7 +92,6 @@ namespace Laundry
             cmbDibayar.Items.Add("dibayar");
             cmbDibayar.Items.Add("belum_dibayar");
         }
-
         private bool isfilled()
         {
             if (cmbOutlet.SelectedIndex >= 0 && cmbPelanggan.SelectedIndex >= 0 && dtpTanggal.Checked && dtpBatasWaktu.Checked && txtDiskon.Text.Length >= 0 && txtBiayaTambahan.Text.Length >= 0 && txtPajak.Text.Length >= 0 && cmbDibayar.SelectedIndex >= 0 && dtpTanggalBayar.Checked && txtCatatan.Text.Length >= 0 && cmbKurir.SelectedIndex >= 0) return true;
@@ -103,6 +102,7 @@ namespace Laundry
         {
             if (isfilled())
             {
+
                 var outlet = cmbOutlet.SelectedValue;
                 var pelanggan = cmbPelanggan.SelectedValue;
                 var tanggal = dtpTanggal.Value.ToString("yyyy-MM-dd");
@@ -115,13 +115,14 @@ namespace Laundry
                 var catatan = txtCatatan.Text;
                 var kurir = cmbKurir.SelectedValue;
                 var invoice = DateTime.Now.ToString("yyyyMMddmmss");
+                
                 petugas = Session.getUserLogged().Rows[0].Field<int>("id");
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     var total = dataGridView1.Rows[i].Cells["harga"].Value.ToString();
 
                     getIdPaket = dataGridView1.Rows[i].Cells["id"].Value.ToString();
-                    if (Db.Insert($"tb_transaksi", $"Null, '{outlet}', '{invoice}', '{pelanggan}', '{tanggal}', '{batasWaktu}', '{tanggalBayar}', '{biayaTambahan}', '{diskon}', '{pajak}', '{total}', 'baru', '{dibayar}', '{kurir}', '{petugas}'"))
+                    if (Db.Update($"tb_transaksi", $"id = {getIdTransaksi}, id_outlet ='{outlet}', kode_invoice ='{invoice}', id_member ='{pelanggan}', tgl ='{tanggal}', batas_waktu ='{batasWaktu}', tgl_bayar ='{tanggalBayar}', biaya_tambahan ='{biayaTambahan}', diskon ='{diskon}', pajak ='{pajak}', total_pembayaran ='{total}', status ='baru', dibayar ='{dibayar}', id_kurir ='{kurir}', id_user ='{petugas}'", $"id = {getIdTransaksi}"))
                     {
                         MessageBox.Show("Transaksi berhasil dilakukan");
                         btrf.PerformClick();
@@ -132,6 +133,8 @@ namespace Laundry
                         MessageBox.Show($"Gagal melakukan transaksi. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+
+
             }
         }
     }
