@@ -21,7 +21,6 @@ namespace Laundry
             InitializeComponent();
             btrf = btrefresh;
             getIdUser = id;
-
         }
 
         private void TambahDataUser_Load(object sender, EventArgs e)
@@ -62,9 +61,7 @@ namespace Laundry
                 var nama = txtnama.Text;
                 var username = txtusername.Text;
                 var password = Sha256.Encrypt(txtpassword.Text);
-                if (cmbOutlet.SelectedIndex == 0) ;
                 var outlet = cmbOutlet.SelectedValue;
-                if (cmbRole.SelectedIndex == 0) ;
                 var role = cmbRole.SelectedItem;
                 if (Db.Insert("tb_user", $"null, '{nama}', '{username}', '{password}', '{outlet}', '{role}'"))
                 {

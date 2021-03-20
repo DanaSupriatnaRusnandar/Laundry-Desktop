@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="laundryDataSetReport" targetNamespace="http://tempuri.org/laundryDataSetReport.xsd" xmlns:mstns="http://tempuri.org/laundryDataSetReport.xsd" xmlns="http://tempuri.org/laundryDataSetReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="laundryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="laundryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Laundry.Properties.Settings.GlobalReference.Default.laundryConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_detail_transaksiTableAdapter" GeneratorDataComponentClassName="tb_detail_transaksiTableAdapter" Name="tb_detail_transaksi" UserDataComponentName="tb_detail_transaksiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_detail_transaksi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `id_transaksi`, `id_paket`, `qty`, `keterangan` FROM `tb_detail_transaksi`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_jenisTableAdapter" GeneratorDataComponentClassName="tb_jenisTableAdapter" Name="tb_jenis" UserDataComponentName="tb_jenisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_jenis" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `jenis` FROM `tb_jenis`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_kurirTableAdapter" GeneratorDataComponentClassName="tb_kurirTableAdapter" Name="tb_kurir" UserDataComponentName="tb_kurirTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_kurir" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `nama_kurir`, `alamat`, `tlp`, `id_outlet` FROM `tb_kurir`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_memberTableAdapter" GeneratorDataComponentClassName="tb_memberTableAdapter" Name="tb_member" UserDataComponentName="tb_memberTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_member" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `nama_member`, `alamat`, `jenis_kelamin`, `tlp`, `id_outlet` FROM `tb_member`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_outletTableAdapter" GeneratorDataComponentClassName="tb_outletTableAdapter" Name="tb_outlet" UserDataComponentName="tb_outletTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_outlet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `nama_outlet`, `alamat`, `tlp` FROM `tb_outlet`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_paketTableAdapter" GeneratorDataComponentClassName="tb_paketTableAdapter" Name="tb_paket" UserDataComponentName="tb_paketTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_paket" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `id_outlet`, `nama_paket`, `id_jenis`, `harga` FROM `tb_paket`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_pengeluaranTableAdapter" GeneratorDataComponentClassName="tb_pengeluaranTableAdapter" Name="tb_pengeluaran" UserDataComponentName="tb_pengeluaranTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_pengeluaran" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `id_outlet`, `nama_barang`, `tgl`, `total`, `keterangan` FROM `tb_pengeluaran`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_transaksiTableAdapter" GeneratorDataComponentClassName="tb_transaksiTableAdapter" Name="tb_transaksi" UserDataComponentName="tb_transaksiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_transaksi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `id_outlet`, `kode_invoice`, `id_member`, `tgl`, `batas_waktu`, `tgl_bayar`, `biaya_tambahan`, `diskon`, `pajak`, `total_pembayaran`, `status`, `dibayar`, `id_kurir`, `id_user` FROM `tb_transaksi`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_userTableAdapter" GeneratorDataComponentClassName="tb_userTableAdapter" Name="tb_user" UserDataComponentName="tb_userTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectName="laundry.tb_user" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `nama`, `username`, `password`, `id_outlet`, `role` FROM `tb_user`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="laundryDataSetReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="laundryDataSetReport" msprop:Generator_UserDSName="laundryDataSetReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tb_detail_transaksi" msprop:Generator_TableClassName="tb_detail_transaksiDataTable" msprop:Generator_TableVarName="tabletb_detail_transaksi" msprop:Generator_TablePropName="tb_detail_transaksi" msprop:Generator_RowDeletingName="tb_detail_transaksiRowDeleting" msprop:Generator_RowChangingName="tb_detail_transaksiRowChanging" msprop:Generator_RowEvHandlerName="tb_detail_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_detail_transaksiRowDeleted" msprop:Generator_UserTableName="tb_detail_transaksi" msprop:Generator_RowChangedName="tb_detail_transaksiRowChanged" msprop:Generator_RowEvArgName="tb_detail_transaksiRowChangeEvent" msprop:Generator_RowClassName="tb_detail_transaksiRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_jenis" msprop:Generator_TableClassName="tb_jenisDataTable" msprop:Generator_TableVarName="tabletb_jenis" msprop:Generator_TablePropName="tb_jenis" msprop:Generator_RowDeletingName="tb_jenisRowDeleting" msprop:Generator_RowChangingName="tb_jenisRowChanging" msprop:Generator_RowEvHandlerName="tb_jenisRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_jenisRowDeleted" msprop:Generator_UserTableName="tb_jenis" msprop:Generator_RowChangedName="tb_jenisRowChanged" msprop:Generator_RowEvArgName="tb_jenisRowChangeEvent" msprop:Generator_RowClassName="tb_jenisRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_kurir" msprop:Generator_TableClassName="tb_kurirDataTable" msprop:Generator_TableVarName="tabletb_kurir" msprop:Generator_TablePropName="tb_kurir" msprop:Generator_RowDeletingName="tb_kurirRowDeleting" msprop:Generator_RowChangingName="tb_kurirRowChanging" msprop:Generator_RowEvHandlerName="tb_kurirRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_kurirRowDeleted" msprop:Generator_UserTableName="tb_kurir" msprop:Generator_RowChangedName="tb_kurirRowChanged" msprop:Generator_RowEvArgName="tb_kurirRowChangeEvent" msprop:Generator_RowClassName="tb_kurirRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_member" msprop:Generator_TableClassName="tb_memberDataTable" msprop:Generator_TableVarName="tabletb_member" msprop:Generator_TablePropName="tb_member" msprop:Generator_RowDeletingName="tb_memberRowDeleting" msprop:Generator_RowChangingName="tb_memberRowChanging" msprop:Generator_RowEvHandlerName="tb_memberRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_memberRowDeleted" msprop:Generator_UserTableName="tb_member" msprop:Generator_RowChangedName="tb_memberRowChanged" msprop:Generator_RowEvArgName="tb_memberRowChangeEvent" msprop:Generator_RowClassName="tb_memberRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_outlet" msprop:Generator_TableClassName="tb_outletDataTable" msprop:Generator_TableVarName="tabletb_outlet" msprop:Generator_TablePropName="tb_outlet" msprop:Generator_RowDeletingName="tb_outletRowDeleting" msprop:Generator_RowChangingName="tb_outletRowChanging" msprop:Generator_RowEvHandlerName="tb_outletRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_outletRowDeleted" msprop:Generator_UserTableName="tb_outlet" msprop:Generator_RowChangedName="tb_outletRowChanged" msprop:Generator_RowEvArgName="tb_outletRowChangeEvent" msprop:Generator_RowClassName="tb_outletRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_paket" msprop:Generator_TableClassName="tb_paketDataTable" msprop:Generator_TableVarName="tabletb_paket" msprop:Generator_TablePropName="tb_paket" msprop:Generator_RowDeletingName="tb_paketRowDeleting" msprop:Generator_RowChangingName="tb_paketRowChanging" msprop:Generator_RowEvHandlerName="tb_paketRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_paketRowDeleted" msprop:Generator_UserTableName="tb_paket" msprop:Generator_RowChangedName="tb_paketRowChanged" msprop:Generator_RowEvArgName="tb_paketRowChangeEvent" msprop:Generator_RowClassName="tb_paketRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_pengeluaran" msprop:Generator_TableClassName="tb_pengeluaranDataTable" msprop:Generator_TableVarName="tabletb_pengeluaran" msprop:Generator_TablePropName="tb_pengeluaran" msprop:Generator_RowDeletingName="tb_pengeluaranRowDeleting" msprop:Generator_RowChangingName="tb_pengeluaranRowChanging" msprop:Generator_RowEvHandlerName="tb_pengeluaranRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_pengeluaranRowDeleted" msprop:Generator_UserTableName="tb_pengeluaran" msprop:Generator_RowChangedName="tb_pengeluaranRowChanged" msprop:Generator_RowEvArgName="tb_pengeluaranRowChangeEvent" msprop:Generator_RowClassName="tb_pengeluaranRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_transaksi" msprop:Generator_TableClassName="tb_transaksiDataTable" msprop:Generator_TableVarName="tabletb_transaksi" msprop:Generator_TablePropName="tb_transaksi" msprop:Generator_RowDeletingName="tb_transaksiRowDeleting" msprop:Generator_RowChangingName="tb_transaksiRowChanging" msprop:Generator_RowEvHandlerName="tb_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_transaksiRowDeleted" msprop:Generator_UserTableName="tb_transaksi" msprop:Generator_RowChangedName="tb_transaksiRowChanged" msprop:Generator_RowEvArgName="tb_transaksiRowChangeEvent" msprop:Generator_RowClassName="tb_transaksiRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_user" msprop:Generator_TableClassName="tb_userDataTable" msprop:Generator_TableVarName="tabletb_user" msprop:Generator_TablePropName="tb_user" msprop:Generator_RowDeletingName="tb_userRowDeleting" msprop:Generator_RowChangingName="tb_userRowChanging" msprop:Generator_RowEvHandlerName="tb_userRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_userRowDeleted" msprop:Generator_UserTableName="tb_user" msprop:Generator_RowChangedName="tb_userRowChanged" msprop:Generator_RowEvArgName="tb_userRowChangeEvent" msprop:Generator_RowClassName="tb_userRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

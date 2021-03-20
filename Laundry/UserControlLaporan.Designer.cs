@@ -74,7 +74,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(615, 115);
+            this.panel1.Size = new System.Drawing.Size(839, 115);
             this.panel1.TabIndex = 4;
             // 
             // panel3
@@ -89,7 +89,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 65);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(615, 50);
+            this.panel3.Size = new System.Drawing.Size(839, 50);
             this.panel3.TabIndex = 1;
             // 
             // btnCetak
@@ -170,7 +170,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(615, 65);
+            this.panel2.Size = new System.Drawing.Size(839, 65);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -194,7 +194,7 @@
             this.panel4.Controls.Add(this.dataGridViewLaporan);
             this.panel4.Location = new System.Drawing.Point(37, 146);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(545, 320);
+            this.panel4.Size = new System.Drawing.Size(769, 397);
             this.panel4.TabIndex = 5;
             // 
             // dataGridViewLaporan
@@ -249,7 +249,7 @@
             this.dataGridViewLaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewLaporan.RowHeadersWidth = 25;
             this.dataGridViewLaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewLaporan.Size = new System.Drawing.Size(545, 320);
+            this.dataGridViewLaporan.Size = new System.Drawing.Size(769, 397);
             this.dataGridViewLaporan.TabIndex = 1;
             // 
             // id
@@ -385,7 +385,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "UserControlLaporan";
-            this.Size = new System.Drawing.Size(615, 503);
+            this.Size = new System.Drawing.Size(839, 580);
             this.Load += new System.EventHandler(this.UserControlLaporan_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

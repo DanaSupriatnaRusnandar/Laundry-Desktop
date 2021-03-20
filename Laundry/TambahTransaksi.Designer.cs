@@ -738,7 +738,7 @@
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label25.Location = new System.Drawing.Point(486, 15);
+            this.label25.Location = new System.Drawing.Point(216, 12);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(34, 16);
             this.label25.TabIndex = 44;
@@ -749,7 +749,7 @@
             this.cmbKurir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbKurir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbKurir.FormattingEnabled = true;
-            this.cmbKurir.Location = new System.Drawing.Point(489, 31);
+            this.cmbKurir.Location = new System.Drawing.Point(219, 31);
             this.cmbKurir.Name = "cmbKurir";
             this.cmbKurir.Size = new System.Drawing.Size(170, 23);
             this.cmbKurir.TabIndex = 61;
@@ -778,6 +778,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TambahTransaksi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "g";
             this.Load += new System.EventHandler(this.Transaksi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

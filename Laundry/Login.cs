@@ -27,7 +27,7 @@ namespace Laundry
             return true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text.Length > 0 && txtPassword.Text.Length > 0 && isUsernameValid())
             {
@@ -73,6 +73,15 @@ namespace Laundry
         private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.KeyChar = Char.ToLower(e.KeyChar);
+
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

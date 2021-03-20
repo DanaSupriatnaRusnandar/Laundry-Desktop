@@ -191,6 +191,7 @@
             this.btnPengaturan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPengaturan.UseMnemonic = false;
             this.btnPengaturan.UseVisualStyleBackColor = true;
+            this.btnPengaturan.Visible = false;
             this.btnPengaturan.Click += new System.EventHandler(this.btnPengaturan_Click);
             // 
             // btnLaporan
@@ -514,7 +515,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(880, 525);
+            this.MinimumSize = new System.Drawing.Size(750, 714);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardAdmin";

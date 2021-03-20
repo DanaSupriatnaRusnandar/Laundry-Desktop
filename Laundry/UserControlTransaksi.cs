@@ -24,13 +24,13 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id");
+                DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id ORDER BY tb_transaksi.id desc");
                 dataGridViewTransaksi.AutoGenerateColumns = false;
                 dataGridViewTransaksi.DataSource = data;
             }
             else
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id desc");
                 dataGridViewTransaksi.AutoGenerateColumns = false;
                 dataGridViewTransaksi.DataSource = data;
             }
@@ -113,13 +113,13 @@ namespace Laundry
             if (e.ColumnIndex == dataGridViewTransaksi.Columns["edit"].Index)
             {
                 var row = dataGridViewTransaksi.Rows[e.RowIndex];
-                string id = row.Cells["id"].Value.ToString();
-                string outlet = row.Cells["nama_outlet"].Value.ToString();
+               /* string id = row.Cells["id"].Value.ToString();
+                string outlet = row.Cells["nama_outlet"].Value.ToString();*/
                 string invoice = row.Cells["kode_invoice"].Value.ToString();
-                string pelanggan = row.Cells["nama_member"].Value.ToString();
+               /* string pelanggan = row.Cells["nama_member"].Value.ToString();
                 DateTime tanggal = (DateTime)row.Cells["tgl"].Value;
                 DateTime batas_waktu = (DateTime)row.Cells["batas_waktu"].Value;
-                DateTime tgl_bayar = (DateTime)row.Cells["tgl_bayar"].Value;
+                DateTime tgl_bayar = Convert.ToDateTime(row.Cells["tgl_bayar"].Value);
                 string biaya_tambahan = row.Cells["biaya_tambahan"].Value.ToString();
                 string diskon = row.Cells["diskon"].Value.ToString();
                 string pajak = row.Cells["pajak"].Value.ToString();
@@ -127,8 +127,8 @@ namespace Laundry
                 string status = row.Cells["status"].Value.ToString();
                 string dibayar = row.Cells["dibayar"].Value.ToString();
                 string kuris = row.Cells["nama_kurir"].Value.ToString();
-                string petugas = row.Cells["nama"].Value.ToString();
-                new EditTransaksi(btn_refresh, id, outlet, invoice, pelanggan, tanggal, batas_waktu, tgl_bayar, biaya_tambahan, diskon, pajak, total, status, dibayar, kuris, petugas).ShowDialog();
+                string petugas = row.Cells["nama"].Value.ToString();*/
+                new EditTransaksi(btn_refresh, invoice).ShowDialog();
             }
         }
 

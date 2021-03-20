@@ -180,7 +180,6 @@ namespace Laundry
                         string id_paket = row.Cells["id"].Value.ToString();
                         string qty = row.Cells["qty"].Value.ToString();
                         double total = Convert.ToDouble(row.Cells["harga"].Value) + pajak + biayaTambahan - diskon;
-
                         if (Db.ExecuteQuery(
                             $"CALL transaksi({next_id},{id_outlet},'{invoice}', {cmbPelanggan.SelectedValue}, '{now}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
                             )) 
