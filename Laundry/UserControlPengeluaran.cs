@@ -42,13 +42,13 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id");
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id ORDER BY tb_transaksi.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = data;
             }
             else
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = data;
             }

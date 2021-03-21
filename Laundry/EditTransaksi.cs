@@ -19,21 +19,7 @@ namespace Laundry
         {
             InitializeComponent();
             btrf = btrefresh;
-            /*getIdTransaksi = id;
-            nama_outlet = outlet;*/
             kode_invoice = invoice;
-            /*nama_pelanggan = pelanggan;
-            dtpTanggal.Value = tgl;
-            dtpBatasWaktu.Value = batas_waktu;
-            dtpTanggalBayar.Value = tgl_bayar;
-            txtBiayaTambahan.Text = biaya_tambahan;
-            txtNominalDiskon.Text = diskon;
-            txtNominalPajak.Text = pajak;
-            txtTotalPembayaran.Text = total;
-            statusTransaksi = status;
-            pembayaran = dibayar;
-            nama_kurir = kurir;
-            nama_petugas = petugas;*/
         }
 
         private void EditTransaksi_Load(object sender, EventArgs e)

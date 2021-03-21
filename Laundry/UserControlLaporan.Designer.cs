@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTableLaporanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet1 = new Laundry.DataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCetak = new FontAwesome.Sharp.IconButton();
@@ -49,22 +43,25 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridViewLaporan = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kode_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_member = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgl_bayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_pembayaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_kurir = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataTableTableAdapterLaporan = new Laundry.DataSet1TableAdapters.DataTableTableAdapterLaporan();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableLaporanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLaporan)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTableLaporanBindingSource
+            // 
+            this.DataTableLaporanBindingSource.DataMember = "DataTableLaporan";
+            this.DataTableLaporanBindingSource.DataSource = this.DataSet1;
+            // 
+            // DataSet1
+            // 
+            this.DataSet1.DataSetName = "DataSet1";
+            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -191,191 +188,27 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.dataGridViewLaporan);
+            this.panel4.Controls.Add(this.reportViewer);
             this.panel4.Location = new System.Drawing.Point(37, 146);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(769, 397);
             this.panel4.TabIndex = 5;
             // 
-            // dataGridViewLaporan
+            // reportViewer
             // 
-            this.dataGridViewLaporan.AllowUserToAddRows = false;
-            this.dataGridViewLaporan.AllowUserToDeleteRows = false;
-            this.dataGridViewLaporan.AllowUserToResizeColumns = false;
-            this.dataGridViewLaporan.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewLaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewLaporan.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewLaporan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLaporan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewLaporan.ColumnHeadersHeight = 38;
-            this.dataGridViewLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewLaporan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.kode_invoice,
-            this.nama_member,
-            this.tgl,
-            this.tgl_bayar,
-            this.total_pembayaran,
-            this.status,
-            this.nama_kurir,
-            this.nama});
-            this.dataGridViewLaporan.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewLaporan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewLaporan.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridViewLaporan.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewLaporan.Name = "dataGridViewLaporan";
-            this.dataGridViewLaporan.ReadOnly = true;
-            this.dataGridViewLaporan.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLaporan.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewLaporan.RowHeadersWidth = 25;
-            this.dataGridViewLaporan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewLaporan.Size = new System.Drawing.Size(769, 397);
-            this.dataGridViewLaporan.TabIndex = 1;
+            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetLap";
+            reportDataSource1.Value = this.DataTableLaporanBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer.LocalReport.ReportEmbeddedResource = "Laundry.ReportLaporan.rdlc";
+            this.reportViewer.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer.Name = "reportViewer";
+            this.reportViewer.Size = new System.Drawing.Size(769, 397);
+            this.reportViewer.TabIndex = 0;
             // 
-            // id
+            // DataTableTableAdapterLaporan
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // kode_invoice
-            // 
-            this.kode_invoice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.kode_invoice.DataPropertyName = "kode_invoice";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.kode_invoice.DefaultCellStyle = dataGridViewCellStyle3;
-            this.kode_invoice.FillWeight = 50F;
-            this.kode_invoice.HeaderText = "Invoice";
-            this.kode_invoice.Name = "kode_invoice";
-            this.kode_invoice.ReadOnly = true;
-            // 
-            // nama_member
-            // 
-            this.nama_member.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama_member.DataPropertyName = "nama_member";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.nama_member.DefaultCellStyle = dataGridViewCellStyle4;
-            this.nama_member.HeaderText = "Pelanggan";
-            this.nama_member.Name = "nama_member";
-            this.nama_member.ReadOnly = true;
-            // 
-            // tgl
-            // 
-            this.tgl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tgl.DataPropertyName = "tgl";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.tgl.DefaultCellStyle = dataGridViewCellStyle5;
-            this.tgl.FillWeight = 50F;
-            this.tgl.HeaderText = "Tgl Masuk";
-            this.tgl.Name = "tgl";
-            this.tgl.ReadOnly = true;
-            // 
-            // tgl_bayar
-            // 
-            this.tgl_bayar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tgl_bayar.DataPropertyName = "tgl_bayar";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.tgl_bayar.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tgl_bayar.FillWeight = 50F;
-            this.tgl_bayar.HeaderText = "Tgl Bayar";
-            this.tgl_bayar.Name = "tgl_bayar";
-            this.tgl_bayar.ReadOnly = true;
-            // 
-            // total_pembayaran
-            // 
-            this.total_pembayaran.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.total_pembayaran.DataPropertyName = "total_pembayaran";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.total_pembayaran.DefaultCellStyle = dataGridViewCellStyle7;
-            this.total_pembayaran.FillWeight = 50F;
-            this.total_pembayaran.HeaderText = "Harga Total";
-            this.total_pembayaran.Name = "total_pembayaran";
-            this.total_pembayaran.ReadOnly = true;
-            // 
-            // status
-            // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.status.FillWeight = 30F;
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // nama_kurir
-            // 
-            this.nama_kurir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama_kurir.DataPropertyName = "nama_kurir";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.nama_kurir.DefaultCellStyle = dataGridViewCellStyle8;
-            this.nama_kurir.FillWeight = 60F;
-            this.nama_kurir.HeaderText = "Kurir";
-            this.nama_kurir.Name = "nama_kurir";
-            this.nama_kurir.ReadOnly = true;
-            // 
-            // nama
-            // 
-            this.nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nama.DataPropertyName = "nama";
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.nama.DefaultCellStyle = dataGridViewCellStyle9;
-            this.nama.FillWeight = 60F;
-            this.nama.HeaderText = "Petugas";
-            this.nama.Name = "nama";
-            this.nama.ReadOnly = true;
+            this.DataTableTableAdapterLaporan.ClearBeforeFill = true;
             // 
             // UserControlLaporan
             // 
@@ -387,13 +220,14 @@
             this.Name = "UserControlLaporan";
             this.Size = new System.Drawing.Size(839, 580);
             this.Load += new System.EventHandler(this.UserControlLaporan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableLaporanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLaporan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,15 +245,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridViewLaporan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kode_invoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nama_member;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tgl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tgl_bayar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_pembayaran;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nama_kurir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nama;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private System.Windows.Forms.BindingSource DataTableLaporanBindingSource;
+        private DataSet1 DataSet1;
+        private DataSet1TableAdapters.DataTableTableAdapterLaporan DataTableTableAdapterLaporan;
     }
 }

@@ -42,13 +42,13 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id");
+                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id ORDER BY tb_transaksi.id DESC");
                 dataGridViewpaket.AutoGenerateColumns = false;
                 dataGridViewpaket.DataSource = data;
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC");
                 dataGridViewpaket.AutoGenerateColumns = false;
                 dataGridViewpaket.DataSource = data;
             }

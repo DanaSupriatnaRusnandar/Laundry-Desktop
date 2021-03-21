@@ -778,7 +778,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TambahTransaksi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "g";
             this.Load += new System.EventHandler(this.Transaksi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

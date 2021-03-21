@@ -2,7 +2,10 @@
 {
 
 
-    partial class DataSetLaporan
+    partial class DataSet1
     {
+        partial class DataTableLaporanDataTable
+        {
+        }
     }
 }

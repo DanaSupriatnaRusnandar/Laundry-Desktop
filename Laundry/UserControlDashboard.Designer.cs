@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -41,10 +41,6 @@
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.lblAmbil = new System.Windows.Forms.Label();
-            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblProses = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
@@ -53,16 +49,21 @@
             this.lblBaru = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblHariTanggal = new System.Windows.Forms.Label();
+            this.lblJam = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.lblTransaksi = new System.Windows.Forms.Label();
+            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblSelesai = new System.Windows.Forms.Label();
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblHariTanggal = new System.Windows.Forms.Label();
-            this.lblJam = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.iconPictureBox6 = new FontAwesome.Sharp.IconPictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblAmbil = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dataGridViewTransaksi = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,16 +77,17 @@
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksi)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +126,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(216, 68);
+            this.label2.Location = new System.Drawing.Point(6, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(141, 21);
             this.label2.TabIndex = 36;
@@ -136,7 +138,7 @@
             this.panel8.Controls.Add(this.lblPelanggan);
             this.panel8.Controls.Add(this.iconPictureBox1);
             this.panel8.Controls.Add(this.label14);
-            this.panel8.Location = new System.Drawing.Point(10, 94);
+            this.panel8.Location = new System.Drawing.Point(10, 150);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 36;
@@ -185,57 +187,11 @@
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblRole.Location = new System.Drawing.Point(216, 89);
+            this.lblRole.Location = new System.Drawing.Point(6, 99);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(44, 21);
             this.lblRole.TabIndex = 37;
             this.lblRole.Text = "Role";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(183)))));
-            this.panel7.Controls.Add(this.lblAmbil);
-            this.panel7.Controls.Add(this.iconPictureBox5);
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(470, 211);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 100);
-            this.panel7.TabIndex = 40;
-            // 
-            // lblAmbil
-            // 
-            this.lblAmbil.AutoSize = true;
-            this.lblAmbil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmbil.ForeColor = System.Drawing.Color.White;
-            this.lblAmbil.Location = new System.Drawing.Point(161, 27);
-            this.lblAmbil.Name = "lblAmbil";
-            this.lblAmbil.Size = new System.Drawing.Size(18, 20);
-            this.lblAmbil.TabIndex = 15;
-            this.lblAmbil.Text = "0";
-            // 
-            // iconPictureBox5
-            // 
-            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
-            this.iconPictureBox5.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 37;
-            this.iconPictureBox5.Location = new System.Drawing.Point(11, 22);
-            this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(51, 37);
-            this.iconPictureBox5.TabIndex = 14;
-            this.iconPictureBox5.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(8, 75);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(163, 16);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Jumlah Cucian Siap Ambil";
             // 
             // panel5
             // 
@@ -243,7 +199,7 @@
             this.panel5.Controls.Add(this.lblProses);
             this.panel5.Controls.Add(this.iconPictureBox3);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Location = new System.Drawing.Point(240, 211);
+            this.panel5.Location = new System.Drawing.Point(240, 267);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 100);
             this.panel5.TabIndex = 38;
@@ -290,7 +246,7 @@
             this.panel3.Controls.Add(this.lblBaru);
             this.panel3.Controls.Add(this.iconPictureBox2);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(240, 94);
+            this.panel3.Location = new System.Drawing.Point(240, 150);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 37;
@@ -330,16 +286,100 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Jumlah Cucian Baru";
             // 
+            // lblHariTanggal
+            // 
+            this.lblHariTanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHariTanggal.AutoSize = true;
+            this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.lblHariTanggal.Location = new System.Drawing.Point(1, 34);
+            this.lblHariTanggal.Name = "lblHariTanggal";
+            this.lblHariTanggal.Size = new System.Drawing.Size(151, 21);
+            this.lblHariTanggal.TabIndex = 38;
+            this.lblHariTanggal.Text = "Hari dan Tanggal";
+            // 
+            // lblJam
+            // 
+            this.lblJam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblJam.AutoSize = true;
+            this.lblJam.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.lblJam.Location = new System.Drawing.Point(32, 13);
+            this.lblJam.Name = "lblJam";
+            this.lblJam.Size = new System.Drawing.Size(45, 21);
+            this.lblJam.TabIndex = 37;
+            this.lblJam.Text = "Jam";
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Teal;
+            this.panel11.Controls.Add(this.lblTransaksi);
+            this.panel11.Controls.Add(this.iconPictureBox6);
+            this.panel11.Controls.Add(this.label4);
+            this.panel11.Location = new System.Drawing.Point(10, 267);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(200, 100);
+            this.panel11.TabIndex = 39;
+            // 
+            // lblTransaksi
+            // 
+            this.lblTransaksi.AutoSize = true;
+            this.lblTransaksi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransaksi.ForeColor = System.Drawing.Color.White;
+            this.lblTransaksi.Location = new System.Drawing.Point(161, 27);
+            this.lblTransaksi.Name = "lblTransaksi";
+            this.lblTransaksi.Size = new System.Drawing.Size(18, 20);
+            this.lblTransaksi.TabIndex = 9;
+            this.lblTransaksi.Text = "0";
+            // 
+            // iconPictureBox6
+            // 
+            this.iconPictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Tshirt;
+            this.iconPictureBox6.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox6.IconSize = 37;
+            this.iconPictureBox6.Location = new System.Drawing.Point(8, 22);
+            this.iconPictureBox6.Name = "iconPictureBox6";
+            this.iconPictureBox6.Size = new System.Drawing.Size(50, 37);
+            this.iconPictureBox6.TabIndex = 8;
+            this.iconPictureBox6.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(5, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Jumlah Transaksi";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblHariTanggal);
+            this.panel1.Controls.Add(this.lblJam);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(534, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(155, 724);
+            this.panel1.TabIndex = 42;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.DarkOrange;
             this.panel6.Controls.Add(this.lblSelesai);
             this.panel6.Controls.Add(this.iconPictureBox4);
             this.panel6.Controls.Add(this.label9);
-            this.panel6.Location = new System.Drawing.Point(470, 94);
+            this.panel6.Location = new System.Drawing.Point(470, 150);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 100);
-            this.panel6.TabIndex = 39;
+            this.panel6.TabIndex = 43;
             // 
             // lblSelesai
             // 
@@ -376,79 +416,51 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Jumlah Cucian Selesai";
             // 
-            // lblHariTanggal
+            // panel7
             // 
-            this.lblHariTanggal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHariTanggal.AutoSize = true;
-            this.lblHariTanggal.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHariTanggal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblHariTanggal.Location = new System.Drawing.Point(430, 89);
-            this.lblHariTanggal.Name = "lblHariTanggal";
-            this.lblHariTanggal.Size = new System.Drawing.Size(151, 21);
-            this.lblHariTanggal.TabIndex = 38;
-            this.lblHariTanggal.Text = "Hari dan Tanggal";
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(121)))), ((int)(((byte)(183)))));
+            this.panel7.Controls.Add(this.lblAmbil);
+            this.panel7.Controls.Add(this.iconPictureBox5);
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Location = new System.Drawing.Point(470, 267);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 100);
+            this.panel7.TabIndex = 44;
             // 
-            // lblJam
+            // lblAmbil
             // 
-            this.lblJam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblJam.AutoSize = true;
-            this.lblJam.Font = new System.Drawing.Font("Shrikhand", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.lblJam.Location = new System.Drawing.Point(461, 68);
-            this.lblJam.Name = "lblJam";
-            this.lblJam.Size = new System.Drawing.Size(45, 21);
-            this.lblJam.TabIndex = 37;
-            this.lblJam.Text = "Jam";
+            this.lblAmbil.AutoSize = true;
+            this.lblAmbil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmbil.ForeColor = System.Drawing.Color.White;
+            this.lblAmbil.Location = new System.Drawing.Point(161, 27);
+            this.lblAmbil.Name = "lblAmbil";
+            this.lblAmbil.Size = new System.Drawing.Size(18, 20);
+            this.lblAmbil.TabIndex = 15;
+            this.lblAmbil.Text = "0";
             // 
-            // panel11
+            // iconPictureBox5
             // 
-            this.panel11.BackColor = System.Drawing.Color.Teal;
-            this.panel11.Controls.Add(this.label3);
-            this.panel11.Controls.Add(this.iconPictureBox6);
-            this.panel11.Controls.Add(this.label4);
-            this.panel11.Location = new System.Drawing.Point(10, 211);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(200, 100);
-            this.panel11.TabIndex = 39;
+            this.iconPictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.InfoCircle;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox5.IconSize = 37;
+            this.iconPictureBox5.Location = new System.Drawing.Point(11, 22);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(51, 37);
+            this.iconPictureBox5.TabIndex = 14;
+            this.iconPictureBox5.TabStop = false;
             // 
-            // label3
+            // label11
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(161, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "0";
-            // 
-            // iconPictureBox6
-            // 
-            this.iconPictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.iconPictureBox6.IconChar = FontAwesome.Sharp.IconChar.Tshirt;
-            this.iconPictureBox6.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox6.IconSize = 37;
-            this.iconPictureBox6.Location = new System.Drawing.Point(8, 22);
-            this.iconPictureBox6.Name = "iconPictureBox6";
-            this.iconPictureBox6.Size = new System.Drawing.Size(50, 37);
-            this.iconPictureBox6.TabIndex = 8;
-            this.iconPictureBox6.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(5, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Jumlah Cucian Diproses";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(8, 75);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(163, 16);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Jumlah Cucian Siap Ambil";
             // 
             // panel10
             // 
@@ -457,32 +469,32 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.dataGridViewTransaksi);
-            this.panel10.Location = new System.Drawing.Point(10, 346);
+            this.panel10.Location = new System.Drawing.Point(10, 412);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(662, 333);
-            this.panel10.TabIndex = 41;
+            this.panel10.Size = new System.Drawing.Size(662, 357);
+            this.panel10.TabIndex = 42;
             // 
             // dataGridViewTransaksi
             // 
             this.dataGridViewTransaksi.AllowUserToAddRows = false;
             this.dataGridViewTransaksi.AllowUserToDeleteRows = false;
             this.dataGridViewTransaksi.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTransaksi.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTransaksi.ColumnHeadersHeight = 38;
             this.dataGridViewTransaksi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -498,13 +510,13 @@
             this.dataGridViewTransaksi.Name = "dataGridViewTransaksi";
             this.dataGridViewTransaksi.ReadOnly = true;
             this.dataGridViewTransaksi.RowHeadersWidth = 25;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTransaksi.Size = new System.Drawing.Size(662, 333);
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridViewTransaksi.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTransaksi.Size = new System.Drawing.Size(662, 357);
             this.dataGridViewTransaksi.TabIndex = 0;
             // 
             // id
@@ -568,40 +580,41 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel10);
-            this.Controls.Add(this.lblHariTanggal);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblJam);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.lblRole);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Name = "UserControlDashboard";
-            this.Size = new System.Drawing.Size(689, 714);
+            this.Size = new System.Drawing.Size(689, 789);
             this.Load += new System.EventHandler(this.UserControlDashboard_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox6)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksi)).EndInit();
             this.ResumeLayout(false);
@@ -618,10 +631,6 @@
         private System.Windows.Forms.Label lblPelanggan;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label lblAmbil;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblProses;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
@@ -630,18 +639,23 @@
         private System.Windows.Forms.Label lblBaru;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label lblSelesai;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblHariTanggal;
         private System.Windows.Forms.Label lblJam;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTransaksi;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox6;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblSelesai;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblAmbil;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.DataGridView dataGridViewTransaksi;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;

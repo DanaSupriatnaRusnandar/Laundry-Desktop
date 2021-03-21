@@ -31,6 +31,7 @@ namespace Laundry
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
                 lblPelanggan.Text = Db.Read($"SELECT COUNT(*) AS total FROM tb_member").Rows[0].Field<Int64>("total").ToString();
+                lblTransaksi.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi").Rows[0].Field<Int64>("total").ToString();
                 lblBaru.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'baru'").Rows[0].Field<Int64>("total").ToString();
                 lblProses.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'proses'").Rows[0].Field<Int64>("total").ToString();
                 lblSelesai.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'selesai'").Rows[0].Field<Int64>("total").ToString();
@@ -38,7 +39,8 @@ namespace Laundry
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
-                lblPelanggan.Text = Db.Read("SELECT COUNT(*) AS total FROM tb_member").Rows[0].Field<Int64>("total").ToString();
+                lblPelanggan.Text = Db.Read($"SELECT COUNT(*) AS total FROM tb_member WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}").Rows[0].Field<Int64>("total").ToString();
+                lblTransaksi.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}").Rows[0].Field<Int64>("total").ToString();
                 lblBaru.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'baru' AND tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}").Rows[0].Field<Int64>("total").ToString();
                 lblProses.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'proses' AND tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}").Rows[0].Field<Int64>("total").ToString();
                 lblSelesai.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'selesai' AND tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}").Rows[0].Field<Int64>("total").ToString();
