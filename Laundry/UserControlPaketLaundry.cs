@@ -42,13 +42,13 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id ORDER BY tb_transaksi.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id ORDER BY tb_paket.id DESC");
                 dataGridViewpaket.AutoGenerateColumns = false;
                 dataGridViewpaket.DataSource = data;
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_paket.id DESC");
                 dataGridViewpaket.AutoGenerateColumns = false;
                 dataGridViewpaket.DataSource = data;
             }
@@ -59,12 +59,12 @@ namespace Laundry
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
                 dataGridViewpaket.AutoGenerateColumns = false;
-                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_paket.nama_paket LIKE '%{keyword}%' OR tb_jenis.jenis LIKE '%{keyword}%'");
+                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE CONCAT (tb_outlet.nama_outlet, tb_paket.nama_paket, tb_jenis.jenis, tb_jenis.harga) LIKE '%{keyword}%'");
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
                 dataGridViewpaket.AutoGenerateColumns = false;
-                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_paket.nama_paket, tb_jenis.jenis) LIKE'%{keyword}%'");
+                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND CONCAT (tb_paket.nama_paket, tb_jenis.jenis, tb_jenis.harga) LIKE '%{keyword}%'");
             }
         }
 

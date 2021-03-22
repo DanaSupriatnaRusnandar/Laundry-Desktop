@@ -16,7 +16,7 @@ namespace Laundry
 {
     public partial class Dashboard : Form
     {
-       
+
         //FIeld
         private IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -42,7 +42,7 @@ namespace Laundry
             public static Color color7 = Color.FromArgb(24, 242, 111);
             public static Color color8 = Color.FromArgb(255, 106, 0);
             public static Color color9 = Color.FromArgb(227, 2, 2);
-          // public static Color color10 = Color.FromArgb(20, 2, 2);
+            // public static Color color10 = Color.FromArgb(20, 2, 2);
         }
 
         //Method
@@ -80,18 +80,24 @@ namespace Laundry
             }
         }
 
-        //Panel Setting
+        //Hide submenu
         private void constumizeDesign()
         {
             panelData.Visible = false;
+            panelLaporan.Visible = false;
         }
         private void hideSubMenu()
         {
             if (panelData.Visible == false)
                 panelData.Visible = false;
+
+            if (panelLaporan.Visible == false)
+                panelLaporan.Visible = false;
         }
+       
         private void showSubMenu(Panel subMenu)
         {
+            //Hide Panel
             if (subMenu.Visible == false)
             {
                 hideSubMenu();
@@ -224,8 +230,19 @@ namespace Laundry
 
         private void btnLaporan_Click(object sender, EventArgs e)
         {
-            openPage(new UserControlLaporan ());
+            showSubMenu(panelLaporan);
             activateButton(sender, RGBColor.color8);
+        }
+
+        private void btnLapTransaksi_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+        }
+
+        private void btnLapPengeluaran_Click(object sender, EventArgs e)
+        {
+            hideSubMenu();
+            openPage(new UserControlGenerateLaporan());
         }
 
         private void btnPengaturan_Click(object sender, EventArgs e)

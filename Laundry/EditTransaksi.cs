@@ -68,6 +68,7 @@ namespace Laundry
 
                 if (Db.Update("tb_transaksi", $"dibayar = '{dibayar}', status = '{status}', tgl_bayar = {tanggalBayar}", $"kode_invoice = '{kode_invoice}'"))
                 {
+                    MessageBox.Show("Data berhasil diubah", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     btrf.PerformClick();
                 }

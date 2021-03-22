@@ -2,7 +2,7 @@
 <xs:schema id="laundryDataSet" targetNamespace="http://tempuri.org/laundryDataSet.xsd" xmlns:mstns="http://tempuri.org/laundryDataSet.xsd" xmlns="http://tempuri.org/laundryDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="laundryConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="laundryConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Laundry.Properties.Settings.GlobalReference.Default.laundryConnectionString" Provider="MySql.Data.MySqlClient" />
         </Connections>
@@ -573,6 +573,65 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTablePengeluaranTableAdapter" GeneratorDataComponentClassName="DataTablePengeluaranTableAdapter" Name="DataTablePengeluaran" UserDataComponentName="DataTablePengeluaranTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tb_pengeluaran.id, tb_outlet.nama_outlet, tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan
+FROM            tb_outlet INNER JOIN
+                         tb_pengeluaran ON tb_outlet.id = tb_pengeluaran.id_outlet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nama_outlet" DataSetColumn="nama_outlet" />
+              <Mapping SourceColumn="nama_barang" DataSetColumn="nama_barang" />
+              <Mapping SourceColumn="tgl" DataSetColumn="tgl" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="keterangan" DataSetColumn="keterangan" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableTransaksiTableAdapter" GeneratorDataComponentClassName="DataTableTransaksiTableAdapter" Name="DataTableTransaksi" UserDataComponentName="DataTableTransaksiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tb_transaksi.id, tb_outlet.nama_outlet, tb_transaksi.kode_invoice, tb_member.nama_member, tb_transaksi.tgl, tb_transaksi.batas_waktu, tb_transaksi.tgl_bayar, tb_transaksi.biaya_tambahan, tb_transaksi.diskon, 
+                         tb_transaksi.pajak, tb_transaksi.total_pembayaran, tb_transaksi.status, tb_transaksi.dibayar, tb_kurir.nama_kurir, tb_user.nama
+FROM            tb_transaksi INNER JOIN
+                         tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id INNER JOIN
+                         tb_member ON tb_transaksi.id_member = tb_member.id INNER JOIN
+                         tb_outlet ON tb_transaksi.id_outlet = tb_outlet.id AND tb_kurir.id_outlet = tb_outlet.id AND tb_member.id_outlet = tb_outlet.id INNER JOIN
+                         tb_user ON tb_transaksi.id_user = tb_user.id AND tb_outlet.id = tb_user.id_outlet</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nama_outlet" DataSetColumn="nama_outlet" />
+              <Mapping SourceColumn="kode_invoice" DataSetColumn="kode_invoice" />
+              <Mapping SourceColumn="nama_member" DataSetColumn="nama_member" />
+              <Mapping SourceColumn="tgl" DataSetColumn="tgl" />
+              <Mapping SourceColumn="batas_waktu" DataSetColumn="batas_waktu" />
+              <Mapping SourceColumn="tgl_bayar" DataSetColumn="tgl_bayar" />
+              <Mapping SourceColumn="biaya_tambahan" DataSetColumn="biaya_tambahan" />
+              <Mapping SourceColumn="diskon" DataSetColumn="diskon" />
+              <Mapping SourceColumn="pajak" DataSetColumn="pajak" />
+              <Mapping SourceColumn="total_pembayaran" DataSetColumn="total_pembayaran" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="dibayar" DataSetColumn="dibayar" />
+              <Mapping SourceColumn="nama_kurir" DataSetColumn="nama_kurir" />
+              <Mapping SourceColumn="nama" DataSetColumn="nama" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -821,6 +880,99 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTablePengeluaran" msprop:Generator_TableClassName="DataTablePengeluaranDataTable" msprop:Generator_TableVarName="tableDataTablePengeluaran" msprop:Generator_RowChangedName="DataTablePengeluaranRowChanged" msprop:Generator_TablePropName="DataTablePengeluaran" msprop:Generator_RowDeletingName="DataTablePengeluaranRowDeleting" msprop:Generator_RowChangingName="DataTablePengeluaranRowChanging" msprop:Generator_RowEvHandlerName="DataTablePengeluaranRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablePengeluaranRowDeleted" msprop:Generator_RowClassName="DataTablePengeluaranRow" msprop:Generator_UserTableName="DataTablePengeluaran" msprop:Generator_RowEvArgName="DataTablePengeluaranRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nama_outlet" msprop:Generator_ColumnVarNameInTable="columnnama_outlet" msprop:Generator_ColumnPropNameInRow="nama_outlet" msprop:Generator_ColumnPropNameInTable="nama_outletColumn" msprop:Generator_UserColumnName="nama_outlet">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_barang" msprop:Generator_ColumnVarNameInTable="columnnama_barang" msprop:Generator_ColumnPropNameInRow="nama_barang" msprop:Generator_ColumnPropNameInTable="nama_barangColumn" msprop:Generator_UserColumnName="nama_barang">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tgl" msprop:Generator_ColumnVarNameInTable="columntgl" msprop:Generator_ColumnPropNameInRow="tgl" msprop:Generator_ColumnPropNameInTable="tglColumn" msprop:Generator_UserColumnName="tgl" type="xs:dateTime" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:int" />
+              <xs:element name="keterangan" msprop:Generator_ColumnVarNameInTable="columnketerangan" msprop:Generator_ColumnPropNameInRow="keterangan" msprop:Generator_ColumnPropNameInTable="keteranganColumn" msprop:Generator_UserColumnName="keterangan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableTransaksi" msprop:Generator_TableClassName="DataTableTransaksiDataTable" msprop:Generator_TableVarName="tableDataTableTransaksi" msprop:Generator_TablePropName="DataTableTransaksi" msprop:Generator_RowDeletingName="DataTableTransaksiRowDeleting" msprop:Generator_RowChangingName="DataTableTransaksiRowChanging" msprop:Generator_RowEvHandlerName="DataTableTransaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableTransaksiRowDeleted" msprop:Generator_UserTableName="DataTableTransaksi" msprop:Generator_RowChangedName="DataTableTransaksiRowChanged" msprop:Generator_RowEvArgName="DataTableTransaksiRowChangeEvent" msprop:Generator_RowClassName="DataTableTransaksiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nama_outlet" msprop:Generator_ColumnVarNameInTable="columnnama_outlet" msprop:Generator_ColumnPropNameInRow="nama_outlet" msprop:Generator_ColumnPropNameInTable="nama_outletColumn" msprop:Generator_UserColumnName="nama_outlet">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kode_invoice" msprop:Generator_ColumnVarNameInTable="columnkode_invoice" msprop:Generator_ColumnPropNameInRow="kode_invoice" msprop:Generator_ColumnPropNameInTable="kode_invoiceColumn" msprop:Generator_UserColumnName="kode_invoice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_member" msprop:Generator_ColumnVarNameInTable="columnnama_member" msprop:Generator_ColumnPropNameInRow="nama_member" msprop:Generator_ColumnPropNameInTable="nama_memberColumn" msprop:Generator_UserColumnName="nama_member">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tgl" msprop:Generator_ColumnVarNameInTable="columntgl" msprop:Generator_ColumnPropNameInRow="tgl" msprop:Generator_ColumnPropNameInTable="tglColumn" msprop:Generator_UserColumnName="tgl" type="xs:dateTime" />
+              <xs:element name="batas_waktu" msprop:Generator_ColumnVarNameInTable="columnbatas_waktu" msprop:Generator_ColumnPropNameInRow="batas_waktu" msprop:Generator_ColumnPropNameInTable="batas_waktuColumn" msprop:Generator_UserColumnName="batas_waktu" type="xs:dateTime" />
+              <xs:element name="tgl_bayar" msprop:Generator_ColumnVarNameInTable="columntgl_bayar" msprop:Generator_ColumnPropNameInRow="tgl_bayar" msprop:Generator_ColumnPropNameInTable="tgl_bayarColumn" msprop:Generator_UserColumnName="tgl_bayar" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="biaya_tambahan" msprop:Generator_ColumnVarNameInTable="columnbiaya_tambahan" msprop:Generator_ColumnPropNameInRow="biaya_tambahan" msprop:Generator_ColumnPropNameInTable="biaya_tambahanColumn" msprop:Generator_UserColumnName="biaya_tambahan" type="xs:int" />
+              <xs:element name="diskon" msprop:Generator_ColumnVarNameInTable="columndiskon" msprop:Generator_ColumnPropNameInRow="diskon" msprop:Generator_ColumnPropNameInTable="diskonColumn" msprop:Generator_UserColumnName="diskon" type="xs:double" />
+              <xs:element name="pajak" msprop:Generator_ColumnVarNameInTable="columnpajak" msprop:Generator_ColumnPropNameInRow="pajak" msprop:Generator_ColumnPropNameInTable="pajakColumn" msprop:Generator_UserColumnName="pajak" type="xs:int" />
+              <xs:element name="total_pembayaran" msprop:Generator_ColumnVarNameInTable="columntotal_pembayaran" msprop:Generator_ColumnPropNameInRow="total_pembayaran" msprop:Generator_ColumnPropNameInTable="total_pembayaranColumn" msprop:Generator_UserColumnName="total_pembayaran" type="xs:int" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dibayar" msprop:Generator_ColumnVarNameInTable="columndibayar" msprop:Generator_ColumnPropNameInRow="dibayar" msprop:Generator_ColumnPropNameInTable="dibayarColumn" msprop:Generator_UserColumnName="dibayar">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_kurir" msprop:Generator_ColumnVarNameInTable="columnnama_kurir" msprop:Generator_ColumnPropNameInRow="nama_kurir" msprop:Generator_ColumnPropNameInTable="nama_kurirColumn" msprop:Generator_UserColumnName="nama_kurir">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama" msprop:Generator_ColumnVarNameInTable="columnnama" msprop:Generator_ColumnPropNameInRow="nama" msprop:Generator_ColumnPropNameInTable="namaColumn" msprop:Generator_UserColumnName="nama">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -859,6 +1011,14 @@
       <xs:selector xpath=".//mstns:tb_user" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:unique name="DataTablePengeluaran_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTablePengeluaran" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="DataTableTransaksi_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableTransaksi" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -874,6 +1034,13 @@
       <msdata:Relationship name="tb_transaksi_ibfk_3" msdata:parent="tb_outlet" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_3" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_3" msprop:Generator_UserParentTable="tb_outlet" />
       <msdata:Relationship name="tb_transaksi_ibfk_4" msdata:parent="tb_kurir" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_kurir" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_4" msprop:Generator_ParentPropName="tb_kurirRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_4" msprop:Generator_UserParentTable="tb_kurir" />
       <msdata:Relationship name="tb_user_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_user" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_user" msprop:Generator_ChildPropName="Gettb_userRows" msprop:Generator_UserRelationName="tb_user_ibfk_1" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_user_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" />
+      <msdata:Relationship name="tb_kurir_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_kurir" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_kurir" msprop:Generator_ChildPropName="Gettb_kurirRows" msprop:Generator_UserRelationName="tb_kurir_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_kurir_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
+      <msdata:Relationship name="tb_member_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_member" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_member" msprop:Generator_ChildPropName="Gettb_memberRows" msprop:Generator_UserRelationName="tb_member_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_member_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
+      <msdata:Relationship name="tb_paket_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_paket_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
+      <msdata:Relationship name="tb_pengeluaran_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_pengeluaran" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_pengeluaran" msprop:Generator_ChildPropName="Gettb_pengeluaranRows" msprop:Generator_UserRelationName="tb_pengeluaran_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_pengeluaran_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
+      <msdata:Relationship name="tb_transaksi_ibfk_31" msdata:parent="DataTablePengeluaran" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_31" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_31" msprop:Generator_UserParentTable="DataTablePengeluaran" />
+      <msdata:Relationship name="tb_user_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_user" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_user" msprop:Generator_ChildPropName="Gettb_userRows" msprop:Generator_UserRelationName="tb_user_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_user_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
+      <msdata:Relationship name="tb_transaksi_ibfk_41" msdata:parent="DataTableTransaksi" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_kurir" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_41" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_41" msprop:Generator_UserParentTable="DataTableTransaksi" msprop:Generator_ParentPropName="DataTableTransaksiRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

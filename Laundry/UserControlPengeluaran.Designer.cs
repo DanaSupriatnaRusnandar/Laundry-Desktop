@@ -54,11 +54,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_refresh = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnEksport = new FontAwesome.Sharp.IconButton();
             this.btnTambah = new FontAwesome.Sharp.IconButton();
-            this.btnExport = new FontAwesome.Sharp.IconButton();
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPengeluaran)).BeginInit();
@@ -321,14 +320,33 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btnEksport);
             this.panel5.Controls.Add(this.btnTambah);
-            this.panel5.Controls.Add(this.btnExport);
             this.panel5.Controls.Add(this.btnHapus);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 65);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(151, 50);
+            this.panel5.Size = new System.Drawing.Size(159, 50);
             this.panel5.TabIndex = 13;
+            // 
+            // btnEksport
+            // 
+            this.btnEksport.BackColor = System.Drawing.Color.Transparent;
+            this.btnEksport.FlatAppearance.BorderSize = 0;
+            this.btnEksport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEksport.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEksport.ForeColor = System.Drawing.Color.White;
+            this.btnEksport.IconChar = FontAwesome.Sharp.IconChar.FileExport;
+            this.btnEksport.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnEksport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEksport.IconSize = 30;
+            this.btnEksport.Location = new System.Drawing.Point(115, 10);
+            this.btnEksport.Name = "btnEksport";
+            this.btnEksport.Size = new System.Drawing.Size(32, 32);
+            this.btnEksport.TabIndex = 23;
+            this.btnEksport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEksport.UseVisualStyleBackColor = false;
+            this.btnEksport.Click += new System.EventHandler(this.btnEksport_Click);
             // 
             // btnTambah
             // 
@@ -344,25 +362,6 @@
             this.btnTambah.TabIndex = 20;
             this.btnTambah.UseVisualStyleBackColor = true;
             this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
-            // 
-            // btnExport
-            // 
-            this.btnExport.BackColor = System.Drawing.Color.Transparent;
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnExport.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnExport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExport.IconSize = 30;
-            this.btnExport.Location = new System.Drawing.Point(115, 9);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(32, 32);
-            this.btnExport.TabIndex = 22;
-            this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.UseVisualStyleBackColor = false;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click_1);
             // 
             // btnHapus
             // 
@@ -450,7 +449,6 @@
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnHapus;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_outlet;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama_outlet;
@@ -461,7 +459,7 @@
         private System.Windows.Forms.DataGridViewLinkColumn edit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotal;
-        private FontAwesome.Sharp.IconButton btnExport;
         private FontAwesome.Sharp.IconButton btnTambah;
+        private FontAwesome.Sharp.IconButton btnEksport;
     }
 }

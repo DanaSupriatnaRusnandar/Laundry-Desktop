@@ -43,13 +43,13 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id ORDER BY tb_transaksi.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id ORDER BY tb_user.id DESC");
                 dataGridViewAdmin.AutoGenerateColumns = false;
                 dataGridViewAdmin.DataSource = data;
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_user.id DESC");
                 dataGridViewAdmin.AutoGenerateColumns = false;
                 dataGridViewAdmin.DataSource = data;
             }
@@ -61,12 +61,12 @@ namespace Laundry
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
                 dataGridViewAdmin.AutoGenerateColumns = false;
-                dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.nama LIKE '%{keyword}%' OR tb_user.username LIKE '%{keyword}%' OR tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_user.role LIKE '%{keyword}%'");
+                dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE CONCAT(tb_user.nama, tb_user.username, tb_outlet.nama_outlet, tb_user.role) LIKE '%{keyword}%'");
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
                 dataGridViewAdmin.AutoGenerateColumns = false;
-                dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_user.nama, tb_user.role) LIKE '%{keyword}%'");
+                dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND CONCAT(tb_user.nama, tb_user.username, tb_user.role) LIKE '%{keyword}%'");
             }
         }
 

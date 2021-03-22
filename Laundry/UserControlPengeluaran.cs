@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Luthor.lib;
-using ClosedXML.Excel;
 
 namespace Laundry
 {
@@ -42,13 +38,13 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id ORDER BY tb_transaksi.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id ORDER BY tb_pengeluran.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = data;
             }
             else
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_pengeluaran.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = data;
             }
@@ -61,12 +57,12 @@ namespace Laundry
             if(Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
-                dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_outlet.nama_outlet LIKE '%{keyword}%' OR tb_pengeluaran.nama_barang LIKE '%{keyword}%' OR tb_pengeluaran.tgl LIKE '%{keyword}%'");
+                dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE CONCAT (tb_outlet.nama_outlet, tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan) LIKE '%{keyword}%'");
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
-                dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_pengeluaran.nama_barang, tb_pengeluaran.tgl) LIKE '%{keyword}%' ");
+                dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan) LIKE '%{keyword}%' ");
             }
             hitungPengeluaran();
         }
@@ -86,6 +82,16 @@ namespace Laundry
         {
             Tampilkan();
             txtCari.Clear();
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
+        }
+
+        private void btnEksport_Click(object sender, EventArgs e)
+        {
+            new LaporanPengeluaran().ShowDialog();
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -120,47 +126,6 @@ namespace Laundry
                 string keterangan = row.Cells["keterangan"].Value.ToString();
                 new EditDataPengeluaran(btn_refresh, id,id_outlet, outlet, nama, tgl, total, keterangan).ShowDialog();
             }
-        }
-
-        private void btnExport_Click_1(object sender, EventArgs e)
-        {
-            //EXPORT TO EXCEL
-            saveFileDialog.InitialDirectory = "C";
-            saveFileDialog.Title = "SIMPAN FILE EXCEL";
-            saveFileDialog.FileName = "";
-            saveFileDialog.Filter = "Excel Files (Excel)|*.xlsx";
-
-            if (saveFileDialog.ShowDialog() != DialogResult.Cancel)
-            {
-                //Change Properties
-                Cursor.Current = Cursors.WaitCursor;
-                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
-                excelApp.Application.Workbooks.Add(Type.Missing);
-
-                excelApp.Columns.ColumnWidth = 28;
-                for (int i = 1; i < dataGridViewPengeluaran.Columns.Count + 1; i++)
-                {
-                    excelApp.Cells[1, i] = dataGridViewPengeluaran.Columns[i - 1].HeaderText;
-                }
-                for (int i = 1; i < dataGridViewPengeluaran.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dataGridViewPengeluaran.Columns.Count; j++)
-                    {
-                        excelApp.Cells[i + 2, j + 1] = dataGridViewPengeluaran.Rows[1].Cells[j].Value.ToString();
-                    }
-                }
-                excelApp.ActiveWorkbook.SaveCopyAs(saveFileDialog.FileName.ToString());
-                excelApp.ActiveWorkbook.Saved = false;
-                excelApp.Quit();
-
-                MessageBox.Show("Export berhasil");
-            }
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void btnTambah_Click(object sender, EventArgs e)
-        {
-            new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
         }
 
         //Cari Data

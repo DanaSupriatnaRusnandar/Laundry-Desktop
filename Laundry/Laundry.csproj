@@ -169,14 +169,6 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSetLaporan.cs">
-      <DependentUpon>DataSetLaporan.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetLaporan.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetLaporan.xsd</DependentUpon>
-    </Compile>
     <Compile Include="EditDataOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,11 +211,14 @@
     <Compile Include="EditTransaksi.Designer.cs">
       <DependentUpon>EditTransaksi.cs</DependentUpon>
     </Compile>
-    <Compile Include="LaporanTransaksi.cs">
+    <Compile Include="LaporanPengeluaran.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LaporanTransaksi.Designer.cs">
-      <DependentUpon>LaporanTransaksi.cs</DependentUpon>
+    <Compile Include="LaporanPengeluaran.Designer.cs">
+      <DependentUpon>LaporanPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="laundryDataSet.cs">
+      <DependentUpon>laundryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="laundryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -310,11 +305,17 @@
     <Compile Include="UserControlKurir.Designer.cs">
       <DependentUpon>UserControlKurir.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlLaporan.cs">
+    <Compile Include="UserControlGenerateLaporan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlLaporan.Designer.cs">
-      <DependentUpon>UserControlLaporan.cs</DependentUpon>
+    <Compile Include="UserControlGenerateLaporan.Designer.cs">
+      <DependentUpon>UserControlGenerateLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLapTransaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLapTransaksi.Designer.cs">
+      <DependentUpon>UserControlLapTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlOutlet.cs">
       <SubType>UserControl</SubType>
@@ -370,11 +371,11 @@
     <EmbeddedResource Include="EditTransaksi.resx">
       <DependentUpon>EditTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LaporanTransaksi.resx">
-      <DependentUpon>LaporanTransaksi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportTransaksi.rdlc" />
-    <EmbeddedResource Include="ReportLaporan.rdlc" />
+    <EmbeddedResource Include="ReportPengeluaran.rdlc" />
+    <EmbeddedResource Include="LaporanPengeluaran.resx">
+      <DependentUpon>LaporanPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TambahDataPengeluaran.resx">
       <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
@@ -416,8 +417,11 @@
     <EmbeddedResource Include="UserControlKurir.resx">
       <DependentUpon>UserControlKurir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlLaporan.resx">
-      <DependentUpon>UserControlLaporan.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlGenerateLaporan.resx">
+      <DependentUpon>UserControlGenerateLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLapTransaksi.resx">
+      <DependentUpon>UserControlLapTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlOutlet.resx">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>
@@ -434,17 +438,6 @@
     <EmbeddedResource Include="UserControlTransaksi.resx">
       <DependentUpon>UserControlTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSetLaporan.xsc">
-      <DependentUpon>DataSetLaporan.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetLaporan.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetLaporan.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetLaporan.xss">
-      <DependentUpon>DataSetLaporan.xsd</DependentUpon>
-    </None>
     <None Include="laundryDataSet.xsc">
       <DependentUpon>laundryDataSet.xsd</DependentUpon>
     </None>

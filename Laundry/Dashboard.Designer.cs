@@ -36,6 +36,9 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnKeluar = new FontAwesome.Sharp.IconButton();
             this.btnPengaturan = new FontAwesome.Sharp.IconButton();
+            this.panelLaporan = new System.Windows.Forms.Panel();
+            this.btnLapPengeluaran = new FontAwesome.Sharp.IconButton();
+            this.btnLapTransaksi = new FontAwesome.Sharp.IconButton();
             this.btnLaporan = new FontAwesome.Sharp.IconButton();
             this.btnPengeluaran = new FontAwesome.Sharp.IconButton();
             this.btnTransaksi = new FontAwesome.Sharp.IconButton();
@@ -54,6 +57,7 @@
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.panelLaporan.SuspendLayout();
             this.panelData.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -131,6 +135,7 @@
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panelMenu.Controls.Add(this.btnKeluar);
             this.panelMenu.Controls.Add(this.btnPengaturan);
+            this.panelMenu.Controls.Add(this.panelLaporan);
             this.panelMenu.Controls.Add(this.btnLaporan);
             this.panelMenu.Controls.Add(this.btnPengeluaran);
             this.panelMenu.Controls.Add(this.btnTransaksi);
@@ -142,7 +147,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(198, 762);
+            this.panelMenu.Size = new System.Drawing.Size(198, 788);
             this.panelMenu.TabIndex = 0;
             // 
             // btnKeluar
@@ -157,10 +162,10 @@
             this.btnKeluar.IconSize = 32;
             this.btnKeluar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKeluar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnKeluar.Location = new System.Drawing.Point(0, 684);
+            this.btnKeluar.Location = new System.Drawing.Point(0, 784);
             this.btnKeluar.Name = "btnKeluar";
             this.btnKeluar.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnKeluar.Size = new System.Drawing.Size(198, 50);
+            this.btnKeluar.Size = new System.Drawing.Size(181, 50);
             this.btnKeluar.TabIndex = 13;
             this.btnKeluar.Text = "Keluar";
             this.btnKeluar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,10 +186,10 @@
             this.btnPengaturan.IconSize = 32;
             this.btnPengaturan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPengaturan.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnPengaturan.Location = new System.Drawing.Point(0, 634);
+            this.btnPengaturan.Location = new System.Drawing.Point(0, 734);
             this.btnPengaturan.Name = "btnPengaturan";
             this.btnPengaturan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPengaturan.Size = new System.Drawing.Size(198, 50);
+            this.btnPengaturan.Size = new System.Drawing.Size(181, 50);
             this.btnPengaturan.TabIndex = 12;
             this.btnPengaturan.Text = "Pengaturan";
             this.btnPengaturan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,6 +198,64 @@
             this.btnPengaturan.UseVisualStyleBackColor = true;
             this.btnPengaturan.Visible = false;
             this.btnPengaturan.Click += new System.EventHandler(this.btnPengaturan_Click);
+            // 
+            // panelLaporan
+            // 
+            this.panelLaporan.Controls.Add(this.btnLapPengeluaran);
+            this.panelLaporan.Controls.Add(this.btnLapTransaksi);
+            this.panelLaporan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLaporan.Location = new System.Drawing.Point(0, 634);
+            this.panelLaporan.Name = "panelLaporan";
+            this.panelLaporan.Size = new System.Drawing.Size(181, 100);
+            this.panelLaporan.TabIndex = 0;
+            // 
+            // btnLapPengeluaran
+            // 
+            this.btnLapPengeluaran.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLapPengeluaran.FlatAppearance.BorderSize = 0;
+            this.btnLapPengeluaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapPengeluaran.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLapPengeluaran.IconChar = FontAwesome.Sharp.IconChar.Tshirt;
+            this.btnLapPengeluaran.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnLapPengeluaran.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLapPengeluaran.IconSize = 32;
+            this.btnLapPengeluaran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapPengeluaran.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLapPengeluaran.Location = new System.Drawing.Point(0, 50);
+            this.btnLapPengeluaran.Name = "btnLapPengeluaran";
+            this.btnLapPengeluaran.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
+            this.btnLapPengeluaran.Size = new System.Drawing.Size(181, 50);
+            this.btnLapPengeluaran.TabIndex = 9;
+            this.btnLapPengeluaran.Text = "Pengeluaran";
+            this.btnLapPengeluaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapPengeluaran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLapPengeluaran.UseMnemonic = false;
+            this.btnLapPengeluaran.UseVisualStyleBackColor = true;
+            this.btnLapPengeluaran.Click += new System.EventHandler(this.btnLapPengeluaran_Click);
+            // 
+            // btnLapTransaksi
+            // 
+            this.btnLapTransaksi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLapTransaksi.FlatAppearance.BorderSize = 0;
+            this.btnLapTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLapTransaksi.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLapTransaksi.IconChar = FontAwesome.Sharp.IconChar.Tshirt;
+            this.btnLapTransaksi.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnLapTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLapTransaksi.IconSize = 32;
+            this.btnLapTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapTransaksi.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLapTransaksi.Location = new System.Drawing.Point(0, 0);
+            this.btnLapTransaksi.Name = "btnLapTransaksi";
+            this.btnLapTransaksi.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
+            this.btnLapTransaksi.Size = new System.Drawing.Size(181, 50);
+            this.btnLapTransaksi.TabIndex = 8;
+            this.btnLapTransaksi.Text = "Transaksi";
+            this.btnLapTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLapTransaksi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLapTransaksi.UseMnemonic = false;
+            this.btnLapTransaksi.UseVisualStyleBackColor = true;
+            this.btnLapTransaksi.Click += new System.EventHandler(this.btnLapTransaksi_Click);
             // 
             // btnLaporan
             // 
@@ -209,7 +272,7 @@
             this.btnLaporan.Location = new System.Drawing.Point(0, 584);
             this.btnLaporan.Name = "btnLaporan";
             this.btnLaporan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnLaporan.Size = new System.Drawing.Size(198, 50);
+            this.btnLaporan.Size = new System.Drawing.Size(181, 50);
             this.btnLaporan.TabIndex = 11;
             this.btnLaporan.Text = "Laporan";
             this.btnLaporan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -233,7 +296,7 @@
             this.btnPengeluaran.Location = new System.Drawing.Point(0, 534);
             this.btnPengeluaran.Name = "btnPengeluaran";
             this.btnPengeluaran.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPengeluaran.Size = new System.Drawing.Size(198, 50);
+            this.btnPengeluaran.Size = new System.Drawing.Size(181, 50);
             this.btnPengeluaran.TabIndex = 10;
             this.btnPengeluaran.Text = "Pengeluaran";
             this.btnPengeluaran.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -257,7 +320,7 @@
             this.btnTransaksi.Location = new System.Drawing.Point(0, 484);
             this.btnTransaksi.Name = "btnTransaksi";
             this.btnTransaksi.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnTransaksi.Size = new System.Drawing.Size(198, 50);
+            this.btnTransaksi.Size = new System.Drawing.Size(181, 50);
             this.btnTransaksi.TabIndex = 9;
             this.btnTransaksi.Text = "Transaksi";
             this.btnTransaksi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,7 +344,7 @@
             this.btnPelanggan.Location = new System.Drawing.Point(0, 434);
             this.btnPelanggan.Name = "btnPelanggan";
             this.btnPelanggan.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnPelanggan.Size = new System.Drawing.Size(198, 50);
+            this.btnPelanggan.Size = new System.Drawing.Size(181, 50);
             this.btnPelanggan.TabIndex = 8;
             this.btnPelanggan.Text = "Pelanggan";
             this.btnPelanggan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -300,7 +363,7 @@
             this.panelData.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelData.Location = new System.Drawing.Point(0, 184);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(198, 250);
+            this.panelData.Size = new System.Drawing.Size(181, 250);
             this.panelData.TabIndex = 30;
             // 
             // btnJenis
@@ -318,7 +381,7 @@
             this.btnJenis.Location = new System.Drawing.Point(0, 200);
             this.btnJenis.Name = "btnJenis";
             this.btnJenis.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnJenis.Size = new System.Drawing.Size(198, 50);
+            this.btnJenis.Size = new System.Drawing.Size(181, 50);
             this.btnJenis.TabIndex = 7;
             this.btnJenis.Text = "Jenis";
             this.btnJenis.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -342,7 +405,7 @@
             this.btnPaketCucian.Location = new System.Drawing.Point(0, 150);
             this.btnPaketCucian.Name = "btnPaketCucian";
             this.btnPaketCucian.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnPaketCucian.Size = new System.Drawing.Size(198, 50);
+            this.btnPaketCucian.Size = new System.Drawing.Size(181, 50);
             this.btnPaketCucian.TabIndex = 6;
             this.btnPaketCucian.Text = "Paket Laundry";
             this.btnPaketCucian.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,7 +429,7 @@
             this.BtnDataUser.Location = new System.Drawing.Point(0, 100);
             this.BtnDataUser.Name = "BtnDataUser";
             this.BtnDataUser.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.BtnDataUser.Size = new System.Drawing.Size(198, 50);
+            this.BtnDataUser.Size = new System.Drawing.Size(181, 50);
             this.BtnDataUser.TabIndex = 5;
             this.BtnDataUser.Text = "Data User";
             this.BtnDataUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,7 +453,7 @@
             this.btnKurir.Location = new System.Drawing.Point(0, 50);
             this.btnKurir.Name = "btnKurir";
             this.btnKurir.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnKurir.Size = new System.Drawing.Size(198, 50);
+            this.btnKurir.Size = new System.Drawing.Size(181, 50);
             this.btnKurir.TabIndex = 4;
             this.btnKurir.Text = "Data Kurir";
             this.btnKurir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,7 +477,7 @@
             this.btnOutlet.Location = new System.Drawing.Point(0, 0);
             this.btnOutlet.Name = "btnOutlet";
             this.btnOutlet.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnOutlet.Size = new System.Drawing.Size(198, 50);
+            this.btnOutlet.Size = new System.Drawing.Size(181, 50);
             this.btnOutlet.TabIndex = 3;
             this.btnOutlet.Text = "Outlet";
             this.btnOutlet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -438,7 +501,7 @@
             this.btnAkun.Location = new System.Drawing.Point(0, 134);
             this.btnAkun.Name = "btnAkun";
             this.btnAkun.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnAkun.Size = new System.Drawing.Size(198, 50);
+            this.btnAkun.Size = new System.Drawing.Size(181, 50);
             this.btnAkun.TabIndex = 2;
             this.btnAkun.Text = "Data Master";
             this.btnAkun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -462,7 +525,7 @@
             this.btnDashboard.Location = new System.Drawing.Point(0, 84);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.btnDashboard.Size = new System.Drawing.Size(198, 50);
+            this.btnDashboard.Size = new System.Drawing.Size(181, 50);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -477,7 +540,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(198, 84);
+            this.panel4.Size = new System.Drawing.Size(181, 84);
             this.panel4.TabIndex = 1;
             // 
             // iconPictureBox1
@@ -501,7 +564,7 @@
             this.pageWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageWrapper.Location = new System.Drawing.Point(198, 47);
             this.pageWrapper.Name = "pageWrapper";
-            this.pageWrapper.Size = new System.Drawing.Size(682, 715);
+            this.pageWrapper.Size = new System.Drawing.Size(682, 741);
             this.pageWrapper.TabIndex = 2;
             // 
             // Dashboard
@@ -510,7 +573,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(880, 762);
+            this.ClientSize = new System.Drawing.Size(880, 788);
             this.Controls.Add(this.pageWrapper);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
@@ -523,6 +586,7 @@
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
+            this.panelLaporan.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
@@ -554,5 +618,8 @@
         private FontAwesome.Sharp.IconButton btnPelanggan;
         private FontAwesome.Sharp.IconButton btnPaketCucian;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Panel panelLaporan;
+        private FontAwesome.Sharp.IconButton btnLapPengeluaran;
+        private FontAwesome.Sharp.IconButton btnLapTransaksi;
     }
 }

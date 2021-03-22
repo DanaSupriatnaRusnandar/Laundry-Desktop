@@ -1,6 +1,6 @@
 ﻿namespace Laundry
 {
-    partial class UserControlLaporan
+    partial class UserControlGenerateLaporan
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.DataTableLaporanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSet1 = new Laundry.DataSet1();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCetak = new FontAwesome.Sharp.IconButton();
@@ -43,25 +39,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataTableTableAdapterLaporan = new Laundry.DataSet1TableAdapters.DataTableTableAdapterLaporan();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableLaporanBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // DataTableLaporanBindingSource
-            // 
-            this.DataTableLaporanBindingSource.DataMember = "DataTableLaporan";
-            this.DataTableLaporanBindingSource.DataSource = this.DataSet1;
-            // 
-            // DataSet1
-            // 
-            this.DataSet1.DataSetName = "DataSet1";
-            this.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -184,50 +165,27 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.reportViewer);
             this.panel4.Location = new System.Drawing.Point(37, 146);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(769, 397);
             this.panel4.TabIndex = 5;
             // 
-            // reportViewer
-            // 
-            this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetLap";
-            reportDataSource1.Value = this.DataTableLaporanBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer.LocalReport.ReportEmbeddedResource = "Laundry.ReportLaporan.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer.Name = "reportViewer";
-            this.reportViewer.Size = new System.Drawing.Size(769, 397);
-            this.reportViewer.TabIndex = 0;
-            // 
-            // DataTableTableAdapterLaporan
-            // 
-            this.DataTableTableAdapterLaporan.ClearBeforeFill = true;
-            // 
-            // UserControlLaporan
+            // UserControlGenerateLaporan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Name = "UserControlLaporan";
+            this.Name = "UserControlGenerateLaporan";
             this.Size = new System.Drawing.Size(839, 580);
             this.Load += new System.EventHandler(this.UserControlLaporan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableLaporanBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -245,9 +203,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
-        private System.Windows.Forms.BindingSource DataTableLaporanBindingSource;
-        private DataSet1 DataSet1;
-        private DataSet1TableAdapters.DataTableTableAdapterLaporan DataTableTableAdapterLaporan;
     }
 }
