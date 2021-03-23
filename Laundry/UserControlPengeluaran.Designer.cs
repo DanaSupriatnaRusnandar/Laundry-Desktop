@@ -54,7 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btn_refresh = new FontAwesome.Sharp.IconButton();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnEksport = new FontAwesome.Sharp.IconButton();
             this.btnTambah = new FontAwesome.Sharp.IconButton();
             this.btnHapus = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -320,33 +319,13 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.btnEksport);
             this.panel5.Controls.Add(this.btnTambah);
             this.panel5.Controls.Add(this.btnHapus);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 65);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(159, 50);
+            this.panel5.Size = new System.Drawing.Size(125, 50);
             this.panel5.TabIndex = 13;
-            // 
-            // btnEksport
-            // 
-            this.btnEksport.BackColor = System.Drawing.Color.Transparent;
-            this.btnEksport.FlatAppearance.BorderSize = 0;
-            this.btnEksport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEksport.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEksport.ForeColor = System.Drawing.Color.White;
-            this.btnEksport.IconChar = FontAwesome.Sharp.IconChar.FileExport;
-            this.btnEksport.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.btnEksport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEksport.IconSize = 30;
-            this.btnEksport.Location = new System.Drawing.Point(115, 10);
-            this.btnEksport.Name = "btnEksport";
-            this.btnEksport.Size = new System.Drawing.Size(32, 32);
-            this.btnEksport.TabIndex = 23;
-            this.btnEksport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEksport.UseVisualStyleBackColor = false;
-            this.btnEksport.Click += new System.EventHandler(this.btnEksport_Click);
             // 
             // btnTambah
             // 
@@ -460,6 +439,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTotal;
         private FontAwesome.Sharp.IconButton btnTambah;
-        private FontAwesome.Sharp.IconButton btnEksport;
     }
 }

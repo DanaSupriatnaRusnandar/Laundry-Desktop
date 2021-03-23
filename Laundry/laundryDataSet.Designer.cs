@@ -11245,16 +11245,35 @@ namespace Laundry.laundryDataSetTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        tb_pengeluaran.id, tb_outlet.nama_outlet, tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan
 FROM            tb_outlet INNER JOIN
-                         tb_pengeluaran ON tb_outlet.id = tb_pengeluaran.id_outlet";
+                         tb_pengeluaran ON tb_outlet.id = tb_pengeluaran.id_outlet
+WHERE        (tb_pengeluaran.tgl BETWEEN @from AND @to)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@from";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "tgl";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@to";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "tgl";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(laundryDataSet.DataTablePengeluaranDataTable dataTable) {
+        public virtual int Fill(laundryDataSet.DataTablePengeluaranDataTable dataTable, System.DateTime from, System.DateTime to) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -11266,8 +11285,10 @@ FROM            tb_outlet INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual laundryDataSet.DataTablePengeluaranDataTable GetData() {
+        public virtual laundryDataSet.DataTablePengeluaranDataTable GetData(System.DateTime from, System.DateTime to) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
             laundryDataSet.DataTablePengeluaranDataTable dataTable = new laundryDataSet.DataTablePengeluaranDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11431,17 +11452,36 @@ FROM            tb_outlet INNER JOIN
 FROM            tb_transaksi INNER JOIN
                          tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id INNER JOIN
                          tb_member ON tb_transaksi.id_member = tb_member.id INNER JOIN
-                         tb_outlet ON tb_transaksi.id_outlet = tb_outlet.id AND tb_kurir.id_outlet = tb_outlet.id AND tb_member.id_outlet = tb_outlet.id INNER JOIN
-                         tb_user ON tb_transaksi.id_user = tb_user.id AND tb_outlet.id = tb_user.id_outlet";
+                         tb_outlet ON tb_transaksi.id_outlet = tb_outlet.id INNER JOIN
+                         tb_user ON tb_transaksi.id_user = tb_user.id
+WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@from";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "tgl";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@to";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "tgl";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(laundryDataSet.DataTableTransaksiDataTable dataTable) {
+        public virtual int Fill(laundryDataSet.DataTableTransaksiDataTable dataTable, System.DateTime from, System.DateTime to) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -11453,8 +11493,10 @@ FROM            tb_transaksi INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual laundryDataSet.DataTableTransaksiDataTable GetData() {
+        public virtual laundryDataSet.DataTableTransaksiDataTable GetData(System.DateTime from, System.DateTime to) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
             laundryDataSet.DataTableTransaksiDataTable dataTable = new laundryDataSet.DataTableTransaksiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

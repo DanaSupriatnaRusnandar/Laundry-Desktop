@@ -37,7 +37,7 @@ namespace Laundry
                     Db.Insert("login_log", $"null, NOW(), {Session.getUserLogged().Rows[0].Field<int>("id")}");
 
                     Form Dashboar = new Dashboard();
-                    MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("role"));
+                    MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("nama"));
                     this.Hide();
                     Dashboar.ShowDialog();
 

@@ -89,11 +89,6 @@ namespace Laundry
             new TambahDataPengeluaran(btn_refresh, getIdPengeluaran).ShowDialog();
         }
 
-        private void btnEksport_Click(object sender, EventArgs e)
-        {
-            new LaporanPengeluaran().ShowDialog();
-        }
-
         private void btnHapus_Click(object sender, EventArgs e)
         {
             var confirm = MessageBox.Show("Apakah anda yakin ingin menghapus data pengeluarana Ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

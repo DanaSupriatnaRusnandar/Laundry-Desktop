@@ -1,0 +1,24 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `transaksi`(IN `id` INT(11), IN `id_outlet` INT(11), IN `invoice` VARCHAR(100), IN `id_member` INT(11), IN `tgl` DATETIME, IN `batas_waktu` DATETIME, IN `tgl_bayar` DATETIME, IN `biaya_tambahan` INT(11), IN `diskon` INT(11), IN `pajak` INT(11), IN `status_cucian` VARCHAR(10), IN `status_pembayaran` VARCHAR(20), IN `id_user` INT(11), IN `id_paket` INT(11), IN `qty` DOUBLE, IN `keterangan` TEXT, IN `total_pembayaran` INT(11), IN `id_kurir` INT(11))
+    DETERMINISTIC
+    COMMENT 'PROCEDURE TRANSACTION'
+BEGIN
+ 
+ DECLARE exit handler for sqlexception
+   BEGIN
+     -- ERROR
+   ROLLBACK;
+ END;
+   
+ DECLARE exit handler for sqlwarning
+  BEGIN
+     -- WARNING
+  ROLLBACK;
+ END;
+ 
+ START TRANSACTION;
+   INSERT INTO tb_transaksi VALUES(null, id_outlet,invoice,id_member,tgl,batas_waktu,tgl_bayar,biaya_tambahan,diskon,pajak,total_pembayaran,status_cucian,status_pembayaran,id_kurir,id_user);
+   INSERT INTO tb_detail_transaksi VALUES(null,id,id_paket,qty,keterangan);
+ COMMIT;
+ END$$
+DELIMITER ;

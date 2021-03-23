@@ -237,12 +237,13 @@ namespace Laundry
         private void btnLapTransaksi_Click(object sender, EventArgs e)
         {
             hideSubMenu();
+            openPage(new UserControlLaporanTransaksi());
         }
 
         private void btnLapPengeluaran_Click(object sender, EventArgs e)
         {
             hideSubMenu();
-            openPage(new UserControlGenerateLaporan());
+            openPage(new UserControlLaporanPengeluaran());
         }
 
         private void btnPengaturan_Click(object sender, EventArgs e)

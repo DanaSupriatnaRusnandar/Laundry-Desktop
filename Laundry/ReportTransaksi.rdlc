@@ -687,7 +687,7 @@
         <DataSetName>DataSetTransaksi</DataSetName>
         <Top>0.97896cm</Top>
         <Height>1.2cm</Height>
-        <Width>31.52037cm</Width>
+        <Width>31.52035cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -727,9 +727,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox17</rd:DefaultName>
           <Top>0.63182cm</Top>
-          <Left>9.6012cm</Left>
+          <Left>12.16766cm</Left>
           <Height>1.20854cm</Height>
-          <Width>8.77062cm</Width>
+          <Width>7.63291cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
