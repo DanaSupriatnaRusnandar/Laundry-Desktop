@@ -640,6 +640,32 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableNotaTableAdapter" GeneratorDataComponentClassName="DataTableNotaTableAdapter" Name="DataTableNota" UserDataComponentName="DataTableNotaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tb_detail_transaksi.id, tb_paket.nama_paket, tb_paket.harga, tb_detail_transaksi.qty, tb_transaksi.diskon, tb_transaksi.pajak, tb_transaksi.biaya_tambahan, tb_transaksi.total_pembayaran
+FROM            tb_detail_transaksi INNER JOIN
+                         tb_transaksi ON tb_detail_transaksi.id_transaksi = tb_transaksi.id INNER JOIN
+                         tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="nama_paket" DataSetColumn="nama_paket" />
+              <Mapping SourceColumn="harga" DataSetColumn="harga" />
+              <Mapping SourceColumn="qty" DataSetColumn="qty" />
+              <Mapping SourceColumn="diskon" DataSetColumn="diskon" />
+              <Mapping SourceColumn="pajak" DataSetColumn="pajak" />
+              <Mapping SourceColumn="biaya_tambahan" DataSetColumn="biaya_tambahan" />
+              <Mapping SourceColumn="total_pembayaran" DataSetColumn="total_pembayaran" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -981,6 +1007,26 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DataTableNota" msprop:Generator_TableClassName="DataTableNotaDataTable" msprop:Generator_TableVarName="tableDataTableNota" msprop:Generator_TablePropName="DataTableNota" msprop:Generator_RowDeletingName="DataTableNotaRowDeleting" msprop:Generator_RowChangingName="DataTableNotaRowChanging" msprop:Generator_RowEvHandlerName="DataTableNotaRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNotaRowDeleted" msprop:Generator_UserTableName="DataTableNota" msprop:Generator_RowChangedName="DataTableNotaRowChanged" msprop:Generator_RowEvArgName="DataTableNotaRowChangeEvent" msprop:Generator_RowClassName="DataTableNotaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="nama_paket" msprop:Generator_ColumnVarNameInTable="columnnama_paket" msprop:Generator_ColumnPropNameInRow="nama_paket" msprop:Generator_ColumnPropNameInTable="nama_paketColumn" msprop:Generator_UserColumnName="nama_paket">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:int" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:double" />
+              <xs:element name="diskon" msprop:Generator_ColumnVarNameInTable="columndiskon" msprop:Generator_ColumnPropNameInRow="diskon" msprop:Generator_ColumnPropNameInTable="diskonColumn" msprop:Generator_UserColumnName="diskon" type="xs:double" />
+              <xs:element name="pajak" msprop:Generator_ColumnVarNameInTable="columnpajak" msprop:Generator_ColumnPropNameInRow="pajak" msprop:Generator_ColumnPropNameInTable="pajakColumn" msprop:Generator_UserColumnName="pajak" type="xs:int" />
+              <xs:element name="biaya_tambahan" msprop:Generator_ColumnVarNameInTable="columnbiaya_tambahan" msprop:Generator_ColumnPropNameInRow="biaya_tambahan" msprop:Generator_ColumnPropNameInTable="biaya_tambahanColumn" msprop:Generator_UserColumnName="biaya_tambahan" type="xs:int" />
+              <xs:element name="total_pembayaran" msprop:Generator_ColumnVarNameInTable="columntotal_pembayaran" msprop:Generator_ColumnPropNameInRow="total_pembayaran" msprop:Generator_ColumnPropNameInTable="total_pembayaranColumn" msprop:Generator_UserColumnName="total_pembayaran" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1025,6 +1071,10 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)</CommandText>
     </xs:unique>
     <xs:unique name="DataTableTransaksi_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTableTransaksi" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="DataTableNota_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableNota" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>

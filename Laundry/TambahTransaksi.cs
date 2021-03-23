@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,8 +29,8 @@ namespace Laundry
 
         private void Transaksi_Load(object sender, EventArgs e)
         {
-            //Biding Pelanggan
-            cmbPelanggan.DataSource = Db.Read("tb_member", "id, nama_member");
+            //Biding Pelanggan;
+            cmbPelanggan.DataSource = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}", "id, nama_member"); 
             cmbPelanggan.DisplayMember = "nama_member";
             cmbPelanggan.ValueMember = "id";
             cmbPelanggan.SelectedIndex = -1;
@@ -47,11 +47,69 @@ namespace Laundry
             cmbKurir.ValueMember = "id";
             cmbKurir.SelectedIndex = -1;
 
+            /*if (Session.getUserLogged().Rows[0].Field<string>("id_outlet") == "superAdmin")
+            {
+                cmbPelanggan.Visible = false;
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("id_outlet") != "superAdmin")
+            {
+                cmbPelangganSupAdmin.Visible = false;
+            }*/
+
+
             id_outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
             id_user = Session.getUserLogged().Rows[0].Field<int>("id");
 
             Dibayar(cmbDibayar.SelectedItem);
         }
+
+        /*private void comboBoxSuperAdmin()
+        {
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                //Biding Pelanggan
+                cmbPelanggan.DataSource = Db.Read("tb_member", "id, nama_member");
+                cmbPelanggan.DisplayMember = "nama_member";
+                cmbPelanggan.ValueMember = "id";
+                cmbPelanggan.SelectedIndex = -1;
+
+                //Biding Paket
+                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
+                cmbPaket.DisplayMember = "nama_paket";
+                cmbPaket.ValueMember = "id";
+                cmbPaket.SelectedIndex = -1;
+
+                //Biding Kurir
+                cmbKurir.DataSource = Db.Read("tb_kurir", "id, nama_kurir");
+                cmbKurir.DisplayMember = "nama_kurir";
+                cmbKurir.ValueMember = "id";
+                cmbKurir.SelectedIndex = -1;
+            }
+        }*/
+
+        /*private void comboBoxUser()
+        {
+            if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                //Biding Pelanggan
+                cmbPelanggan.DataSource = Db.Read($"tb_member" , "id, nama_member");
+                cmbPelanggan.DisplayMember = "nama_member";
+                cmbPelanggan.ValueMember = "id";
+                cmbPelanggan.SelectedIndex = -1;
+
+                //Biding Paket
+                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
+                cmbPaket.DisplayMember = "nama_paket";
+                cmbPaket.ValueMember = "id";
+                cmbPaket.SelectedIndex = -1;
+
+                //Biding Kurir
+                cmbKurir.DataSource = Db.Read("tb_kurir", "id, nama_kurir");
+                cmbKurir.DisplayMember = "nama_kurir";
+                cmbKurir.ValueMember = "id";
+                cmbKurir.SelectedIndex = -1;
+            }
+        }*/
 
         //Panggil Data Paket
         private void dataPaket()
@@ -297,6 +355,11 @@ namespace Laundry
         private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new NotaTransaksi().ShowDialog();
         }
     }
 }

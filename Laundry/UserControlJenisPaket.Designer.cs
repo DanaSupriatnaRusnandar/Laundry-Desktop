@@ -242,7 +242,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewJenis.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewJenis.RowHeadersWidth = 25;
+            this.dataGridViewJenis.RowHeadersWidth = 35;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -253,6 +253,8 @@
             this.dataGridViewJenis.TabIndex = 1;
             this.dataGridViewJenis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellClick);
             this.dataGridViewJenis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewJenis_CellContentClick);
+            this.dataGridViewJenis.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewJenis_RowPostPaint);
+            this.dataGridViewJenis.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewJenis_RowPrePaint);
             // 
             // id
             // 

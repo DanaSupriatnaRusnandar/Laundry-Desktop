@@ -219,6 +219,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>laundryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NotaTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaTransaksi.Designer.cs">
+      <DependentUpon>NotaTransaksi.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="TambahDataPengeluaran.cs">
       <SubType>Form</SubType>
@@ -365,6 +371,10 @@
     <EmbeddedResource Include="EditTransaksi.resx">
       <DependentUpon>EditTransaksi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotaTransaksi.resx">
+      <DependentUpon>NotaTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaPembayaran.rdlc" />
     <EmbeddedResource Include="ReportTransaksi.rdlc" />
     <EmbeddedResource Include="ReportPengeluaran.rdlc" />
     <EmbeddedResource Include="TambahDataPengeluaran.resx">

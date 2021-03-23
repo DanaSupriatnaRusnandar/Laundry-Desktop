@@ -29,26 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTableTransaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.laundryDataSet = new Laundry.laundryDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCari = new FontAwesome.Sharp.IconButton();
-            this.dateTimePickerSampai = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerDari = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataTableTransaksiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.laundryDataSet = new Laundry.laundryDataSet();
             this.DataTableTransaksiTableAdapter = new Laundry.laundryDataSetTableAdapters.DataTableTransaksiTableAdapter();
+            this.dateTimePickerSampai = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDari = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableTransaksiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableTransaksiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTableTransaksiBindingSource
+            // 
+            this.DataTableTransaksiBindingSource.DataMember = "DataTableTransaksi";
+            this.DataTableTransaksiBindingSource.DataSource = this.laundryDataSet;
+            // 
+            // laundryDataSet
+            // 
+            this.laundryDataSet.DataSetName = "laundryDataSet";
+            this.laundryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -75,10 +85,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.btnCari);
-            this.panel4.Controls.Add(this.dateTimePickerSampai);
-            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.dateTimePickerDari);
+            this.panel4.Controls.Add(this.dateTimePickerSampai);
+            this.panel4.Controls.Add(this.btnCari);
+            this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 65);
@@ -103,15 +113,6 @@
             this.btnCari.UseVisualStyleBackColor = false;
             this.btnCari.Click += new System.EventHandler(this.btnCari_Click);
             // 
-            // dateTimePickerSampai
-            // 
-            this.dateTimePickerSampai.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerSampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSampai.Location = new System.Drawing.Point(212, 17);
-            this.dateTimePickerSampai.Name = "dateTimePickerSampai";
-            this.dateTimePickerSampai.Size = new System.Drawing.Size(125, 20);
-            this.dateTimePickerSampai.TabIndex = 3;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -122,15 +123,6 @@
             this.label3.Size = new System.Drawing.Size(28, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "s/d";
-            // 
-            // dateTimePickerDari
-            // 
-            this.dateTimePickerDari.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerDari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDari.Location = new System.Drawing.Point(47, 17);
-            this.dateTimePickerDari.Name = "dateTimePickerDari";
-            this.dateTimePickerDari.Size = new System.Drawing.Size(125, 20);
-            this.dateTimePickerDari.TabIndex = 1;
             // 
             // label2
             // 
@@ -156,28 +148,36 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetTransaksi";
-            reportDataSource1.Value = this.DataTableTransaksiBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSetTransaksi";
+            reportDataSource2.Value = this.DataTableTransaksiBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Laundry.ReportTransaksi.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(823, 362);
             this.reportViewer1.TabIndex = 7;
             // 
-            // DataTableTransaksiBindingSource
-            // 
-            this.DataTableTransaksiBindingSource.DataMember = "DataTableTransaksi";
-            this.DataTableTransaksiBindingSource.DataSource = this.laundryDataSet;
-            // 
-            // laundryDataSet
-            // 
-            this.laundryDataSet.DataSetName = "laundryDataSet";
-            this.laundryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // DataTableTransaksiTableAdapter
             // 
             this.DataTableTransaksiTableAdapter.ClearBeforeFill = true;
+            // 
+            // dateTimePickerSampai
+            // 
+            this.dateTimePickerSampai.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerSampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerSampai.Location = new System.Drawing.Point(212, 17);
+            this.dateTimePickerSampai.Name = "dateTimePickerSampai";
+            this.dateTimePickerSampai.Size = new System.Drawing.Size(125, 20);
+            this.dateTimePickerSampai.TabIndex = 5;
+            // 
+            // dateTimePickerDari
+            // 
+            this.dateTimePickerDari.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerDari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerDari.Location = new System.Drawing.Point(47, 16);
+            this.dateTimePickerDari.Name = "dateTimePickerDari";
+            this.dateTimePickerDari.Size = new System.Drawing.Size(125, 20);
+            this.dateTimePickerDari.TabIndex = 6;
             // 
             // UserControlLaporanTransaksi
             // 
@@ -189,13 +189,13 @@
             this.Name = "UserControlLaporanTransaksi";
             this.Size = new System.Drawing.Size(825, 491);
             this.Load += new System.EventHandler(this.UserControlLaporanTransaksi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableTransaksiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableTransaksiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,11 +209,11 @@
         private laundryDataSet laundryDataSet;
         private laundryDataSetTableAdapters.DataTableTransaksiTableAdapter DataTableTransaksiTableAdapter;
         private FontAwesome.Sharp.IconButton btnCari;
-        private System.Windows.Forms.DateTimePicker dateTimePickerSampai;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDari;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSampai;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDari;
     }
 }

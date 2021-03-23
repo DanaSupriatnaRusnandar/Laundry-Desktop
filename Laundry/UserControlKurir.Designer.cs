@@ -109,12 +109,14 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewKurir.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewKurir.RowHeadersWidth = 25;
+            this.dataGridViewKurir.RowHeadersWidth = 35;
             this.dataGridViewKurir.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewKurir.Size = new System.Drawing.Size(630, 357);
             this.dataGridViewKurir.TabIndex = 1;
             this.dataGridViewKurir.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKurir_CellClick);
             this.dataGridViewKurir.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKurir_CellContentClick);
+            this.dataGridViewKurir.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewKurir_RowPostPaint);
+            this.dataGridViewKurir.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewKurir_RowPrePaint);
             // 
             // id
             // 

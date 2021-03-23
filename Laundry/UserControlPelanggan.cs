@@ -115,5 +115,62 @@ namespace Laundry
             if (txtCari.Text.Length > 0)
              CariData(txtCari.Text);
         }
+
+        //Menampilkan Number
+        private void dataGridViewRegistrasi_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            var g = (DataGridView)sender;
+            var r = new Rectangle(e.RowBounds.Left, e.RowBounds.Top,
+                g.RowHeadersWidth, e.RowBounds.Height);
+            TextRenderer.DrawText(e.Graphics, $"{e.RowIndex + 1}",
+                g.RowHeadersDefaultCellStyle.Font, r, g.RowHeadersDefaultCellStyle.ForeColor);
+        }
+
+        private void dataGridViewRegistrasi_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var g = (DataGridView)sender;
+            if (e.RowIndex > -1 && $"{g.Rows[e.RowIndex].HeaderCell.Value}" != $"{e.RowIndex + 1}")
+            {
+                g.Rows[e.RowIndex].HeaderCell.Value = $"{e.RowIndex + 1}";
+            }
+        }
+        public class DataGridViewRowNumberColumn : DataGridViewColumn
+        {
+            public DataGridViewRowNumberColumn() : base()
+            {
+                this.CellTemplate = new DataGridViewRowNumberCell();
+                this.Width = 40;
+                this.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+            [Browsable(false)]
+            [DefaultValue(true)]
+            public override bool ReadOnly
+            {
+                get { return true; }
+                set { base.ReadOnly = true; }
+            }
+        }
+        public class DataGridViewRowNumberCell : DataGridViewTextBoxCell
+        {
+            protected override void Paint(System.Drawing.Graphics graphics,
+                System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds,
+                int rowIndex, DataGridViewElementStates cellState, object value,
+                object formattedValue, string errorText, DataGridViewCellStyle cellStyle,
+                DataGridViewAdvancedBorderStyle advancedBorderStyle,
+                DataGridViewPaintParts paintParts)
+            {
+                base.Paint(graphics, clipBounds, cellBounds, rowIndex, cellState, value,
+                    formattedValue, errorText, cellStyle, advancedBorderStyle, paintParts);
+            }
+            protected override object GetValue(int rowIndex)
+            {
+                return rowIndex + 1;
+            }
+            protected override bool SetValue(int rowIndex, object value)
+            {
+                return base.SetValue(rowIndex, rowIndex + 1);
+            }
+        }
+
     }
 }

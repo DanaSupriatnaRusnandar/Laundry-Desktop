@@ -10,9 +10,12 @@
     }
 }
 
-namespace Laundry.laundryDataSetTableAdapters {
-    
-    
+namespace Laundry.laundryDataSetTableAdapters
+{
+    partial class DataTableNotaTableAdapter
+    {
+    }
+
     public partial class DataTablePengeluaranTableAdapter {
     }
 }

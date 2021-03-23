@@ -146,11 +146,13 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewOtlet.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewOtlet.RowHeadersWidth = 25;
+            this.dataGridViewOtlet.RowHeadersWidth = 35;
             this.dataGridViewOtlet.Size = new System.Drawing.Size(630, 357);
             this.dataGridViewOtlet.TabIndex = 26;
             this.dataGridViewOtlet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOtlet_CellClick);
             this.dataGridViewOtlet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOtlet_CellContentClick);
+            this.dataGridViewOtlet.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewOtlet_RowPostPaint);
+            this.dataGridViewOtlet.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridViewOtlet_RowPrePaint);
             // 
             // id
             // 
