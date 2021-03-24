@@ -4,6 +4,10 @@
 
     partial class laundryDataSet
     {
+        partial class DataTableStrukDataTable
+        {
+        }
+
         partial class DataTablePengeluaranDataTable
         {
         }

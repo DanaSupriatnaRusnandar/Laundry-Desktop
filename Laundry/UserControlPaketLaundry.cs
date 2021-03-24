@@ -59,7 +59,7 @@ namespace Laundry
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
                 dataGridViewpaket.AutoGenerateColumns = false;
-                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE CONCAT (tb_outlet.nama_outlet, tb_paket.nama_paket, tb_jenis.jenis, tb_jenis.harga) LIKE '%{keyword}%'");
+                dataGridViewpaket.DataSource = Db.Read($"SELECT * FROM tb_paket JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id JOIN tb_jenis ON tb_paket.id_jenis = tb_jenis.id WHERE CONCAT (tb_outlet.nama_outlet, tb_paket.nama_paket, tb_jenis.jenis, tb_paket.harga) LIKE '%{keyword}%'");
             }
             else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {

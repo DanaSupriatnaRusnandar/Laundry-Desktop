@@ -601,7 +601,6 @@
         private FontAwesome.Sharp.IconButton btnClose;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel pageWrapper;
         private System.Windows.Forms.Panel panel4;
         private FontAwesome.Sharp.IconButton btnDashboard;
         private FontAwesome.Sharp.IconButton btnAkun;
@@ -621,5 +620,6 @@
         private System.Windows.Forms.Panel panelLaporan;
         private FontAwesome.Sharp.IconButton btnLapPengeluaran;
         private FontAwesome.Sharp.IconButton btnLapTransaksi;
+        private System.Windows.Forms.Panel pageWrapper;
     }
 }

@@ -194,6 +194,7 @@ namespace Laundry
 
         private void btnOutlet_Click_1(object sender, EventArgs e)
         {
+
             openPage(new UserControlOutlet());
             hideSubMenu();
         }

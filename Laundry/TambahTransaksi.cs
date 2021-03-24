@@ -1,4 +1,4 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Luthor.lib;
-
+using Microsoft.Reporting.WinForms;
 namespace Laundry
 {
     public partial class TambahTransaksi : Form
@@ -20,6 +20,7 @@ namespace Laundry
         int petugas;
         int id_outlet;
         int id_user;
+        string Invoice;
         public TambahTransaksi(Button btrefresh, string id)
         {
             InitializeComponent();
@@ -29,8 +30,9 @@ namespace Laundry
 
         private void Transaksi_Load(object sender, EventArgs e)
         {
+        //    SELECT* FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = { Session.getUserLogged().Rows[0].Field<int>("id_outlet")}
             //Biding Pelanggan;
-            cmbPelanggan.DataSource = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}", "id, nama_member"); 
+            cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member", $"tb_member.id_outlet = { Session.getUserLogged().Rows[0].Field<int>("id_outlet")}"); 
             cmbPelanggan.DisplayMember = "nama_member";
             cmbPelanggan.ValueMember = "id";
             cmbPelanggan.SelectedIndex = -1;
@@ -224,7 +226,7 @@ namespace Laundry
 
                 if (Db.ExecuteQuery($"ALTER TABLE tb_transaksi AUTO_INCREMENT = {next_id}"))
                 {
-                    string invoice = $"INV{DateTime.Now.ToString("yyMMddmmss")}";
+                    Invoice = $"INV{DateTime.Now.ToString("yyMMddmmss")}";
                     string now = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
                     var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
@@ -239,7 +241,7 @@ namespace Laundry
                         string qty = row.Cells["qty"].Value.ToString();
                         double total = Convert.ToDouble(row.Cells["harga"].Value) + pajak + biayaTambahan - diskon;
                         if (Db.ExecuteQuery(
-                            $"CALL transaksi({next_id},{id_outlet},'{invoice}', {cmbPelanggan.SelectedValue}, '{now}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
+                            $"CALL transaksi({next_id},{id_outlet},'{Invoice}', {cmbPelanggan.SelectedValue}, '{now}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
                             )) 
                         {
                             next_id++;
@@ -359,7 +361,11 @@ namespace Laundry
 
         private void button2_Click(object sender, EventArgs e)
         {
-            new NotaTransaksi().ShowDialog();
+            btnSimpan.PerformClick();
+
+                
+
+            new NotaTransaksi(Invoice).ShowDialog();
         }
     }
 }

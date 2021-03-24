@@ -642,10 +642,11 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableNotaTableAdapter" GeneratorDataComponentClassName="DataTableNotaTableAdapter" Name="DataTableNota" UserDataComponentName="DataTableNotaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tb_detail_transaksi.id, tb_paket.nama_paket, tb_paket.harga, tb_detail_transaksi.qty, tb_transaksi.diskon, tb_transaksi.pajak, tb_transaksi.biaya_tambahan, tb_transaksi.total_pembayaran
+                    <CommandText>SELECT        tb_detail_transaksi.id, tb_paket.nama_paket, tb_paket.harga, tb_detail_transaksi.qty, tb_transaksi.diskon, tb_transaksi.pajak, tb_transaksi.biaya_tambahan, tb_transaksi.total_pembayaran, tb_detail_transaksi.keterangan, 
+                         tb_transaksi.kode_invoice, tb_transaksi.dibayar
 FROM            tb_detail_transaksi INNER JOIN
                          tb_transaksi ON tb_detail_transaksi.id_transaksi = tb_transaksi.id INNER JOIN
                          tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id</CommandText>
@@ -663,6 +664,59 @@ FROM            tb_detail_transaksi INNER JOIN
               <Mapping SourceColumn="pajak" DataSetColumn="pajak" />
               <Mapping SourceColumn="biaya_tambahan" DataSetColumn="biaya_tambahan" />
               <Mapping SourceColumn="total_pembayaran" DataSetColumn="total_pembayaran" />
+              <Mapping SourceColumn="keterangan" DataSetColumn="keterangan" />
+              <Mapping SourceColumn="kode_invoice" DataSetColumn="kode_invoice" />
+              <Mapping SourceColumn="dibayar" DataSetColumn="dibayar" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableStrukTableAdapter" GeneratorDataComponentClassName="DataTableStrukTableAdapter" Name="DataTableStruk" UserDataComponentName="DataTableStrukTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="laundryConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        tb_transaksi.kode_invoice, tb_transaksi.tgl, tb_transaksi.batas_waktu, tb_transaksi.tgl_bayar, tb_transaksi.biaya_tambahan, tb_transaksi.diskon, tb_transaksi.pajak, tb_transaksi.total_pembayaran, tb_transaksi.status, 
+                         tb_transaksi.dibayar, tb_user.nama, tb_member.nama_member, tb_member.alamat, tb_kurir.nama_kurir, tb_outlet.nama_outlet, tb_outlet.alamat AS alamat_outlet, tb_outlet.tlp, tb_detail_transaksi.id, tb_detail_transaksi.qty, 
+                         tb_paket.nama_paket, tb_paket.harga, tb_jenis.jenis
+FROM            tb_transaksi INNER JOIN
+                         tb_user ON tb_transaksi.id_user = tb_user.id INNER JOIN
+                         tb_member ON tb_transaksi.id_member = tb_member.id INNER JOIN
+                         tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id INNER JOIN
+                         tb_outlet ON tb_transaksi.id_outlet = tb_outlet.id INNER JOIN
+                         tb_detail_transaksi ON tb_detail_transaksi.id_transaksi = tb_transaksi.id INNER JOIN
+                         tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id INNER JOIN
+                         tb_jenis ON tb_paket.id_jenis = tb_jenis.id
+WHERE        (tb_transaksi.kode_invoice = @invoice)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="invoice" ColumnName="kode_invoice" DataSourceName="laundry.tb_transaksi" DataTypeServer="varchar(100)(100)" DbType="String" Direction="Input" ParameterName="@invoice" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="kode_invoice" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="kode_invoice" DataSetColumn="kode_invoice" />
+              <Mapping SourceColumn="tgl" DataSetColumn="tgl" />
+              <Mapping SourceColumn="batas_waktu" DataSetColumn="batas_waktu" />
+              <Mapping SourceColumn="tgl_bayar" DataSetColumn="tgl_bayar" />
+              <Mapping SourceColumn="biaya_tambahan" DataSetColumn="biaya_tambahan" />
+              <Mapping SourceColumn="diskon" DataSetColumn="diskon" />
+              <Mapping SourceColumn="pajak" DataSetColumn="pajak" />
+              <Mapping SourceColumn="total_pembayaran" DataSetColumn="total_pembayaran" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="dibayar" DataSetColumn="dibayar" />
+              <Mapping SourceColumn="nama_member" DataSetColumn="nama_member" />
+              <Mapping SourceColumn="alamat" DataSetColumn="alamat" />
+              <Mapping SourceColumn="tlp" DataSetColumn="tlp" />
+              <Mapping SourceColumn="qty" DataSetColumn="qty" />
+              <Mapping SourceColumn="nama_paket" DataSetColumn="nama_paket" />
+              <Mapping SourceColumn="harga" DataSetColumn="harga" />
+              <Mapping SourceColumn="nama" DataSetColumn="nama" />
+              <Mapping SourceColumn="nama_kurir" DataSetColumn="nama_kurir" />
+              <Mapping SourceColumn="nama_outlet" DataSetColumn="nama_outlet" />
+              <Mapping SourceColumn="jenis" DataSetColumn="jenis" />
+              <Mapping SourceColumn="alamat_outlet" DataSetColumn="alamat_outlet" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -674,7 +728,7 @@ FROM            tb_detail_transaksi INNER JOIN
   <xs:element name="laundryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="laundryDataSet" msprop:Generator_UserDSName="laundryDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tb_detail_transaksi" msprop:Generator_TableClassName="tb_detail_transaksiDataTable" msprop:Generator_TableVarName="tabletb_detail_transaksi" msprop:Generator_TablePropName="tb_detail_transaksi" msprop:Generator_RowDeletingName="tb_detail_transaksiRowDeleting" msprop:Generator_RowChangingName="tb_detail_transaksiRowChanging" msprop:Generator_RowEvHandlerName="tb_detail_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_detail_transaksiRowDeleted" msprop:Generator_UserTableName="tb_detail_transaksi" msprop:Generator_RowChangedName="tb_detail_transaksiRowChanged" msprop:Generator_RowEvArgName="tb_detail_transaksiRowChangeEvent" msprop:Generator_RowClassName="tb_detail_transaksiRow">
+        <xs:element name="tb_detail_transaksi" msprop:Generator_TableClassName="tb_detail_transaksiDataTable" msprop:Generator_TableVarName="tabletb_detail_transaksi" msprop:Generator_RowChangedName="tb_detail_transaksiRowChanged" msprop:Generator_TablePropName="tb_detail_transaksi" msprop:Generator_RowDeletingName="tb_detail_transaksiRowDeleting" msprop:Generator_RowChangingName="tb_detail_transaksiRowChanging" msprop:Generator_RowEvHandlerName="tb_detail_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_detail_transaksiRowDeleted" msprop:Generator_RowClassName="tb_detail_transaksiRow" msprop:Generator_UserTableName="tb_detail_transaksi" msprop:Generator_RowEvArgName="tb_detail_transaksiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -691,7 +745,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_jenis" msprop:Generator_TableClassName="tb_jenisDataTable" msprop:Generator_TableVarName="tabletb_jenis" msprop:Generator_TablePropName="tb_jenis" msprop:Generator_RowDeletingName="tb_jenisRowDeleting" msprop:Generator_RowChangingName="tb_jenisRowChanging" msprop:Generator_RowEvHandlerName="tb_jenisRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_jenisRowDeleted" msprop:Generator_UserTableName="tb_jenis" msprop:Generator_RowChangedName="tb_jenisRowChanged" msprop:Generator_RowEvArgName="tb_jenisRowChangeEvent" msprop:Generator_RowClassName="tb_jenisRow">
+        <xs:element name="tb_jenis" msprop:Generator_TableClassName="tb_jenisDataTable" msprop:Generator_TableVarName="tabletb_jenis" msprop:Generator_RowChangedName="tb_jenisRowChanged" msprop:Generator_TablePropName="tb_jenis" msprop:Generator_RowDeletingName="tb_jenisRowDeleting" msprop:Generator_RowChangingName="tb_jenisRowChanging" msprop:Generator_RowEvHandlerName="tb_jenisRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_jenisRowDeleted" msprop:Generator_RowClassName="tb_jenisRow" msprop:Generator_UserTableName="tb_jenis" msprop:Generator_RowEvArgName="tb_jenisRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -705,7 +759,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_kurir" msprop:Generator_TableClassName="tb_kurirDataTable" msprop:Generator_TableVarName="tabletb_kurir" msprop:Generator_TablePropName="tb_kurir" msprop:Generator_RowDeletingName="tb_kurirRowDeleting" msprop:Generator_RowChangingName="tb_kurirRowChanging" msprop:Generator_RowEvHandlerName="tb_kurirRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_kurirRowDeleted" msprop:Generator_UserTableName="tb_kurir" msprop:Generator_RowChangedName="tb_kurirRowChanged" msprop:Generator_RowEvArgName="tb_kurirRowChangeEvent" msprop:Generator_RowClassName="tb_kurirRow">
+        <xs:element name="tb_kurir" msprop:Generator_TableClassName="tb_kurirDataTable" msprop:Generator_TableVarName="tabletb_kurir" msprop:Generator_RowChangedName="tb_kurirRowChanged" msprop:Generator_TablePropName="tb_kurir" msprop:Generator_RowDeletingName="tb_kurirRowDeleting" msprop:Generator_RowChangingName="tb_kurirRowChanging" msprop:Generator_RowEvHandlerName="tb_kurirRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_kurirRowDeleted" msprop:Generator_RowClassName="tb_kurirRow" msprop:Generator_UserTableName="tb_kurir" msprop:Generator_RowEvArgName="tb_kurirRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -734,7 +788,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_member" msprop:Generator_TableClassName="tb_memberDataTable" msprop:Generator_TableVarName="tabletb_member" msprop:Generator_TablePropName="tb_member" msprop:Generator_RowDeletingName="tb_memberRowDeleting" msprop:Generator_RowChangingName="tb_memberRowChanging" msprop:Generator_RowEvHandlerName="tb_memberRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_memberRowDeleted" msprop:Generator_UserTableName="tb_member" msprop:Generator_RowChangedName="tb_memberRowChanged" msprop:Generator_RowEvArgName="tb_memberRowChangeEvent" msprop:Generator_RowClassName="tb_memberRow">
+        <xs:element name="tb_member" msprop:Generator_TableClassName="tb_memberDataTable" msprop:Generator_TableVarName="tabletb_member" msprop:Generator_RowChangedName="tb_memberRowChanged" msprop:Generator_TablePropName="tb_member" msprop:Generator_RowDeletingName="tb_memberRowDeleting" msprop:Generator_RowChangingName="tb_memberRowChanging" msprop:Generator_RowEvHandlerName="tb_memberRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_memberRowDeleted" msprop:Generator_RowClassName="tb_memberRow" msprop:Generator_UserTableName="tb_member" msprop:Generator_RowEvArgName="tb_memberRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -770,7 +824,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_outlet" msprop:Generator_TableClassName="tb_outletDataTable" msprop:Generator_TableVarName="tabletb_outlet" msprop:Generator_TablePropName="tb_outlet" msprop:Generator_RowDeletingName="tb_outletRowDeleting" msprop:Generator_RowChangingName="tb_outletRowChanging" msprop:Generator_RowEvHandlerName="tb_outletRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_outletRowDeleted" msprop:Generator_UserTableName="tb_outlet" msprop:Generator_RowChangedName="tb_outletRowChanged" msprop:Generator_RowEvArgName="tb_outletRowChangeEvent" msprop:Generator_RowClassName="tb_outletRow">
+        <xs:element name="tb_outlet" msprop:Generator_TableClassName="tb_outletDataTable" msprop:Generator_TableVarName="tabletb_outlet" msprop:Generator_RowChangedName="tb_outletRowChanged" msprop:Generator_TablePropName="tb_outlet" msprop:Generator_RowDeletingName="tb_outletRowDeleting" msprop:Generator_RowChangingName="tb_outletRowChanging" msprop:Generator_RowEvHandlerName="tb_outletRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_outletRowDeleted" msprop:Generator_RowClassName="tb_outletRow" msprop:Generator_UserTableName="tb_outlet" msprop:Generator_RowEvArgName="tb_outletRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -798,7 +852,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_paket" msprop:Generator_TableClassName="tb_paketDataTable" msprop:Generator_TableVarName="tabletb_paket" msprop:Generator_TablePropName="tb_paket" msprop:Generator_RowDeletingName="tb_paketRowDeleting" msprop:Generator_RowChangingName="tb_paketRowChanging" msprop:Generator_RowEvHandlerName="tb_paketRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_paketRowDeleted" msprop:Generator_UserTableName="tb_paket" msprop:Generator_RowChangedName="tb_paketRowChanged" msprop:Generator_RowEvArgName="tb_paketRowChangeEvent" msprop:Generator_RowClassName="tb_paketRow">
+        <xs:element name="tb_paket" msprop:Generator_TableClassName="tb_paketDataTable" msprop:Generator_TableVarName="tabletb_paket" msprop:Generator_RowChangedName="tb_paketRowChanged" msprop:Generator_TablePropName="tb_paket" msprop:Generator_RowDeletingName="tb_paketRowDeleting" msprop:Generator_RowChangingName="tb_paketRowChanging" msprop:Generator_RowEvHandlerName="tb_paketRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_paketRowDeleted" msprop:Generator_RowClassName="tb_paketRow" msprop:Generator_UserTableName="tb_paket" msprop:Generator_RowEvArgName="tb_paketRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -815,7 +869,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_pengeluaran" msprop:Generator_TableClassName="tb_pengeluaranDataTable" msprop:Generator_TableVarName="tabletb_pengeluaran" msprop:Generator_TablePropName="tb_pengeluaran" msprop:Generator_RowDeletingName="tb_pengeluaranRowDeleting" msprop:Generator_RowChangingName="tb_pengeluaranRowChanging" msprop:Generator_RowEvHandlerName="tb_pengeluaranRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_pengeluaranRowDeleted" msprop:Generator_UserTableName="tb_pengeluaran" msprop:Generator_RowChangedName="tb_pengeluaranRowChanged" msprop:Generator_RowEvArgName="tb_pengeluaranRowChangeEvent" msprop:Generator_RowClassName="tb_pengeluaranRow">
+        <xs:element name="tb_pengeluaran" msprop:Generator_TableClassName="tb_pengeluaranDataTable" msprop:Generator_TableVarName="tabletb_pengeluaran" msprop:Generator_RowChangedName="tb_pengeluaranRowChanged" msprop:Generator_TablePropName="tb_pengeluaran" msprop:Generator_RowDeletingName="tb_pengeluaranRowDeleting" msprop:Generator_RowChangingName="tb_pengeluaranRowChanging" msprop:Generator_RowEvHandlerName="tb_pengeluaranRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_pengeluaranRowDeleted" msprop:Generator_RowClassName="tb_pengeluaranRow" msprop:Generator_UserTableName="tb_pengeluaran" msprop:Generator_RowEvArgName="tb_pengeluaranRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -839,7 +893,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_transaksi" msprop:Generator_TableClassName="tb_transaksiDataTable" msprop:Generator_TableVarName="tabletb_transaksi" msprop:Generator_TablePropName="tb_transaksi" msprop:Generator_RowDeletingName="tb_transaksiRowDeleting" msprop:Generator_RowChangingName="tb_transaksiRowChanging" msprop:Generator_RowEvHandlerName="tb_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_transaksiRowDeleted" msprop:Generator_UserTableName="tb_transaksi" msprop:Generator_RowChangedName="tb_transaksiRowChanged" msprop:Generator_RowEvArgName="tb_transaksiRowChangeEvent" msprop:Generator_RowClassName="tb_transaksiRow">
+        <xs:element name="tb_transaksi" msprop:Generator_TableClassName="tb_transaksiDataTable" msprop:Generator_TableVarName="tabletb_transaksi" msprop:Generator_RowChangedName="tb_transaksiRowChanged" msprop:Generator_TablePropName="tb_transaksi" msprop:Generator_RowDeletingName="tb_transaksiRowDeleting" msprop:Generator_RowChangingName="tb_transaksiRowChanging" msprop:Generator_RowEvHandlerName="tb_transaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_transaksiRowDeleted" msprop:Generator_RowClassName="tb_transaksiRow" msprop:Generator_UserTableName="tb_transaksi" msprop:Generator_RowEvArgName="tb_transaksiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -878,7 +932,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tb_user" msprop:Generator_TableClassName="tb_userDataTable" msprop:Generator_TableVarName="tabletb_user" msprop:Generator_TablePropName="tb_user" msprop:Generator_RowDeletingName="tb_userRowDeleting" msprop:Generator_RowChangingName="tb_userRowChanging" msprop:Generator_RowEvHandlerName="tb_userRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_userRowDeleted" msprop:Generator_UserTableName="tb_user" msprop:Generator_RowChangedName="tb_userRowChanged" msprop:Generator_RowEvArgName="tb_userRowChangeEvent" msprop:Generator_RowClassName="tb_userRow">
+        <xs:element name="tb_user" msprop:Generator_TableClassName="tb_userDataTable" msprop:Generator_TableVarName="tabletb_user" msprop:Generator_RowChangedName="tb_userRowChanged" msprop:Generator_TablePropName="tb_user" msprop:Generator_RowDeletingName="tb_userRowDeleting" msprop:Generator_RowChangingName="tb_userRowChanging" msprop:Generator_RowEvHandlerName="tb_userRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_userRowDeleted" msprop:Generator_RowClassName="tb_userRow" msprop:Generator_UserTableName="tb_user" msprop:Generator_RowEvArgName="tb_userRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -914,7 +968,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTablePengeluaran" msprop:Generator_TableClassName="DataTablePengeluaranDataTable" msprop:Generator_TableVarName="tableDataTablePengeluaran" msprop:Generator_RowChangedName="DataTablePengeluaranRowChanged" msprop:Generator_TablePropName="DataTablePengeluaran" msprop:Generator_RowDeletingName="DataTablePengeluaranRowDeleting" msprop:Generator_RowChangingName="DataTablePengeluaranRowChanging" msprop:Generator_RowEvHandlerName="DataTablePengeluaranRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablePengeluaranRowDeleted" msprop:Generator_RowClassName="DataTablePengeluaranRow" msprop:Generator_UserTableName="DataTablePengeluaran" msprop:Generator_RowEvArgName="DataTablePengeluaranRowChangeEvent">
+        <xs:element name="DataTablePengeluaran" msprop:Generator_TableClassName="DataTablePengeluaranDataTable" msprop:Generator_TableVarName="tableDataTablePengeluaran" msprop:Generator_TablePropName="DataTablePengeluaran" msprop:Generator_RowDeletingName="DataTablePengeluaranRowDeleting" msprop:Generator_RowChangingName="DataTablePengeluaranRowChanging" msprop:Generator_RowEvHandlerName="DataTablePengeluaranRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablePengeluaranRowDeleted" msprop:Generator_UserTableName="DataTablePengeluaran" msprop:Generator_RowChangedName="DataTablePengeluaranRowChanged" msprop:Generator_RowEvArgName="DataTablePengeluaranRowChangeEvent" msprop:Generator_RowClassName="DataTablePengeluaranRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -944,7 +998,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTableTransaksi" msprop:Generator_TableClassName="DataTableTransaksiDataTable" msprop:Generator_TableVarName="tableDataTableTransaksi" msprop:Generator_TablePropName="DataTableTransaksi" msprop:Generator_RowDeletingName="DataTableTransaksiRowDeleting" msprop:Generator_RowChangingName="DataTableTransaksiRowChanging" msprop:Generator_RowEvHandlerName="DataTableTransaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableTransaksiRowDeleted" msprop:Generator_UserTableName="DataTableTransaksi" msprop:Generator_RowChangedName="DataTableTransaksiRowChanged" msprop:Generator_RowEvArgName="DataTableTransaksiRowChangeEvent" msprop:Generator_RowClassName="DataTableTransaksiRow">
+        <xs:element name="DataTableTransaksi" msprop:Generator_TableClassName="DataTableTransaksiDataTable" msprop:Generator_TableVarName="tableDataTableTransaksi" msprop:Generator_RowChangedName="DataTableTransaksiRowChanged" msprop:Generator_TablePropName="DataTableTransaksi" msprop:Generator_RowDeletingName="DataTableTransaksiRowDeleting" msprop:Generator_RowChangingName="DataTableTransaksiRowChanging" msprop:Generator_RowEvHandlerName="DataTableTransaksiRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableTransaksiRowDeleted" msprop:Generator_RowClassName="DataTableTransaksiRow" msprop:Generator_UserTableName="DataTableTransaksi" msprop:Generator_RowEvArgName="DataTableTransaksiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1007,7 +1061,7 @@ FROM            tb_detail_transaksi INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTableNota" msprop:Generator_TableClassName="DataTableNotaDataTable" msprop:Generator_TableVarName="tableDataTableNota" msprop:Generator_TablePropName="DataTableNota" msprop:Generator_RowDeletingName="DataTableNotaRowDeleting" msprop:Generator_RowChangingName="DataTableNotaRowChanging" msprop:Generator_RowEvHandlerName="DataTableNotaRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNotaRowDeleted" msprop:Generator_UserTableName="DataTableNota" msprop:Generator_RowChangedName="DataTableNotaRowChanged" msprop:Generator_RowEvArgName="DataTableNotaRowChangeEvent" msprop:Generator_RowClassName="DataTableNotaRow">
+        <xs:element name="DataTableNota" msprop:Generator_TableClassName="DataTableNotaDataTable" msprop:Generator_TableVarName="tableDataTableNota" msprop:Generator_RowChangedName="DataTableNotaRowChanged" msprop:Generator_TablePropName="DataTableNota" msprop:Generator_RowDeletingName="DataTableNotaRowDeleting" msprop:Generator_RowChangingName="DataTableNotaRowChanging" msprop:Generator_RowEvHandlerName="DataTableNotaRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableNotaRowDeleted" msprop:Generator_RowClassName="DataTableNotaRow" msprop:Generator_UserTableName="DataTableNota" msprop:Generator_RowEvArgName="DataTableNotaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1024,6 +1078,127 @@ FROM            tb_detail_transaksi INNER JOIN
               <xs:element name="pajak" msprop:Generator_ColumnVarNameInTable="columnpajak" msprop:Generator_ColumnPropNameInRow="pajak" msprop:Generator_ColumnPropNameInTable="pajakColumn" msprop:Generator_UserColumnName="pajak" type="xs:int" />
               <xs:element name="biaya_tambahan" msprop:Generator_ColumnVarNameInTable="columnbiaya_tambahan" msprop:Generator_ColumnPropNameInRow="biaya_tambahan" msprop:Generator_ColumnPropNameInTable="biaya_tambahanColumn" msprop:Generator_UserColumnName="biaya_tambahan" type="xs:int" />
               <xs:element name="total_pembayaran" msprop:Generator_ColumnVarNameInTable="columntotal_pembayaran" msprop:Generator_ColumnPropNameInRow="total_pembayaran" msprop:Generator_ColumnPropNameInTable="total_pembayaranColumn" msprop:Generator_UserColumnName="total_pembayaran" type="xs:int" />
+              <xs:element name="keterangan" msprop:Generator_ColumnVarNameInTable="columnketerangan" msprop:Generator_ColumnPropNameInRow="keterangan" msprop:Generator_ColumnPropNameInTable="keteranganColumn" msprop:Generator_UserColumnName="keterangan">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kode_invoice" msprop:Generator_ColumnVarNameInTable="columnkode_invoice" msprop:Generator_ColumnPropNameInRow="kode_invoice" msprop:Generator_ColumnPropNameInTable="kode_invoiceColumn" msprop:Generator_UserColumnName="kode_invoice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dibayar" msprop:Generator_ColumnVarNameInTable="columndibayar" msprop:Generator_ColumnPropNameInRow="dibayar" msprop:Generator_ColumnPropNameInTable="dibayarColumn" msprop:Generator_UserColumnName="dibayar">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableStruk" msprop:Generator_TableClassName="DataTableStrukDataTable" msprop:Generator_TableVarName="tableDataTableStruk" msprop:Generator_TablePropName="DataTableStruk" msprop:Generator_RowDeletingName="DataTableStrukRowDeleting" msprop:Generator_RowChangingName="DataTableStrukRowChanging" msprop:Generator_RowEvHandlerName="DataTableStrukRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableStrukRowDeleted" msprop:Generator_UserTableName="DataTableStruk" msprop:Generator_RowChangedName="DataTableStrukRowChanged" msprop:Generator_RowEvArgName="DataTableStrukRowChangeEvent" msprop:Generator_RowClassName="DataTableStrukRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="kode_invoice" msprop:Generator_ColumnVarNameInTable="columnkode_invoice" msprop:Generator_ColumnPropNameInRow="kode_invoice" msprop:Generator_ColumnPropNameInTable="kode_invoiceColumn" msprop:Generator_UserColumnName="kode_invoice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tgl" msprop:Generator_ColumnVarNameInTable="columntgl" msprop:Generator_ColumnPropNameInRow="tgl" msprop:Generator_ColumnPropNameInTable="tglColumn" msprop:Generator_UserColumnName="tgl" type="xs:dateTime" />
+              <xs:element name="batas_waktu" msprop:Generator_ColumnVarNameInTable="columnbatas_waktu" msprop:Generator_ColumnPropNameInRow="batas_waktu" msprop:Generator_ColumnPropNameInTable="batas_waktuColumn" msprop:Generator_UserColumnName="batas_waktu" type="xs:dateTime" />
+              <xs:element name="tgl_bayar" msprop:Generator_ColumnVarNameInTable="columntgl_bayar" msprop:Generator_ColumnPropNameInRow="tgl_bayar" msprop:Generator_ColumnPropNameInTable="tgl_bayarColumn" msprop:Generator_UserColumnName="tgl_bayar" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="biaya_tambahan" msprop:Generator_ColumnVarNameInTable="columnbiaya_tambahan" msprop:Generator_ColumnPropNameInRow="biaya_tambahan" msprop:Generator_ColumnPropNameInTable="biaya_tambahanColumn" msprop:Generator_UserColumnName="biaya_tambahan" type="xs:int" />
+              <xs:element name="diskon" msprop:Generator_ColumnVarNameInTable="columndiskon" msprop:Generator_ColumnPropNameInRow="diskon" msprop:Generator_ColumnPropNameInTable="diskonColumn" msprop:Generator_UserColumnName="diskon" type="xs:double" />
+              <xs:element name="pajak" msprop:Generator_ColumnVarNameInTable="columnpajak" msprop:Generator_ColumnPropNameInRow="pajak" msprop:Generator_ColumnPropNameInTable="pajakColumn" msprop:Generator_UserColumnName="pajak" type="xs:int" />
+              <xs:element name="total_pembayaran" msprop:Generator_ColumnVarNameInTable="columntotal_pembayaran" msprop:Generator_ColumnPropNameInRow="total_pembayaran" msprop:Generator_ColumnPropNameInTable="total_pembayaranColumn" msprop:Generator_UserColumnName="total_pembayaran" type="xs:int" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dibayar" msprop:Generator_ColumnVarNameInTable="columndibayar" msprop:Generator_ColumnPropNameInRow="dibayar" msprop:Generator_ColumnPropNameInTable="dibayarColumn" msprop:Generator_UserColumnName="dibayar">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_member" msprop:Generator_ColumnVarNameInTable="columnnama_member" msprop:Generator_ColumnPropNameInRow="nama_member" msprop:Generator_ColumnPropNameInTable="nama_memberColumn" msprop:Generator_UserColumnName="nama_member">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="alamat" msprop:Generator_ColumnVarNameInTable="columnalamat" msprop:Generator_ColumnPropNameInRow="alamat" msprop:Generator_ColumnPropNameInTable="alamatColumn" msprop:Generator_UserColumnName="alamat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tlp" msprop:Generator_ColumnVarNameInTable="columntlp" msprop:Generator_ColumnPropNameInRow="tlp" msprop:Generator_ColumnPropNameInTable="tlpColumn" msprop:Generator_UserColumnName="tlp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:double" />
+              <xs:element name="nama_paket" msprop:Generator_ColumnVarNameInTable="columnnama_paket" msprop:Generator_ColumnPropNameInRow="nama_paket" msprop:Generator_ColumnPropNameInTable="nama_paketColumn" msprop:Generator_UserColumnName="nama_paket">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:int" />
+              <xs:element name="nama" msprop:Generator_ColumnVarNameInTable="columnnama" msprop:Generator_ColumnPropNameInRow="nama" msprop:Generator_ColumnPropNameInTable="namaColumn" msprop:Generator_UserColumnName="nama">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_kurir" msprop:Generator_ColumnVarNameInTable="columnnama_kurir" msprop:Generator_ColumnPropNameInRow="nama_kurir" msprop:Generator_ColumnPropNameInTable="nama_kurirColumn" msprop:Generator_UserColumnName="nama_kurir">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_outlet" msprop:Generator_ColumnVarNameInTable="columnnama_outlet" msprop:Generator_ColumnPropNameInRow="nama_outlet" msprop:Generator_ColumnPropNameInTable="nama_outletColumn" msprop:Generator_UserColumnName="nama_outlet">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="jenis" msprop:Generator_ColumnVarNameInTable="columnjenis" msprop:Generator_ColumnPropNameInRow="jenis" msprop:Generator_ColumnPropNameInTable="jenisColumn" msprop:Generator_UserColumnName="jenis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="alamat_outlet" msprop:Generator_ColumnVarNameInTable="columnalamat_outlet" msprop:Generator_ColumnPropNameInRow="alamat_outlet" msprop:Generator_ColumnPropNameInTable="alamat_outletColumn" msprop:Generator_UserColumnName="alamat_outlet">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1077,28 +1252,32 @@ FROM            tb_detail_transaksi INNER JOIN
       <xs:selector xpath=".//mstns:DataTableNota" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
+    <xs:unique name="DataTableStruk_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableStruk" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="tb_detail_transaksi_ibfk_1" msdata:parent="tb_transaksi" msdata:child="tb_detail_transaksi" msdata:parentkey="id" msdata:childkey="id_transaksi" msprop:Generator_UserChildTable="tb_detail_transaksi" msprop:Generator_ChildPropName="Gettb_detail_transaksiRows" msprop:Generator_UserRelationName="tb_detail_transaksi_ibfk_1" msprop:Generator_RelationVarName="relationtb_detail_transaksi_ibfk_1" msprop:Generator_UserParentTable="tb_transaksi" msprop:Generator_ParentPropName="tb_transaksiRow" />
-      <msdata:Relationship name="tb_detail_transaksi_ibfk_2" msdata:parent="tb_paket" msdata:child="tb_detail_transaksi" msdata:parentkey="id" msdata:childkey="id_paket" msprop:Generator_UserChildTable="tb_detail_transaksi" msprop:Generator_ChildPropName="Gettb_detail_transaksiRows" msprop:Generator_UserRelationName="tb_detail_transaksi_ibfk_2" msprop:Generator_RelationVarName="relationtb_detail_transaksi_ibfk_2" msprop:Generator_UserParentTable="tb_paket" msprop:Generator_ParentPropName="tb_paketRow" />
-      <msdata:Relationship name="tb_kurir_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_kurir" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_kurir" msprop:Generator_ChildPropName="Gettb_kurirRows" msprop:Generator_UserRelationName="tb_kurir_ibfk_1" msprop:Generator_RelationVarName="relationtb_kurir_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" msprop:Generator_ParentPropName="tb_outletRow" />
-      <msdata:Relationship name="tb_member_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_member" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_member" msprop:Generator_ChildPropName="Gettb_memberRows" msprop:Generator_UserRelationName="tb_member_ibfk_1" msprop:Generator_RelationVarName="relationtb_member_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" msprop:Generator_ParentPropName="tb_outletRow" />
-      <msdata:Relationship name="tb_paket_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_1" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_paket_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" />
-      <msdata:Relationship name="tb_paket_ibfk_2" msdata:parent="tb_jenis" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_jenis" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_2" msprop:Generator_ParentPropName="tb_jenisRow" msprop:Generator_RelationVarName="relationtb_paket_ibfk_2" msprop:Generator_UserParentTable="tb_jenis" />
-      <msdata:Relationship name="tb_pengeluaran_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_pengeluaran" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_pengeluaran" msprop:Generator_ChildPropName="Gettb_pengeluaranRows" msprop:Generator_UserRelationName="tb_pengeluaran_ibfk_1" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_pengeluaran_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" />
-      <msdata:Relationship name="tb_transaksi_ibfk_1" msdata:parent="tb_member" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_member" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_1" msprop:Generator_ParentPropName="tb_memberRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_1" msprop:Generator_UserParentTable="tb_member" />
-      <msdata:Relationship name="tb_transaksi_ibfk_2" msdata:parent="tb_user" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_user" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_2" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_2" msprop:Generator_UserParentTable="tb_user" msprop:Generator_ParentPropName="tb_userRow" />
-      <msdata:Relationship name="tb_transaksi_ibfk_3" msdata:parent="tb_outlet" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_3" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_3" msprop:Generator_UserParentTable="tb_outlet" />
-      <msdata:Relationship name="tb_transaksi_ibfk_4" msdata:parent="tb_kurir" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_kurir" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_4" msprop:Generator_ParentPropName="tb_kurirRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_4" msprop:Generator_UserParentTable="tb_kurir" />
-      <msdata:Relationship name="tb_user_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_user" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_user" msprop:Generator_ChildPropName="Gettb_userRows" msprop:Generator_UserRelationName="tb_user_ibfk_1" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_user_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" />
-      <msdata:Relationship name="tb_kurir_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_kurir" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_kurir" msprop:Generator_ChildPropName="Gettb_kurirRows" msprop:Generator_UserRelationName="tb_kurir_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_kurir_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
-      <msdata:Relationship name="tb_member_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_member" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_member" msprop:Generator_ChildPropName="Gettb_memberRows" msprop:Generator_UserRelationName="tb_member_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_member_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
-      <msdata:Relationship name="tb_paket_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_paket_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
-      <msdata:Relationship name="tb_pengeluaran_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_pengeluaran" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_pengeluaran" msprop:Generator_ChildPropName="Gettb_pengeluaranRows" msprop:Generator_UserRelationName="tb_pengeluaran_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_pengeluaran_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
-      <msdata:Relationship name="tb_transaksi_ibfk_31" msdata:parent="DataTablePengeluaran" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_31" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_31" msprop:Generator_UserParentTable="DataTablePengeluaran" />
-      <msdata:Relationship name="tb_user_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_user" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_user" msprop:Generator_ChildPropName="Gettb_userRows" msprop:Generator_UserRelationName="tb_user_ibfk_11" msprop:Generator_ParentPropName="DataTablePengeluaranRow" msprop:Generator_RelationVarName="relationtb_user_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" />
-      <msdata:Relationship name="tb_transaksi_ibfk_41" msdata:parent="DataTableTransaksi" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_kurir" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_41" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_41" msprop:Generator_UserParentTable="DataTableTransaksi" msprop:Generator_ParentPropName="DataTableTransaksiRow" />
+      <msdata:Relationship name="tb_detail_transaksi_ibfk_1" msdata:parent="tb_transaksi" msdata:child="tb_detail_transaksi" msdata:parentkey="id" msdata:childkey="id_transaksi" msprop:Generator_UserChildTable="tb_detail_transaksi" msprop:Generator_ChildPropName="Gettb_detail_transaksiRows" msprop:Generator_UserRelationName="tb_detail_transaksi_ibfk_1" msprop:Generator_ParentPropName="tb_transaksiRow" msprop:Generator_RelationVarName="relationtb_detail_transaksi_ibfk_1" msprop:Generator_UserParentTable="tb_transaksi" />
+      <msdata:Relationship name="tb_detail_transaksi_ibfk_2" msdata:parent="tb_paket" msdata:child="tb_detail_transaksi" msdata:parentkey="id" msdata:childkey="id_paket" msprop:Generator_UserChildTable="tb_detail_transaksi" msprop:Generator_ChildPropName="Gettb_detail_transaksiRows" msprop:Generator_UserRelationName="tb_detail_transaksi_ibfk_2" msprop:Generator_ParentPropName="tb_paketRow" msprop:Generator_RelationVarName="relationtb_detail_transaksi_ibfk_2" msprop:Generator_UserParentTable="tb_paket" />
+      <msdata:Relationship name="tb_kurir_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_kurir" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_kurir" msprop:Generator_ChildPropName="Gettb_kurirRows" msprop:Generator_UserRelationName="tb_kurir_ibfk_1" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_kurir_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" />
+      <msdata:Relationship name="tb_member_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_member" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_member" msprop:Generator_ChildPropName="Gettb_memberRows" msprop:Generator_UserRelationName="tb_member_ibfk_1" msprop:Generator_ParentPropName="tb_outletRow" msprop:Generator_RelationVarName="relationtb_member_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" />
+      <msdata:Relationship name="tb_paket_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_1" msprop:Generator_RelationVarName="relationtb_paket_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" msprop:Generator_ParentPropName="tb_outletRow" />
+      <msdata:Relationship name="tb_paket_ibfk_2" msdata:parent="tb_jenis" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_jenis" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_2" msprop:Generator_RelationVarName="relationtb_paket_ibfk_2" msprop:Generator_UserParentTable="tb_jenis" msprop:Generator_ParentPropName="tb_jenisRow" />
+      <msdata:Relationship name="tb_pengeluaran_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_pengeluaran" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_pengeluaran" msprop:Generator_ChildPropName="Gettb_pengeluaranRows" msprop:Generator_UserRelationName="tb_pengeluaran_ibfk_1" msprop:Generator_RelationVarName="relationtb_pengeluaran_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" msprop:Generator_ParentPropName="tb_outletRow" />
+      <msdata:Relationship name="tb_transaksi_ibfk_1" msdata:parent="tb_member" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_member" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_1" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_1" msprop:Generator_UserParentTable="tb_member" msprop:Generator_ParentPropName="tb_memberRow" />
+      <msdata:Relationship name="tb_transaksi_ibfk_2" msdata:parent="tb_user" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_user" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_2" msprop:Generator_ParentPropName="tb_userRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_2" msprop:Generator_UserParentTable="tb_user" />
+      <msdata:Relationship name="tb_transaksi_ibfk_3" msdata:parent="tb_outlet" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_3" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_3" msprop:Generator_UserParentTable="tb_outlet" msprop:Generator_ParentPropName="tb_outletRow" />
+      <msdata:Relationship name="tb_transaksi_ibfk_4" msdata:parent="tb_kurir" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_kurir" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_4" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_4" msprop:Generator_UserParentTable="tb_kurir" msprop:Generator_ParentPropName="tb_kurirRow" />
+      <msdata:Relationship name="tb_user_ibfk_1" msdata:parent="tb_outlet" msdata:child="tb_user" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_user" msprop:Generator_ChildPropName="Gettb_userRows" msprop:Generator_UserRelationName="tb_user_ibfk_1" msprop:Generator_RelationVarName="relationtb_user_ibfk_1" msprop:Generator_UserParentTable="tb_outlet" msprop:Generator_ParentPropName="tb_outletRow" />
+      <msdata:Relationship name="tb_kurir_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_kurir" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_kurir" msprop:Generator_ChildPropName="Gettb_kurirRows" msprop:Generator_UserRelationName="tb_kurir_ibfk_11" msprop:Generator_RelationVarName="relationtb_kurir_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" msprop:Generator_ParentPropName="DataTablePengeluaranRow" />
+      <msdata:Relationship name="tb_member_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_member" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_member" msprop:Generator_ChildPropName="Gettb_memberRows" msprop:Generator_UserRelationName="tb_member_ibfk_11" msprop:Generator_RelationVarName="relationtb_member_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" msprop:Generator_ParentPropName="DataTablePengeluaranRow" />
+      <msdata:Relationship name="tb_paket_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_paket" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_paket" msprop:Generator_ChildPropName="Gettb_paketRows" msprop:Generator_UserRelationName="tb_paket_ibfk_11" msprop:Generator_RelationVarName="relationtb_paket_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" msprop:Generator_ParentPropName="DataTablePengeluaranRow" />
+      <msdata:Relationship name="tb_pengeluaran_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_pengeluaran" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_pengeluaran" msprop:Generator_ChildPropName="Gettb_pengeluaranRows" msprop:Generator_UserRelationName="tb_pengeluaran_ibfk_11" msprop:Generator_RelationVarName="relationtb_pengeluaran_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" msprop:Generator_ParentPropName="DataTablePengeluaranRow" />
+      <msdata:Relationship name="tb_transaksi_ibfk_31" msdata:parent="DataTablePengeluaran" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_31" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_31" msprop:Generator_UserParentTable="DataTablePengeluaran" msprop:Generator_ParentPropName="DataTablePengeluaranRow" />
+      <msdata:Relationship name="tb_user_ibfk_11" msdata:parent="DataTablePengeluaran" msdata:child="tb_user" msdata:parentkey="id" msdata:childkey="id_outlet" msprop:Generator_UserChildTable="tb_user" msprop:Generator_ChildPropName="Gettb_userRows" msprop:Generator_UserRelationName="tb_user_ibfk_11" msprop:Generator_RelationVarName="relationtb_user_ibfk_11" msprop:Generator_UserParentTable="DataTablePengeluaran" msprop:Generator_ParentPropName="DataTablePengeluaranRow" />
+      <msdata:Relationship name="tb_transaksi_ibfk_41" msdata:parent="DataTableTransaksi" msdata:child="tb_transaksi" msdata:parentkey="id" msdata:childkey="id_kurir" msprop:Generator_UserChildTable="tb_transaksi" msprop:Generator_ChildPropName="Gettb_transaksiRows" msprop:Generator_UserRelationName="tb_transaksi_ibfk_41" msprop:Generator_ParentPropName="DataTableTransaksiRow" msprop:Generator_RelationVarName="relationtb_transaksi_ibfk_41" msprop:Generator_UserParentTable="DataTableTransaksi" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
