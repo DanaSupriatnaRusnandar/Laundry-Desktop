@@ -129,7 +129,7 @@ namespace Laundry
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "kasir")
             {
                 btnAkun.Visible = false;
-                btnKurir.Visible = false;
+                btnDataKurir.Visible = false;
                 BtnDataUser.Visible = false;
                 btnOutlet.Visible = false;
                 btnJenis.Visible = false;
@@ -139,7 +139,7 @@ namespace Laundry
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "owner")
             {
                 btnAkun.Visible = false;
-                btnKurir.Visible = false;
+                btnDataKurir.Visible = false;
                 BtnDataUser.Visible = false;
                 btnOutlet.Visible = false;
                 btnJenis.Visible = false;
@@ -199,7 +199,7 @@ namespace Laundry
             hideSubMenu();
         }
 
-        private void btnKurir_Click_1(object sender, EventArgs e)
+        private void btnDataKurir_Click(object sender, EventArgs e)
         {
             openPage(new UserControlKurir());
             hideSubMenu();

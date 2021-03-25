@@ -38,7 +38,7 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id ORDER BY tb_pengeluran.id DESC");
+                DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id ORDER BY tb_pengeluaran.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = data;
             }

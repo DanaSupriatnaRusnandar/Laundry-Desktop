@@ -6,6 +6,9 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
+              <Width>1.38875cm</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>6.68338cm</Width>
             </TablixColumn>
             <TablixColumn>
@@ -25,6 +28,47 @@
             <TablixRow>
               <Height>0.67938cm</Height>
               <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>NO</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BottomBorder>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#1e1f44</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox2">
@@ -237,6 +281,42 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=RowNumber(NOTHING)</Value>
+                              <Style>
+                                <FontWeight>Normal</FontWeight>
+                                <Color>#1e1f44</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <BackgroundColor>White</BackgroundColor>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="nama_outlet">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -429,6 +509,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -444,7 +525,7 @@
         <DataSetName>DataSetPengeluaran</DataSetName>
         <Top>0.82021cm</Top>
         <Height>1.35876cm</Height>
-        <Width>25.92917cm</Width>
+        <Width>27.31792cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -455,7 +536,7 @@
     <Height>4.26411in</Height>
     <Style />
   </Body>
-  <Width>10.20833in</Width>
+  <Width>10.75509in</Width>
   <Page>
     <PageHeader>
       <Height>2.29057cm</Height>
@@ -483,8 +564,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.62002cm</Top>
-          <Left>19.63654cm</Left>
+          <Top>1.51418cm</Top>
+          <Left>21.02529cm</Left>
           <Height>0.6cm</Height>
           <Width>5.97513cm</Width>
           <Style>
@@ -544,7 +625,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.74084cm</Height>
+      <Height>1.01451cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -569,7 +650,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
-          <Left>21.04792cm</Left>
+          <Top>0.17639cm</Top>
+          <Left>22.43667cm</Left>
           <Height>0.73229cm</Height>
           <Width>4.56375cm</Width>
           <Style>

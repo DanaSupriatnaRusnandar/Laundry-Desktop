@@ -38,15 +38,9 @@ namespace Laundry
 
         private void Tampilkan()
         {
+            DataTable data = Db.Read("tb_jenis", "*");
             dataGridViewJenis.AutoGenerateColumns = false;
-            dataGridViewJenis.DataSource = Db.Read("tb_jenis", "*");
-
-            /*DataTable data = Db.Read("tb_jenis", "*");
-            dataGridViewJenis.Rows.Clear();
-            foreach (DataRow row in data.Rows)
-            {
-                dataGridViewJenis.Rows.Add(row.Field<int>("id"), row.Field<string>("jenis"));
-            }*/
+            dataGridViewJenis.DataSource = data;
         }
 
         private void CariData(string keyword)
@@ -78,6 +72,7 @@ namespace Laundry
             }
         }
 
+        //Event Hapus
         private void dataGridViewJenis_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int row = dataGridViewJenis.CurrentCell.RowIndex;

@@ -39,12 +39,24 @@ namespace Laundry
             cmbOutlet.DisplayMember = "nama_outlet";
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
+            
+            if(Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            {
+                //Biding user
+                cmbRole.DataSource = Db.Read("tb_user", "id, role");
+                cmbRole.DisplayMember = "role";
+                cmbRole.ValueMember = "id";
+                cmbRole.SelectedIndex = -1;
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            {
+                //Biding user
+                cmbRole.DataSource = Db.Read("tb_user", "id, role", $"tb_user.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                cmbRole.DisplayMember = "role";
+                cmbRole.ValueMember = "id";
+                cmbRole.SelectedIndex = -1;
+            }
 
-            //Biding user
-            cmbRole.DataSource = Db.Read("tb_user", "id, role");
-            cmbRole.DisplayMember = "role";
-            cmbRole.ValueMember = "id";
-            cmbRole.SelectedIndex = -1;
 
             cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
             cmbRole.SelectedIndex = cmbRole.FindStringExact(nama_role);
@@ -73,9 +85,7 @@ namespace Laundry
                 var nama = txtnama.Text;
                 var username = txtusername.Text;
                 var password = Sha256.Encrypt(txtpassword.Text);
-                if (cmbOutlet.SelectedIndex == 0) ;
                 var outlet = cmbOutlet.SelectedValue;
-                if (cmbRole.SelectedIndex == 0) ;
                 var role = cmbRole.SelectedValue;
                 if (Db.Update($"tb_user", $"id = '{getIdUser}', nama ='{nama}', username = '{username}', password = '{password}', id_outlet = '{outlet}' , role = '{role}'", $"id = {getIdUser}"))
                 {
