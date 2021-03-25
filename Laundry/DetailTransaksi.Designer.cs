@@ -31,28 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kode_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.batas_waktu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgl_bayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.biaya_tambahan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dikon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pajak = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_pembayaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stastu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dibayar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keterangan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.radioButtonLaki = new System.Windows.Forms.RadioButton();
             this.radioButtonPerempuan = new System.Windows.Forms.RadioButton();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTlpPelanggan = new System.Windows.Forms.TextBox();
+            this.txtAlamatPelanggan = new System.Windows.Forms.TextBox();
+            this.txtJK = new System.Windows.Forms.TextBox();
             this.Lbltlp = new System.Windows.Forms.Label();
             this.lblAlamat = new System.Windows.Forms.Label();
             this.txtNamaPelanggan = new System.Windows.Forms.TextBox();
@@ -61,24 +45,63 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtKurir = new System.Windows.Forms.TextBox();
+            this.txtPetugas = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtTlpOutlet = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtOutlet = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPembayaran = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblInvoice = new System.Windows.Forms.Label();
+            this.lblTgl = new System.Windows.Forms.Label();
+            this.lblBatasWaktu = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblTanggalBayar = new System.Windows.Forms.Label();
+            this.lblStatusCucian = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblPaket = new System.Windows.Forms.Label();
+            this.lblPajak = new System.Windows.Forms.Label();
+            this.lblDiskon = new System.Windows.Forms.Label();
+            this.lblbiayaTambahan = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCatatan = new System.Windows.Forms.TextBox();
+            this.dataGridViewKeranjang = new System.Windows.Forms.DataGridView();
+            this.nama_paket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.harga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKeranjang)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,140 +128,23 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 300);
+            this.panel2.Location = new System.Drawing.Point(0, 299);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(725, 199);
             this.panel2.TabIndex = 10;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.kode_invoice,
-            this.tgl,
-            this.batas_waktu,
-            this.tgl_bayar,
-            this.nama_paket,
-            this.jenis,
-            this.harga,
-            this.qty,
-            this.biaya_tambahan,
-            this.dikon,
-            this.pajak,
-            this.total_pembayaran,
-            this.stastu,
-            this.dibayar,
-            this.keterangan});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(725, 199);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // kode_invoice
-            // 
-            this.kode_invoice.HeaderText = "Invoice";
-            this.kode_invoice.Name = "kode_invoice";
-            this.kode_invoice.ReadOnly = true;
-            // 
-            // tgl
-            // 
-            this.tgl.HeaderText = "Tanggal";
-            this.tgl.Name = "tgl";
-            this.tgl.ReadOnly = true;
-            // 
-            // batas_waktu
-            // 
-            this.batas_waktu.HeaderText = "Batas Waktu";
-            this.batas_waktu.Name = "batas_waktu";
-            this.batas_waktu.ReadOnly = true;
-            // 
-            // tgl_bayar
-            // 
-            this.tgl_bayar.HeaderText = "Tanggal Bayar";
-            this.tgl_bayar.Name = "tgl_bayar";
-            this.tgl_bayar.ReadOnly = true;
-            // 
-            // nama_paket
-            // 
-            this.nama_paket.HeaderText = "Paket";
-            this.nama_paket.Name = "nama_paket";
-            this.nama_paket.ReadOnly = true;
-            // 
-            // jenis
-            // 
-            this.jenis.HeaderText = "Jenis";
-            this.jenis.Name = "jenis";
-            this.jenis.ReadOnly = true;
-            // 
-            // harga
-            // 
-            this.harga.HeaderText = "harga";
-            this.harga.Name = "harga";
-            this.harga.ReadOnly = true;
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "qty";
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
-            // 
-            // biaya_tambahan
-            // 
-            this.biaya_tambahan.HeaderText = "Biaya Tambahan";
-            this.biaya_tambahan.Name = "biaya_tambahan";
-            this.biaya_tambahan.ReadOnly = true;
-            // 
-            // dikon
-            // 
-            this.dikon.HeaderText = "Diskon";
-            this.dikon.Name = "dikon";
-            this.dikon.ReadOnly = true;
-            // 
-            // pajak
-            // 
-            this.pajak.HeaderText = "Pajak";
-            this.pajak.Name = "pajak";
-            this.pajak.ReadOnly = true;
-            // 
-            // total_pembayaran
-            // 
-            this.total_pembayaran.HeaderText = "Total Pembayaran";
-            this.total_pembayaran.Name = "total_pembayaran";
-            this.total_pembayaran.ReadOnly = true;
-            // 
-            // stastu
-            // 
-            this.stastu.HeaderText = "Status";
-            this.stastu.Name = "stastu";
-            this.stastu.ReadOnly = true;
-            // 
-            // dibayar
-            // 
-            this.dibayar.HeaderText = "Pembayaran";
-            this.dibayar.Name = "dibayar";
-            this.dibayar.ReadOnly = true;
-            // 
-            // keterangan
-            // 
-            this.keterangan.HeaderText = "Catatan";
-            this.keterangan.Name = "keterangan";
-            this.keterangan.ReadOnly = true;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.radioButtonLaki);
             this.panel3.Controls.Add(this.radioButtonPerempuan);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.txtTlpPelanggan);
+            this.panel3.Controls.Add(this.txtAlamatPelanggan);
+            this.panel3.Controls.Add(this.txtJK);
             this.panel3.Controls.Add(this.Lbltlp);
             this.panel3.Controls.Add(this.lblAlamat);
             this.panel3.Controls.Add(this.txtNamaPelanggan);
@@ -248,7 +154,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 55);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(204, 245);
+            this.panel3.Size = new System.Drawing.Size(225, 244);
             this.panel3.TabIndex = 15;
             // 
             // radioButtonLaki
@@ -262,6 +168,7 @@
             this.radioButtonLaki.TabStop = true;
             this.radioButtonLaki.Text = "Laki - Laki";
             this.radioButtonLaki.UseVisualStyleBackColor = false;
+            this.radioButtonLaki.CheckedChanged += new System.EventHandler(this.radioButtonLaki_CheckedChanged);
             // 
             // radioButtonPerempuan
             // 
@@ -274,30 +181,31 @@
             this.radioButtonPerempuan.TabStop = true;
             this.radioButtonPerempuan.Text = "Perempuan";
             this.radioButtonPerempuan.UseVisualStyleBackColor = false;
+            this.radioButtonPerempuan.CheckedChanged += new System.EventHandler(this.radioButtonPerempuan_CheckedChanged);
             // 
-            // textBox3
+            // txtTlpPelanggan
             // 
-            this.textBox3.Location = new System.Drawing.Point(16, 200);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(176, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtTlpPelanggan.Location = new System.Drawing.Point(16, 200);
+            this.txtTlpPelanggan.Name = "txtTlpPelanggan";
+            this.txtTlpPelanggan.ReadOnly = true;
+            this.txtTlpPelanggan.Size = new System.Drawing.Size(191, 20);
+            this.txtTlpPelanggan.TabIndex = 8;
             // 
-            // textBox2
+            // txtAlamatPelanggan
             // 
-            this.textBox2.Location = new System.Drawing.Point(16, 147);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtAlamatPelanggan.Location = new System.Drawing.Point(16, 147);
+            this.txtAlamatPelanggan.Name = "txtAlamatPelanggan";
+            this.txtAlamatPelanggan.ReadOnly = true;
+            this.txtAlamatPelanggan.Size = new System.Drawing.Size(191, 20);
+            this.txtAlamatPelanggan.TabIndex = 7;
             // 
-            // textBox1
+            // txtJK
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Visible = false;
+            this.txtJK.Location = new System.Drawing.Point(15, 96);
+            this.txtJK.Name = "txtJK";
+            this.txtJK.Size = new System.Drawing.Size(191, 20);
+            this.txtJK.TabIndex = 6;
+            this.txtJK.Visible = false;
             // 
             // Lbltlp
             // 
@@ -324,7 +232,7 @@
             this.txtNamaPelanggan.Location = new System.Drawing.Point(16, 48);
             this.txtNamaPelanggan.Name = "txtNamaPelanggan";
             this.txtNamaPelanggan.ReadOnly = true;
-            this.txtNamaPelanggan.Size = new System.Drawing.Size(175, 20);
+            this.txtNamaPelanggan.Size = new System.Drawing.Size(190, 20);
             this.txtNamaPelanggan.TabIndex = 3;
             // 
             // lblJk
@@ -361,18 +269,18 @@
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.textBox7);
-            this.panel4.Controls.Add(this.textBox6);
+            this.panel4.Controls.Add(this.txtKurir);
+            this.panel4.Controls.Add(this.txtPetugas);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.textBox5);
+            this.panel4.Controls.Add(this.txtTlpOutlet);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.txtOutlet);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(521, 55);
+            this.panel4.Location = new System.Drawing.Point(500, 55);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(204, 245);
+            this.panel4.Size = new System.Drawing.Size(225, 244);
             this.panel4.TabIndex = 14;
             // 
             // label8
@@ -385,21 +293,21 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "No.Telepon";
             // 
-            // textBox7
+            // txtKurir
             // 
-            this.textBox7.Location = new System.Drawing.Point(16, 200);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(175, 20);
-            this.textBox7.TabIndex = 18;
+            this.txtKurir.Location = new System.Drawing.Point(16, 200);
+            this.txtKurir.Name = "txtKurir";
+            this.txtKurir.ReadOnly = true;
+            this.txtKurir.Size = new System.Drawing.Size(186, 20);
+            this.txtKurir.TabIndex = 18;
             // 
-            // textBox6
+            // txtPetugas
             // 
-            this.textBox6.Location = new System.Drawing.Point(16, 147);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(175, 20);
-            this.textBox6.TabIndex = 16;
+            this.txtPetugas.Location = new System.Drawing.Point(16, 147);
+            this.txtPetugas.Name = "txtPetugas";
+            this.txtPetugas.ReadOnly = true;
+            this.txtPetugas.Size = new System.Drawing.Size(186, 20);
+            this.txtPetugas.TabIndex = 16;
             // 
             // label7
             // 
@@ -411,13 +319,13 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Kurir";
             // 
-            // textBox5
+            // txtTlpOutlet
             // 
-            this.textBox5.Location = new System.Drawing.Point(16, 97);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(175, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtTlpOutlet.Location = new System.Drawing.Point(16, 97);
+            this.txtTlpOutlet.Name = "txtTlpOutlet";
+            this.txtTlpOutlet.ReadOnly = true;
+            this.txtTlpOutlet.Size = new System.Drawing.Size(186, 20);
+            this.txtTlpOutlet.TabIndex = 14;
             // 
             // label6
             // 
@@ -429,13 +337,13 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Petugas";
             // 
-            // textBox4
+            // txtOutlet
             // 
-            this.textBox4.Location = new System.Drawing.Point(16, 48);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(175, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtOutlet.Location = new System.Drawing.Point(16, 48);
+            this.txtOutlet.Name = "txtOutlet";
+            this.txtOutlet.ReadOnly = true;
+            this.txtOutlet.Size = new System.Drawing.Size(186, 20);
+            this.txtOutlet.TabIndex = 12;
             // 
             // label5
             // 
@@ -461,39 +369,408 @@
             // 
             this.panel5.Controls.Add(this.groupBox1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(204, 55);
+            this.panel5.Location = new System.Drawing.Point(225, 55);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(317, 245);
+            this.panel5.Size = new System.Drawing.Size(275, 244);
             this.panel5.TabIndex = 17;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(317, 245);
+            this.groupBox1.Size = new System.Drawing.Size(275, 244);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Catatan";
+            this.groupBox1.Text = "Transaksi";
             // 
-            // textBox8
+            // tableLayoutPanel1
             // 
-            this.textBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox8.Location = new System.Drawing.Point(3, 18);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(311, 224);
-            this.textBox8.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label21, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblInvoice, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblTgl, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblBatasWaktu, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label18, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblTanggalBayar, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lblPembayaran, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblStatusCucian, 1, 5);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(269, 223);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblPembayaran
+            // 
+            this.lblPembayaran.AutoSize = true;
+            this.lblPembayaran.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPembayaran.Location = new System.Drawing.Point(137, 160);
+            this.lblPembayaran.Name = "lblPembayaran";
+            this.lblPembayaran.Size = new System.Drawing.Size(126, 16);
+            this.lblPembayaran.TabIndex = 27;
+            this.lblPembayaran.Text = "Status Pembayaran";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 130);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(89, 16);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Status Cucian";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(137, 12);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 32);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Tanggal Pembayaran";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Batas Waktu";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 40);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 16);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Tanggal Entri";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(3, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 16);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Kode Invoice";
+            // 
+            // lblInvoice
+            // 
+            this.lblInvoice.AutoSize = true;
+            this.lblInvoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoice.Location = new System.Drawing.Point(137, 10);
+            this.lblInvoice.Name = "lblInvoice";
+            this.lblInvoice.Size = new System.Drawing.Size(102, 16);
+            this.lblInvoice.TabIndex = 28;
+            this.lblInvoice.Text = "INVxxxxxxxxxxxx";
+            // 
+            // lblTgl
+            // 
+            this.lblTgl.AutoSize = true;
+            this.lblTgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTgl.Location = new System.Drawing.Point(137, 40);
+            this.lblTgl.Name = "lblTgl";
+            this.lblTgl.Size = new System.Drawing.Size(113, 16);
+            this.lblTgl.TabIndex = 29;
+            this.lblTgl.Text = "Hari/Bulan/Tahun";
+            // 
+            // lblBatasWaktu
+            // 
+            this.lblBatasWaktu.AutoSize = true;
+            this.lblBatasWaktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBatasWaktu.Location = new System.Drawing.Point(137, 70);
+            this.lblBatasWaktu.Name = "lblBatasWaktu";
+            this.lblBatasWaktu.Size = new System.Drawing.Size(113, 16);
+            this.lblBatasWaktu.TabIndex = 30;
+            this.lblBatasWaktu.Text = "Hari/Bulan/Tahun";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 100);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(98, 16);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "Tanggal Bayar";
+            // 
+            // lblTanggalBayar
+            // 
+            this.lblTanggalBayar.AutoSize = true;
+            this.lblTanggalBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTanggalBayar.Location = new System.Drawing.Point(137, 100);
+            this.lblTanggalBayar.Name = "lblTanggalBayar";
+            this.lblTanggalBayar.Size = new System.Drawing.Size(113, 16);
+            this.lblTanggalBayar.TabIndex = 32;
+            this.lblTanggalBayar.Text = "Hari/Bulan/Tahun";
+            // 
+            // lblStatusCucian
+            // 
+            this.lblStatusCucian.AutoSize = true;
+            this.lblStatusCucian.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusCucian.Location = new System.Drawing.Point(137, 130);
+            this.lblStatusCucian.Name = "lblStatusCucian";
+            this.lblStatusCucian.Size = new System.Drawing.Size(89, 16);
+            this.lblStatusCucian.TabIndex = 33;
+            this.lblStatusCucian.Text = "Status Cucian";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 160);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(126, 16);
+            this.label21.TabIndex = 34;
+            this.label21.Text = "Status Pembayaran";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.groupBox2);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(192, 199);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.tableLayoutPanel2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(517, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(208, 199);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.dataGridViewKeranjang);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(192, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(325, 199);
+            this.panel8.TabIndex = 2;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 94.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.714286F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanel2.Controls.Add(this.lblTotal, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label25, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lblbiayaTambahan, 2, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label26, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblPajak, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblDiskon, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label22, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblPaket, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label23, 0, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(208, 199);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(3, 20);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(87, 16);
+            this.label22.TabIndex = 35;
+            this.label22.Text = "Paket Cucian";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(3, 50);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(50, 16);
+            this.label23.TabIndex = 36;
+            this.label23.Text = "Diskon";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(3, 110);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(112, 16);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Biaya Tambahan";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(3, 140);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(39, 16);
+            this.label25.TabIndex = 38;
+            this.label25.Text = "Total";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(3, 80);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(43, 16);
+            this.label26.TabIndex = 39;
+            this.label26.Text = "Pajak";
+            // 
+            // lblPaket
+            // 
+            this.lblPaket.AutoSize = true;
+            this.lblPaket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaket.Location = new System.Drawing.Point(136, 20);
+            this.lblPaket.Name = "lblPaket";
+            this.lblPaket.Size = new System.Drawing.Size(15, 16);
+            this.lblPaket.TabIndex = 41;
+            this.lblPaket.Text = "0";
+            // 
+            // lblPajak
+            // 
+            this.lblPajak.AutoSize = true;
+            this.lblPajak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPajak.Location = new System.Drawing.Point(136, 80);
+            this.lblPajak.Name = "lblPajak";
+            this.lblPajak.Size = new System.Drawing.Size(15, 16);
+            this.lblPajak.TabIndex = 42;
+            this.lblPajak.Text = "0";
+            // 
+            // lblDiskon
+            // 
+            this.lblDiskon.AutoSize = true;
+            this.lblDiskon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiskon.Location = new System.Drawing.Point(136, 50);
+            this.lblDiskon.Name = "lblDiskon";
+            this.lblDiskon.Size = new System.Drawing.Size(15, 16);
+            this.lblDiskon.TabIndex = 43;
+            this.lblDiskon.Text = "0";
+            // 
+            // lblbiayaTambahan
+            // 
+            this.lblbiayaTambahan.AutoSize = true;
+            this.lblbiayaTambahan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbiayaTambahan.Location = new System.Drawing.Point(136, 110);
+            this.lblbiayaTambahan.Name = "lblbiayaTambahan";
+            this.lblbiayaTambahan.Size = new System.Drawing.Size(15, 16);
+            this.lblbiayaTambahan.TabIndex = 44;
+            this.lblbiayaTambahan.Text = "0";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(136, 140);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(15, 16);
+            this.lblTotal.TabIndex = 45;
+            this.lblTotal.Text = "0";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtCatatan);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(192, 199);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Catatan";
+            // 
+            // txtCatatan
+            // 
+            this.txtCatatan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCatatan.Location = new System.Drawing.Point(3, 18);
+            this.txtCatatan.Multiline = true;
+            this.txtCatatan.Name = "txtCatatan";
+            this.txtCatatan.ReadOnly = true;
+            this.txtCatatan.Size = new System.Drawing.Size(186, 178);
+            this.txtCatatan.TabIndex = 0;
+            // 
+            // dataGridViewKeranjang
+            // 
+            this.dataGridViewKeranjang.AllowUserToAddRows = false;
+            this.dataGridViewKeranjang.AllowUserToDeleteRows = false;
+            this.dataGridViewKeranjang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKeranjang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nama_paket,
+            this.qty,
+            this.harga});
+            this.dataGridViewKeranjang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewKeranjang.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewKeranjang.Name = "dataGridViewKeranjang";
+            this.dataGridViewKeranjang.ReadOnly = true;
+            this.dataGridViewKeranjang.Size = new System.Drawing.Size(325, 199);
+            this.dataGridViewKeranjang.TabIndex = 0;
+            // 
+            // nama_paket
+            // 
+            this.nama_paket.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama_paket.HeaderText = "Nama Paket";
+            this.nama_paket.Name = "nama_paket";
+            this.nama_paket.ReadOnly = true;
+            // 
+            // qty
+            // 
+            this.qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.qty.FillWeight = 50F;
+            this.qty.HeaderText = "Quantity";
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            // 
+            // harga
+            // 
+            this.harga.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.harga.FillWeight = 80F;
+            this.harga.HeaderText = "Harga";
+            this.harga.Name = "harga";
+            this.harga.ReadOnly = true;
             // 
             // DetailTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(725, 499);
+            this.ClientSize = new System.Drawing.Size(725, 498);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -505,14 +782,22 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKeranjang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -521,28 +806,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn kode_invoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tgl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn batas_waktu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tgl_bayar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nama_paket;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jenis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn harga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn biaya_tambahan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dikon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pajak;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_pembayaran;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stastu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dibayar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn keterangan;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton radioButtonLaki;
         private System.Windows.Forms.RadioButton radioButtonPerempuan;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTlpPelanggan;
+        private System.Windows.Forms.TextBox txtAlamatPelanggan;
+        private System.Windows.Forms.TextBox txtJK;
         private System.Windows.Forms.Label Lbltlp;
         private System.Windows.Forms.Label lblAlamat;
         private System.Windows.Forms.TextBox txtNamaPelanggan;
@@ -551,16 +821,49 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtKurir;
+        private System.Windows.Forms.TextBox txtPetugas;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtTlpOutlet;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtOutlet;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblInvoice;
+        private System.Windows.Forms.Label lblTgl;
+        private System.Windows.Forms.Label lblBatasWaktu;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblTanggalBayar;
+        private System.Windows.Forms.Label lblPembayaran;
+        private System.Windows.Forms.Label lblStatusCucian;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblbiayaTambahan;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblPajak;
+        private System.Windows.Forms.Label lblDiskon;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblPaket;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView dataGridViewKeranjang;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtCatatan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nama_paket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn harga;
     }
 }

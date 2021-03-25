@@ -83,7 +83,7 @@ namespace Laundry
                 string id = row.Cells["id"].Value.ToString();
                 string nama = row.Cells["nama_outlet"].Value.ToString();
                 string alamat = row.Cells["alamat"].Value.ToString();
-                string tlp = row.Cells["tlp"].Value.ToString();
+                string tlp = row.Cells["no_tlp"].Value.ToString();
                 new EditDataOutlet(btn_refresh, id, nama, alamat, tlp).ShowDialog();
             }
         }

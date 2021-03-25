@@ -37,7 +37,7 @@ namespace Laundry
                 var nama = txtnama.Text;
                 var alamat = txtAlamat.Text;
                 var tlp = txtNoTelepon.Text;
-                if (Db.Update($"tb_outlet", $"id = {getIdOutlet}, nama_outlet ='{nama}', alamat = '{alamat}', tlp = '{tlp}'", $"id = {getIdOutlet}"))
+                if (Db.Update($"tb_outlet", $"id = {getIdOutlet}, nama_outlet ='{nama}', alamat = '{alamat}', no_tlp = '{tlp}'", $"id = {getIdOutlet}"))
                 {
                     MessageBox.Show("Data outlet berhasil diubah");
                     btrf.PerformClick();

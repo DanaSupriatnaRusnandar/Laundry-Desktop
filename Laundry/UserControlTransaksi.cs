@@ -125,7 +125,7 @@ namespace Laundry
             {
                 var row = dataGridViewTransaksi.Rows[e.RowIndex];
                 string invoice = row.Cells["kode_invoice"].Value.ToString();
-                new DetailTransaksi().ShowDialog();
+                new DetailTransaksi(invoice).ShowDialog();
             }
         }
 
