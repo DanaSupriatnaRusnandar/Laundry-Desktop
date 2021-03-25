@@ -38,7 +38,6 @@ namespace Laundry
 
         private void CariData(string keyword)
         {
-            //Pencarian tidak tampil
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
                 dataGridViewTransaksi.AutoGenerateColumns = false;
@@ -110,14 +109,23 @@ namespace Laundry
             getIdTransaksi = dataGridViewTransaksi.Rows[row].Cells["id"].Value.ToString();
         }
 
-        //Event Edit
+        
         private void dataGridViewTransaksi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Event Edit
             if (e.ColumnIndex == dataGridViewTransaksi.Columns["edit"].Index)
             {
                 var row = dataGridViewTransaksi.Rows[e.RowIndex];
                 string invoice = row.Cells["kode_invoice"].Value.ToString();
                 new EditTransaksi(btn_refresh, invoice).ShowDialog();
+            }
+
+            //Event Detail
+            if (e.ColumnIndex == dataGridViewTransaksi.Columns["detail"].Index)
+            {
+                var row = dataGridViewTransaksi.Rows[e.RowIndex];
+                string invoice = row.Cells["kode_invoice"].Value.ToString();
+                new DetailTransaksi().ShowDialog();
             }
         }
 

@@ -30,33 +30,47 @@ namespace Laundry
 
         private void Transaksi_Load(object sender, EventArgs e)
         {
-        //    SELECT* FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = { Session.getUserLogged().Rows[0].Field<int>("id_outlet")}
-            //Biding Pelanggan;
-            cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member", $"tb_member.id_outlet = { Session.getUserLogged().Rows[0].Field<int>("id_outlet")}"); 
-            cmbPelanggan.DisplayMember = "nama_member";
-            cmbPelanggan.ValueMember = "id";
-            cmbPelanggan.SelectedIndex = -1;
-
-            //Biding Paket
-            cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
-            cmbPaket.DisplayMember = "nama_paket";
-            cmbPaket.ValueMember = "id";
-            cmbPaket.SelectedIndex = -1;
-
-            //Biding Kurir
-            cmbKurir.DataSource = Db.Read("tb_kurir", "id, nama_kurir");
-            cmbKurir.DisplayMember = "nama_kurir";
-            cmbKurir.ValueMember = "id";
-            cmbKurir.SelectedIndex = -1;
-
-            /*if (Session.getUserLogged().Rows[0].Field<string>("id_outlet") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
             {
-                cmbPelanggan.Visible = false;
+                //ComboBox pelanggan
+                cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member");
+                cmbPelanggan.DisplayMember = "nama_member";
+                cmbPelanggan.ValueMember = "id";
+                cmbPelanggan.SelectedIndex = -1;
+
+                //ComboBox Paket
+                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
+                cmbPaket.DisplayMember = "nama_paket";
+                cmbPaket.ValueMember = "id";
+                cmbPaket.SelectedIndex = -1;
+
+                //ComboBox Kurir
+                cmbKurir.DataSource = Db.Read("tb_kurir", "id, nama_kurir");
+                cmbKurir.DisplayMember = "nama_kurir";
+                cmbKurir.ValueMember = "id";
+                cmbKurir.SelectedIndex = -1;
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("id_outlet") != "superAdmin")
+
+            if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
             {
-                cmbPelangganSupAdmin.Visible = false;
-            }*/
+                //ComboBox Pelanggan
+                cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member", $"tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                cmbPelanggan.DisplayMember = "nama_member";
+                cmbPelanggan.ValueMember = "id";
+                cmbPelanggan.SelectedIndex = -1;
+
+                //ComboBox Paket
+                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
+                cmbPaket.DisplayMember = "nama_paket";
+                cmbPaket.ValueMember = "id";
+                cmbPaket.SelectedIndex = -1;
+
+                //ComboBox Kurir
+                cmbKurir.DataSource = Db.Read($"tb_kurir", "id, nama_kurir", $"tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
+                cmbKurir.DisplayMember = "nama_kurir";
+                cmbKurir.ValueMember = "id";
+                cmbKurir.SelectedIndex = -1;
+            }
 
 
             id_outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
@@ -64,54 +78,6 @@ namespace Laundry
 
             Dibayar(cmbDibayar.SelectedItem);
         }
-
-        /*private void comboBoxSuperAdmin()
-        {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
-            {
-                //Biding Pelanggan
-                cmbPelanggan.DataSource = Db.Read("tb_member", "id, nama_member");
-                cmbPelanggan.DisplayMember = "nama_member";
-                cmbPelanggan.ValueMember = "id";
-                cmbPelanggan.SelectedIndex = -1;
-
-                //Biding Paket
-                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
-                cmbPaket.DisplayMember = "nama_paket";
-                cmbPaket.ValueMember = "id";
-                cmbPaket.SelectedIndex = -1;
-
-                //Biding Kurir
-                cmbKurir.DataSource = Db.Read("tb_kurir", "id, nama_kurir");
-                cmbKurir.DisplayMember = "nama_kurir";
-                cmbKurir.ValueMember = "id";
-                cmbKurir.SelectedIndex = -1;
-            }
-        }*/
-
-        /*private void comboBoxUser()
-        {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
-            {
-                //Biding Pelanggan
-                cmbPelanggan.DataSource = Db.Read($"tb_member" , "id, nama_member");
-                cmbPelanggan.DisplayMember = "nama_member";
-                cmbPelanggan.ValueMember = "id";
-                cmbPelanggan.SelectedIndex = -1;
-
-                //Biding Paket
-                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
-                cmbPaket.DisplayMember = "nama_paket";
-                cmbPaket.ValueMember = "id";
-                cmbPaket.SelectedIndex = -1;
-
-                //Biding Kurir
-                cmbKurir.DataSource = Db.Read("tb_kurir", "id, nama_kurir");
-                cmbKurir.DisplayMember = "nama_kurir";
-                cmbKurir.ValueMember = "id";
-                cmbKurir.SelectedIndex = -1;
-            }
-        }*/
 
         //Panggil Data Paket
         private void dataPaket()
@@ -362,9 +328,6 @@ namespace Laundry
         private void button2_Click(object sender, EventArgs e)
         {
             btnSimpan.PerformClick();
-
-                
-
             new NotaTransaksi(Invoice).ShowDialog();
         }
     }

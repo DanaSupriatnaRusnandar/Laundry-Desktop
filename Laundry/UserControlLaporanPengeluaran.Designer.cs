@@ -40,8 +40,6 @@
             this.dateTimePickerDari = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataTablePengeluaranTableAdapter1 = new Laundry.laundryDataSetTableAdapters.DataTablePengeluaranTableAdapter();
@@ -93,7 +91,7 @@
             this.btnCari.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCari.IconColor = System.Drawing.Color.Black;
             this.btnCari.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCari.Location = new System.Drawing.Point(568, 17);
+            this.btnCari.Location = new System.Drawing.Point(336, 20);
             this.btnCari.Name = "btnCari";
             this.btnCari.Size = new System.Drawing.Size(75, 23);
             this.btnCari.TabIndex = 4;
@@ -105,7 +103,7 @@
             // 
             this.dateTimePickerSampai.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerSampai.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerSampai.Location = new System.Drawing.Point(437, 18);
+            this.dateTimePickerSampai.Location = new System.Drawing.Point(205, 21);
             this.dateTimePickerSampai.Name = "dateTimePickerSampai";
             this.dateTimePickerSampai.Size = new System.Drawing.Size(125, 20);
             this.dateTimePickerSampai.TabIndex = 3;
@@ -115,7 +113,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(403, 18);
+            this.label3.Location = new System.Drawing.Point(171, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 18);
             this.label3.TabIndex = 2;
@@ -125,7 +123,7 @@
             // 
             this.dateTimePickerDari.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerDari.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDari.Location = new System.Drawing.Point(273, 18);
+            this.dateTimePickerDari.Location = new System.Drawing.Point(41, 21);
             this.dateTimePickerDari.Name = "dateTimePickerDari";
             this.dateTimePickerDari.Size = new System.Drawing.Size(125, 20);
             this.dateTimePickerDari.TabIndex = 1;
@@ -135,7 +133,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(237, 19);
+            this.label2.Location = new System.Drawing.Point(5, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 18);
             this.label2.TabIndex = 0;
@@ -144,8 +142,6 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.comboBox1);
-            this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.btnCari);
             this.panel4.Controls.Add(this.dateTimePickerSampai);
             this.panel4.Controls.Add(this.label3);
@@ -156,25 +152,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(876, 68);
             this.panel4.TabIndex = 7;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 18);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 21);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(3, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Pencarian";
             // 
             // panel1
             // 
@@ -237,8 +214,6 @@
         private System.Windows.Forms.Panel panel1;
         private laundryDataSet laundryDataSet;
         private laundryDataSetTableAdapters.DataTablePengeluaranTableAdapter DataTablePengeluaranTableAdapter;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource dataTablePengeluaranBindingSource;
         private laundryDataSet laundryDataSet1;
