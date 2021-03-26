@@ -4720,8 +4720,6 @@ namespace Laundry {
             
             private global::System.Data.DataColumn columnalamat;
             
-            private global::System.Data.DataColumn columntlp;
-            
             private global::System.Data.DataColumn columnqty;
             
             private global::System.Data.DataColumn columnnama_paket;
@@ -4877,14 +4875,6 @@ namespace Laundry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn tlpColumn {
-                get {
-                    return this.columntlp;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn qtyColumn {
                 get {
                     return this.columnqty;
@@ -4997,7 +4987,6 @@ namespace Laundry {
                         string dibayar, 
                         string nama_member, 
                         string alamat, 
-                        string tlp, 
                         double qty, 
                         string nama_paket, 
                         int harga, 
@@ -5021,7 +5010,6 @@ namespace Laundry {
                         dibayar,
                         nama_member,
                         alamat,
-                        tlp,
                         qty,
                         nama_paket,
                         harga,
@@ -5072,7 +5060,6 @@ namespace Laundry {
                 this.columndibayar = base.Columns["dibayar"];
                 this.columnnama_member = base.Columns["nama_member"];
                 this.columnalamat = base.Columns["alamat"];
-                this.columntlp = base.Columns["tlp"];
                 this.columnqty = base.Columns["qty"];
                 this.columnnama_paket = base.Columns["nama_paket"];
                 this.columnharga = base.Columns["harga"];
@@ -5112,8 +5099,6 @@ namespace Laundry {
                 base.Columns.Add(this.columnnama_member);
                 this.columnalamat = new global::System.Data.DataColumn("alamat", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnalamat);
-                this.columntlp = new global::System.Data.DataColumn("tlp", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntlp);
                 this.columnqty = new global::System.Data.DataColumn("qty", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnqty);
                 this.columnnama_paket = new global::System.Data.DataColumn("nama_paket", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5153,8 +5138,6 @@ namespace Laundry {
                 this.columnnama_member.MaxLength = 100;
                 this.columnalamat.AllowDBNull = false;
                 this.columnalamat.MaxLength = 65535;
-                this.columntlp.AllowDBNull = false;
-                this.columntlp.MaxLength = 15;
                 this.columnqty.AllowDBNull = false;
                 this.columnnama_paket.AllowDBNull = false;
                 this.columnnama_paket.MaxLength = 100;
@@ -6896,17 +6879,6 @@ namespace Laundry {
                 }
                 set {
                     this[this.tableDataTableStruk.alamatColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string tlp {
-                get {
-                    return ((string)(this[this.tableDataTableStruk.tlpColumn]));
-                }
-                set {
-                    this[this.tableDataTableStruk.tlpColumn] = value;
                 }
             }
             
@@ -12588,7 +12560,6 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)";
             tableMapping.ColumnMappings.Add("dibayar", "dibayar");
             tableMapping.ColumnMappings.Add("nama_member", "nama_member");
             tableMapping.ColumnMappings.Add("alamat", "alamat");
-            tableMapping.ColumnMappings.Add("tlp", "tlp");
             tableMapping.ColumnMappings.Add("qty", "qty");
             tableMapping.ColumnMappings.Add("nama_paket", "nama_paket");
             tableMapping.ColumnMappings.Add("harga", "harga");
@@ -12614,7 +12585,7 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)";
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        tb_transaksi.kode_invoice, tb_transaksi.tgl, tb_transaksi.batas_waktu, tb_transaksi.tgl_bayar, tb_transaksi.biaya_tambahan, tb_transaksi.diskon, tb_transaksi.pajak, tb_transaksi.total_pembayaran, tb_transaksi.status, 
-                         tb_transaksi.dibayar, tb_user.nama, tb_member.nama_member, tb_member.alamat, tb_kurir.nama_kurir, tb_outlet.nama_outlet, tb_outlet.alamat AS alamat_outlet, tb_outlet.tlp, tb_detail_transaksi.id, tb_detail_transaksi.qty, 
+                         tb_transaksi.dibayar, tb_user.nama, tb_member.nama_member, tb_member.alamat, tb_kurir.nama_kurir, tb_outlet.nama_outlet, tb_outlet.alamat AS alamat_outlet, tb_detail_transaksi.id, tb_detail_transaksi.qty, 
                          tb_paket.nama_paket, tb_paket.harga, tb_jenis.jenis
 FROM            tb_transaksi INNER JOIN
                          tb_user ON tb_transaksi.id_user = tb_user.id INNER JOIN

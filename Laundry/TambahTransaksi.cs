@@ -193,7 +193,7 @@ namespace Laundry
                 if (Db.ExecuteQuery($"ALTER TABLE tb_transaksi AUTO_INCREMENT = {next_id}"))
                 {
                     Invoice = $"INV{DateTime.Now.ToString("yyMMddmmss")}";
-                    string now = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    string now = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                     var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
                     var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
                     var pajak = Convert.ToDouble(txtNominalPajak.Text) / dataGridView1.Rows.Count;
