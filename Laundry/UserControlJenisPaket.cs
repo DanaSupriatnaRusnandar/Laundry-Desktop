@@ -86,6 +86,7 @@ namespace Laundry
                 var row = dataGridViewJenis.Rows[e.RowIndex];
                 string id = row.Cells["id"].Value.ToString();
                 string jenis = row.Cells["jenis"].Value.ToString();
+                new EditJenis(btn_refresh, id, jenis).ShowDialog();
             }
         }
 
@@ -98,6 +99,7 @@ namespace Laundry
                 if (Db.Insert("tb_jenis", $"NULL, '{jenis}'"))
                 {
                     MessageBox.Show("Jenis barang berhasil di tambahkan");
+                    btn_refresh.PerformClick();
                     txtAdd.Clear();
                 }
                 else

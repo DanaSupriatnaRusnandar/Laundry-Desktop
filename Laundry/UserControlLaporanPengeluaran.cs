@@ -22,8 +22,9 @@ namespace Laundry
         private void UserControlLaporanPengeluaran_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'laundryDataSet.tb_pengeluaran' table. You can move, or remove it, as needed.
-           /* this.DataTablePengeluaranTableAdapter.Fill(this.laundryDataSet.DataTablePengeluaran, dateTimePickerDari.Value.Date, dateTimePickerSampai.Value.Date);
-            this.reportViewer1.RefreshReport();*/
+            /* this.DataTablePengeluaranTableAdapter.Fill(this.laundryDataSet.DataTablePengeluaran, dateTimePickerDari.Value.Date, dateTimePickerSampai.Value.Date);
+             this.reportViewer1.RefreshReport();*/
+            this.reportViewer1.RefreshReport();
         }
 
         private void btnCari_Click(object sender, EventArgs e)

@@ -43,16 +43,17 @@
             this.btnTransaksi = new FontAwesome.Sharp.IconButton();
             this.btnPelanggan = new FontAwesome.Sharp.IconButton();
             this.panelData = new System.Windows.Forms.Panel();
+            this.btnDataKurir = new FontAwesome.Sharp.IconButton();
             this.btnJenis = new FontAwesome.Sharp.IconButton();
             this.btnPaketCucian = new FontAwesome.Sharp.IconButton();
-            this.BtnDataUser = new FontAwesome.Sharp.IconButton();
             this.btnOutlet = new FontAwesome.Sharp.IconButton();
+            this.BtnDataUser = new FontAwesome.Sharp.IconButton();
             this.btnAkun = new FontAwesome.Sharp.IconButton();
             this.btnDashboard = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.pageWrapper = new System.Windows.Forms.Panel();
-            this.btnDataKurir = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -60,6 +61,8 @@
             this.panelData.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.pageWrapper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -339,6 +342,30 @@
             this.panelData.Size = new System.Drawing.Size(198, 250);
             this.panelData.TabIndex = 30;
             // 
+            // btnDataKurir
+            // 
+            this.btnDataKurir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDataKurir.FlatAppearance.BorderSize = 0;
+            this.btnDataKurir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDataKurir.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDataKurir.IconChar = FontAwesome.Sharp.IconChar.ShippingFast;
+            this.btnDataKurir.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnDataKurir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDataKurir.IconSize = 32;
+            this.btnDataKurir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDataKurir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnDataKurir.Location = new System.Drawing.Point(0, 200);
+            this.btnDataKurir.Name = "btnDataKurir";
+            this.btnDataKurir.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
+            this.btnDataKurir.Size = new System.Drawing.Size(198, 50);
+            this.btnDataKurir.TabIndex = 9;
+            this.btnDataKurir.Text = "Data Kurir";
+            this.btnDataKurir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDataKurir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDataKurir.UseMnemonic = false;
+            this.btnDataKurir.UseVisualStyleBackColor = true;
+            this.btnDataKurir.Click += new System.EventHandler(this.btnDataKurir_Click);
+            // 
             // btnJenis
             // 
             this.btnJenis.Dock = System.Windows.Forms.DockStyle.Top;
@@ -387,30 +414,6 @@
             this.btnPaketCucian.UseVisualStyleBackColor = true;
             this.btnPaketCucian.Click += new System.EventHandler(this.btnPaketCucian_Click_1);
             // 
-            // BtnDataUser
-            // 
-            this.BtnDataUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnDataUser.FlatAppearance.BorderSize = 0;
-            this.BtnDataUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDataUser.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnDataUser.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.BtnDataUser.IconColor = System.Drawing.Color.Gainsboro;
-            this.BtnDataUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnDataUser.IconSize = 32;
-            this.BtnDataUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDataUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BtnDataUser.Location = new System.Drawing.Point(0, 0);
-            this.BtnDataUser.Name = "BtnDataUser";
-            this.BtnDataUser.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.BtnDataUser.Size = new System.Drawing.Size(198, 50);
-            this.BtnDataUser.TabIndex = 5;
-            this.BtnDataUser.Text = "Data User";
-            this.BtnDataUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDataUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnDataUser.UseMnemonic = false;
-            this.BtnDataUser.UseVisualStyleBackColor = true;
-            this.BtnDataUser.Click += new System.EventHandler(this.BtnDataUser_Click);
-            // 
             // btnOutlet
             // 
             this.btnOutlet.Dock = System.Windows.Forms.DockStyle.Top;
@@ -434,6 +437,30 @@
             this.btnOutlet.UseMnemonic = false;
             this.btnOutlet.UseVisualStyleBackColor = true;
             this.btnOutlet.Click += new System.EventHandler(this.btnOutlet_Click_1);
+            // 
+            // BtnDataUser
+            // 
+            this.BtnDataUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnDataUser.FlatAppearance.BorderSize = 0;
+            this.BtnDataUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDataUser.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnDataUser.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.BtnDataUser.IconColor = System.Drawing.Color.Gainsboro;
+            this.BtnDataUser.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnDataUser.IconSize = 32;
+            this.BtnDataUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDataUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BtnDataUser.Location = new System.Drawing.Point(0, 0);
+            this.BtnDataUser.Name = "BtnDataUser";
+            this.BtnDataUser.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
+            this.BtnDataUser.Size = new System.Drawing.Size(198, 50);
+            this.BtnDataUser.TabIndex = 5;
+            this.BtnDataUser.Text = "Data User";
+            this.BtnDataUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDataUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnDataUser.UseMnemonic = false;
+            this.BtnDataUser.UseVisualStyleBackColor = true;
+            this.BtnDataUser.Click += new System.EventHandler(this.BtnDataUser_Click);
             // 
             // btnAkun
             // 
@@ -510,35 +537,29 @@
             // 
             // pageWrapper
             // 
+            this.pageWrapper.Controls.Add(this.iconPictureBox2);
             this.pageWrapper.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pageWrapper.Location = new System.Drawing.Point(198, 47);
             this.pageWrapper.Name = "pageWrapper";
             this.pageWrapper.Size = new System.Drawing.Size(682, 741);
             this.pageWrapper.TabIndex = 2;
             // 
-            // btnDataKurir
+            // iconPictureBox2
             // 
-            this.btnDataKurir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDataKurir.FlatAppearance.BorderSize = 0;
-            this.btnDataKurir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDataKurir.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnDataKurir.IconChar = FontAwesome.Sharp.IconChar.ShippingFast;
-            this.btnDataKurir.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnDataKurir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDataKurir.IconSize = 32;
-            this.btnDataKurir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataKurir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnDataKurir.Location = new System.Drawing.Point(0, 200);
-            this.btnDataKurir.Name = "btnDataKurir";
-            this.btnDataKurir.Padding = new System.Windows.Forms.Padding(36, 0, 20, 0);
-            this.btnDataKurir.Size = new System.Drawing.Size(198, 50);
-            this.btnDataKurir.TabIndex = 9;
-            this.btnDataKurir.Text = "Data Kurir";
-            this.btnDataKurir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDataKurir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDataKurir.UseMnemonic = false;
-            this.btnDataKurir.UseVisualStyleBackColor = true;
-            this.btnDataKurir.Click += new System.EventHandler(this.btnDataKurir_Click);
+            this.iconPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox2.BackgroundImage = global::Laundry.Properties.Resources.Dana01;
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 141;
+            this.iconPictureBox2.Location = new System.Drawing.Point(100, 264);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(481, 141);
+            this.iconPictureBox2.TabIndex = 1;
+            this.iconPictureBox2.TabStop = false;
             // 
             // Dashboard
             // 
@@ -563,6 +584,8 @@
             this.panelData.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.pageWrapper.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -593,5 +616,6 @@
         private FontAwesome.Sharp.IconButton btnLapTransaksi;
         private System.Windows.Forms.Panel pageWrapper;
         private FontAwesome.Sharp.IconButton btnDataKurir;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
     }
 }

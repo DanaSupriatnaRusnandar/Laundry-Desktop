@@ -19,7 +19,6 @@ namespace Laundry
         {
             InitializeComponent();
             kode_invoice = Invoice;
-            MessageBox.Show(Invoice);
         }
 
         private void NotaTransaksi_Load(object sender, EventArgs e)

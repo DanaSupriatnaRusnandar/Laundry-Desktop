@@ -12377,7 +12377,7 @@ FROM            tb_transaksi INNER JOIN
                          tb_member ON tb_transaksi.id_member = tb_member.id INNER JOIN
                          tb_outlet ON tb_transaksi.id_outlet = tb_outlet.id INNER JOIN
                          tb_user ON tb_transaksi.id_user = tb_user.id
-WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)";
+WHERE        (tb_transaksi.tgl BETWEEN @from AND @to) AND (tb_outlet.nama_outlet = @outlet)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@from";
@@ -12395,16 +12395,31 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)";
             param.SourceColumn = "tgl";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@outlet";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "nama_outlet";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(laundryDataSet.DataTableTransaksiDataTable dataTable, System.DateTime from, System.DateTime to) {
+        public virtual int Fill(laundryDataSet.DataTableTransaksiDataTable dataTable, System.DateTime from, System.DateTime to, string outlet) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
+            if ((outlet == null)) {
+                throw new global::System.ArgumentNullException("outlet");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(outlet));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -12416,10 +12431,16 @@ WHERE        (tb_transaksi.tgl BETWEEN @from AND @to)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual laundryDataSet.DataTableTransaksiDataTable GetData(System.DateTime from, System.DateTime to) {
+        public virtual laundryDataSet.DataTableTransaksiDataTable GetData(System.DateTime from, System.DateTime to, string outlet) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
+            if ((outlet == null)) {
+                throw new global::System.ArgumentNullException("outlet");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(outlet));
+            }
             laundryDataSet.DataTableTransaksiDataTable dataTable = new laundryDataSet.DataTableTransaksiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

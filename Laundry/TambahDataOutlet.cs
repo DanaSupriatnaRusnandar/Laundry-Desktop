@@ -45,5 +45,10 @@ namespace Laundry
                 }
             }
         }
+
+        private void txtNoTelepon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
     }
 }

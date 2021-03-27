@@ -34,15 +34,15 @@
             this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbRole = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.txtnama = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbRole = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -72,15 +72,15 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.cmbRole);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.txtpassword);
             this.panel2.Controls.Add(this.txtusername);
             this.panel2.Controls.Add(this.txtnama);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -104,7 +104,7 @@
             // 
             this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.cmbOutlet.FormattingEnabled = true;
-            this.cmbOutlet.Location = new System.Drawing.Point(116, 157);
+            this.cmbOutlet.Location = new System.Drawing.Point(116, 201);
             this.cmbOutlet.Name = "cmbOutlet";
             this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
             this.cmbOutlet.TabIndex = 4;
@@ -114,20 +114,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 156);
+            this.label5.Location = new System.Drawing.Point(16, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 18);
             this.label5.TabIndex = 19;
             this.label5.Text = "Outlet";
-            // 
-            // cmbRole
-            // 
-            this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbRole.FormattingEnabled = true;
-            this.cmbRole.Location = new System.Drawing.Point(116, 199);
-            this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(280, 21);
-            this.cmbRole.TabIndex = 5;
             // 
             // btnAdd
             // 
@@ -173,17 +164,6 @@
             this.txtnama.Size = new System.Drawing.Size(280, 20);
             this.txtnama.TabIndex = 1;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(16, 198);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 18);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Hak Akses";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -217,6 +197,26 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Nama";
             // 
+            // cmbRole
+            // 
+            this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.cmbRole.FormattingEnabled = true;
+            this.cmbRole.Location = new System.Drawing.Point(116, 159);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(280, 21);
+            this.cmbRole.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label6.Location = new System.Drawing.Point(16, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 18);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Hak Akses";
+            // 
             // TambahDataUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,14 +247,14 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.TextBox txtnama;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtpassword;
-        private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.ComboBox cmbOutlet;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblIsUsernameValid;
+        private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.Label label6;
     }
 }

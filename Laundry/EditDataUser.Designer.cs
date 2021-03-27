@@ -32,8 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblIsUsernameValid = new System.Windows.Forms.Label();
-            this.cmbOutlet = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
@@ -43,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbOutlet = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,10 +62,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.btnEdit);
+            this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.txtpassword);
             this.panel2.Controls.Add(this.txtusername);
@@ -105,26 +105,6 @@
             this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
             this.lblIsUsernameValid.Visible = false;
             // 
-            // cmbOutlet
-            // 
-            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbOutlet.FormattingEnabled = true;
-            this.cmbOutlet.Location = new System.Drawing.Point(116, 157);
-            this.cmbOutlet.Name = "cmbOutlet";
-            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutlet.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 18);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Outlet";
-            // 
             // cmbRole
             // 
             this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -133,7 +113,7 @@
             "Administrator",
             "Kasir",
             "Owner"});
-            this.cmbRole.Location = new System.Drawing.Point(116, 199);
+            this.cmbRole.Location = new System.Drawing.Point(116, 161);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(280, 21);
             this.cmbRole.TabIndex = 5;
@@ -172,7 +152,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(16, 198);
+            this.label6.Location = new System.Drawing.Point(16, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 18);
             this.label6.TabIndex = 16;
@@ -221,6 +201,26 @@
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
             // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(116, 205);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutlet.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(16, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 18);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Outlet";
+            // 
             // EditDataUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,8 +246,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.ComboBox cmbOutlet;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.TextBox txtusername;
@@ -258,5 +256,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblIsUsernameValid;
+        private System.Windows.Forms.ComboBox cmbOutlet;
+        private System.Windows.Forms.Label label5;
     }
 }

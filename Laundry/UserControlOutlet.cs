@@ -46,7 +46,7 @@ namespace Laundry
         private void CariData(string keyword)
         {
             dataGridViewOtlet.AutoGenerateColumns = false;
-            dataGridViewOtlet.DataSource = Db.Read($"SELECT * FROM tb_outlet WHERE CONCAT(tb_outlet.nama_outlet, tb_outlet.alamat, tb_outlet.tlp) LIKE '%{keyword}%'");
+            dataGridViewOtlet.DataSource = Db.Read($"SELECT * FROM tb_outlet WHERE CONCAT(tb_outlet.nama_outlet, tb_outlet.alamat, tb_outlet.no_tlp) LIKE '%{keyword}%'");
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)

@@ -60,7 +60,7 @@ namespace Laundry
                 cmbPelanggan.SelectedIndex = -1;
 
                 //ComboBox Paket
-                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket");
+                cmbPaket.DataSource = Db.Read("tb_paket", "id, nama_paket", $"tb_paket.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
                 cmbPaket.DisplayMember = "nama_paket";
                 cmbPaket.ValueMember = "id";
                 cmbPaket.SelectedIndex = -1;
@@ -218,13 +218,13 @@ namespace Laundry
                         }
                     }
                     MessageBox.Show("Transaksi berhasil dilakukan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    hapusTransaksi();
+                    clearTransaksi();
 
                 }
             }
         }
 
-        private void hapusTransaksi()
+        private void clearTransaksi()
         {
             cmbPelanggan.ResetText();
             cmbPaket.ResetText();
@@ -329,6 +329,11 @@ namespace Laundry
         {
             btnSimpan.PerformClick();
             new NotaTransaksi(Invoice).ShowDialog();
+        }
+
+        private void cmbPelanggan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btrf.PerformClick();
         }
     }
 }

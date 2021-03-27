@@ -92,6 +92,7 @@
             this.txtNoTelepon.Name = "txtNoTelepon";
             this.txtNoTelepon.Size = new System.Drawing.Size(280, 20);
             this.txtNoTelepon.TabIndex = 3;
+            this.txtNoTelepon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoTelepon_KeyPress);
             // 
             // txtAlamat
             // 

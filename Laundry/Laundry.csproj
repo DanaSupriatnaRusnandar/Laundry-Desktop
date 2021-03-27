@@ -196,6 +196,12 @@
     <Compile Include="EditDataKurir.Designer.cs">
       <DependentUpon>EditDataKurir.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditJenis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditJenis.Designer.cs">
+      <DependentUpon>EditJenis.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditPaketLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditDataUser.resx">
       <DependentUpon>EditDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditJenis.resx">
+      <DependentUpon>EditJenis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditPaketLaundry.resx">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>

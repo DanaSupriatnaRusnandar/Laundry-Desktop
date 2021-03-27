@@ -60,8 +60,6 @@ namespace Laundry
 
             cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
             cmbRole.SelectedIndex = cmbRole.FindStringExact(nama_role);
-
-
         }
 
         //Function
@@ -76,8 +74,6 @@ namespace Laundry
             if (txtusername.Text.Contains(" ")) return false;
             return true;
         }
-
-
         private void btnEdit_Click(object sender, EventArgs e)
         { 
             if (isfilled() && isUsernameValid())
@@ -86,7 +82,7 @@ namespace Laundry
                 var username = txtusername.Text;
                 var password = Sha256.Encrypt(txtpassword.Text);
                 var outlet = cmbOutlet.SelectedValue;
-                var role = cmbRole.SelectedValue;
+                var role = cmbRole.Text;
                 if (Db.Update($"tb_user", $"id = '{getIdUser}', nama ='{nama}', username = '{username}', password = '{password}', id_outlet = '{outlet}' , role = '{role}'", $"id = {getIdUser}"))
                 {
                     MessageBox.Show("Data user berhasil diubah");

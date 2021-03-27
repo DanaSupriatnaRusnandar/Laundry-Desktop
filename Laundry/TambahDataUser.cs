@@ -31,6 +31,7 @@ namespace Laundry
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
 
+
             Role();
         }
 
@@ -45,7 +46,6 @@ namespace Laundry
             cmbRole.Items.Add("admin"); 
             cmbRole.Items.Add("kasir"); 
             cmbRole.Items.Add("owner");
-
         }
 
         private bool isUsernameValid()
