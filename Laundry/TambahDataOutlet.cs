@@ -35,6 +35,7 @@ namespace Laundry
                 var tlp = txtNoTelepon.Text;
                 if (Db.Insert("tb_outlet", $"NULL, '{nama}', '{alamat}', '{tlp}'"))
                 {
+                    
                     MessageBox.Show("Outlet berhasil di tambahkan");
                     btrf.PerformClick();
                     this.Close();
@@ -49,6 +50,14 @@ namespace Laundry
         private void txtNoTelepon_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+        }
+
+        private void txtnama_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtnama.Text == string.Empty)
+            {
+                MessageBox.Show("Nama outlet tidak boleh kosong!");
+            }
         }
     }
 }

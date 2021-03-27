@@ -120,11 +120,6 @@ namespace Laundry
         private void Dashboard_Load(object sender, EventArgs e)
         {
             //Pembagian Role
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
-            {
-                btnOutlet.Visible = false;
-                panelData.Height -= 50;
-            }
 
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "kasir")
             {

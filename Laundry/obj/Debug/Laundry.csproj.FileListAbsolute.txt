@@ -10,7 +10,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\K4os.Hash.xxHash.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\Luthor.lib.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\MySql.Data.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\Renci.SshNet.dll
-D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\SplashScreen.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\System.Buffers.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\System.Memory.dll
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\System.Numerics.Vectors.dll
@@ -97,5 +96,8 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlLaporanPe
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.UserControlLaporanTransaksi.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.NotaTransaksi.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.DetailTransaksi.resources
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditJenis.resources
+D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache
+D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\FluentValidation.dll
+D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\System.ComponentModel.Annotations.dll
+D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\FluentValidation.xml

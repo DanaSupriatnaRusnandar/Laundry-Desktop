@@ -27,6 +27,11 @@ namespace Laundry
             cmbOutle.DisplayMember = "nama_outlet";
             cmbOutle.ValueMember = "id";
             cmbOutle.SelectedIndex = -1;
+
+            if(Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
+            {
+                cmbOutle.SelectedValue = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
+            }
         }
 
         private bool isfilled()

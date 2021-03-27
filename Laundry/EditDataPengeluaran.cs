@@ -38,6 +38,11 @@ namespace Laundry
             cmbOutle.ValueMember = "id";
             cmbOutle.SelectedIndex = -1;
 
+            if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
+            {
+                panelOutlet.Visible = false;
+            }
+
             cmbOutle.SelectedIndex = cmbOutle.FindStringExact(nama_outlet);
         }
 

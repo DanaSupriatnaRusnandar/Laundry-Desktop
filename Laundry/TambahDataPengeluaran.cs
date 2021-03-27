@@ -33,9 +33,7 @@ namespace Laundry
 
             if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
-
-                
-                
+                panelOutlet.Visible = false;
             }
         }
 

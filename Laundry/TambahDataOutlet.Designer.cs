@@ -112,6 +112,7 @@
             this.txtnama.Name = "txtnama";
             this.txtnama.Size = new System.Drawing.Size(280, 20);
             this.txtnama.TabIndex = 1;
+            this.txtnama.Validating += new System.ComponentModel.CancelEventHandler(this.txtnama_Validating);
             // 
             // label4
             // 
