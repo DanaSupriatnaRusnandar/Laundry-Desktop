@@ -40,6 +40,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbOutle = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +61,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.cmbOutle);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtNamaBarang);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.txtKeterangan);
@@ -70,7 +74,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(24, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 336);
+            this.panel2.Size = new System.Drawing.Size(416, 364);
             this.panel2.TabIndex = 5;
             // 
             // txtNamaBarang
@@ -97,7 +101,7 @@
             // 
             this.txtKeterangan.BackColor = System.Drawing.Color.White;
             this.txtKeterangan.ForeColor = System.Drawing.Color.Black;
-            this.txtKeterangan.Location = new System.Drawing.Point(116, 155);
+            this.txtKeterangan.Location = new System.Drawing.Point(116, 204);
             this.txtKeterangan.Multiline = true;
             this.txtKeterangan.Name = "txtKeterangan";
             this.txtKeterangan.Size = new System.Drawing.Size(280, 67);
@@ -107,7 +111,7 @@
             // 
             this.dateTimePicker.Location = new System.Drawing.Point(116, 70);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(215, 20);
+            this.dateTimePicker.Size = new System.Drawing.Size(194, 20);
             this.dateTimePicker.TabIndex = 3;
             // 
             // label5
@@ -115,7 +119,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(13, 184);
+            this.label5.Location = new System.Drawing.Point(13, 233);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 18);
             this.label5.TabIndex = 19;
@@ -128,7 +132,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(295, 262);
+            this.btnAdd.Location = new System.Drawing.Point(295, 297);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 6;
@@ -178,12 +182,31 @@
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label2.Location = new System.Drawing.Point(13, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 18);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Outlet";
+            // 
+            // cmbOutle
+            // 
+            this.cmbOutle.FormattingEnabled = true;
+            this.cmbOutle.Location = new System.Drawing.Point(116, 160);
+            this.cmbOutle.Name = "cmbOutle";
+            this.cmbOutle.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutle.TabIndex = 26;
+            // 
             // TambahDataPengeluaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 462);
+            this.ClientSize = new System.Drawing.Size(466, 484);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -213,5 +236,7 @@
         private System.Windows.Forms.TextBox txtKeterangan;
         private System.Windows.Forms.TextBox txtNamaBarang;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbOutle;
+        private System.Windows.Forms.Label label2;
     }
 }

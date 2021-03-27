@@ -21,13 +21,13 @@ namespace Laundry
 
         public void Tampilkan()
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id ORDER BY tb_transaksi.id DESC");
                 dataGridViewTransaksi.AutoGenerateColumns = false;
                 dataGridViewTransaksi.DataSource = data;
             }
-            else
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC");
                 dataGridViewTransaksi.AutoGenerateColumns = false;
@@ -38,12 +38,12 @@ namespace Laundry
 
         private void CariData(string keyword)
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 dataGridViewTransaksi.AutoGenerateColumns = false;
                 dataGridViewTransaksi.DataSource = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE CONCAT (tb_member.nama_member, tb_kurir.nama_kurir, tb_user.nama, tb_transaksi.tgl, tb_outlet.nama_outlet, tb_transaksi.kode_invoice, tb_transaksi.status, tb_transaksi.dibayar, tb_transaksi.total_pembayaran) LIKE '%{keyword}%'");
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 dataGridViewTransaksi.AutoGenerateColumns = false;
                 dataGridViewTransaksi.DataSource = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND CONCAT (tb_member.nama_member, tb_kurir.nama_kurir, tb_user.nama, tb_transaksi.tgl, tb_outlet.nama_outlet, tb_transaksi.kode_invoice, tb_transaksi.status, tb_transaksi.dibayar, tb_transaksi.total_pembayaran) LIKE '%{keyword}%'");

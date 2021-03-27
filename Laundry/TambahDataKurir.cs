@@ -13,12 +13,21 @@ namespace Laundry
 {
     public partial class TambahDataKurir : Form
     {
+        Button btrf;
         public TambahDataKurir(Button btrefresh)
         {
             InitializeComponent();
             btrf = btrefresh;
         }
-        Button btrf;
+
+        private void TambahDataKurir_Load(object sender, EventArgs e)
+        {
+            //Biding Outlet
+            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutle.DisplayMember = "nama_outlet";
+            cmbOutle.ValueMember = "id";
+            cmbOutle.SelectedIndex = -1;
+        }
 
         private bool isfilled()
         {

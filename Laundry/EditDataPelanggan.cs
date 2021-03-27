@@ -32,7 +32,13 @@ namespace Laundry
 
         private void EditDataPelanggan_Load(object sender, EventArgs e)
         {
+            //Biding Outlet
+            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutle.DisplayMember = "nama_outlet";
+            cmbOutle.ValueMember = "id";
+            cmbOutle.SelectedIndex = -1;
 
+            cmbOutle.SelectedIndex = cmbOutle.FindStringExact(nama_outlet);
         }
 
         private bool isfilled()

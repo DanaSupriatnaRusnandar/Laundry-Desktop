@@ -30,7 +30,7 @@ namespace Laundry
 
         private void Transaksi_Load(object sender, EventArgs e)
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 //ComboBox pelanggan
                 cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member");
@@ -49,9 +49,15 @@ namespace Laundry
                 cmbKurir.DisplayMember = "nama_kurir";
                 cmbKurir.ValueMember = "id";
                 cmbKurir.SelectedIndex = -1;
+                
+                //ComboBox Outlet
+                cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+                cmbOutlet.DisplayMember = "nama_outlet";
+                cmbOutlet.ValueMember = "id";
+                cmbOutlet.SelectedIndex = -1;
             }
 
-            if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 //ComboBox Pelanggan
                 cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member", $"tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}");
@@ -70,6 +76,9 @@ namespace Laundry
                 cmbKurir.DisplayMember = "nama_kurir";
                 cmbKurir.ValueMember = "id";
                 cmbKurir.SelectedIndex = -1;
+
+                cmbOutlet.Visible = false;
+                lblOutlet.Visible = false;
             }
 
 

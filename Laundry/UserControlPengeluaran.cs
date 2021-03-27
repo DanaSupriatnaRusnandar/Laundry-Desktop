@@ -36,13 +36,13 @@ namespace Laundry
 
         private void Tampilkan()
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id ORDER BY tb_pengeluaran.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = data;
             }
-            else
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_pengeluaran.id DESC");
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
@@ -54,12 +54,12 @@ namespace Laundry
 
         private void CariData(string keyword)
         {
-            if(Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if(Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE CONCAT (tb_outlet.nama_outlet, tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan) LIKE '%{keyword}%'");
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 dataGridViewPengeluaran.AutoGenerateColumns = false;
                 dataGridViewPengeluaran.DataSource = Db.Read($"SELECT * FROM tb_pengeluaran join tb_outlet on tb_pengeluaran.id_outlet = tb_outlet.id WHERE tb_pengeluaran.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan) LIKE '%{keyword}%' ");

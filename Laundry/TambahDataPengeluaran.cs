@@ -15,6 +15,7 @@ namespace Laundry
     {
         Button btrf;
         string getIdPengeluaran;
+        string outlet;
         public TambahDataPengeluaran(Button btrefresh, string id)
         {
             InitializeComponent();
@@ -24,11 +25,18 @@ namespace Laundry
 
         private void TambahDataPengeluaran_Load(object sender, EventArgs e)
         {
-          /*  //Biding Outlet
-            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutlet.DisplayMember = "nama_outlet";
-            cmbOutlet.ValueMember = "id";
-            cmbOutlet.SelectedIndex = -1;*/
+            //Biding Outlet
+            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutle.DisplayMember = "nama_outlet";
+            cmbOutle.ValueMember = "id";
+            cmbOutle.SelectedIndex = -1;
+
+            if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
+            {
+
+                
+                
+            }
         }
 
         private bool isfilled()

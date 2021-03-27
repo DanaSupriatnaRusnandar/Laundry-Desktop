@@ -31,7 +31,6 @@ namespace Laundry
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
 
-
             Role();
         }
 

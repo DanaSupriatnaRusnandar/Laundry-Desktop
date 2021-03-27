@@ -42,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbOutle = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +63,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.cmbOutle);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.radioButtonLaki);
             this.panel2.Controls.Add(this.radioButtonPerempuan);
             this.panel2.Controls.Add(this.textBoxJK);
@@ -74,7 +78,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(25, 96);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 297);
+            this.panel2.Size = new System.Drawing.Size(416, 316);
             this.panel2.TabIndex = 5;
             // 
             // radioButtonLaki
@@ -131,7 +135,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(296, 225);
+            this.btnAdd.Location = new System.Drawing.Point(296, 262);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
             this.btnAdd.TabIndex = 6;
@@ -212,12 +216,31 @@
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
             // 
+            // cmbOutle
+            // 
+            this.cmbOutle.FormattingEnabled = true;
+            this.cmbOutle.Location = new System.Drawing.Point(117, 213);
+            this.cmbOutle.Name = "cmbOutle";
+            this.cmbOutle.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutle.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label6.Location = new System.Drawing.Point(14, 212);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 18);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Outlet";
+            // 
             // RegistrasiPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 425);
+            this.ClientSize = new System.Drawing.Size(466, 440);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -250,5 +273,7 @@
         private System.Windows.Forms.RadioButton radioButtonLaki;
         private System.Windows.Forms.RadioButton radioButtonPerempuan;
         private System.Windows.Forms.TextBox textBoxJK;
+        private System.Windows.Forms.ComboBox cmbOutle;
+        private System.Windows.Forms.Label label6;
     }
 }

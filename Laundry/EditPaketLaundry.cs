@@ -39,7 +39,14 @@ namespace Laundry
             cmbJenis.ValueMember = "id";
             cmbJenis.SelectedIndex = -1;
 
+            //Biding Outlet
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutlet.DisplayMember = "nama_outlet";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
+
             cmbJenis.SelectedIndex = cmbJenis.FindStringExact(nama_jenis);
+            cmbOutlet.SelectedIndex = cmbOutlet.FindStringExact(nama_outlet);
         }
 
         //Function

@@ -31,6 +31,16 @@ namespace Laundry
             txtKeterangan.Text = keterangan;
         }
 
+        private void EditDataPengeluaran_Load(object sender, EventArgs e)
+        {
+            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutle.DisplayMember = "nama_outlet";
+            cmbOutle.ValueMember = "id";
+            cmbOutle.SelectedIndex = -1;
+
+            cmbOutle.SelectedIndex = cmbOutle.FindStringExact(nama_outlet);
+        }
+
         private bool isfilled()
         {
             if (txtNamaBarang.Text.Length >= 0 && dateTimePicker.Checked && txtNominal.Text.Length >= 0 && txtKeterangan.Text.Length >= 0) return true;

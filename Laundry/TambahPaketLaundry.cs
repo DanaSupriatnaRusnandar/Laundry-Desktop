@@ -31,15 +31,20 @@ namespace Laundry
 
         private void PaketLaundry_Load(object sender, EventArgs e)
         {
-
             //Biding Jenis
             cmbJenis.DataSource = Db.Read("tb_jenis", "id, jenis");
             cmbJenis.DisplayMember = "jenis";
             cmbJenis.ValueMember = "id";
             cmbJenis.SelectedIndex = -1;
+
+            //Biding Outlet
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutlet.DisplayMember = "nama_outlet";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             if (isfilled())
             {
@@ -60,7 +65,7 @@ namespace Laundry
             }
         }
 
-        private void txtHarga_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtHarga_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }

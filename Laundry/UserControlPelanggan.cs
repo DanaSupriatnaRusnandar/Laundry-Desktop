@@ -39,13 +39,13 @@ namespace Laundry
 
         private void Tampilkan()
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 dataGridViewRegistrasi.AutoGenerateColumns = false;
                 DataTable data = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id ORDER BY tb_member.id DESC");
                 dataGridViewRegistrasi.DataSource = data;
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 dataGridViewRegistrasi.AutoGenerateColumns = false;
                 DataTable data = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_member.id DESC");
@@ -55,12 +55,12 @@ namespace Laundry
 
         private void CariData(string keyword)
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 dataGridViewRegistrasi.AutoGenerateColumns = false;
                 dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE CONCAT(tb_member.nama_member, tb_member.alamat, tb_outlet.nama_outlet, tb_member.jenis_kelamin, tb_member.tlp) LIKE '%{keyword}%'");
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 dataGridViewRegistrasi.AutoGenerateColumns = false;
                 dataGridViewRegistrasi.DataSource = Db.Read($"SELECT * FROM tb_member JOIN tb_outlet ON tb_member.id_outlet = tb_outlet.id WHERE tb_member.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND CONCAT(tb_member.nama_member, tb_member.alamat, tb_member.jenis_kelamin, tb_member.tlp) LIKE '%{keyword}%'");

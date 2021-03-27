@@ -56,6 +56,8 @@
             this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
             this.dtpBatasWaktu = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbOutlet = new System.Windows.Forms.ComboBox();
+            this.lblOutlet = new System.Windows.Forms.Label();
             this.cmbPelanggan = new System.Windows.Forms.ComboBox();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -334,6 +336,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cmbOutlet);
+            this.panel2.Controls.Add(this.lblOutlet);
             this.panel2.Controls.Add(this.cmbPelanggan);
             this.panel2.Controls.Add(this.dtpBatasWaktu);
             this.panel2.Controls.Add(this.dtpTanggal);
@@ -346,6 +350,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(690, 92);
             this.panel2.TabIndex = 8;
+            // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(129, 58);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(200, 23);
+            this.cmbOutlet.TabIndex = 17;
+            // 
+            // lblOutlet
+            // 
+            this.lblOutlet.AutoSize = true;
+            this.lblOutlet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.lblOutlet.Location = new System.Drawing.Point(49, 58);
+            this.lblOutlet.Name = "lblOutlet";
+            this.lblOutlet.Size = new System.Drawing.Size(42, 16);
+            this.lblOutlet.TabIndex = 16;
+            this.lblOutlet.Text = "Outlet";
             // 
             // cmbPelanggan
             // 
@@ -849,5 +874,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn harga;
         private System.Windows.Forms.DataGridViewLinkColumn hapus;
+        private System.Windows.Forms.ComboBox cmbOutlet;
+        private System.Windows.Forms.Label lblOutlet;
     }
 }

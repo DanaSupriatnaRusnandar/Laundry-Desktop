@@ -40,7 +40,7 @@ namespace Laundry
         //Function
         private void Tampilkan()
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id ORDER BY tb_user.id DESC");
                 dataGridViewAdmin.AutoGenerateColumns = false;
@@ -57,12 +57,12 @@ namespace Laundry
 
         private void CariData(string keyword)
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 dataGridViewAdmin.AutoGenerateColumns = false;
                 dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE CONCAT(tb_user.nama, tb_user.username, tb_outlet.nama_outlet, tb_user.role) LIKE '%{keyword}%'");
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 dataGridViewAdmin.AutoGenerateColumns = false;
                 dataGridViewAdmin.DataSource = Db.Read($"SELECT * FROM tb_user JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id WHERE tb_user.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND CONCAT(tb_user.nama, tb_user.username, tb_user.role) LIKE '%{keyword}%'");

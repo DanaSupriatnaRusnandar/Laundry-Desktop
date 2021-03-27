@@ -27,6 +27,17 @@ namespace Laundry
             nama_outlet = outlet;
         }
 
+        private void EditDataKurir_Load(object sender, EventArgs e)
+        {
+            //Biding Outlet
+            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutle.DisplayMember = "nama_outlet";
+            cmbOutle.ValueMember = "id";
+            cmbOutle.SelectedIndex = -1;
+
+            cmbOutle.SelectedIndex = cmbOutle.FindStringExact(nama_outlet);
+        }
+
         private bool isfilled()
         {
             if (txtnama.Text.Length > 0 && txtAlamat.Text.Length > 0 && txtTlp.Text.Length > 0) return true;

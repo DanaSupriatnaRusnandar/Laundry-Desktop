@@ -40,13 +40,13 @@ namespace Laundry
 
         private void Tampilkan()
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id ORDER BY tb_outlet.id DESC");
                 dataGridViewKurir.AutoGenerateColumns = false;
                 dataGridViewKurir.DataSource = data;
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 DataTable data = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_outlet.id DESC");
                 dataGridViewKurir.AutoGenerateColumns = false;
@@ -56,12 +56,12 @@ namespace Laundry
 
         private void CariData(string keyword)
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "superAdmin")
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
                 dataGridViewKurir.AutoGenerateColumns = false;
                 dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE CONCAT(tb_kurir.nama_kurir, tb_kurir.alamat, tb_kurir.tlp, tb_outlet.nama_outlet) LIKE '%{keyword}%'");
             }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "superAdmin")
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
                 dataGridViewKurir.AutoGenerateColumns = false;
                 dataGridViewKurir.DataSource = Db.Read($"SELECT * FROM tb_kurir JOIN tb_outlet on tb_kurir.id_outlet = tb_outlet.id WHERE tb_kurir.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} AND concat(tb_kurir.nama_kurir, tb_kurir.alamat, tb_kurir.tlp) LIKE '%{keyword}%'");

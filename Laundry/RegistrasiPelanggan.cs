@@ -20,6 +20,15 @@ namespace Laundry
             btrf = btrefresh;
         }
 
+        private void RegistrasiPelanggan_Load(object sender, EventArgs e)
+        {
+            //Biding Outlet
+            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutle.DisplayMember = "nama_outlet";
+            cmbOutle.ValueMember = "id";
+            cmbOutle.SelectedIndex = -1;
+        }
+
         private bool isfilled()
         {
             if (txtnama.Text.Length < 0 && txtalamat.Text.Length < 0 && textBoxJK.Text.Length < 0 && txtTelepon.Text.Length < 0) return false;
@@ -56,11 +65,6 @@ namespace Laundry
                     MessageBox.Show($"Gagal Menambah pelanggan. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void RegistrasiPelanggan_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void txtTelepon_KeyPress(object sender, KeyPressEventArgs e)
