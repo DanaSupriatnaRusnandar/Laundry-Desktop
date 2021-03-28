@@ -173,7 +173,7 @@ namespace Laundry
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            new RegistrasiPelanggan(btn_refresh).ShowDialog();
+            new RegistrasiPelanggan(btn_refresh).ShowDialog();;
         }
 
         private void ClearData()
@@ -230,9 +230,16 @@ namespace Laundry
                     }
                     MessageBox.Show("Transaksi berhasil dilakukan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearTransaksi();
+                    btrf.PerformClick();
 
                 }
             }
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            btrf.PerformClick();
+            new NotaTransaksi(Invoice).ShowDialog();
         }
 
         private void clearTransaksi()
@@ -324,11 +331,13 @@ namespace Laundry
         private void txtDiskon_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validasi.Angka(e);
+            Validasi.Batas_Persen(txtDiskon, 100, e);
         }
 
         private void txtPajak_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validasi.Angka(e);
+            Validasi.Batas_Persen(txtPajak, 100, e);
         }
 
         private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
@@ -336,15 +345,17 @@ namespace Laundry
             Validasi.Angka(e);
         }
 
-        private void btnCetak_Click(object sender, EventArgs e)
-        {
-            btnSimpan.PerformClick();
-            new NotaTransaksi(Invoice).ShowDialog();
-        }
-
         private void cmbPelanggan_SelectedIndexChanged(object sender, EventArgs e)
         {
             btrf.PerformClick();
+        }
+
+        private void dtpBatasWaktu_Validating(object sender, CancelEventArgs e)
+        {
+            if (dtpBatasWaktu.Value < dtpTanggal.Value)
+            {
+                MessageBox.Show("Batas Waktu tidak boleh lebih kecil dari tanggal!");
+            }
         }
     }
 }

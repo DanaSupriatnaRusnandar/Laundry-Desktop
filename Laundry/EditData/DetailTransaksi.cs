@@ -14,14 +14,10 @@ namespace Laundry
     public partial class DetailTransaksi : Form
     {
         string invoice;
-        string jk;
         public DetailTransaksi(string kode_invoice)
         {
             InitializeComponent();
             invoice = kode_invoice;
-            jk = txtJK.Text;
-            if (jk == "Laki - Laki") radioButtonLaki.Checked = true;
-            else radioButtonPerempuan.Checked = true;
         }
 
         private void DetailTransaksi_Load(object sender, EventArgs e)
@@ -91,16 +87,6 @@ namespace Laundry
                 lblDiskon.Text = diskon.ToString("C0");
                 lblTotal.Text = (total + pajak + biaya_tambahan - diskon).ToString("C0");
             }
-        }
-
-        private void radioButtonLaki_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonLaki.Checked) txtJK.Text = "Laki - Laki";
-        }
-
-        private void radioButtonPerempuan_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButtonPerempuan.Checked) txtJK.Text = "Perempuan";
         }
 
         private void dataGridViewKeranjang_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

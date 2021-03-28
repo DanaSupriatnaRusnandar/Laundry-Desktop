@@ -25,41 +25,41 @@ namespace Laundry
         {
             this.KeyPreview = true;
             //Biding Outlet
-            cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
-            cmbOutle.DisplayMember = "nama_outlet";
-            cmbOutle.ValueMember = "id";
-            cmbOutle.SelectedIndex = -1;
+            cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+            cmbOutlet.DisplayMember = "nama_outlet";
+            cmbOutlet.ValueMember = "id";
+            cmbOutlet.SelectedIndex = -1;
 
             if(Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
             {
-                cmbOutle.SelectedValue = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
+                panelOutlet.Visible = false;
             }
         }
 
         private bool isfilled()
         {
-            if (txtnama.Text.Length < 0 && txtalamat.Text.Length < 0 && textBoxJK.Text.Length < 0 && txtTelepon.Text.Length < 0) return false;
+            if (txtNama.Text.Length < 0 && txtAlamat.Text.Length < 0 && txtJK.Text.Length < 0 && txtTlp.Text.Length < 0) return false;
             return true;
         }
 
         private void radioButtonLaki_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonLaki.Checked) textBoxJK.Text = "Laki - Laki";
+            if (rbLaki.Checked) txtJK.Text = "Laki - Laki";
         }
 
         private void radioButtonPerempuan_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButtonPerempuan.Checked) textBoxJK.Text = "Perempuan";
+            if (rbPerempuan.Checked) txtJK.Text = "Perempuan";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (isfilled())
             {
-                var nama = txtnama.Text;
-                var alamat = txtalamat.Text;
-                var JK = textBoxJK.Text;
-                var tlp = txtTelepon.Text;
+                var nama = txtNama.Text;
+                var alamat = txtAlamat.Text;
+                var JK = txtJK.Text;
+                var tlp = txtTlp.Text;
                 var outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
                 if (Db.Insert("tb_member", $"NULL, '{nama}', '{alamat}', '{JK}', '{tlp}', '{outlet}'"))
                 {
@@ -74,7 +74,7 @@ namespace Laundry
             }
         }
 
-        private void txtTelepon_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTlp_KeyPress(object sender, KeyPressEventArgs e)
         {
             validasi.Angka(e);
         }

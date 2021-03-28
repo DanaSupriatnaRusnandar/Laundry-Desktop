@@ -14,7 +14,7 @@ namespace Laundry
     public partial class TambahDataKurir : Form
     {
         Button btrf;
-        Validasi val = new Validasi();
+        Validasi validasi = new Validasi();
         public TambahDataKurir(Button btrefresh)
         {
             InitializeComponent();
@@ -62,7 +62,7 @@ namespace Laundry
 
         private void txtTlp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

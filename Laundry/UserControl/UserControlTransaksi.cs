@@ -14,6 +14,7 @@ namespace Laundry
     public partial class UserControlTransaksi : UserControl
     {
         string getIdTransaksi;
+        
         public UserControlTransaksi()
         {
             InitializeComponent();

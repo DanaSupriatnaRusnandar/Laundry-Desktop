@@ -73,11 +73,16 @@ namespace Laundry
         public Boolean Batas_Persen (TextBox TB, double persen, KeyPressEventArgs e)
         {
             char c = e.KeyChar;
-            if((!char.IsDigit(c)||Convert.ToDouble(TB.Text+c) > persen || TB.Text == "0") && c!)
+            if((!char.IsDigit(c)||Convert.ToDouble(TB.Text+c) > persen || TB.Text == "0") && c!= '\b')
             {
                 e.Handled = true;
             }
             return e.Handled;
         }
+
+      /*  public Boolean Tanggal (DateTimePicker DT, DateTime old, DateTime now, KeyPressEventArgs e)
+        {
+            
+        }*/
     }
 }
