@@ -14,6 +14,7 @@ namespace Laundry
     public partial class RegistrasiPelanggan : Form
     {
         Button btrf;
+        Validasi validasi = new Validasi();
         public RegistrasiPelanggan(Button btrefresh)
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace Laundry
 
         private void RegistrasiPelanggan_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             //Biding Outlet
             cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutle.DisplayMember = "nama_outlet";
@@ -74,7 +76,7 @@ namespace Laundry
 
         private void txtTelepon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

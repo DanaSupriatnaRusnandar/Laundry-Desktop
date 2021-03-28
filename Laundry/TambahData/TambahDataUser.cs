@@ -16,6 +16,7 @@ namespace Laundry
     {
         Button btrf;
         string getIdUser;
+        Validasi validasi = new Validasi();
         public TambahDataUser(Button btrefresh, string id)
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Laundry
 
         private void TambahDataUser_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             //Biding Outlet
             cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutlet.DisplayMember = "nama_outlet";
@@ -83,7 +85,7 @@ namespace Laundry
 
         private void txtusername_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.KeyChar = Char.ToLower(e.KeyChar);
+            validasi.Huruf_Kecil(e);
         }
     }
 }

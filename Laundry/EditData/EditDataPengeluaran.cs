@@ -18,6 +18,7 @@ namespace Laundry
         string getIdPengeluaran;
         string IdOutlet;
         string nama_outlet;
+        Validasi validasi = new Validasi();
         public EditDataPengeluaran(Button btrefresh, string id, string id_outlet, string outlet, string nama, DateTime tgl, string total, string keterangan)
         {
             InitializeComponent();
@@ -33,6 +34,8 @@ namespace Laundry
 
         private void EditDataPengeluaran_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+
             cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutle.DisplayMember = "nama_outlet";
             cmbOutle.ValueMember = "id";
@@ -77,7 +80,7 @@ namespace Laundry
 
         private void txtNominal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

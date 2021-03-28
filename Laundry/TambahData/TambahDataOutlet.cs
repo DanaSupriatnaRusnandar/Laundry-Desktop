@@ -14,12 +14,17 @@ namespace Laundry.TambahData
     public partial class TambahDataOutlet : Form
     {
         Button btrf;
+        Validasi validasi = new Validasi();
         public TambahDataOutlet(Button btrefresh)
         {
             InitializeComponent();
             btrf = btrefresh;
         }
 
+        private void TambahDataOutlet_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+        }
         private bool isfilled()
         {
             if (txtnama.Text.Length > 0 && txtAlamat.Text.Length > 0 && txtNoTelepon.Text.Length > 0) return true;
@@ -49,7 +54,7 @@ namespace Laundry.TambahData
 
         private void txtNoTelepon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

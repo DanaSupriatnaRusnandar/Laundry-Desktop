@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbOutle = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtTlp = new System.Windows.Forms.TextBox();
             this.txtAlamat = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbOutle = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,25 @@
             this.panel2.Size = new System.Drawing.Size(416, 267);
             this.panel2.TabIndex = 7;
             // 
+            // cmbOutle
+            // 
+            this.cmbOutle.FormattingEnabled = true;
+            this.cmbOutle.Location = new System.Drawing.Point(116, 163);
+            this.cmbOutle.Name = "cmbOutle";
+            this.cmbOutle.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutle.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(13, 162);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 18);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Outlet";
+            // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -93,6 +112,7 @@
             this.txtTlp.BackColor = System.Drawing.Color.White;
             this.txtTlp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.txtTlp.Location = new System.Drawing.Point(116, 117);
+            this.txtTlp.MaxLength = 13;
             this.txtTlp.Name = "txtTlp";
             this.txtTlp.Size = new System.Drawing.Size(280, 20);
             this.txtTlp.TabIndex = 3;
@@ -158,25 +178,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 6;
-            // 
-            // cmbOutle
-            // 
-            this.cmbOutle.FormattingEnabled = true;
-            this.cmbOutle.Location = new System.Drawing.Point(116, 163);
-            this.cmbOutle.Name = "cmbOutle";
-            this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(13, 162);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 18);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Outlet";
             // 
             // EditDataKurir
             // 

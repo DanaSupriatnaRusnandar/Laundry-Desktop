@@ -15,7 +15,8 @@ namespace Laundry
     {
         Button btrf;
         string id_outlet;
-        
+        Validasi validasi = new Validasi();
+
         public TambahPaketLaundry(UserControlPaketLaundry parent, Button btrefresh, string Outlet)
         {
             InitializeComponent();
@@ -23,14 +24,9 @@ namespace Laundry
             btrf = btrefresh;
         }
 
-        private bool isfilled()
-        {
-            if (cmbJenis.SelectedIndex >= 0 && txtNama.Text.Length > 0 && txtHarga.Text.Length > 0) return true;
-            return false;
-        }
-
         private void PaketLaundry_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             //Biding Jenis
             cmbJenis.DataSource = Db.Read("tb_jenis", "id, jenis");
             cmbJenis.DisplayMember = "jenis";
@@ -42,6 +38,12 @@ namespace Laundry
             cmbOutlet.DisplayMember = "nama_outlet";
             cmbOutlet.ValueMember = "id";
             cmbOutlet.SelectedIndex = -1;
+        }
+
+        private bool isfilled()
+        {
+            if (cmbJenis.SelectedIndex >= 0 && txtNama.Text.Length > 0 && txtHarga.Text.Length > 0) return true;
+            return false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace Laundry
 
         private void txtHarga_KeyPress_1(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

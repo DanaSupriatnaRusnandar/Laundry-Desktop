@@ -66,7 +66,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(24, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 287);
+            this.panel2.Size = new System.Drawing.Size(416, 263);
             this.panel2.TabIndex = 9;
             // 
             // btnAdd
@@ -162,13 +162,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(466, 409);
+            this.ClientSize = new System.Drawing.Size(466, 384);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TambahDataOutlet";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.TambahDataOutlet_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

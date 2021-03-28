@@ -19,6 +19,7 @@ namespace Laundry
         string idOutlet;
         string nama_outlet;
         string nama_role;
+        Validasi validasi = new Validasi();
         public EditDataUser(Button btrefresh, string id, string nama, string username, string password,string id_outlet, string outlet, string role)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace Laundry
 
         private void EditDataUser_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             //Biding Outlet
             cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutlet.DisplayMember = "nama_outlet";
@@ -104,7 +106,12 @@ namespace Laundry
 
         private void txtusername_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.KeyChar = Char.ToLower(e.KeyChar);
+            validasi.Huruf_Kecil(e);
+        }
+
+        private void txtnama_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validasi.Huruf_Angka_Simbol_Spasi(e);
         }
     }
 }

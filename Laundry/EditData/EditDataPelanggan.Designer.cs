@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbOutle = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.rbLaki = new System.Windows.Forms.RadioButton();
             this.rbPerempuan = new System.Windows.Forms.RadioButton();
             this.txtJK = new System.Windows.Forms.TextBox();
@@ -42,8 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbOutle = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +80,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 328);
             this.panel2.TabIndex = 7;
+            // 
+            // cmbOutle
+            // 
+            this.cmbOutle.FormattingEnabled = true;
+            this.cmbOutle.Location = new System.Drawing.Point(116, 210);
+            this.cmbOutle.Name = "cmbOutle";
+            this.cmbOutle.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutle.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label6.Location = new System.Drawing.Point(13, 209);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 18);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Outlet";
             // 
             // rbLaki
             // 
@@ -123,6 +142,7 @@
             this.txtTelepon.BackColor = System.Drawing.Color.White;
             this.txtTelepon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.txtTelepon.Location = new System.Drawing.Point(116, 165);
+            this.txtTelepon.MaxLength = 13;
             this.txtTelepon.Name = "txtTelepon";
             this.txtTelepon.Size = new System.Drawing.Size(280, 20);
             this.txtTelepon.TabIndex = 5;
@@ -215,25 +235,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 6;
-            // 
-            // cmbOutle
-            // 
-            this.cmbOutle.FormattingEnabled = true;
-            this.cmbOutle.Location = new System.Drawing.Point(116, 210);
-            this.cmbOutle.Name = "cmbOutle";
-            this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 28;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(13, 209);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 18);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Outlet";
             // 
             // EditDataPelanggan
             // 

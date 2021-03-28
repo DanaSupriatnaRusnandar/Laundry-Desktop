@@ -16,6 +16,7 @@ namespace Laundry
         Button btrf;
         string getIdPelanggan;
         string nama_outlet;
+        Validasi validasi = new Validasi();
         public EditDataPelanggan(Button btrefresh, string id, string outlet, string nama, string alamat, string jk, string tlp)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Laundry
 
         private void EditDataPelanggan_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             //Biding Outlet
             cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutle.DisplayMember = "nama_outlet";
@@ -81,7 +83,7 @@ namespace Laundry
 
         private void txtTelepon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

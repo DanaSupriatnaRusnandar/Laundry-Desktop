@@ -21,6 +21,7 @@ namespace Laundry
         int id_outlet;
         int id_user;
         string Invoice;
+        Validasi Validasi = new Validasi();
         public TambahTransaksi(Button btrefresh, string id)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace Laundry
         {
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
             {
+                this.KeyPreview = true;
                 //ComboBox pelanggan
                 cmbPelanggan.DataSource = Db.Read($"tb_member", "id, nama_member");
                 cmbPelanggan.DisplayMember = "nama_member";
@@ -316,25 +318,25 @@ namespace Laundry
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            Validasi.Angka(e);
         }
 
         private void txtDiskon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            Validasi.Angka(e);
         }
 
         private void txtPajak_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            Validasi.Angka(e);
         }
 
         private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            Validasi.Angka(e);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCetak_Click(object sender, EventArgs e)
         {
             btnSimpan.PerformClick();
             new NotaTransaksi(Invoice).ShowDialog();

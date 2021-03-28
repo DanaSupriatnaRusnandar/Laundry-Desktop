@@ -18,6 +18,7 @@ namespace Laundry
         string getIdjenis;
         string nama_outlet;
         string nama_jenis;
+        Validasi validasi = new Validasi();
         public EditPaketLaundry(Button btrefresh, string id, string outlet, string nama_paket, string id_jenis, string jenis, string harga)
         {
             InitializeComponent();
@@ -33,7 +34,8 @@ namespace Laundry
 
         private void EditPaketLaundry_Load(object sender, EventArgs e)
         {
-            //Biding Jenis
+            this.KeyPreview = true;
+             //Biding Jenis
             cmbJenis.DataSource = Db.Read("tb_jenis", "id, jenis");
             cmbJenis.DisplayMember = "jenis";
             cmbJenis.ValueMember = "id";
@@ -79,7 +81,7 @@ namespace Laundry
 
         private void txtHarga_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

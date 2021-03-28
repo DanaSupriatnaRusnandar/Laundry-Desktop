@@ -30,6 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbOutlet = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
@@ -41,8 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbOutlet = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(416, 321);
             this.panel2.TabIndex = 5;
+            // 
+            // cmbOutlet
+            // 
+            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.cmbOutlet.FormattingEnabled = true;
+            this.cmbOutlet.Location = new System.Drawing.Point(116, 205);
+            this.cmbOutlet.Name = "cmbOutlet";
+            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
+            this.cmbOutlet.TabIndex = 22;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(16, 204);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 18);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Outlet";
             // 
             // btnEdit
             // 
@@ -146,6 +166,7 @@
             this.txtnama.Name = "txtnama";
             this.txtnama.Size = new System.Drawing.Size(280, 20);
             this.txtnama.TabIndex = 1;
+            this.txtnama.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnama_KeyPress);
             // 
             // label6
             // 
@@ -200,26 +221,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(466, 67);
             this.panel1.TabIndex = 4;
-            // 
-            // cmbOutlet
-            // 
-            this.cmbOutlet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbOutlet.FormattingEnabled = true;
-            this.cmbOutlet.Location = new System.Drawing.Point(116, 205);
-            this.cmbOutlet.Name = "cmbOutlet";
-            this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutlet.TabIndex = 22;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(16, 204);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 18);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Outlet";
             // 
             // EditDataUser
             // 

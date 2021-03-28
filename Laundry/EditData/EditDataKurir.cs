@@ -16,6 +16,7 @@ namespace Laundry
         Button btrf;
         string getIdKurir;
         string nama_outlet;
+        Validasi validasi = new Validasi();
         public EditDataKurir(Button btrefresh, string id, string nama_kurir, string alamat, string tlp, string outlet)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace Laundry
 
         private void EditDataKurir_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
             //Biding Outlet
             cmbOutle.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
             cmbOutle.DisplayMember = "nama_outlet";
@@ -68,7 +70,7 @@ namespace Laundry
 
         private void txtTlp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

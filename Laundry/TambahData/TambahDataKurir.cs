@@ -14,6 +14,7 @@ namespace Laundry
     public partial class TambahDataKurir : Form
     {
         Button btrf;
+        Validasi val = new Validasi();
         public TambahDataKurir(Button btrefresh)
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace Laundry
             cmbOutle.DisplayMember = "nama_outlet";
             cmbOutle.ValueMember = "id";
             cmbOutle.SelectedIndex = -1;
+
+            this.KeyPreview = true;
         }
 
         private bool isfilled()

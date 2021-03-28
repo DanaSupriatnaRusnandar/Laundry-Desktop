@@ -14,6 +14,7 @@ namespace Laundry
     {
         Button btrf;
         string getIdOutlet;
+        Validasi validasi = new Validasi();
         public EditDataOutlet(Button btrefresh, string id, string nama, string alamat, string tlp)
         {
             InitializeComponent();
@@ -22,6 +23,10 @@ namespace Laundry
             txtnama.Text = nama;
             txtAlamat.Text = alamat;
             txtNoTelepon.Text = tlp;
+        }
+        private void EditDataOutlet_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
         }
 
         private bool isfilled()
@@ -52,7 +57,7 @@ namespace Laundry
 
         private void txtNoTelepon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
+            validasi.Angka(e);
         }
     }
 }

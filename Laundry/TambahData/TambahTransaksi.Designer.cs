@@ -80,7 +80,7 @@
             this.txtNominalDiskon = new System.Windows.Forms.TextBox();
             this.txtTotalPembayaran = new System.Windows.Forms.TextBox();
             this.btnSimpan = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCetak = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.txtCatatan = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -697,20 +697,20 @@
             this.btnSimpan.UseVisualStyleBackColor = false;
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
-            // button2
+            // btnCetak
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(542, 130);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 32);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Simpan dan Cetak";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCetak.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.btnCetak.FlatAppearance.BorderSize = 0;
+            this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCetak.ForeColor = System.Drawing.Color.White;
+            this.btnCetak.Location = new System.Drawing.Point(542, 130);
+            this.btnCetak.Name = "btnCetak";
+            this.btnCetak.Size = new System.Drawing.Size(117, 32);
+            this.btnCetak.TabIndex = 20;
+            this.btnCetak.Text = "Simpan dan Cetak";
+            this.btnCetak.UseVisualStyleBackColor = false;
+            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
             // 
             // label21
             // 
@@ -746,7 +746,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.btnCetak);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.btnSimpan);
             this.panel5.Controls.Add(this.cmbKurir);
@@ -854,7 +854,7 @@
         private System.Windows.Forms.TextBox txtNominalDiskon;
         private System.Windows.Forms.TextBox txtTotalPembayaran;
         private System.Windows.Forms.Button btnSimpan;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCetak;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtCatatan;
         private System.Windows.Forms.Label label24;
