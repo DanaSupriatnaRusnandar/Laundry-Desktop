@@ -36,9 +36,6 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.9.5.3\lib\net461\FluentValidation.dll</HintPath>
-    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -54,22 +51,8 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
-      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
-    </Reference>
     <Reference Include="Luthor.lib">
       <HintPath>..\..\Tools\Luthor.lib.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>C:\Users\AdmiN\Downloads\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -112,6 +95,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
@@ -131,6 +115,13 @@
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
@@ -157,64 +148,64 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetailTransaksi.cs">
+    <Compile Include="EditData\DetailTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetailTransaksi.Designer.cs">
+    <Compile Include="EditData\DetailTransaksi.Designer.cs">
       <DependentUpon>DetailTransaksi.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDataOutlet.cs">
+    <Compile Include="EditData\EditDataOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDataOutlet.Designer.cs">
+    <Compile Include="EditData\EditDataOutlet.Designer.cs">
       <DependentUpon>EditDataOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDataPelanggan.cs">
+    <Compile Include="EditData\EditDataPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDataPelanggan.Designer.cs">
+    <Compile Include="EditData\EditDataPelanggan.Designer.cs">
       <DependentUpon>EditDataPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDataPengeluaran.cs">
+    <Compile Include="EditData\EditDataPengeluaran.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDataPengeluaran.Designer.cs">
+    <Compile Include="EditData\EditDataPengeluaran.Designer.cs">
       <DependentUpon>EditDataPengeluaran.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDataUser.cs">
+    <Compile Include="EditData\EditDataUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDataUser.Designer.cs">
+    <Compile Include="EditData\EditDataUser.Designer.cs">
       <DependentUpon>EditDataUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDataKurir.cs">
+    <Compile Include="EditData\EditDataKurir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDataKurir.Designer.cs">
+    <Compile Include="EditData\EditDataKurir.Designer.cs">
       <DependentUpon>EditDataKurir.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditJenis.cs">
+    <Compile Include="EditData\EditJenis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditJenis.Designer.cs">
+    <Compile Include="EditData\EditJenis.Designer.cs">
       <DependentUpon>EditJenis.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditPaketLaundry.cs">
+    <Compile Include="EditData\EditPaketLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditPaketLaundry.Designer.cs">
+    <Compile Include="EditData\EditPaketLaundry.Designer.cs">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditTransaksi.cs">
+    <Compile Include="EditData\EditTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditTransaksi.Designer.cs">
+    <Compile Include="EditData\EditTransaksi.Designer.cs">
       <DependentUpon>EditTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="laundryDataSet.cs">
@@ -225,65 +216,65 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>laundryDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NotaTransaksi.cs">
+    <Compile Include="Report\NotaTransaksi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NotaTransaksi.Designer.cs">
+    <Compile Include="Report\NotaTransaksi.Designer.cs">
       <DependentUpon>NotaTransaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="TambahDataPengeluaran.cs">
+    <Compile Include="TambahData\TambahDataPengeluaran.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TambahDataPengeluaran.Designer.cs">
+    <Compile Include="TambahData\TambahDataPengeluaran.Designer.cs">
       <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
     </Compile>
-    <Compile Include="TambahPaketLaundry.cs">
+    <Compile Include="TambahData\TambahDataOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TambahPaketLaundry.Designer.cs">
-      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrasiPelanggan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistrasiPelanggan.Designer.cs">
-      <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TambahDataKurir.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TambahDataKurir.Designer.cs">
-      <DependentUpon>TambahDataKurir.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TambahDataUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TambahDataUser.Designer.cs">
-      <DependentUpon>TambahDataUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TambahDataOutlet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TambahDataOutlet.Designer.cs">
+    <Compile Include="TambahData\TambahDataOutlet.Designer.cs">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="TambahTransaksi.cs">
+    <Compile Include="TambahData\TambahPaketLaundry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TambahTransaksi.Designer.cs">
+    <Compile Include="TambahData\TambahPaketLaundry.Designer.cs">
+      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\RegistrasiPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\RegistrasiPelanggan.Designer.cs">
+      <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahDataKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahDataKurir.Designer.cs">
+      <DependentUpon>TambahDataKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahDataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahDataUser.Designer.cs">
+      <DependentUpon>TambahDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahTransaksi.Designer.cs">
       <DependentUpon>TambahTransaksi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlDashboard.cs">
+    <Compile Include="UserControl\UserControlDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDashboard.Designer.cs">
+    <Compile Include="UserControl\UserControlDashboard.Designer.cs">
       <DependentUpon>UserControlDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlDataUser.cs">
+    <Compile Include="UserControl\UserControlDataUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlDataUser.Designer.cs">
+    <Compile Include="UserControl\UserControlDataUser.Designer.cs">
       <DependentUpon>UserControlDataUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -299,121 +290,123 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UserControlJenisPaket.cs">
+    <Compile Include="UserControl\UserControlJenisPaket.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlJenisPaket.Designer.cs">
+    <Compile Include="UserControl\UserControlJenisPaket.Designer.cs">
       <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlKurir.cs">
+    <Compile Include="UserControl\UserControlKurir.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlKurir.Designer.cs">
+    <Compile Include="UserControl\UserControlKurir.Designer.cs">
       <DependentUpon>UserControlKurir.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlLaporanPengeluaran.cs">
+    <Compile Include="Report\UserControlLaporanPengeluaran.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlLaporanPengeluaran.Designer.cs">
+    <Compile Include="Report\UserControlLaporanPengeluaran.Designer.cs">
       <DependentUpon>UserControlLaporanPengeluaran.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlLaporanTransaksi.cs">
+    <Compile Include="Report\UserControlLaporanTransaksi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlLaporanTransaksi.Designer.cs">
+    <Compile Include="Report\UserControlLaporanTransaksi.Designer.cs">
       <DependentUpon>UserControlLaporanTransaksi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlOutlet.cs">
+    <Compile Include="UserControl\UserControlOutlet.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlOutlet.Designer.cs">
+    <Compile Include="UserControl\UserControlOutlet.Designer.cs">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlPaketLaundry.cs">
+    <Compile Include="UserControl\UserControlPaketLaundry.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlPaketLaundry.Designer.cs">
+    <Compile Include="UserControl\UserControlPaketLaundry.Designer.cs">
       <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlPelanggan.cs">
+    <Compile Include="UserControl\UserControlPelanggan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlPelanggan.Designer.cs">
+    <Compile Include="UserControl\UserControlPelanggan.Designer.cs">
       <DependentUpon>UserControlPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlPengeluaran.cs">
+    <Compile Include="UserControl\UserControlPengeluaran.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlPengeluaran.Designer.cs">
+    <Compile Include="UserControl\UserControlPengeluaran.Designer.cs">
       <DependentUpon>UserControlPengeluaran.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlTransaksi.cs">
+    <Compile Include="UserControl\UserControlTransaksi.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlTransaksi.Designer.cs">
+    <Compile Include="UserControl\UserControlTransaksi.Designer.cs">
       <DependentUpon>UserControlTransaksi.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="Validasi.cs" />
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetailTransaksi.resx">
+    <EmbeddedResource Include="EditData\DetailTransaksi.resx">
       <DependentUpon>DetailTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDataKurir.resx">
+    <EmbeddedResource Include="EditData\EditDataKurir.resx">
       <DependentUpon>EditDataKurir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDataOutlet.resx">
+    <EmbeddedResource Include="EditData\EditDataOutlet.resx">
       <DependentUpon>EditDataOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDataPelanggan.resx">
+    <EmbeddedResource Include="EditData\EditDataPelanggan.resx">
       <DependentUpon>EditDataPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDataPengeluaran.resx">
+    <EmbeddedResource Include="EditData\EditDataPengeluaran.resx">
       <DependentUpon>EditDataPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDataUser.resx">
+    <EmbeddedResource Include="EditData\EditDataUser.resx">
       <DependentUpon>EditDataUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditJenis.resx">
+    <EmbeddedResource Include="EditData\EditJenis.resx">
       <DependentUpon>EditJenis.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditPaketLaundry.resx">
+    <EmbeddedResource Include="EditData\EditPaketLaundry.resx">
       <DependentUpon>EditPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditTransaksi.resx">
+    <EmbeddedResource Include="EditData\EditTransaksi.resx">
       <DependentUpon>EditTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotaTransaksi.resx">
+    <EmbeddedResource Include="Report\NotaTransaksi.resx">
       <DependentUpon>NotaTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NotaPembayaran.rdlc" />
-    <EmbeddedResource Include="ReportTransaksi.rdlc" />
-    <EmbeddedResource Include="ReportPengeluaran.rdlc" />
-    <EmbeddedResource Include="TambahDataPengeluaran.resx">
+    <EmbeddedResource Include="Report\NotaPembayaran.rdlc" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\ReportTransaksi.rdlc" />
+    <EmbeddedResource Include="Report\ReportPengeluaran.rdlc" />
+    <EmbeddedResource Include="TambahData\TambahDataPengeluaran.resx">
       <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TambahPaketLaundry.resx">
-      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrasiPelanggan.resx">
-      <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TambahDataKurir.resx">
-      <DependentUpon>TambahDataKurir.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TambahDataUser.resx">
-      <DependentUpon>TambahDataUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TambahDataOutlet.resx">
+    <EmbeddedResource Include="TambahData\TambahDataOutlet.resx">
       <DependentUpon>TambahDataOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TambahTransaksi.resx">
+    <EmbeddedResource Include="TambahData\TambahPaketLaundry.resx">
+      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\RegistrasiPelanggan.resx">
+      <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahDataKurir.resx">
+      <DependentUpon>TambahDataKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahDataUser.resx">
+      <DependentUpon>TambahDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahTransaksi.resx">
       <DependentUpon>TambahTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDashboard.resx">
+    <EmbeddedResource Include="UserControl\UserControlDashboard.resx">
       <DependentUpon>UserControlDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlDataUser.resx">
+    <EmbeddedResource Include="UserControl\UserControlDataUser.resx">
       <DependentUpon>UserControlDataUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -424,31 +417,31 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlJenisPaket.resx">
+    <EmbeddedResource Include="UserControl\UserControlJenisPaket.resx">
       <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlKurir.resx">
+    <EmbeddedResource Include="UserControl\UserControlKurir.resx">
       <DependentUpon>UserControlKurir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlLaporanPengeluaran.resx">
+    <EmbeddedResource Include="Report\UserControlLaporanPengeluaran.resx">
       <DependentUpon>UserControlLaporanPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlLaporanTransaksi.resx">
+    <EmbeddedResource Include="Report\UserControlLaporanTransaksi.resx">
       <DependentUpon>UserControlLaporanTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlOutlet.resx">
+    <EmbeddedResource Include="UserControl\UserControlOutlet.resx">
       <DependentUpon>UserControlOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlPaketLaundry.resx">
+    <EmbeddedResource Include="UserControl\UserControlPaketLaundry.resx">
       <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlPelanggan.resx">
+    <EmbeddedResource Include="UserControl\UserControlPelanggan.resx">
       <DependentUpon>UserControlPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlPengeluaran.resx">
+    <EmbeddedResource Include="UserControl\UserControlPengeluaran.resx">
       <DependentUpon>UserControlPengeluaran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlTransaksi.resx">
+    <EmbeddedResource Include="UserControl\UserControlTransaksi.resx">
       <DependentUpon>UserControlTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="laundryDataSet.xsc">
