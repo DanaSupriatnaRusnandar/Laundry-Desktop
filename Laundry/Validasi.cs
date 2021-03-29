@@ -79,10 +79,5 @@ namespace Laundry
             }
             return e.Handled;
         }
-
-      /*  public Boolean Tanggal (DateTimePicker DT, DateTime old, DateTime now, KeyPressEventArgs e)
-        {
-            
-        }*/
     }
 }

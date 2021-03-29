@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Laundry.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\App.config" />
+  <event action="Analyze" type="Success" name="DetailTransaksi.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\DetailTransaksi.resx" />
+  <event action="Analyze" type="Success" name="EditDataKurir.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditDataKurir.resx" />
+  <event action="Analyze" type="Success" name="EditDataOutlet.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditDataOutlet.resx" />
+  <event action="Analyze" type="Success" name="EditDataPelanggan.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditDataPelanggan.resx" />
+  <event action="Analyze" type="Success" name="EditDataPengeluaran.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditDataPengeluaran.resx" />
+  <event action="Analyze" type="Success" name="EditDataUser.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditDataUser.resx" />
+  <event action="Analyze" type="Success" name="EditJenis.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditJenis.resx" />
+  <event action="Analyze" type="Success" name="EditPaketLaundry.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditPaketLaundry.resx" />
+  <event action="Analyze" type="Success" name="EditTransaksi.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\EditData\EditTransaksi.resx" />
+  <event action="Analyze" type="Success" name="Login.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Login.resx" />
+  <event action="Analyze" type="Success" name="MainMenu.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\MainMenu.resx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="packages.config" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\packages.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="NotaTransaksi.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Report\NotaTransaksi.resx" />
+  <event action="Analyze" type="Success" name="UserControlLaporanPengeluaran.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Report\UserControlLaporanPengeluaran.resx" />
+  <event action="Analyze" type="Success" name="UserControlLaporanTransaksi.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Report\UserControlLaporanTransaksi.resx" />
+  <event action="Analyze" type="Success" name="RegistrasiPelanggan.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\RegistrasiPelanggan.resx" />
+  <event action="Analyze" type="Success" name="TambahDataKurir.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\TambahDataKurir.resx" />
+  <event action="Analyze" type="Success" name="TambahDataOutlet.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\TambahDataOutlet.resx" />
+  <event action="Analyze" type="Success" name="TambahDataPengeluaran.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\TambahDataPengeluaran.resx" />
+  <event action="Analyze" type="Success" name="TambahDataUser.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\TambahDataUser.resx" />
+  <event action="Analyze" type="Success" name="TambahPaketLaundry.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\TambahPaketLaundry.resx" />
+  <event action="Analyze" type="Success" name="TambahTransaksi.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\TambahData\TambahTransaksi.resx" />
+  <event action="Analyze" type="Success" name="UserControlDashboard.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlDashboard.resx" />
+  <event action="Analyze" type="Success" name="UserControlDataUser.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlDataUser.resx" />
+  <event action="Analyze" type="Success" name="UserControlJenisPaket.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlJenisPaket.resx" />
+  <event action="Analyze" type="Success" name="UserControlKurir.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlKurir.resx" />
+  <event action="Analyze" type="Success" name="UserControlOutlet.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlOutlet.resx" />
+  <event action="Analyze" type="Success" name="UserControlPaketLaundry.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlPaketLaundry.resx" />
+  <event action="Analyze" type="Success" name="UserControlPelanggan.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlPelanggan.resx" />
+  <event action="Analyze" type="Success" name="UserControlPengeluaran.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlPengeluaran.resx" />
+  <event action="Analyze" type="Success" name="UserControlTransaksi.resx" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\UserControl\UserControlTransaksi.resx" />
+  <event action="Analyze" type="Success" name="Laundry" path="D:\Belajar Pemrograman\C#\Laundry\Laundry\Laundry.csproj" />
+  <event action="Analyze" type="Success" name="Laundry" path="D:\Belajar Pemrograman\C#\Laundry\Laundry.sln" />
+</log>

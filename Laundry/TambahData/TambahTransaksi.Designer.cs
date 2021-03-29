@@ -85,15 +85,12 @@
             this.txtCatatan = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.cmbKurir = new System.Windows.Forms.ComboBox();
-            this.cmbDibayar = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panelUang = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbDibayar = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.cmbKurir = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -102,7 +99,6 @@
             this.panel5.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panelUang.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -700,7 +696,7 @@
             this.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.ForeColor = System.Drawing.Color.White;
-            this.btnSimpan.Location = new System.Drawing.Point(434, 98);
+            this.btnSimpan.Location = new System.Drawing.Point(432, 124);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(91, 32);
             this.btnSimpan.TabIndex = 19;
@@ -715,7 +711,7 @@
             this.btnCetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCetak.ForeColor = System.Drawing.Color.White;
-            this.btnCetak.Location = new System.Drawing.Point(542, 98);
+            this.btnCetak.Location = new System.Drawing.Point(540, 124);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(117, 32);
             this.btnCetak.TabIndex = 20;
@@ -738,7 +734,7 @@
             // txtCatatan
             // 
             this.txtCatatan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.txtCatatan.Location = new System.Drawing.Point(80, 54);
+            this.txtCatatan.Location = new System.Drawing.Point(78, 80);
             this.txtCatatan.Multiline = true;
             this.txtCatatan.Name = "txtCatatan";
             this.txtCatatan.Size = new System.Drawing.Size(309, 109);
@@ -749,7 +745,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label24.Location = new System.Drawing.Point(21, 98);
+            this.label24.Location = new System.Drawing.Point(19, 124);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(54, 16);
             this.label24.TabIndex = 60;
@@ -766,8 +762,56 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 409);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(687, 188);
+            this.panel5.Size = new System.Drawing.Size(687, 211);
             this.panel5.TabIndex = 11;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.panel6);
+            this.flowLayoutPanel1.Controls.Add(this.panel8);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(385, 66);
+            this.flowLayoutPanel1.TabIndex = 61;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.cmbDibayar);
+            this.panel6.Controls.Add(this.label21);
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(167, 55);
+            this.panel6.TabIndex = 46;
+            // 
+            // cmbDibayar
+            // 
+            this.cmbDibayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDibayar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.cmbDibayar.FormattingEnabled = true;
+            this.cmbDibayar.Location = new System.Drawing.Point(5, 25);
+            this.cmbDibayar.Name = "cmbDibayar";
+            this.cmbDibayar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cmbDibayar.Size = new System.Drawing.Size(150, 23);
+            this.cmbDibayar.TabIndex = 16;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.cmbKurir);
+            this.panel8.Controls.Add(this.label25);
+            this.panel8.Location = new System.Drawing.Point(176, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(195, 55);
+            this.panel8.TabIndex = 62;
+            // 
+            // cmbKurir
+            // 
+            this.cmbKurir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbKurir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.cmbKurir.FormattingEnabled = true;
+            this.cmbKurir.Location = new System.Drawing.Point(10, 25);
+            this.cmbKurir.Name = "cmbKurir";
+            this.cmbKurir.Size = new System.Drawing.Size(170, 23);
+            this.cmbKurir.TabIndex = 17;
             // 
             // label25
             // 
@@ -780,88 +824,12 @@
             this.label25.TabIndex = 44;
             this.label25.Text = "Kurir";
             // 
-            // cmbKurir
-            // 
-            this.cmbKurir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbKurir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbKurir.FormattingEnabled = true;
-            this.cmbKurir.Location = new System.Drawing.Point(47, 0);
-            this.cmbKurir.Name = "cmbKurir";
-            this.cmbKurir.Size = new System.Drawing.Size(170, 23);
-            this.cmbKurir.TabIndex = 17;
-            // 
-            // cmbDibayar
-            // 
-            this.cmbDibayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDibayar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.cmbDibayar.FormattingEnabled = true;
-            this.cmbDibayar.Location = new System.Drawing.Point(97, 3);
-            this.cmbDibayar.Name = "cmbDibayar";
-            this.cmbDibayar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cmbDibayar.Size = new System.Drawing.Size(144, 23);
-            this.cmbDibayar.TabIndex = 16;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.panel6);
-            this.flowLayoutPanel1.Controls.Add(this.panelUang);
-            this.flowLayoutPanel1.Controls.Add(this.panel8);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(659, 37);
-            this.flowLayoutPanel1.TabIndex = 61;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.cmbDibayar);
-            this.panel6.Controls.Add(this.label21);
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(244, 29);
-            this.panel6.TabIndex = 46;
-            // 
-            // panelUang
-            // 
-            this.panelUang.Controls.Add(this.textBox1);
-            this.panelUang.Controls.Add(this.label2);
-            this.panelUang.Location = new System.Drawing.Point(253, 3);
-            this.panelUang.Name = "panelUang";
-            this.panelUang.Size = new System.Drawing.Size(171, 29);
-            this.panelUang.TabIndex = 62;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(4, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 16);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "Rp.";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(33, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 20);
-            this.textBox1.TabIndex = 63;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.cmbKurir);
-            this.panel8.Controls.Add(this.label25);
-            this.panel8.Location = new System.Drawing.Point(430, 3);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(225, 28);
-            this.panel8.TabIndex = 62;
-            // 
             // TambahTransaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(687, 596);
+            this.ClientSize = new System.Drawing.Size(687, 617);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -885,8 +853,6 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panelUang.ResumeLayout(false);
-            this.panelUang.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.ResumeLayout(false);
@@ -950,9 +916,6 @@
         private System.Windows.Forms.Label lblOutlet;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panelUang;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel8;
     }
 }

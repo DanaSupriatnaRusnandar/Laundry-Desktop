@@ -238,8 +238,47 @@ namespace Laundry
 
         private void btnCetak_Click(object sender, EventArgs e)
         {
-            btrf.PerformClick();
-            new NotaTransaksi(Invoice).ShowDialog();
+            if (isfilled())
+            {
+                int next_id;
+                DataTable result = Db.Read("SELECT id FROM tb_transaksi ORDER BY id DESC LIMIT 1");
+                if (result.Rows.Count > 0) next_id = result.Rows[0].Field<int>("id") + 1;
+                else next_id = 1;
+
+                if (Db.ExecuteQuery($"ALTER TABLE tb_transaksi AUTO_INCREMENT = {next_id}"))
+                {
+                    Invoice = $"INV{DateTime.Now.ToString("yyMMddmmss")}";
+                    string now = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+                    var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
+                    var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
+                    var pajak = Convert.ToDouble(txtNominalPajak.Text) / dataGridView1.Rows.Count;
+                    var dibayar = cmbDibayar.SelectedItem;
+                    var kurir = cmbKurir.SelectedValue;
+                    string tanggalBayar = "Null";
+                    if (cmbDibayar.SelectedIndex == 0) tanggalBayar = $"'{now}'";
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        string id_paket = row.Cells["id"].Value.ToString();
+                        string qty = row.Cells["qty"].Value.ToString();
+                        double total = Convert.ToDouble(row.Cells["harga"].Value) + pajak + biayaTambahan - diskon;
+                        if (Db.ExecuteQuery(
+                            $"CALL transaksi({next_id},{id_outlet},'{Invoice}', {cmbPelanggan.SelectedValue}, '{now}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
+                            ))
+                        {
+                            next_id++;
+                        }
+                        else
+                        {
+                            MessageBox.Show($"ERROR : {Error.error_msg}");
+                        }
+                    }
+                    MessageBox.Show("Transaksi berhasil dilakukan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clearTransaksi();
+                    btrf.PerformClick();
+                }
+                new NotaTransaksi(Invoice).ShowDialog();
+                btrf.PerformClick();
+            }
         }
 
         private void clearTransaksi()
@@ -352,9 +391,10 @@ namespace Laundry
 
         private void dtpBatasWaktu_Validating(object sender, CancelEventArgs e)
         {
-            if (dtpBatasWaktu.Value < dtpTanggal.Value)
+            if (dtpBatasWaktu.Value < DateTime.Now)
             {
                 MessageBox.Show("Batas Waktu tidak boleh lebih kecil dari tanggal!");
+                dtpBatasWaktu.Value = DateTime.Now;
             }
         }
     }

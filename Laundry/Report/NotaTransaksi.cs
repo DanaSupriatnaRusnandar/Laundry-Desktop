@@ -23,10 +23,8 @@ namespace Laundry
 
         private void NotaTransaksi_Load(object sender, EventArgs e)
         {
-            this.DataTableStrukTableAdapter.Fill(this.laundryDataSet.DataTableStruk, kode_invoice);
-
+             this.DataTableStrukTableAdapter.Fill(this.laundryDataSet.DataTableStruk, kode_invoice);
              this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
         }
     }
 }

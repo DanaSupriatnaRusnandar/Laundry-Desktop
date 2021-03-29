@@ -120,7 +120,6 @@ namespace Laundry
         private void Dashboard_Load(object sender, EventArgs e)
         {
             //Pembagian Role
-
             if (Session.getUserLogged().Rows[0].Field<string>("role") == "kasir")
             {
                 btnAkun.Visible = false;
@@ -142,6 +141,7 @@ namespace Laundry
                 btnTransaksi.Visible = false;
                 btnPengeluaran.Visible = false;
                 btnPelanggan.Visible = false;
+                btnDashboard.Visible = false;
             }
         }
 

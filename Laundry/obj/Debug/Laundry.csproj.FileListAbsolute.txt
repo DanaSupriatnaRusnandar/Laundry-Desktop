@@ -87,7 +87,6 @@ D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.NotaTransaksi.resour
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.DetailTransaksi.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.EditJenis.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\bin\Debug\System.ComponentModel.Annotations.dll
-D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.exe.licenses
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.MainMenu.resources
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.csprojAssemblyReference.cache
 D:\Belajar Pemrograman\C#\Laundry\Laundry\obj\Debug\Laundry.TambahData.TambahDataOutlet.resources
