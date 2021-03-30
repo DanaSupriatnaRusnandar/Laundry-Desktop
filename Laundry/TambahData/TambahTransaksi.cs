@@ -232,7 +232,6 @@ namespace Laundry
                     MessageBox.Show("Transaksi berhasil dilakukan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearTransaksi();
                     btrf.PerformClick();
-
                 }
             }
         }

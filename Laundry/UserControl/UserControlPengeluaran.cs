@@ -73,7 +73,7 @@ namespace Laundry
             double pengeluaran = 0;
             foreach (DataGridViewRow row in dataGridViewPengeluaran.Rows)
             {
-                pengeluaran = pengeluaran + Convert.ToDouble(row.Cells["total"].Value);
+                pengeluaran = pengeluaran + Convert.ToDouble(row.Cells["harga"].Value);
             }
             txtTotal.Text = pengeluaran.ToString("C0");
         }
