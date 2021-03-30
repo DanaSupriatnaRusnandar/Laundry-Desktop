@@ -81,7 +81,7 @@
             reportDataSource1.Name = "DataSetStruk";
             reportDataSource1.Value = this.DataTableStrukBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Laundry.Report.NotaPembayaran.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Laundry.Report.ReportNota.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 54);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(455, 508);
@@ -123,9 +123,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource DataTableStrukBindingSource;
         private laundryDataSet laundryDataSet;
         private laundryDataSetTableAdapters.DataTableStrukTableAdapter DataTableStrukTableAdapter;

@@ -395,7 +395,7 @@
     <EmbeddedResource Include="Report\NotaTransaksi.resx">
       <DependentUpon>NotaTransaksi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\NotaPembayaran.rdlc" />
+    <EmbeddedResource Include="Report\ReportNota.rdlc" />
     <EmbeddedResource Include="Report\ReportTransaksi.rdlc" />
     <EmbeddedResource Include="Report\ReportPengeluaran.rdlc" />
     <EmbeddedResource Include="TambahData\TambahDataPengeluaran.resx">

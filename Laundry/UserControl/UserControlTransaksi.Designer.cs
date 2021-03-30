@@ -308,6 +308,7 @@
             // 
             // nama_outlet
             // 
+            this.nama_outlet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nama_outlet.DataPropertyName = "nama_outlet";
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,6 +322,7 @@
             // 
             // kode_invoice
             // 
+            this.kode_invoice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.kode_invoice.DataPropertyName = "kode_invoice";
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -328,12 +330,14 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.kode_invoice.DefaultCellStyle = dataGridViewCellStyle4;
+            this.kode_invoice.FillWeight = 80F;
             this.kode_invoice.HeaderText = "Invoice";
             this.kode_invoice.Name = "kode_invoice";
             this.kode_invoice.ReadOnly = true;
             // 
             // nama_member
             // 
+            this.nama_member.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nama_member.DataPropertyName = "nama_member";
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -341,12 +345,14 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.nama_member.DefaultCellStyle = dataGridViewCellStyle5;
+            this.nama_member.FillWeight = 90F;
             this.nama_member.HeaderText = "Pelanggan";
             this.nama_member.Name = "nama_member";
             this.nama_member.ReadOnly = true;
             // 
             // tgl
             // 
+            this.tgl.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.tgl.DataPropertyName = "tgl";
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -354,12 +360,14 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.tgl.DefaultCellStyle = dataGridViewCellStyle6;
+            this.tgl.FillWeight = 60F;
             this.tgl.HeaderText = "Tanggal";
             this.tgl.Name = "tgl";
             this.tgl.ReadOnly = true;
             // 
             // batas_waktu
             // 
+            this.batas_waktu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.batas_waktu.DataPropertyName = "batas_waktu";
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -367,6 +375,7 @@
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
             this.batas_waktu.DefaultCellStyle = dataGridViewCellStyle7;
+            this.batas_waktu.FillWeight = 60F;
             this.batas_waktu.HeaderText = "Batas Waktu";
             this.batas_waktu.Name = "batas_waktu";
             this.batas_waktu.ReadOnly = true;
@@ -429,13 +438,16 @@
             // 
             // total_pembayaran
             // 
+            this.total_pembayaran.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.total_pembayaran.DataPropertyName = "total_pembayaran";
+            this.total_pembayaran.FillWeight = 60F;
             this.total_pembayaran.HeaderText = "Total";
             this.total_pembayaran.Name = "total_pembayaran";
             this.total_pembayaran.ReadOnly = true;
             // 
             // status
             // 
+            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.status.DataPropertyName = "status";
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -443,12 +455,14 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
             this.status.DefaultCellStyle = dataGridViewCellStyle12;
+            this.status.FillWeight = 60F;
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
             // 
             // dibayar
             // 
+            this.dibayar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dibayar.DataPropertyName = "dibayar";
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,6 +470,7 @@
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
             this.dibayar.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dibayar.FillWeight = 65F;
             this.dibayar.HeaderText = "Pembayaran";
             this.dibayar.Name = "dibayar";
             this.dibayar.ReadOnly = true;
@@ -473,9 +488,12 @@
             this.nama_kurir.HeaderText = "Kurir";
             this.nama_kurir.Name = "nama_kurir";
             this.nama_kurir.ReadOnly = true;
+            this.nama_kurir.Visible = false;
+            this.nama_kurir.Width = 63;
             // 
             // nama
             // 
+            this.nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nama.DataPropertyName = "nama";
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
@@ -484,6 +502,7 @@
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
             this.nama.DefaultCellStyle = dataGridViewCellStyle15;
+            this.nama.FillWeight = 90F;
             this.nama.HeaderText = "Petugas";
             this.nama.Name = "nama";
             this.nama.ReadOnly = true;
@@ -491,6 +510,8 @@
             // edit
             // 
             this.edit.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.edit.FillWeight = 25F;
             this.edit.HeaderText = "";
             this.edit.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.edit.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(85)))), ((int)(((byte)(184)))));
@@ -504,6 +525,7 @@
             // detail
             // 
             this.detail.ActiveLinkColor = System.Drawing.Color.Green;
+            this.detail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -511,6 +533,7 @@
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
             this.detail.DefaultCellStyle = dataGridViewCellStyle16;
+            this.detail.FillWeight = 25F;
             this.detail.HeaderText = "";
             this.detail.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.detail.LinkColor = System.Drawing.Color.Green;
