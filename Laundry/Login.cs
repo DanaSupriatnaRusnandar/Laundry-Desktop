@@ -15,9 +15,15 @@ namespace Laundry
 {
     public partial class Login : Form
     {
+        Validasi validasi = new Validasi();
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
         }
 
         private bool isUsernameValid()
@@ -35,10 +41,10 @@ namespace Laundry
                     //Logging
                     Db.Insert("login_log", $"null, NOW(), {Session.getUserLogged().Rows[0].Field<int>("id")}");
 
-                    Form Dashboar = new MainMenu();
+                    Form menu = new MainMenu();
                     MessageBox.Show("Selamat datang", Session.getUserLogged().Rows[0].Field<string>("nama"));
                     this.Hide();
-                    Dashboar.ShowDialog();
+                    menu.ShowDialog();
 
                 }
                 else
@@ -73,7 +79,7 @@ namespace Laundry
 
         private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.KeyChar = Char.ToLower(e.KeyChar);
+            validasi.Huruf_Kecil(e);
 
         }
 

@@ -96,11 +96,10 @@ namespace Laundry
                     else
                     {
                         MessageBox.Show($"Nilai maksimal hanya sampai {persen} ", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TB.Text = "0";
                     }
                     e.Handled = true;
                 }
-
-                
             }
             return e.Handled;
        }

@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
@@ -23,11 +23,11 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.67938cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -36,6 +36,7 @@
                             <TextRun>
                               <Value>NO</Value>
                               <Style>
+                                <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -47,16 +48,13 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
-                        </BottomBorder>
-                        <BackgroundColor>#1e1f44</BackgroundColor>
+                        </Border>
+                        <BackgroundColor>#1f1e44</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -68,7 +66,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox33">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -77,6 +75,7 @@
                             <TextRun>
                               <Value>NAMA BARANG</Value>
                               <Style>
+                                <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -88,16 +87,13 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Textbox33</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
-                        </BottomBorder>
-                        <BackgroundColor>#1e1f44</BackgroundColor>
+                        </Border>
+                        <BackgroundColor>#1f1e44</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -109,7 +105,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="Textbox31">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -118,6 +114,7 @@
                             <TextRun>
                               <Value>TANGGAL</Value>
                               <Style>
+                                <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -129,16 +126,13 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <rd:DefaultName>Textbox31</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
-                        </BottomBorder>
-                        <BackgroundColor>#1e1f44</BackgroundColor>
+                        </Border>
+                        <BackgroundColor>#1f1e44</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -150,7 +144,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox29">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -159,6 +153,7 @@
                             <TextRun>
                               <Value>HARGA</Value>
                               <Style>
+                                <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -170,16 +165,13 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>Textbox29</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
-                        </BottomBorder>
-                        <BackgroundColor>#1e1f44</BackgroundColor>
+                        </Border>
+                        <BackgroundColor>#1f1e44</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -191,7 +183,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="Textbox27">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -200,6 +192,7 @@
                             <TextRun>
                               <Value>KETERANGAN</Value>
                               <Style>
+                                <FontFamily>Calibri</FontFamily>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
@@ -211,16 +204,13 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <rd:DefaultName>Textbox27</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <BottomBorder>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
-                        </BottomBorder>
-                        <BackgroundColor>#1e1f44</BackgroundColor>
+                        </Border>
+                        <BackgroundColor>#1f1e44</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -233,21 +223,21 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.67938cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox8">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=RowNumber(NOTHING)</Value>
+                              <Value>=RowNumber(nothing)</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#1e1f44</Color>
+                                <FontFamily>Calibri</FontFamily>
+                                <Color>#1f1e44</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -256,12 +246,12 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -273,7 +263,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nama_barang">
+                    <Textbox Name="nama_barang1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -282,8 +272,8 @@
                             <TextRun>
                               <Value>=Fields!nama_barang.Value</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#1e1f44</Color>
+                                <FontFamily>Calibri</FontFamily>
+                                <Color>#1f1e44</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -292,12 +282,12 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nama_barang</rd:DefaultName>
+                      <rd:DefaultName>nama_barang1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -309,7 +299,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="tgl">
+                    <Textbox Name="tgl1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -318,9 +308,8 @@
                             <TextRun>
                               <Value>=Fields!tgl.Value</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Format>dd MMMM yyyy</Format>
-                                <Color>#1e1f44</Color>
+                                <FontFamily>Calibri</FontFamily>
+                                <Color>#1f1e44</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -329,12 +318,12 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>tgl</rd:DefaultName>
+                      <rd:DefaultName>tgl1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -346,18 +335,17 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="total">
+                    <Textbox Name="harga">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Sum(Fields!total.Value)</Value>
+                              <Value>=Fields!harga.Value</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Format>'Rp'#,0.00;'Rp'#,0.00-</Format>
-                                <Color>#1e1f44</Color>
+                                <FontFamily>Calibri</FontFamily>
+                                <Color>#1f1e44</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -366,26 +354,24 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>total</rd:DefaultName>
+                      <rd:DefaultName>harga</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="keterangan">
+                    <Textbox Name="keterangan1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -394,22 +380,22 @@
                             <TextRun>
                               <Value>=Fields!keterangan.Value</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#1e1f44</Color>
+                                <FontFamily>Calibri</FontFamily>
+                                <Color>#1f1e44</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Left</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>keterangan</rd:DefaultName>
+                      <rd:DefaultName>keterangan1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Style>None</Style>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -438,14 +424,14 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Details1" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSetPengeluaran</DataSetName>
-        <Top>0.47625cm</Top>
+        <DataSetName>DataSetPengeluarana</DataSetName>
+        <Top>0.17639cm</Top>
         <Left>0.47308cm</Left>
-        <Height>1.35876cm</Height>
+        <Height>1.2cm</Height>
         <Width>20.39884cm</Width>
         <Style>
           <Border>
@@ -471,10 +457,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=NOW()</Value>
+                  <Value>=Fields!nama_outlet.Value</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
-                    <FontSize>11pt</FontSize>
+                    <FontSize>12pt</FontSize>
                     <Color>White</Color>
                   </Style>
                 </TextRun>
@@ -485,8 +471,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.99383cm</Top>
-          <Height>0.89104cm</Height>
+          <Top>0.99688cm</Top>
+          <Height>0.88799cm</Height>
           <Width>21.37326cm</Width>
           <Style>
             <Border>
@@ -561,7 +547,7 @@
           <Top>2.22001cm</Top>
           <Left>2.84079cm</Left>
           <Height>0.70583cm</Height>
-          <Width>4.32563cm</Width>
+          <Width>7.58001cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -639,6 +625,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0cm</Top>
           <Height>1.03146cm</Height>
           <Width>21.37326cm</Width>
           <Style>
@@ -717,7 +704,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetPengeluaran">
+    <DataSet Name="DataSetPengeluarana">
       <Query>
         <DataSourceName>laundryDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -739,13 +726,13 @@
           <DataField>tgl</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="total">
-          <DataField>total</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="keterangan">
           <DataField>keterangan</DataField>
           <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="harga">
+          <DataField>harga</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

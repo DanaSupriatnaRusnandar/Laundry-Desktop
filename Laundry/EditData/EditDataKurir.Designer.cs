@@ -79,7 +79,7 @@
             this.cmbOutle.Location = new System.Drawing.Point(116, 163);
             this.cmbOutle.Name = "cmbOutle";
             this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 28;
+            this.cmbOutle.TabIndex = 4;
             // 
             // label5
             // 
@@ -102,7 +102,7 @@
             this.btnEdit.Location = new System.Drawing.Point(295, 211);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 32);
-            this.btnEdit.TabIndex = 6;
+            this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit Data";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);

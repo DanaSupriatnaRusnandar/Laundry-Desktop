@@ -3886,9 +3886,9 @@ namespace Laundry {
             
             private global::System.Data.DataColumn columntgl;
             
-            private global::System.Data.DataColumn columntotal;
-            
             private global::System.Data.DataColumn columnketerangan;
+            
+            private global::System.Data.DataColumn columnharga;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3957,17 +3957,17 @@ namespace Laundry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn totalColumn {
+            public global::System.Data.DataColumn keteranganColumn {
                 get {
-                    return this.columntotal;
+                    return this.columnketerangan;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn keteranganColumn {
+            public global::System.Data.DataColumn hargaColumn {
                 get {
-                    return this.columnketerangan;
+                    return this.columnharga;
                 }
             }
             
@@ -4008,15 +4008,15 @@ namespace Laundry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DataTablePengeluaranRow AddDataTablePengeluaranRow(string nama_outlet, string nama_barang, System.DateTime tgl, int total, string keterangan) {
+            public DataTablePengeluaranRow AddDataTablePengeluaranRow(string nama_outlet, string nama_barang, System.DateTime tgl, string keterangan, int harga) {
                 DataTablePengeluaranRow rowDataTablePengeluaranRow = ((DataTablePengeluaranRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         nama_outlet,
                         nama_barang,
                         tgl,
-                        total,
-                        keterangan};
+                        keterangan,
+                        harga};
                 rowDataTablePengeluaranRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTablePengeluaranRow);
                 return rowDataTablePengeluaranRow;
@@ -4050,8 +4050,8 @@ namespace Laundry {
                 this.columnnama_outlet = base.Columns["nama_outlet"];
                 this.columnnama_barang = base.Columns["nama_barang"];
                 this.columntgl = base.Columns["tgl"];
-                this.columntotal = base.Columns["total"];
                 this.columnketerangan = base.Columns["keterangan"];
+                this.columnharga = base.Columns["harga"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4065,10 +4065,10 @@ namespace Laundry {
                 base.Columns.Add(this.columnnama_barang);
                 this.columntgl = new global::System.Data.DataColumn("tgl", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntgl);
-                this.columntotal = new global::System.Data.DataColumn("total", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntotal);
                 this.columnketerangan = new global::System.Data.DataColumn("keterangan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnketerangan);
+                this.columnharga = new global::System.Data.DataColumn("harga", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnharga);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -4081,9 +4081,9 @@ namespace Laundry {
                 this.columnnama_barang.AllowDBNull = false;
                 this.columnnama_barang.MaxLength = 100;
                 this.columntgl.AllowDBNull = false;
-                this.columntotal.AllowDBNull = false;
                 this.columnketerangan.AllowDBNull = false;
                 this.columnketerangan.MaxLength = 65535;
+                this.columnharga.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6425,23 +6425,23 @@ namespace Laundry {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int total {
-                get {
-                    return ((int)(this[this.tableDataTablePengeluaran.totalColumn]));
-                }
-                set {
-                    this[this.tableDataTablePengeluaran.totalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string keterangan {
                 get {
                     return ((string)(this[this.tableDataTablePengeluaran.keteranganColumn]));
                 }
                 set {
                     this[this.tableDataTablePengeluaran.keteranganColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int harga {
+                get {
+                    return ((int)(this[this.tableDataTablePengeluaran.hargaColumn]));
+                }
+                set {
+                    this[this.tableDataTablePengeluaran.hargaColumn] = value;
                 }
             }
             
@@ -12148,8 +12148,8 @@ namespace Laundry.laundryDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("nama_outlet", "nama_outlet");
             tableMapping.ColumnMappings.Add("nama_barang", "nama_barang");
             tableMapping.ColumnMappings.Add("tgl", "tgl");
-            tableMapping.ColumnMappings.Add("total", "total");
             tableMapping.ColumnMappings.Add("keterangan", "keterangan");
+            tableMapping.ColumnMappings.Add("harga", "harga");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -12166,10 +12166,10 @@ namespace Laundry.laundryDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        tb_pengeluaran.id, tb_outlet.nama_outlet, tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.total, tb_pengeluaran.keterangan
+            this._commandCollection[0].CommandText = @"SELECT        tb_pengeluaran.id, tb_outlet.nama_outlet, tb_pengeluaran.nama_barang, tb_pengeluaran.tgl, tb_pengeluaran.keterangan, tb_pengeluaran.harga
 FROM            tb_outlet INNER JOIN
                          tb_pengeluaran ON tb_outlet.id = tb_pengeluaran.id_outlet
-WHERE        (tb_pengeluaran.tgl BETWEEN @from AND @to)";
+WHERE        (tb_pengeluaran.tgl BETWEEN @from AND @to) AND (tb_outlet.nama_outlet = @outlet)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@from";
@@ -12187,16 +12187,31 @@ WHERE        (tb_pengeluaran.tgl BETWEEN @from AND @to)";
             param.SourceColumn = "tgl";
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@outlet";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "nama_outlet";
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(laundryDataSet.DataTablePengeluaranDataTable dataTable, System.DateTime from, System.DateTime to) {
+        public virtual int Fill(laundryDataSet.DataTablePengeluaranDataTable dataTable, System.DateTime from, System.DateTime to, string outlet) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
+            if ((outlet == null)) {
+                throw new global::System.ArgumentNullException("outlet");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(outlet));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -12208,10 +12223,16 @@ WHERE        (tb_pengeluaran.tgl BETWEEN @from AND @to)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual laundryDataSet.DataTablePengeluaranDataTable GetData(System.DateTime from, System.DateTime to) {
+        public virtual laundryDataSet.DataTablePengeluaranDataTable GetData(System.DateTime from, System.DateTime to, string outlet) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(from));
             this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(to));
+            if ((outlet == null)) {
+                throw new global::System.ArgumentNullException("outlet");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(outlet));
+            }
             laundryDataSet.DataTablePengeluaranDataTable dataTable = new laundryDataSet.DataTablePengeluaranDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

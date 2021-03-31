@@ -80,7 +80,7 @@
             this.btnAdd.Location = new System.Drawing.Point(294, 47);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Edit Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -91,7 +91,7 @@
             this.cmbOutle.Location = new System.Drawing.Point(115, 6);
             this.cmbOutle.Name = "cmbOutle";
             this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 28;
+            this.cmbOutle.TabIndex = 6;
             // 
             // label6
             // 
@@ -123,7 +123,7 @@
             this.txtTelepon.MaxLength = 13;
             this.txtTelepon.Name = "txtTelepon";
             this.txtTelepon.Size = new System.Drawing.Size(280, 20);
-            this.txtTelepon.TabIndex = 5;
+            this.txtTelepon.TabIndex = 7;
             this.txtTelepon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelepon_KeyPress);
             // 
             // txtalamat
@@ -252,7 +252,7 @@
             this.rbLaki.Location = new System.Drawing.Point(121, 8);
             this.rbLaki.Name = "rbLaki";
             this.rbLaki.Size = new System.Drawing.Size(74, 17);
-            this.rbLaki.TabIndex = 29;
+            this.rbLaki.TabIndex = 3;
             this.rbLaki.TabStop = true;
             this.rbLaki.Text = "Laki - Laki";
             this.rbLaki.UseVisualStyleBackColor = false;
@@ -264,7 +264,7 @@
             this.rbPerempuan.Location = new System.Drawing.Point(201, 8);
             this.rbPerempuan.Name = "rbPerempuan";
             this.rbPerempuan.Size = new System.Drawing.Size(79, 17);
-            this.rbPerempuan.TabIndex = 30;
+            this.rbPerempuan.TabIndex = 5;
             this.rbPerempuan.TabStop = true;
             this.rbPerempuan.Text = "Perempuan";
             this.rbPerempuan.UseVisualStyleBackColor = false;

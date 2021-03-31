@@ -79,7 +79,7 @@
             this.cmbOutle.Location = new System.Drawing.Point(116, 157);
             this.cmbOutle.Name = "cmbOutle";
             this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 28;
+            this.cmbOutle.TabIndex = 4;
             // 
             // label5
             // 
@@ -102,7 +102,7 @@
             this.btnAdd.Location = new System.Drawing.Point(295, 205);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);

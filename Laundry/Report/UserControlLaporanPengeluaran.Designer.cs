@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.dataTablePengeluaranBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.laundryDataSet1 = new Laundry.laundryDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCari = new FontAwesome.Sharp.IconButton();
@@ -40,24 +38,16 @@
             this.dateTimePickerDari = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtCari = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.laundryDataSet1 = new Laundry.laundryDataSet();
+            this.dataTablePengeluaranBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTablePengeluaranTableAdapter1 = new Laundry.laundryDataSetTableAdapters.DataTablePengeluaranTableAdapter();
-            this.txtCari = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTablePengeluaranBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePengeluaranBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataTablePengeluaranBindingSource
-            // 
-            this.dataTablePengeluaranBindingSource.DataMember = "DataTablePengeluaran";
-            this.dataTablePengeluaranBindingSource.DataSource = this.laundryDataSet1;
-            // 
-            // laundryDataSet1
-            // 
-            this.laundryDataSet1.DataSetName = "laundryDataSet";
-            this.laundryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -90,7 +80,7 @@
             this.btnCari.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCari.IconColor = System.Drawing.Color.Black;
             this.btnCari.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCari.Location = new System.Drawing.Point(506, 21);
+            this.btnCari.Location = new System.Drawing.Point(515, 20);
             this.btnCari.Name = "btnCari";
             this.btnCari.Size = new System.Drawing.Size(75, 23);
             this.btnCari.TabIndex = 4;
@@ -153,10 +143,18 @@
             this.panel4.Size = new System.Drawing.Size(876, 68);
             this.panel4.TabIndex = 7;
             // 
+            // txtCari
+            // 
+            this.txtCari.FormattingEnabled = true;
+            this.txtCari.Location = new System.Drawing.Point(352, 20);
+            this.txtCari.Name = "txtCari";
+            this.txtCari.Size = new System.Drawing.Size(157, 21);
+            this.txtCari.TabIndex = 8;
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetPengeluaran";
+            reportDataSource1.Name = "DataSetPengeluarana";
             reportDataSource1.Value = this.dataTablePengeluaranBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Laundry.Report.ReportPengeluaran.rdlc";
@@ -165,16 +163,19 @@
             this.reportViewer1.Size = new System.Drawing.Size(876, 388);
             this.reportViewer1.TabIndex = 8;
             // 
+            // laundryDataSet1
+            // 
+            this.laundryDataSet1.DataSetName = "laundryDataSet";
+            this.laundryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataTablePengeluaranBindingSource
+            // 
+            this.dataTablePengeluaranBindingSource.DataMember = "DataTablePengeluaran";
+            this.dataTablePengeluaranBindingSource.DataSource = this.laundryDataSet1;
+            // 
             // dataTablePengeluaranTableAdapter1
             // 
             this.dataTablePengeluaranTableAdapter1.ClearBeforeFill = true;
-            // 
-            // txtCari
-            // 
-            this.txtCari.Location = new System.Drawing.Point(340, 22);
-            this.txtCari.Name = "txtCari";
-            this.txtCari.Size = new System.Drawing.Size(160, 20);
-            this.txtCari.TabIndex = 0;
             // 
             // UserControlLaporanPengeluaran
             // 
@@ -187,12 +188,12 @@
             this.Name = "UserControlLaporanPengeluaran";
             this.Size = new System.Drawing.Size(876, 521);
             this.Load += new System.EventHandler(this.UserControlLaporanPengeluaran_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataTablePengeluaranBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTablePengeluaranBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,10 +210,10 @@
         private System.Windows.Forms.Panel panel4;
         private laundryDataSet laundryDataSet;
         private laundryDataSetTableAdapters.DataTablePengeluaranTableAdapter DataTablePengeluaranTableAdapter;
+        private System.Windows.Forms.ComboBox txtCari;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource dataTablePengeluaranBindingSource;
         private laundryDataSet laundryDataSet1;
         private laundryDataSetTableAdapters.DataTablePengeluaranTableAdapter dataTablePengeluaranTableAdapter1;
-        private System.Windows.Forms.TextBox txtCari;
     }
 }

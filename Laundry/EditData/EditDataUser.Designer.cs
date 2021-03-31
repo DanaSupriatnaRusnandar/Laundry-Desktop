@@ -86,7 +86,7 @@
             this.cmbOutlet.Location = new System.Drawing.Point(116, 205);
             this.cmbOutlet.Name = "cmbOutlet";
             this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutlet.TabIndex = 22;
+            this.cmbOutlet.TabIndex = 5;
             // 
             // label5
             // 
@@ -109,7 +109,7 @@
             this.btnEdit.Location = new System.Drawing.Point(295, 245);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 32);
-            this.btnEdit.TabIndex = 21;
+            this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit Data";
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -136,7 +136,7 @@
             this.cmbRole.Location = new System.Drawing.Point(116, 161);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(280, 21);
-            this.cmbRole.TabIndex = 5;
+            this.cmbRole.TabIndex = 4;
             // 
             // txtpassword
             // 

@@ -204,7 +204,7 @@ namespace Laundry
 
                 if (Db.ExecuteQuery($"ALTER TABLE tb_transaksi AUTO_INCREMENT = {next_id}"))
                 {
-                    Invoice = $"INV{DateTime.Now.ToString("yyMMddmmss")}";
+                    Invoice = $"INV{DateTime.Now.ToString("yyMMddHHmmss")}";
                     string now = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
                     var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
                     var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
@@ -336,19 +336,18 @@ namespace Laundry
 
         private void txtDiskon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Validasi.Angka(e);
             Validasi.Batas_Persen(txtDiskon, 100, e);
         }
 
         private void txtPajak_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Validasi.Angka(e);
             Validasi.Batas_Persen(txtPajak, 100, e);
         }
 
         private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validasi.Angka(e);
+           
         }
 
         private void cmbPelanggan_SelectedIndexChanged(object sender, EventArgs e)

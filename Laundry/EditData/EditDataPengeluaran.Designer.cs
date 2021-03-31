@@ -168,7 +168,7 @@
             this.cmbOutle.Location = new System.Drawing.Point(117, 7);
             this.cmbOutle.Name = "cmbOutle";
             this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 26;
+            this.cmbOutle.TabIndex = 4;
             // 
             // label2
             // 
@@ -198,7 +198,7 @@
             this.txtNominal.Location = new System.Drawing.Point(117, 7);
             this.txtNominal.Name = "txtNominal";
             this.txtNominal.Size = new System.Drawing.Size(280, 20);
-            this.txtNominal.TabIndex = 4;
+            this.txtNominal.TabIndex = 5;
             // 
             // label4
             // 
@@ -230,7 +230,7 @@
             this.txtKeterangan.Multiline = true;
             this.txtKeterangan.Name = "txtKeterangan";
             this.txtKeterangan.Size = new System.Drawing.Size(280, 67);
-            this.txtKeterangan.TabIndex = 5;
+            this.txtKeterangan.TabIndex = 6;
             // 
             // label5
             // 
@@ -253,7 +253,7 @@
             this.btnAdd.Location = new System.Drawing.Point(296, 96);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
