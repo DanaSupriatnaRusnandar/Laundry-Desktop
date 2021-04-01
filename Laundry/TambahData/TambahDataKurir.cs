@@ -62,7 +62,7 @@ namespace Laundry
 
         private void txtTlp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validasi.Angka(e);
+            validasi.Angka(sender, e);
         }
     }
 }

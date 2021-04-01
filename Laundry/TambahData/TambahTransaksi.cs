@@ -16,11 +16,14 @@ namespace Laundry
         Button btrf;
         string getIdTransaksi;
         string getIdPaket;
-        int Total;
+        int Total = 0;
         int petugas;
         int id_outlet;
         int id_user;
         string Invoice;
+        double diskon = 0;
+        double pajak = 0;
+        double biayaTambahan = 0;
         Validasi Validasi = new Validasi();
         public TambahTransaksi(Button btrefresh, string id)
         {
@@ -53,10 +56,12 @@ namespace Laundry
                 cmbKurir.SelectedIndex = -1;
                 
                 //ComboBox Outlet
-                cmbOutlet.DataSource = Db.Read("tb_outlet", "id, nama_outlet");
+                DataTable data = Db.Read("tb_outlet", "id, nama_outlet");
+                cmbOutlet.DataSource = data;
                 cmbOutlet.DisplayMember = "nama_outlet";
                 cmbOutlet.ValueMember = "id";
                 cmbOutlet.SelectedIndex = -1;
+               // cmbOutlet.AutoCompleteSource = dat;
             }
 
             if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
@@ -83,7 +88,6 @@ namespace Laundry
                 lblOutlet.Visible = false;
             }
 
-
             id_outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
             id_user = Session.getUserLogged().Rows[0].Field<int>("id");
 
@@ -106,11 +110,18 @@ namespace Laundry
         {
             int.TryParse(txtHarga.Text, out int harga);
             int.TryParse(txtQty.Text, out int qty);
-            double.TryParse(txtDiskon.Text, out double diskon);
+            // double.TryParse(txtDiskon.Text, out double diskon);
+           
+            if (txtDiskon.Text.Length > 0) diskon = Convert.ToDouble(txtDiskon.Text);
             int.TryParse(txtNominalDiskon.Text, out int NominalDiskon);
-            double.TryParse(txtNominalPajak.Text, out double pajak);
+            // double.TryParse(txtNominalPajak.Text, out double pajak);
+           
+            if (txtPajak.Text.Length > 0) pajak = Convert.ToDouble(txtPajak.Text);
             int.TryParse(txtNominalPajak.Text, out int NominalPajak);
-            int.TryParse(txtBiayaTambahan.Text, out int biayaTambahan);
+            //  int.TryParse(txtBiayaTambahan.Text, out int biayaTambahan);
+            
+            if (txtBiayaTambahan.Text.Length > 0) biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text);
+
             harga.ToString();
 
             //Total
@@ -188,8 +199,11 @@ namespace Laundry
         //Tambah Paket dataGridView
         private void btnTambahPaket_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add(cmbPaket.SelectedValue, cmbPaket.Text, txtQty.Text, txtTotal.Text);
-            ClearData();
+            if (txtQty.Text.Length > 0 && txtQty.Text != "0" && cmbPaket.SelectedIndex >= 0)
+            {
+                dataGridView1.Rows.Add(cmbPaket.SelectedValue, cmbPaket.Text, txtQty.Text, txtTotal.Text);
+                ClearData();
+            }
         }
 
         //Simpan Transaksi
@@ -206,20 +220,20 @@ namespace Laundry
                 {
                     Invoice = $"INV{DateTime.Now.ToString("yyMMddHHmmss")}";
                     string now = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
-                    var diskon = Convert.ToDouble(txtNominalDiskon.Text) / dataGridView1.Rows.Count;
-                    var biayaTambahan = Convert.ToDouble(txtBiayaTambahan.Text) / dataGridView1.Rows.Count;
-                    var pajak = Convert.ToDouble(txtNominalPajak.Text) / dataGridView1.Rows.Count;
+                    diskon = diskon / dataGridView1.Rows.Count;
+                    biayaTambahan = biayaTambahan / dataGridView1.Rows.Count;
+                    pajak = pajak / dataGridView1.Rows.Count;
                     var dibayar = cmbDibayar.SelectedItem;
                     var kurir = cmbKurir.SelectedValue;
                     string tanggalBayar = "Null";
-                    if (cmbDibayar.SelectedIndex == 0) tanggalBayar = $"'{now}'";
+                    if (cmbDibayar.SelectedIndex == 0) tanggalBayar = $"'{dtpTanggal.Value.ToString("yyyy / MM / dd HH: mm:ss")}'";
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         string id_paket = row.Cells["id"].Value.ToString();
                         string qty = row.Cells["qty"].Value.ToString();
                         double total = Convert.ToDouble(row.Cells["harga"].Value) + pajak + biayaTambahan - diskon;
                         if (Db.ExecuteQuery(
-                            $"CALL transaksi({next_id},{id_outlet},'{Invoice}', {cmbPelanggan.SelectedValue}, '{now}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
+                            $"CALL transaksi({next_id},{id_outlet},'{Invoice}', {cmbPelanggan.SelectedValue}, '{dtpTanggal.Value.ToString("yyyy / MM / dd HH: mm:ss")}', '{dtpBatasWaktu.Value.ToString("yyyy/MM/dd")}', {tanggalBayar}, '{biayaTambahan}', '{diskon}', '{pajak}', 'baru', '{dibayar}', {id_user},  {id_paket}, '{qty}', '{txtCatatan.Text}', '{total}', '{kurir}')"
                             ))
                         {
                             next_id++;
@@ -281,27 +295,27 @@ namespace Laundry
 
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
-            hitungTotalPembayaran();
+           // hitungTotalPembayaran();
         }
 
         private void txtDiskon_TextChanged(object sender, EventArgs e)
         {
-            hitungTotalPembayaran();
+           // hitungTotalPembayaran();
         }
 
         private void txtPajak_TextChanged(object sender, EventArgs e)
         {
-            hitungTotalPembayaran();
+           // hitungTotalPembayaran();
         }
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-            hitungTotalPembayaran();
+           // hitungTotalPembayaran();
         }
 
         private void txtBiayaTambahan_TextChanged(object sender, EventArgs e)
         {
-            hitungTotalPembayaran();
+           // hitungTotalPembayaran();
         }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -331,23 +345,35 @@ namespace Laundry
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Validasi.Angka(e);
+            if (Validasi.Angka(sender, e))
+            {
+                hitungTotalPembayaran();
+            }
         }
 
         private void txtDiskon_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Validasi.Batas_Persen(txtDiskon, 100, e);
+           
+            if (Validasi.Angka(sender, e) && Validasi.Batas_Persen(txtDiskon, 100, e))
+            {
+                hitungTotalPembayaran();
+            }
         }
 
         private void txtPajak_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Validasi.Batas_Persen(txtPajak, 100, e);
+            if (Validasi.Angka(sender, e) && Validasi.Batas_Persen(txtDiskon, 100, e))
+            {
+                hitungTotalPembayaran();
+            }
         }
 
         private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Validasi.Angka(e);
-           
+            if (Validasi.Angka(sender, e))
+            {
+                hitungTotalPembayaran();
+            }
         }
 
         private void cmbPelanggan_SelectedIndexChanged(object sender, EventArgs e)

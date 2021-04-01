@@ -162,6 +162,14 @@ namespace Laundry
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Keluar dari aplikasi?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
         //Button Menu
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -255,14 +263,6 @@ namespace Laundry
                 this.Hide();
                 Login lg = new Login();
                 lg.Show();
-            }
-        }
-
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Keluar dari aplikasi?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
             }
         }
     }

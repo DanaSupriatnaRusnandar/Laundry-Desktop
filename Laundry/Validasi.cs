@@ -65,10 +65,12 @@ namespace Laundry
             return e.Handled;
         }
 
-        public Boolean Angka (KeyPressEventArgs e)
+        public Boolean Angka(Object sender, KeyPressEventArgs e)
         {
+            var obj = (sender as TextBox);
             var regex = new Regex(@"[^0-9\b]");
-            if (regex.IsMatch(e.KeyChar.ToString()))
+            char c = e.KeyChar;
+            if (regex.IsMatch(e.KeyChar.ToString()) && obj.Text.Length <= 0)
             {
                 e.Handled = true;
                 MessageBox.Show($"Angka tidak valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -85,20 +87,8 @@ namespace Laundry
                 var regex = new Regex(@"[^0-9\b]");
                 if(TB.Text.Length <= 0)
                 {
-                    e.Handled = false;
-                }
-                else
-                {
-                    if (regex.IsMatch(e.KeyChar.ToString()))
-                    {
-                        e.Handled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Nilai maksimal hanya sampai {persen} ", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        TB.Text = "0";
-                    }
-                    e.Handled = true;
+                    MessageBox.Show($"Nilai maksimal hanya sampai {persen} ", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TB.Text = "0";
                 }
             }
             return e.Handled;

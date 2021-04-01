@@ -70,7 +70,7 @@ namespace Laundry
 
         private void txtNominal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validasi.Angka(e);
+            validasi.Angka(sender, e);
         }
     }
 }

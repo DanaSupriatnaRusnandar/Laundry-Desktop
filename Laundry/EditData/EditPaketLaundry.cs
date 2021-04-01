@@ -81,7 +81,7 @@ namespace Laundry
 
         private void txtHarga_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validasi.Angka(e);
+            validasi.Angka(sender,e);
         }
     }
 }

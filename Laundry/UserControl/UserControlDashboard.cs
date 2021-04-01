@@ -8,11 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Luthor.lib;
+using System.Windows.Media;
+using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
+using Color = System.Drawing.Color;
+using Point = System.Windows.Point;
 
 namespace Laundry
 {
     public partial class UserControlDashboard : UserControl
     {
+        DateTime lastDayOfMonth;
+        DateTime firstDayOfMonth;
+        int id_outlet;
         public UserControlDashboard()
         {
             InitializeComponent();
@@ -47,35 +56,21 @@ namespace Laundry
                 lblAmbil.Text = Db.Read($"SELECT COUNT(*)AS total FROM tb_transaksi WHERE status = 'diambil' AND tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")}").Rows[0].Field<Int64>("total").ToString();
             }
 
-            dataGridViewTransaksi.BorderStyle = BorderStyle.None;
-            dataGridViewTransaksi.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridViewTransaksi.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewTransaksi.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewTransaksi.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridViewTransaksi.BackgroundColor = Color.White;
+            firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            lastDayOfMonth = firstDayOfMonth.AddMonths(1);
+            //.AddDays(-1)
 
-            dataGridViewTransaksi.EnableHeadersVisualStyles = false;
-            dataGridViewTransaksi.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridViewTransaksi.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            id_outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
 
             Tampilkan();
         }
 
         public void Tampilkan()
         {
-            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
-            {
-                DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id JOIN tb_detail_transaksi ON tb_detail_transaksi.id_transaksi = tb_transaksi.id JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id ORDER BY tb_transaksi.id DESC LIMIT 9");
-                dataGridViewTransaksi.AutoGenerateColumns = false;
-                dataGridViewTransaksi.DataSource = data;
-            }
-            else if (Session.getUserLogged().Rows[0].Field<string>("role") != "admin")
-            {
-                DataTable data = Db.Read($"SELECT * FROM tb_transaksi join tb_outlet on tb_transaksi.id_outlet = tb_outlet.id JOIN tb_member ON tb_transaksi.id_member = tb_member.id JOIN tb_kurir ON tb_transaksi.id_kurir = tb_kurir.id JOIN tb_user ON tb_transaksi.id_user = tb_user.id JOIN tb_detail_transaksi ON tb_detail_transaksi.id_transaksi = tb_transaksi.id JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id WHERE tb_transaksi.id_outlet = {Session.getUserLogged().Rows[0].Field<int>("id_outlet")} ORDER BY tb_transaksi.id DESC LIMIT 9");
-                dataGridViewTransaksi.AutoGenerateColumns = false;
-                dataGridViewTransaksi.DataSource = data;
-            }
+            DataTable data = Db.Read($"SELECT DATE(tb_transaksi.tgl_bayar) AS tgl_bayar, SUM(tb_transaksi.total_pembayaran) AS total_tagihan FROM tb_transaksi WHERE id_outlet = '{id_outlet}' AND dibayar = 'dibayar' AND tgl_bayar BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_transaksi.tgl_bayar)");
+            DataTable data2 = Db.Read($"SELECT DATE(tb_pengeluaran.tgl) AS tanggal, SUM(tb_pengeluaran.harga) AS jumlah FROM tb_pengeluaran WHERE id_outlet = '{id_outlet}' AND tb_pengeluaran.tgl BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_pengeluaran.tgl)");
+            fillChart(data, data2);
+            MessageBox.Show(data.Rows.Count.ToString());
         }
 
         private void timer_Tick_1(object sender, EventArgs e)
@@ -143,6 +138,124 @@ namespace Laundry
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        //Live Chart
+        private void fillChart(DataTable source, DataTable source2)
+        {
+            chartTransaksi.Series.Clear();
+            chartTransaksi.AxisX.Clear();
+            chartTransaksi.AxisY.Clear();
+            if (source.Rows.Count > 1) setChart(chartTransaksi, source, source2);
+        }
+
+        private void setChart(LiveCharts.WinForms.CartesianChart chart, DataTable data, DataTable data2)
+        {
+            var gradientBrush = new LinearGradientBrush
+            {
+                StartPoint = new System.Windows.Point(0, 0),
+                EndPoint = new Point(0, 1)
+            };
+            gradientBrush.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(7, 173, 10), 0));
+            gradientBrush.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
+
+            var gradientBrush2 = new LinearGradientBrush
+            {
+                StartPoint = new System.Windows.Point(0, 0),
+                EndPoint = new Point(0, 1)
+            };
+            gradientBrush2.GradientStops.Add(new GradientStop(System.Windows.Media.Color.FromRgb(241, 48, 48), 0));
+            gradientBrush2.GradientStops.Add(new GradientStop(Colors.Transparent, 1));
+
+            chart.Series.Add(new LineSeries
+            {
+                Title = "Pemasukan",
+                Values = GetData(data),
+                Fill = gradientBrush,
+                StrokeThickness = 1,
+                PointGeometry = null
+            });
+
+            chart.Series.Add(new LineSeries
+            {
+                Title = "Pengeluaran",
+                Values = GetData2(data2),
+                Fill = gradientBrush2,
+                StrokeThickness = 1,
+                PointGeometry = null
+            });
+
+
+            chart.Zoom = ZoomingOptions.X;
+
+            chart.AxisX.Add(new Axis
+            {
+                LabelFormatter = val => new System.DateTime((long)val).ToString("dd MMMM yyyy")
+            });
+
+            chart.AxisY.Add(new Axis
+            {
+                LabelFormatter = val => val.ToString("C")
+            });
+        }
+
+        private ChartValues<DateTimePoint> GetData(DataTable data)
+        {
+            var values = new ChartValues<DateTimePoint>();
+            List<DateTime> tgl = new List<DateTime>();
+            List<decimal> jml = new List<decimal>();
+            foreach (DataRow row in data.Rows)
+            {
+                tgl.Add(row.Field<DateTime>("tgl_bayar"));
+                jml.Add(row.Field<decimal>("total_tagihan"));
+            }
+
+            int i = 0;
+            int totalDays = Convert.ToInt32((firstDayOfMonth.Date - lastDayOfMonth.Date).TotalDays * -1);
+            for (int t = 0; t <= totalDays; t++)
+            {
+                DateTime tanggal = firstDayOfMonth.AddDays(t);
+                if (tgl.Contains(tanggal))
+                {
+                    decimal jumlah = jml[i];
+                    values.Add(new DateTimePoint(tanggal.ToLocalTime(), Convert.ToDouble(jumlah)));
+                    i++;
+                }
+                else
+                    values.Add(new DateTimePoint(firstDayOfMonth.AddDays(t).ToLocalTime(), 0));
+            }
+
+
+            return values;
+        }
+
+        private ChartValues<DateTimePoint> GetData2(DataTable data)
+        {
+            var values = new ChartValues<DateTimePoint>();
+            List<DateTime> tgl = new List<DateTime>();
+            List<decimal> jml = new List<decimal>();
+            foreach (DataRow row in data.Rows)
+            {
+                tgl.Add(row.Field<DateTime>("tanggal"));
+                jml.Add(row.Field<decimal>("jumlah"));
+            }
+
+            int i = 0;
+            int totalDays = Convert.ToInt32((firstDayOfMonth.Date - lastDayOfMonth.Date).TotalDays * -1);
+            for (int t = 0; t <= totalDays; t++)
+            {
+                DateTime tanggal = firstDayOfMonth.AddDays(t);
+                if (tgl.Contains(tanggal))
+                {
+                    decimal jumlah = jml[i];
+                    values.Add(new DateTimePoint(tanggal.ToLocalTime(), Convert.ToDouble(jumlah)));
+                    i++;
+                }
+                else
+                    values.Add(new DateTimePoint(firstDayOfMonth.AddDays(t).ToLocalTime(), 0));
+            }
+
+            return values;
         }
     }
 }
