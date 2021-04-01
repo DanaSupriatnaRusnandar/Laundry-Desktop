@@ -58,7 +58,6 @@ namespace Laundry
 
             firstDayOfMonth = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             lastDayOfMonth = firstDayOfMonth.AddMonths(1);
-            //.AddDays(-1)
 
             id_outlet = Session.getUserLogged().Rows[0].Field<int>("id_outlet");
 
@@ -67,10 +66,19 @@ namespace Laundry
 
         public void Tampilkan()
         {
-            DataTable data = Db.Read($"SELECT DATE(tb_transaksi.tgl_bayar) AS tgl_bayar, SUM(tb_transaksi.total_pembayaran) AS total_tagihan FROM tb_transaksi WHERE id_outlet = '{id_outlet}' AND dibayar = 'dibayar' AND tgl_bayar BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_transaksi.tgl_bayar)");
-            DataTable data2 = Db.Read($"SELECT DATE(tb_pengeluaran.tgl) AS tanggal, SUM(tb_pengeluaran.harga) AS jumlah FROM tb_pengeluaran WHERE id_outlet = '{id_outlet}' AND tb_pengeluaran.tgl BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_pengeluaran.tgl)");
-            fillChart(data, data2);
-            MessageBox.Show(data.Rows.Count.ToString());
+            if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
+            {
+                DataTable data = Db.Read($"SELECT DATE(tb_transaksi.tgl_bayar) AS tgl_bayar, SUM(tb_transaksi.total_pembayaran) AS total_tagihan FROM tb_transaksi WHERE dibayar = 'dibayar' AND tgl_bayar BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_transaksi.tgl_bayar)");
+                DataTable data2 = Db.Read($"SELECT DATE(tb_pengeluaran.tgl) AS tanggal, SUM(tb_pengeluaran.harga) AS jumlah FROM tb_pengeluaran WHERE tb_pengeluaran.tgl BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_pengeluaran.tgl)");
+                fillChart(data, data2);
+            }
+            else if (Session.getUserLogged().Rows[0].Field<string>("role") == "admin")
+            {
+                DataTable data = Db.Read($"SELECT DATE(tb_transaksi.tgl_bayar) AS tgl_bayar, SUM(tb_transaksi.total_pembayaran) AS total_tagihan FROM tb_transaksi WHERE id_outlet = '{id_outlet}' AND dibayar = 'dibayar' AND tgl_bayar BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_transaksi.tgl_bayar)");
+                DataTable data2 = Db.Read($"SELECT DATE(tb_pengeluaran.tgl) AS tanggal, SUM(tb_pengeluaran.harga) AS jumlah FROM tb_pengeluaran WHERE id_outlet = '{id_outlet}' AND tb_pengeluaran.tgl BETWEEN '{firstDayOfMonth.ToString("yyyy/MM/dd")}' AND '{lastDayOfMonth.ToString("yyyy/MM/dd")}' GROUP BY DATE(tb_pengeluaran.tgl)");
+                fillChart(data, data2);
+            }
+            
         }
 
         private void timer_Tick_1(object sender, EventArgs e)
