@@ -277,7 +277,7 @@
             this.panelOutlet.Location = new System.Drawing.Point(3, 123);
             this.panelOutlet.Name = "panelOutlet";
             this.panelOutlet.Size = new System.Drawing.Size(416, 34);
-            this.panelOutlet.TabIndex = 7;
+            this.panelOutlet.TabIndex = 20;
             // 
             // panel5
             // 

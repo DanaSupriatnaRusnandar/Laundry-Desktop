@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.cmbOutle = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNamaBarang = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,13 +78,33 @@
             this.panel2.Size = new System.Drawing.Size(416, 34);
             this.panel2.TabIndex = 5;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.label6.Location = new System.Drawing.Point(12, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 18);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Nama Barang";
+            // 
+            // txtNamaBarang
+            // 
+            this.txtNamaBarang.BackColor = System.Drawing.Color.White;
+            this.txtNamaBarang.ForeColor = System.Drawing.Color.Black;
+            this.txtNamaBarang.Location = new System.Drawing.Point(117, 7);
+            this.txtNamaBarang.Name = "txtNamaBarang";
+            this.txtNamaBarang.Size = new System.Drawing.Size(280, 20);
+            this.txtNamaBarang.TabIndex = 2;
+            // 
             // cmbOutle
             // 
             this.cmbOutle.FormattingEnabled = true;
             this.cmbOutle.Location = new System.Drawing.Point(117, 7);
             this.cmbOutle.Name = "cmbOutle";
             this.cmbOutle.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutle.TabIndex = 26;
+            this.cmbOutle.TabIndex = 4;
             // 
             // label2
             // 
@@ -97,26 +117,6 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Outlet";
             // 
-            // txtNamaBarang
-            // 
-            this.txtNamaBarang.BackColor = System.Drawing.Color.White;
-            this.txtNamaBarang.ForeColor = System.Drawing.Color.Black;
-            this.txtNamaBarang.Location = new System.Drawing.Point(117, 7);
-            this.txtNamaBarang.Name = "txtNamaBarang";
-            this.txtNamaBarang.Size = new System.Drawing.Size(280, 20);
-            this.txtNamaBarang.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(12, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 18);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Nama Barang";
-            // 
             // txtKeterangan
             // 
             this.txtKeterangan.BackColor = System.Drawing.Color.White;
@@ -125,7 +125,7 @@
             this.txtKeterangan.Multiline = true;
             this.txtKeterangan.Name = "txtKeterangan";
             this.txtKeterangan.Size = new System.Drawing.Size(280, 67);
-            this.txtKeterangan.TabIndex = 5;
+            this.txtKeterangan.TabIndex = 6;
             // 
             // dateTimePicker
             // 
@@ -155,7 +155,7 @@
             this.btnAdd.Location = new System.Drawing.Point(296, 96);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -167,7 +167,7 @@
             this.txtNominal.Location = new System.Drawing.Point(117, 7);
             this.txtNominal.Name = "txtNominal";
             this.txtNominal.Size = new System.Drawing.Size(280, 20);
-            this.txtNominal.TabIndex = 4;
+            this.txtNominal.TabIndex = 5;
             this.txtNominal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNominal_KeyPress);
             // 
             // label4

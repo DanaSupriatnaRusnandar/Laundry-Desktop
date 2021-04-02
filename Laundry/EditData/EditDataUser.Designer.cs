@@ -33,7 +33,6 @@
             this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.txtusername = new System.Windows.Forms.TextBox();
@@ -65,7 +64,6 @@
             this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnEdit);
-            this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.txtpassword);
             this.panel2.Controls.Add(this.txtusername);
@@ -114,17 +112,6 @@
             this.btnEdit.UseVisualStyleBackColor = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // lblIsUsernameValid
-            // 
-            this.lblIsUsernameValid.AutoSize = true;
-            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
-            this.lblIsUsernameValid.Location = new System.Drawing.Point(238, 59);
-            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
-            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
-            this.lblIsUsernameValid.TabIndex = 20;
-            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
-            this.lblIsUsernameValid.Visible = false;
-            // 
             // cmbRole
             // 
             this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
@@ -155,7 +142,6 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(280, 20);
             this.txtusername.TabIndex = 2;
-            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
             this.txtusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusername_KeyPress);
             // 
             // txtnama
@@ -256,7 +242,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblIsUsernameValid;
         private System.Windows.Forms.ComboBox cmbOutlet;
         private System.Windows.Forms.Label label5;
     }

@@ -24,8 +24,6 @@ namespace Laundry
 
         private void EditTransaksi_Load(object sender, EventArgs e)
         {
-            
-
             Dibayar();
             Status();
 
@@ -76,8 +74,6 @@ namespace Laundry
                 {
                     MessageBox.Show($"ERROR : {Error.error_msg}");
                 }
-
-
             }
         }
     }

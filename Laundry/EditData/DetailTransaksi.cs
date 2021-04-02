@@ -144,5 +144,10 @@ namespace Laundry
                 return base.SetValue(rowIndex, rowIndex + 1);
             }
         }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            new NotaTransaksi(invoice).ShowDialog();
+        }
     }
 }

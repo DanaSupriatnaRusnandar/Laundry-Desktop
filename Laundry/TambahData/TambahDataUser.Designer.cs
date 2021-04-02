@@ -33,7 +33,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblIsUsernameValid = new System.Windows.Forms.Label();
             this.cmbOutlet = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -74,7 +73,6 @@
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.cmbRole);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.lblIsUsernameValid);
             this.panel2.Controls.Add(this.cmbOutlet);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnAdd);
@@ -108,17 +106,6 @@
             this.label6.Size = new System.Drawing.Size(80, 18);
             this.label6.TabIndex = 22;
             this.label6.Text = "Hak Akses";
-            // 
-            // lblIsUsernameValid
-            // 
-            this.lblIsUsernameValid.AutoSize = true;
-            this.lblIsUsernameValid.ForeColor = System.Drawing.Color.Red;
-            this.lblIsUsernameValid.Location = new System.Drawing.Point(238, 59);
-            this.lblIsUsernameValid.Name = "lblIsUsernameValid";
-            this.lblIsUsernameValid.Size = new System.Drawing.Size(158, 13);
-            this.lblIsUsernameValid.TabIndex = 20;
-            this.lblIsUsernameValid.Text = "Username tidak boleh ada spasi";
-            this.lblIsUsernameValid.Visible = false;
             // 
             // cmbOutlet
             // 
@@ -172,7 +159,6 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(280, 20);
             this.txtusername.TabIndex = 2;
-            this.txtusername.TextChanged += new System.EventHandler(this.txtusername_TextChanged);
             this.txtusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusername_KeyPress);
             // 
             // txtnama
@@ -183,6 +169,7 @@
             this.txtnama.Name = "txtnama";
             this.txtnama.Size = new System.Drawing.Size(280, 20);
             this.txtnama.TabIndex = 1;
+            this.txtnama.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnama_KeyPress);
             // 
             // label4
             // 
@@ -253,7 +240,6 @@
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.ComboBox cmbOutlet;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblIsUsernameValid;
         private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.Label label6;
     }

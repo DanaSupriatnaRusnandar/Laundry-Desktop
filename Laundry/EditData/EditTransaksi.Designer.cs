@@ -122,7 +122,7 @@
             this.cmbStatus.Location = new System.Drawing.Point(138, 31);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(120, 23);
-            this.cmbStatus.TabIndex = 62;
+            this.cmbStatus.TabIndex = 2;
             // 
             // btnSimpan
             // 
@@ -134,7 +134,7 @@
             this.btnSimpan.Location = new System.Drawing.Point(70, 77);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(120, 32);
-            this.btnSimpan.TabIndex = 27;
+            this.btnSimpan.TabIndex = 3;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
@@ -147,7 +147,7 @@
             this.cmbDibayar.Location = new System.Drawing.Point(10, 31);
             this.cmbDibayar.Name = "cmbDibayar";
             this.cmbDibayar.Size = new System.Drawing.Size(120, 23);
-            this.cmbDibayar.TabIndex = 23;
+            this.cmbDibayar.TabIndex = 1;
             // 
             // EditTransaksi
             // 

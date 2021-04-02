@@ -90,7 +90,7 @@
             this.btnAdd.Location = new System.Drawing.Point(294, 48);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 32);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Tambah Data";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -114,7 +114,7 @@
             this.txtTlp.MaxLength = 13;
             this.txtTlp.Name = "txtTlp";
             this.txtTlp.Size = new System.Drawing.Size(280, 20);
-            this.txtTlp.TabIndex = 5;
+            this.txtTlp.TabIndex = 6;
             this.txtTlp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTlp_KeyPress);
             // 
             // label7
@@ -135,7 +135,7 @@
             this.rbLaki.Location = new System.Drawing.Point(121, 8);
             this.rbLaki.Name = "rbLaki";
             this.rbLaki.Size = new System.Drawing.Size(74, 17);
-            this.rbLaki.TabIndex = 29;
+            this.rbLaki.TabIndex = 3;
             this.rbLaki.TabStop = true;
             this.rbLaki.Text = "Laki - Laki";
             this.rbLaki.UseVisualStyleBackColor = false;
@@ -147,7 +147,7 @@
             this.rbPerempuan.Location = new System.Drawing.Point(201, 8);
             this.rbPerempuan.Name = "rbPerempuan";
             this.rbPerempuan.Size = new System.Drawing.Size(79, 17);
-            this.rbPerempuan.TabIndex = 30;
+            this.rbPerempuan.TabIndex = 4;
             this.rbPerempuan.TabStop = true;
             this.rbPerempuan.Text = "Perempuan";
             this.rbPerempuan.UseVisualStyleBackColor = false;
@@ -277,7 +277,7 @@
             this.cmbOutlet.Location = new System.Drawing.Point(115, 6);
             this.cmbOutlet.Name = "cmbOutlet";
             this.cmbOutlet.Size = new System.Drawing.Size(280, 21);
-            this.cmbOutlet.TabIndex = 28;
+            this.cmbOutlet.TabIndex = 5;
             // 
             // label11
             // 

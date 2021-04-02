@@ -46,7 +46,7 @@ namespace Laundry
             return false;
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (isfilled())
             {

@@ -69,27 +69,26 @@ namespace Laundry
         {
             var obj = (sender as TextBox);
             var regex = new Regex(@"[^0-9\b]");
-            char c = e.KeyChar;
             if (regex.IsMatch(e.KeyChar.ToString()) && obj.Text.Length <= 0)
             {
                 e.Handled = true;
-                MessageBox.Show($"Angka tidak valid.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Hanya bisa diisi angka", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return e.Handled;
         }
 
         public Boolean Batas_Persen(TextBox TB, double persen, KeyPressEventArgs e)
         {
-            
             char c = e.KeyChar;
             if ((!char.IsDigit(c) || Convert.ToDouble(TB.Text + c) > persen || TB.Text == "0") && c != '\b')
             {
-                var regex = new Regex(@"[^0-9\b]");
-                if(TB.Text.Length <= 0)
+                /*if(TB.Text.Length <= 0)
                 {
-                    MessageBox.Show($"Nilai maksimal hanya sampai {persen} ", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    TB.Text = "0";
-                }
+                    
+                }*/
+                e.Handled = true;
+                MessageBox.Show($"Nilai maksimal hanya sampai {persen} ", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TB.Text = "0";
             }
             return e.Handled;
        }

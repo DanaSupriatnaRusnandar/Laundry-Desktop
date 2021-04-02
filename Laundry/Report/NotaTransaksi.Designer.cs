@@ -30,18 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.DataTableStrukBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.laundryDataSet = new Laundry.laundryDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.laundryDataSet = new Laundry.laundryDataSet();
-            this.DataTableStrukBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataTableStrukTableAdapter = new Laundry.laundryDataSetTableAdapters.DataTableStrukTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableStrukBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableStrukBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTableStrukBindingSource
+            // 
+            this.DataTableStrukBindingSource.DataMember = "DataTableStruk";
+            this.DataTableStrukBindingSource.DataSource = this.laundryDataSet;
+            // 
+            // laundryDataSet
+            // 
+            this.laundryDataSet.DataSetName = "laundryDataSet";
+            this.laundryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -50,8 +60,20 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 562);
+            this.panel1.Size = new System.Drawing.Size(445, 562);
             this.panel1.TabIndex = 0;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetStruk";
+            reportDataSource1.Value = this.DataTableStrukBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Laundry.Report.ReportNota.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 54);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(445, 508);
+            this.reportViewer1.TabIndex = 3;
             // 
             // panel2
             // 
@@ -60,7 +82,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(455, 54);
+            this.panel2.Size = new System.Drawing.Size(445, 54);
             this.panel2.TabIndex = 2;
             // 
             // label1
@@ -75,28 +97,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "NOTA TRANSAKSI";
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSetStruk";
-            reportDataSource1.Value = this.DataTableStrukBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Laundry.Report.ReportNota.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 54);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(455, 508);
-            this.reportViewer1.TabIndex = 3;
-            // 
-            // laundryDataSet
-            // 
-            this.laundryDataSet.DataSetName = "laundryDataSet";
-            this.laundryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DataTableStrukBindingSource
-            // 
-            this.DataTableStrukBindingSource.DataMember = "DataTableStruk";
-            this.DataTableStrukBindingSource.DataSource = this.laundryDataSet;
-            // 
             // DataTableStrukTableAdapter
             // 
             this.DataTableStrukTableAdapter.ClearBeforeFill = true;
@@ -105,17 +105,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 562);
+            this.ClientSize = new System.Drawing.Size(445, 562);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NotaTransaksi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.NotaTransaksi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableStrukBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laundryDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableStrukBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

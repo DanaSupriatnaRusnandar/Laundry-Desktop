@@ -77,15 +77,14 @@ namespace Laundry
             }
         }
 
-        private void txtusername_TextChanged(object sender, EventArgs e)
-        {
-            if (isUsernameValid()) lblIsUsernameValid.Visible = false;
-            else lblIsUsernameValid.Visible = true;
-        }
-
         private void txtusername_KeyPress(object sender, KeyPressEventArgs e)
         {
             validasi.Huruf_Kecil(e);
+        }
+
+        private void txtnama_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validasi.Huruf_Angka_Simbol_Spasi(e);
         }
     }
 }

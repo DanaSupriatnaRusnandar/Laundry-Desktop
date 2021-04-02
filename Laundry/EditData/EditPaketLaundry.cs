@@ -29,7 +29,6 @@ namespace Laundry
             getIdjenis = id_jenis;
             nama_jenis = jenis;
             txtHarga.Text = harga;
-
         }
 
         private void EditPaketLaundry_Load(object sender, EventArgs e)

@@ -71,14 +71,10 @@ namespace Laundry
             if (txtnama.Text.Length > 0 && txtusername.Text.Length > 0 && txtpassword.Text.Length > 0 && cmbOutlet.SelectedIndex >= 0 && cmbRole.SelectedIndex >= 0) return true;
             return false;
         }
-        private bool isUsernameValid()
-        {
-            if (txtusername.Text.Contains(" ")) return false;
-            return true;
-        }
+
         private void btnEdit_Click(object sender, EventArgs e)
         { 
-            if (isfilled() && isUsernameValid())
+            if (isfilled())
             {
                 var nama = txtnama.Text;
                 var username = txtusername.Text;
@@ -96,12 +92,6 @@ namespace Laundry
                     MessageBox.Show($"Gagal mengubah data user. \n\n ERROR MESSAGE: \n {Error.error_msg}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void txtusername_TextChanged(object sender, EventArgs e)
-        {
-            if (isUsernameValid()) lblIsUsernameValid.Visible = false;
-            else lblIsUsernameValid.Visible = true;
         }
 
         private void txtusername_KeyPress(object sender, KeyPressEventArgs e)

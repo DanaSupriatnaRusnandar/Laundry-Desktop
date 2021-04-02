@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Luthor.lib;
-using Microsoft.Reporting.WinForms;
+
 namespace Laundry
 {
     public partial class TambahTransaksi : Form
@@ -24,6 +24,8 @@ namespace Laundry
         double diskon = 0;
         double pajak = 0;
         double biayaTambahan = 0;
+        int index;
+        int q;
         Validasi Validasi = new Validasi();
         public TambahTransaksi(Button btrefresh, string id)
         {
@@ -201,9 +203,26 @@ namespace Laundry
         {
             if (txtQty.Text.Length > 0 && txtQty.Text != "0" && cmbPaket.SelectedIndex >= 0)
             {
-                dataGridView1.Rows.Add(cmbPaket.SelectedValue, cmbPaket.Text, txtQty.Text, txtTotal.Text);
+               if(isSame())
+                {
+                    dataGridView1.Rows.Add(cmbPaket.SelectedValue, cmbPaket.Text, txtQty.Text, txtTotal.Text);
+                }
+               else
+                {
+                    dataGridView1.Rows[index].Cells["qty"].Value = q + Convert.ToInt32(txtQty.Text);
+                }
                 ClearData();
             }
+        }
+        private bool isSame()
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                index = row.Index;
+                q = Convert.ToInt32(row.Cells["colQty"].Value);
+                if (row.Cells["colIdPaket"].Value.ToString() == cmbPaket.SelectedValue.ToString()) return true;
+            }
+            return false;
         }
 
         //Simpan Transaksi
@@ -226,7 +245,7 @@ namespace Laundry
                     var dibayar = cmbDibayar.SelectedItem;
                     var kurir = cmbKurir.SelectedValue;
                     string tanggalBayar = "Null";
-                    if (cmbDibayar.SelectedIndex == 0) tanggalBayar = $"'{dtpTanggal.Value.ToString("yyyy / MM / dd HH: mm:ss")}'";
+                    if (cmbDibayar.SelectedIndex == 0) tanggalBayar = $"'{dtpTanggal.Value.ToString("yyyy/ MM/dd HH:mm:ss")}'";
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         string id_paket = row.Cells["id"].Value.ToString();
@@ -253,6 +272,7 @@ namespace Laundry
         private void btnSimpan_Click(object sender, EventArgs e)
         {
             simpanData();
+            btrf.PerformClick();
         }
 
         private void btnCetak_Click(object sender, EventArgs e)
@@ -295,38 +315,56 @@ namespace Laundry
 
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
-           // hitungTotalPembayaran();
-        }
-
-        private void txtDiskon_TextChanged(object sender, EventArgs e)
-        {
-           // hitungTotalPembayaran();
-        }
-
-        private void txtPajak_TextChanged(object sender, EventArgs e)
-        {
-           // hitungTotalPembayaran();
+            hitungTotalPembayaran();
         }
 
         private void txtQty_TextChanged(object sender, EventArgs e)
         {
-           // hitungTotalPembayaran();
+            hitungTotalPembayaran();
+        }
+
+        private void txtDiskon_TextChanged(object sender, EventArgs e)
+        {
+            hitungTotalPembayaran();
+            if(txtDiskon.Text.Length <= 0)
+            {
+                txtNominalDiskon.Text = "0";
+            }
+        }
+
+        private void txtPajak_TextChanged(object sender, EventArgs e)
+        {
+            hitungTotalPembayaran();
+            {
+                txtNominalPajak.Text = "0";
+            }
         }
 
         private void txtBiayaTambahan_TextChanged(object sender, EventArgs e)
         {
-           // hitungTotalPembayaran();
+            hitungTotalPembayaran();
         }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            Total = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            if (dataGridView1.Rows.Count > 0)
             {
-                Total = Total + Convert.ToInt32(dataGridView1.Rows[i].Cells["harga"].Value);
+                Total = 0;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    Total = Total + Convert.ToInt32(dataGridView1.Rows[i].Cells["harga"].Value);
+                }
+                cmbOutlet.Enabled = false;
+                hitungTotalPembayaran();
             }
+        }
 
-            hitungTotalPembayaran();
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dataGridView1.Rows.Count <= 0)
+            {
+                cmbOutlet.Enabled = true;
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -345,35 +383,24 @@ namespace Laundry
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Validasi.Angka(sender, e))
-            {
-                hitungTotalPembayaran();
-            }
+            Validasi.Angka(sender, e);
         }
 
         private void txtDiskon_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-            if (Validasi.Angka(sender, e) && Validasi.Batas_Persen(txtDiskon, 100, e))
-            {
-                hitungTotalPembayaran();
-            }
+            Validasi.Batas_Persen(txtDiskon, 100, e);
+            Validasi.Angka(sender, e);
         }
 
         private void txtPajak_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Validasi.Angka(sender, e) && Validasi.Batas_Persen(txtDiskon, 100, e))
-            {
-                hitungTotalPembayaran();
-            }
+            Validasi.Batas_Persen(txtDiskon, 100, e);
+            Validasi.Angka(sender, e);
         }
 
         private void txtBiayaTambahan_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Validasi.Angka(sender, e))
-            {
-                hitungTotalPembayaran();
-            }
+            Validasi.Angka(sender, e);
         }
 
         private void cmbPelanggan_SelectedIndexChanged(object sender, EventArgs e)
