@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBA158F4-380F-4967-8C90-CC854EFFC9FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Laundry</RootNamespace>
+    <AssemblyName>Laundry</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>8.0</LangVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Luthor.lib">
+      <HintPath>..\..\Tools\Luthor.lib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Reporting.WinForms.v11.1.0.0.0\lib\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SplashScreen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SplashScreen.Winforms.1.0.0\lib\SplashScreen.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\DetailTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\DetailTransaksi.Designer.cs">
+      <DependentUpon>DetailTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditDataOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditDataOutlet.Designer.cs">
+      <DependentUpon>EditDataOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditDataPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditDataPelanggan.Designer.cs">
+      <DependentUpon>EditDataPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditDataPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditDataPengeluaran.Designer.cs">
+      <DependentUpon>EditDataPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditDataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditDataUser.Designer.cs">
+      <DependentUpon>EditDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditDataKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditDataKurir.Designer.cs">
+      <DependentUpon>EditDataKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditJenis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditJenis.Designer.cs">
+      <DependentUpon>EditJenis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditPaketLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditPaketLaundry.Designer.cs">
+      <DependentUpon>EditPaketLaundry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditData\EditTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditData\EditTransaksi.Designer.cs">
+      <DependentUpon>EditTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="laundryDataSet.cs">
+      <DependentUpon>laundryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="laundryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>laundryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\NotaTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\NotaTransaksi.Designer.cs">
+      <DependentUpon>NotaTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TambahData\TambahDataPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahDataPengeluaran.Designer.cs">
+      <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahDataOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahDataOutlet.Designer.cs">
+      <DependentUpon>TambahDataOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahPaketLaundry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahPaketLaundry.Designer.cs">
+      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\RegistrasiPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\RegistrasiPelanggan.Designer.cs">
+      <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahDataKurir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahDataKurir.Designer.cs">
+      <DependentUpon>TambahDataKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahDataUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahDataUser.Designer.cs">
+      <DependentUpon>TambahDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TambahData\TambahTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TambahData\TambahTransaksi.Designer.cs">
+      <DependentUpon>TambahTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlDashboard.Designer.cs">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlDataUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlDataUser.Designer.cs">
+      <DependentUpon>UserControlDataUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlJenisPaket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlJenisPaket.Designer.cs">
+      <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlKurir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlKurir.Designer.cs">
+      <DependentUpon>UserControlKurir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\UserControlLaporanPengeluaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\UserControlLaporanPengeluaran.Designer.cs">
+      <DependentUpon>UserControlLaporanPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\UserControlLaporanTransaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\UserControlLaporanTransaksi.Designer.cs">
+      <DependentUpon>UserControlLaporanTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlOutlet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlOutlet.Designer.cs">
+      <DependentUpon>UserControlOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlPaketLaundry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlPaketLaundry.Designer.cs">
+      <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlPelanggan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlPelanggan.Designer.cs">
+      <DependentUpon>UserControlPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlPengeluaran.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlPengeluaran.Designer.cs">
+      <DependentUpon>UserControlPengeluaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\UserControlTransaksi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl\UserControlTransaksi.Designer.cs">
+      <DependentUpon>UserControlTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validasi.cs" />
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\DetailTransaksi.resx">
+      <DependentUpon>DetailTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditDataKurir.resx">
+      <DependentUpon>EditDataKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditDataOutlet.resx">
+      <DependentUpon>EditDataOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditDataPelanggan.resx">
+      <DependentUpon>EditDataPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditDataPengeluaran.resx">
+      <DependentUpon>EditDataPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditDataUser.resx">
+      <DependentUpon>EditDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditJenis.resx">
+      <DependentUpon>EditJenis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditPaketLaundry.resx">
+      <DependentUpon>EditPaketLaundry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditData\EditTransaksi.resx">
+      <DependentUpon>EditTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\NotaTransaksi.resx">
+      <DependentUpon>NotaTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportNota.rdlc" />
+    <EmbeddedResource Include="Report\ReportTransaksi.rdlc" />
+    <EmbeddedResource Include="Report\ReportPengeluaran.rdlc" />
+    <EmbeddedResource Include="TambahData\TambahDataPengeluaran.resx">
+      <DependentUpon>TambahDataPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahDataOutlet.resx">
+      <DependentUpon>TambahDataOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahPaketLaundry.resx">
+      <DependentUpon>TambahPaketLaundry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\RegistrasiPelanggan.resx">
+      <DependentUpon>RegistrasiPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahDataKurir.resx">
+      <DependentUpon>TambahDataKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahDataUser.resx">
+      <DependentUpon>TambahDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TambahData\TambahTransaksi.resx">
+      <DependentUpon>TambahTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlDashboard.resx">
+      <DependentUpon>UserControlDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlDataUser.resx">
+      <DependentUpon>UserControlDataUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlJenisPaket.resx">
+      <DependentUpon>UserControlJenisPaket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlKurir.resx">
+      <DependentUpon>UserControlKurir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\UserControlLaporanPengeluaran.resx">
+      <DependentUpon>UserControlLaporanPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\UserControlLaporanTransaksi.resx">
+      <DependentUpon>UserControlLaporanTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlOutlet.resx">
+      <DependentUpon>UserControlOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlPaketLaundry.resx">
+      <DependentUpon>UserControlPaketLaundry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlPelanggan.resx">
+      <DependentUpon>UserControlPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlPengeluaran.resx">
+      <DependentUpon>UserControlPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\UserControlTransaksi.resx">
+      <DependentUpon>UserControlTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="laundryDataSet.xsc">
+      <DependentUpon>laundryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="laundryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>laundryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="laundryDataSet.xss">
+      <DependentUpon>laundryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Happy housewife cheerful mother vector image on VectorStock1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dana01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\msvcr100.dll">
+      <Link>SqlServerTypes\x64\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x64\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x64\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\msvcr100.dll">
+      <Link>SqlServerTypes\x86\msvcr100.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.SqlServer.Types.11.0.2\nativeBinaries\x86\SqlServerSpatial110.dll">
+      <Link>SqlServerTypes\x86\SqlServerSpatial110.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Dana Logo UJIKOM1.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
